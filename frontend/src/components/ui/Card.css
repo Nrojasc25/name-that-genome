@@ -1,0 +1,18 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 5px 20px;
+  height: fit-content;
+  margin-bottom: 5px;
+}
+
+.card-title-centered {
+  text-align: center;
+}
+
+.card-title-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+}

@@ -1,0 +1,41 @@
+.results-variant-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-detail-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.results-detail-value {
+  margin: 4px 0 16px;
+}
+
+.results-tag {
+  background: rgb(122, 210, 182);
+  color: black;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.results-disease {
+  padding: 10px;
+  background: rgb(131, 175, 161);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.results-confidence-value {
+  font-size: 40px;
+  color: rgb(20, 83, 63);
+  font-weight: 400;
+  margin: 0;
+}
+
+.results-confidence-label {
+  color: rgb(20, 83, 63);
+  margin: 0;
+}

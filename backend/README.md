@@ -6,7 +6,7 @@ The model's task is to classify a genetic variant as benign or pathogenic. The d
 
 ## Current status
 
-The populated SQLite database is available for local use. The simplified database connection code and FastAPI endpoints have not been added yet, so there is no API server to start at this stage.
+The populated SQLite database supports variant lookups through `database.py`. A FastAPI endpoint in `main.py` returns the same stored information as JSON. Model inference and SHAP explanations are still upcoming.
 
 ## Dataset
 
@@ -33,11 +33,37 @@ The database also stores coordinates, reported genes, review information, basic 
 2. Download [variants.sqlite](https://github.com/Nrojasc25/name-that-genome/releases/download/clinvar-data-v1/variants.sqlite) and place it in `backend/data/`.
 3. Keep the database excluded from Git. Anyone running the backend locally needs a copy of the same prepared database. Cloning the repository alone will not download it.
 
+## Run the API
+
+Use Python 3.11 or newer. Run these commands from the repository root (`name-that-genome/`).
+
+Create a virtual environment:
+
+```sh
+python -m venv .venv
+```
+
+On Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r backend\requirements.txt
+.\.venv\Scripts\python.exe -m uvicorn backend.main:app --reload
+```
+
+On macOS/Linux:
+
+```sh
+.venv/bin/python -m pip install -r backend/requirements.txt
+.venv/bin/python -m uvicorn backend.main:app --reload
+```
+
+Open <http://127.0.0.1:8000/variants/clinvar/576> for an example lookup, or <http://127.0.0.1:8000/docs> to try the endpoint interactively. Keep the server terminal open, use Ctrl+C to stop it.
+
+The endpoint returns 200 for a stored variant, 404 for an unknown ID, 422 for an invalid ID, and 503 if the database file is missing. The classification in a successful response is ClinVar's stored label. Each source record retains its release version and all reported genes.
+
 ## Next backend work
 
-- Add `database.py` to connect to SQLite and look up stored variants using Python's built-in `sqlite3` module.
-- Add `main.py` with a FastAPI endpoint that accepts a ClinVar variation ID and returns the stored variant details.
-- Add a small `requirements.txt` and startup instructions when the API is implemented.
+- Agree on the frontend's input and response format, then connect it to the lookup endpoint.
 - Connect model predictions and SHAP explanations once those components are ready.
 
-The first endpoint will return stored ClinVar information. Model inference is a later step.
+The current endpoint returns stored ClinVar information. Model inference is a later step.

@@ -57,3 +57,92 @@
   color: var(--text-light);
   font-size: 11px;
 }
+
+.variant-error {
+  color: #b42318;
+  font-size: 14px;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: min(100%, 440px);
+  padding: 32px 40px;
+  margin: 0;
+  text-align: center;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.login-logo {
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.login-brand-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: min(300px, 100%);
+  margin: 0 auto;
+}
+
+.login-form .input,
+.login-form .button {
+  max-width: 100%;
+}
+
+.login-form .input {
+  margin-top: 0;
+}
+
+.login-form .button {
+  margin: 34px 0 16px;
+}
+
+.login-card > .hyperlink {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.login-card > .hyperlink.auth-secondary-link {
+  display: block;
+}
+
+.auth-page-title {
+  margin: 0 0 8px;
+}
+
+.auth-secondary-link {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 0;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 28px 24px;
+  }
+}

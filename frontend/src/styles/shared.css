@@ -114,6 +114,13 @@
   max-width: 100%;
 }
 
+.login-form .login-skip-link {
+  align-self: center;
+  color: #c65d00;
+  font-size: 12px;
+  margin: 0;
+}
+
 .login-form .input {
   margin-top: 0;
 }

@@ -41,6 +41,13 @@ function Login() {
             required
           />
 
+          <button
+            className="hyperlink login-skip-link"
+            type="button"
+            onClick={() => navigate('/dashboard')}
+          >
+            Skip
+          </button>
           <button className="button" type="submit">
             Login
           </button>

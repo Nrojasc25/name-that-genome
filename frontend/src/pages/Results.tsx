@@ -1,9 +1,19 @@
+import { useNavigate } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import './Results.css'
 
 function Results() {
+  const navigate = useNavigate()
+
   return (
     <>
+      <button
+        className="button results-back-button"
+        type="button"
+        onClick={() => navigate('/dashboard')}
+      >
+        ← Back
+      </button>
       <h1>Results</h1>
       <div className="narrow-wide-grid">
         <Card>

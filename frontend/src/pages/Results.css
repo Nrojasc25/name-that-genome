@@ -1,3 +1,9 @@
+.results-back-button {
+  width: auto;
+  margin-bottom: 16px;
+  background: #c65d00;
+}
+
 .results-variant-details {
   display: flex;
   flex-direction: column;

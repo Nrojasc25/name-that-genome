@@ -1,69 +1,87 @@
 # Name That Genome - Backend
 
-This folder holds the project's ClinVar database and will contain the Python backend for accessing variant records and connecting the website to the model.
+## Setup
 
-The model's task is to classify a genetic variant as benign or pathogenic. The database contains ClinVar's existing classifications. These are separate from predictions our model will make.
+Use Python 3.12. Download [variants.sqlite](https://github.com/Nrojasc25/name-that-genome/releases/download/clinvar-data-v1/variants.sqlite) into `backend/data/`. The API creates `app.sqlite` for accounts and history.
 
-## Current status
-
-The populated SQLite database supports variant lookups through `database.py`. A FastAPI endpoint in `main.py` returns the same stored information as JSON. Model inference and SHAP explanations are still upcoming.
-
-## Dataset
-
-- **Source:** [ClinVar GRCh38 snapshot, September 13, 2026](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar_20260913.vcf.gz).
-- **Genes:** ACADM, ATP7B, CFTR, COL4A5, FBN1, GAA, PAH, and PKHD1.
-- **Local file:** `backend/data/variants.sqlite`, relative to the repository root.
-
-| Group | Records |
-|---|---:|
-| All stored variants | 36,065 |
-| Candidate training variants | 20,996 |
-| Benign / likely benign candidates | 10,765 |
-| Pathogenic / likely pathogenic candidates | 10,231 |
-
-The two label counts make up the candidate group. Other records, including uncertain and conflicting classifications, are retained for reference and are excluded from that group.
-
-Candidates were selected using clear germline classifications, qualifying review status, and small sequence changes. They still need reference checks, gene and transcript annotation, final feature selection, and train/validation/test splits before training.
-
-The database also stores coordinates, reported genes, review information, basic features, and the source and selection metadata.
-
-## Local setup
-
-1. Create `data/` inside this `backend/` folder if it does not exist.
-2. Download [variants.sqlite](https://github.com/Nrojasc25/name-that-genome/releases/download/clinvar-data-v1/variants.sqlite) and place it in `backend/data/`.
-3. Keep the database excluded from Git. Anyone running the backend locally needs a copy of the same prepared database. Cloning the repository alone will not download it.
-
-## Run the API
-
-Use Python 3.11 or newer. Run these commands from the repository root (`name-that-genome/`).
-
-Create a virtual environment:
-
-```sh
-python -m venv .venv
-```
-
-On Windows PowerShell:
+First-time setup from the repository root on Windows:
 
 ```powershell
+py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r backend\requirements.txt
-.\.venv\Scripts\python.exe -m uvicorn backend.main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn backend.main:app --reload --no-use-colors
 ```
 
-On macOS/Linux:
+On macOS/Linux, create the environment with `python3.12 -m venv .venv` and use `.venv/bin/python` for the remaining commands.
 
-```sh
-.venv/bin/python -m pip install -r backend/requirements.txt
-.venv/bin/python -m uvicorn backend.main:app --reload
-```
+## Connection
 
-Open <http://127.0.0.1:8000/variants/clinvar/576> for an example lookup, or <http://127.0.0.1:8000/docs> to try the endpoint interactively. Keep the server terminal open, use Ctrl+C to stop it.
+- API: `http://localhost:8000`. Schemas and examples: [localhost:8000/docs](http://localhost:8000/docs).
+- Frontend origins: `http://localhost:5173` and `http://127.0.0.1:5173`. Use the same hostname for the API.
+- Include `credentials: "include"` on requests and `Content-Type: application/json` when sending JSON.
 
-The endpoint returns 200 for a stored variant, 404 for an unknown ID, 422 for an invalid ID, and 503 if the database file is missing. The classification in a successful response is ClinVar's stored label. Each source record retains its release version and all reported genes.
+## Endpoints
 
-## Next backend work
+| Endpoint | Request | Response |
+|---|---|---|
+| `POST /api/auth/register` | `first_name`, `last_name`, `email`, `password` | 201: User; signs in immediately |
+| `POST /api/auth/login` | `email`, `password` | 200: User |
+| `POST /api/auth/guest` | No body | 201: User |
+| `GET /api/auth/me` | No body | 200: User; 401 without a session |
+| `POST /api/auth/logout` | No body | 204: empty body |
+| `POST /api/auth/password-reset` | `email` | 200: `message`, `delivery` |
+| `POST /api/auth/password-reset/confirm` | `token`, `password` | 200: `message`; requires login again |
+| `POST /api/analyses` | `{"variant":"576"}` | 201: Analysis |
+| `GET /api/analyses/{id}` | Analysis ID | 200: Analysis |
+| `GET /api/history?limit=4&offset=0` | Recent results | 200: History |
+| `GET /api/history?limit=20&offset=0` | Paginated history | 200: History |
 
-- Agree on the frontend's input and response format, then connect it to the lookup endpoint.
-- Connect model predictions and SHAP explanations once those components are ready.
+**User:** `{id, email, first_name, last_name, is_guest}`. Guest email is null. New passwords require 8-128 characters; send only `password`, not the confirmation field. Guest history does not transfer to an account.
 
-The current endpoint returns stored ClinVar information. Model inference is a later step.
+**Errors:** `detail` is a message string or a list of validation entries with `msg` fields. Statuses: 400 invalid reset link, 401 login/session required, 403 origin rejected, 404 not found, 409 duplicate email, 422 invalid input, 503 database or reset delivery unavailable.
+
+## Analysis and history
+
+Accepted inputs: ClinVar ID (`576`) or an exact stored GRCh38 genomic HGVS (`NC_000012.12:g.102840399C>T`). Short `c.` expressions and transcript-level HGVS are unsupported.
+
+| Analysis field | Contents |
+|---|---|
+| `id` | Saved analysis ID used to reopen a result |
+| `created_at` | Unix timestamp in seconds |
+| `input` | Submitted variant text |
+| `variant` | `variant_id`, `clinvar_variation_id`, `clinvar_allele_id`, `source_records` |
+| `prediction_status` | `not_available` or `available` |
+| `prediction` | Null until the model is connected; otherwise the object below |
+
+Use `variant.source_records[0]` for the newest source record:
+
+| Fields | Contents |
+|---|---|
+| `hgvs`, `genes`, `consequences` | HGVS string or null; gene and consequence lists |
+| `chromosome`, `position`, `ref`, `alt`, `assembly` | Coordinates and sequence change |
+| `clinvar_classification`, `conditions` | Reference classification; condition objects with `name` and `identifiers` |
+| `review_stars`, `review_status`, `release_version` | Review information and source version |
+
+ClinVar classifications and conditions are reference data, not model predictions. No zygosity field is available.
+
+**History:** `{items, total, limit, offset}`. Each item is an Analysis, newest first. `limit` accepts 1-100; `offset` starts at 0. Saved analyses retain their original results after model updates.
+
+## Password reset
+
+The response's `delivery` is `local` until email is configured. For local testing, open the `.eml` message in `backend/data/mail_outbox/` and follow its link.
+
+The link opens `/forgot-password/new-password#token=...`. Read `token` from the URL fragment and send it with `password` to the confirmation endpoint. The link expires after 30 minutes and works once; a newer request replaces it.
+
+## Prediction and SHAP
+
+| Prediction field | Contents |
+|---|---|
+| `model_name`, `model_version` | Model identification |
+| `decision` | `benign`, `pathogenic`, or `uncertain` |
+| `pathogenic_probability` | 0-1 score for the pathogenic class |
+| `probability_kind` | `calibrated` or `uncalibrated`; display uncalibrated values as scores |
+| `explanation` | Null or a SHAP explanation |
+
+An explanation contains `base_value`, `explained_value`, `output_space` (`probability`, `log_odds`, or `raw_score`), `output_target` (`pathogenic`), and `features`. Each feature has `feature`, `value` (string, number, boolean, or null), and `contribution`.
+
+Positive contributions increase the pathogenic output in the stated output space; negative contributions decrease it.

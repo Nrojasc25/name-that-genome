@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { api } from '../lib/api'
 import { Link, useNavigate } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import logo from '../assets/logo-icon.svg'
@@ -5,9 +7,35 @@ import logo from '../assets/logo-icon.svg'
 function Login() {
   const navigate = useNavigate()
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState('')
+  const [pending, setPending] = useState(false)
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    navigate('/dashboard')
+    const data = new FormData(event.currentTarget)
+    setError('')
+    setPending(true)
+    try {
+      await api('/api/auth/login', { method: 'POST', body: JSON.stringify({ email: data.get('email'), password: data.get('password') }) })
+      navigate('/dashboard')
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Request failed. Please try again.')
+    } finally {
+      setPending(false)
+    }
+  }
+
+  async function continueAsGuest() {
+    setError('')
+    setPending(true)
+    try {
+      await api('/api/auth/guest', { method: 'POST' })
+      navigate('/dashboard')
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Unable to start guest session.')
+    } finally {
+      setPending(false)
+    }
   }
 
   return (
@@ -18,6 +46,7 @@ function Login() {
           <h1 className="login-brand-title">Name That Genome</h1>
         </div>
 
+        {error && <p role="alert">{error}</p>}
         <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <input
@@ -44,11 +73,12 @@ function Login() {
           <button
             className="hyperlink login-skip-link"
             type="button"
-            onClick={() => navigate('/dashboard')}
+            onClick={continueAsGuest}
+            disabled={pending}
           >
-            Skip
+            Continue as guest
           </button>
-          <button className="button" type="submit">
+          <button className="button" type="submit" disabled={pending}>
             Login
           </button>
         </form>

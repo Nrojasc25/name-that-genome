@@ -22,7 +22,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/history" element={<History />} />
-          <Route path="/results" element={<Results />} />
+          <Route path="/results/:analysisId" element={<Results />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" />} />

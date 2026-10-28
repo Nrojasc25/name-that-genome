@@ -1,14 +1,28 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { api } from '../lib/api'
+import { Link } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import logo from '../assets/logo-icon.svg'
 
 function ForgotPassword() {
-  const navigate = useNavigate()
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState('')
+  const [pending, setPending] = useState(false)
+  const [message, setMessage] = useState('')
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    // TODO: Verify that the email belongs to an account and complete the reset-token confirmation.
-    navigate('/forgot-password/new-password')
+    const data = new FormData(event.currentTarget)
+    setError('')
+    setPending(true)
+    try {
+      const result = await api<{ message: string; delivery: string }>('/api/auth/password-reset', { method: 'POST', body: JSON.stringify({ email: data.get('email') }) })
+      setMessage(result.message + (result.delivery === 'local' ? ' For local testing, open the reset email in backend/data/mail_outbox/.' : ' Check your inbox.'))
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Request failed. Please try again.')
+    } finally {
+      setPending(false)
+    }
   }
 
   return (
@@ -21,6 +35,8 @@ function ForgotPassword() {
 
         <h2 className="auth-page-title">Forgot your password?</h2>
 
+        {error && <p role="alert">{error}</p>}
+        {message && <p role="status">{message}</p>}
         <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="reset-email">Email</label>
           <input
@@ -33,7 +49,7 @@ function ForgotPassword() {
             required
           />
 
-          <button className="button" type="submit">
+          <button className="button" type="submit" disabled={pending}>
             Continue
           </button>
         </form>

@@ -1,11 +1,31 @@
+import { useState } from 'react'
+import { api } from '../lib/api'
 import { Link } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import logo from '../assets/logo-icon.svg'
 
 function NewPassword() {
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState('')
+  const [pending, setPending] = useState(false)
+  const [message, setMessage] = useState('')
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    // TODO: Verify the reset token and persist the new password through the backend.
+    const data = new FormData(event.currentTarget)
+    setError('')
+    setPending(true)
+    try {
+      const token = new URLSearchParams(window.location.hash.slice(1)).get('token')
+      if (!token) throw new Error('Open the reset link from your email, or request a new link.')
+      if (data.get('newPassword') !== data.get('confirmPassword')) throw new Error('Passwords must match.')
+      await api('/api/auth/password-reset/confirm', { method: 'POST', body: JSON.stringify({ token, password: data.get('newPassword') }) })
+      window.history.replaceState(null, '', window.location.pathname)
+      setMessage('Password updated. You can now log in with your new password.')
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Request failed. Please try again.')
+    } finally {
+      setPending(false)
+    }
   }
 
   return (
@@ -18,6 +38,8 @@ function NewPassword() {
 
         <h2 className="auth-page-title">New Password</h2>
 
+        {error && <p role="alert">{error}</p>}
+        {message && <p role="status">{message}</p>}
         <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="new-password">New password</label>
           <input
@@ -27,6 +49,8 @@ function NewPassword() {
             type="password"
             placeholder="New password"
             autoComplete="new-password"
+            minLength={8}
+            maxLength={128}
             required
           />
 
@@ -38,10 +62,12 @@ function NewPassword() {
             type="password"
             placeholder="Confirm new password"
             autoComplete="new-password"
+            minLength={8}
+            maxLength={128}
             required
           />
 
-          <button className="button" type="submit">
+          <button className="button" type="submit" disabled={pending || !!message}>
             Reset Password
           </button>
         </form>

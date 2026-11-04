@@ -1,11 +1,28 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { api } from '../lib/api'
+import { Link, useNavigate } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import logo from '../assets/logo-icon.svg'
 
 function CreateAccount() {
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState('')
+  const [pending, setPending] = useState(false)
+  const navigate = useNavigate()
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    // TODO: Send the account details to the backend and securely persist the account.
+    const data = new FormData(event.currentTarget)
+    setError('')
+    setPending(true)
+    try {
+      if (data.get('password') !== data.get('confirmPassword')) throw new Error('Passwords must match.')
+      await api('/api/auth/register', { method: 'POST', body: JSON.stringify({ first_name: data.get('firstName'), last_name: data.get('lastName'), email: data.get('email'), password: data.get('password') }) })
+      navigate('/dashboard')
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Request failed. Please try again.')
+    } finally {
+      setPending(false)
+    }
   }
 
   return (
@@ -18,6 +35,7 @@ function CreateAccount() {
 
         <h2 className="auth-page-title">Create Account</h2>
 
+        {error && <p role="alert">{error}</p>}
         <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="first-name">Name</label>
           <input
@@ -60,6 +78,8 @@ function CreateAccount() {
             type="password"
             placeholder="Password"
             autoComplete="new-password"
+            minLength={8}
+            maxLength={128}
             required
           />
 
@@ -71,10 +91,12 @@ function CreateAccount() {
             type="password"
             placeholder="Confirm password"
             autoComplete="new-password"
+            minLength={8}
+            maxLength={128}
             required
           />
 
-          <button className="button" type="submit">
+          <button className="button" type="submit" disabled={pending}>
             Create Account
           </button>
         </form>

@@ -14,6 +14,13 @@ py -3.12 -m venv .venv
 
 On macOS/Linux, create the environment with `python3.12 -m venv .venv` and use `.venv/bin/python` for the remaining commands.
 
+## Start both servers together
+
+After setup, run `python3 dev.py` from the repository root (`py dev.py` on Windows).
+This starts the backend and frontend in one terminal without activating the virtual
+environment manually. Open http://localhost:5173. Press Ctrl+C to stop both.
+Stop any existing dev servers first.
+
 ## Connection
 
 - API: `http://localhost:8000`. Schemas and examples: [localhost:8000/docs](http://localhost:8000/docs).

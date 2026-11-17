@@ -81,14 +81,29 @@ The link opens `/forgot-password/new-password#token=...`. Read `token` from the 
 
 ## Prediction and SHAP
 
+No model is connected yet. New analyses continue to return `prediction_status: "not_available"` and `prediction: null`.
+
+### Five-class prediction (schema version 2)
+
 | Prediction field | Contents |
 |---|---|
-| `model_name`, `model_version` | Model identification |
-| `decision` | `benign`, `pathogenic`, or `uncertain` |
-| `pathogenic_probability` | 0-1 score for the pathogenic class |
+| `schema_version` | Required literal `2` |
+| `model_name`, `model_version` | Nonempty model identification |
+| `feature_schema_version`, `annotation_version`, `dataset_version` | Nonempty provenance versions |
+| `decision` | `benign`, `likely_benign`, `uncertain`, `likely_pathogenic`, or `pathogenic` |
+| `class_scores` | Exactly those five keys; finite numeric values in [0, 1], summing to 1 within 1e-6 |
 | `probability_kind` | `calibrated` or `uncalibrated`; display uncalibrated values as scores |
-| `explanation` | Null or a SHAP explanation |
+| `confidence_status` | `not_assessed`, `low`, or `standard`; independent of the Uncertain class |
+| `explanation` | Null or a class-specific SHAP explanation |
 
-An explanation contains `base_value`, `explained_value`, `output_space` (`probability`, `log_odds`, or `raw_score`), `output_target` (`pathogenic`), and `features`. Each feature has `feature`, `value` (string, number, boolean, or null), and `contribution`.
+The decision is the maximum-scoring class. Exact ties choose the first class in the order shown above. Do not infer a category from five arbitrary intervals of a binary score. A predicted Uncertain label and low model confidence are distinct.
 
-Positive contributions increase the pathogenic output in the stated output space; negative contributions decrease it.
+An explanation contains `base_value`, `explained_value`, `output_space` (`probability`, `log_odds`, or `raw_score`), a required `output_target` using the five-class enum, and `features`. Each feature has `feature`, `value` (string, number, boolean, or null), and finite `contribution`.
+
+Positive contributions increase the named target's output in the stated output space; negative contributions decrease it. Raw multiclass margins must not be described as calibrated probabilities. SHAP computation and additivity checks will be implemented with the model.
+
+### Legacy saved results
+
+Unversioned and version 1 predictions remain readable with their original three-choice `decision`, `pathogenic_probability`, model fields, probability kind, and optional pathogenic SHAP explanation. API serialization supplies `schema_version: 1`; stored JSON is not changed. Missing five-class probabilities are never fabricated. Version 2 payloads cannot fall back to legacy parsing when invalid.
+
+See [ML implementation plan and Phase 1 instructions](../ml/README.md) and the explicitly synthetic examples in `ml/tests/fixtures/predictions.json`.

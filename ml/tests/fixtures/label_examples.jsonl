@@ -1,0 +1,17 @@
+{"record_id": "synthetic-1", "classification": "Benign", "review_stars": 1, "expected_reason": null, "expected_label": "benign"}
+{"record_id": "synthetic-2", "classification": "Likely benign", "review_stars": 1, "expected_reason": null, "expected_label": "likely_benign"}
+{"record_id": "synthetic-3", "classification": "Uncertain significance", "review_stars": 1, "expected_reason": null, "expected_label": "uncertain"}
+{"record_id": "synthetic-4", "classification": "Likely pathogenic", "review_stars": 1, "expected_reason": null, "expected_label": "likely_pathogenic"}
+{"record_id": "synthetic-5", "classification": "Pathogenic", "review_stars": 1, "expected_reason": null, "expected_label": "pathogenic"}
+{"record_id": "synthetic-6", "classification": "Benign/Likely_benign", "review_stars": 1, "expected_reason": "combined_classification"}
+{"record_id": "synthetic-7", "classification": "Pathogenic / Likely pathogenic", "review_stars": 1, "expected_reason": "combined_classification"}
+{"record_id": "synthetic-8", "classification": "Conflicting_classifications_of_pathogenicity", "review_stars": 1, "expected_reason": "conflicting_classification"}
+{"record_id": "synthetic-9", "classification": "Conflicting interpretations of pathogenicity", "review_stars": 1, "expected_reason": "conflicting_classification"}
+{"record_id": "synthetic-10", "classification": null, "review_stars": 1, "expected_reason": "missing_classification"}
+{"record_id": "synthetic-11", "classification": "not provided", "review_stars": 1, "expected_reason": "missing_classification"}
+{"record_id": "synthetic-12", "classification": "risk factor", "review_stars": 1, "expected_reason": "unsupported_classification"}
+{"record_id": "synthetic-13", "classification": "drug response", "review_stars": 1, "expected_reason": "unsupported_classification"}
+{"record_id": "synthetic-14", "classification": "association", "review_stars": 1, "expected_reason": "unsupported_classification"}
+{"record_id": "synthetic-15", "classification": "Uncertain significance/Pathogenic", "review_stars": 1, "expected_reason": "unsupported_classification"}
+{"record_id": "synthetic-zero-stars", "classification": "Benign", "review_stars": 0, "expected_reason": "insufficient_review_stars"}
+{"record_id": "synthetic-somatic", "classification": "Pathogenic", "review_stars": 3, "classification_type": "somatic", "expected_reason": "non_germline_classification"}

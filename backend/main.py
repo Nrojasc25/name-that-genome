@@ -19,6 +19,7 @@ from pydantic import BaseModel, EmailStr, Field
 
 from . import app_database as store
 from .database import find_variant, get_variant
+from .prediction import Prediction, StoredPrediction
 
 
 FRONTEND_URL = os.environ.get("NTG_FRONTEND_URL", "http://localhost:5173").rstrip("/")
@@ -90,36 +91,13 @@ class UserResponse(BaseModel):
     is_guest: bool
 
 
-class ShapFeature(BaseModel):
-    feature: str
-    value: str | float | bool | None
-    contribution: float = Field(allow_inf_nan=False)
-
-
-class ShapExplanation(BaseModel):
-    base_value: float = Field(allow_inf_nan=False)
-    explained_value: float = Field(allow_inf_nan=False)
-    output_space: Literal["probability", "log_odds", "raw_score"]
-    output_target: Literal["pathogenic"] = "pathogenic"
-    features: list[ShapFeature]
-
-
-class Prediction(BaseModel):
-    model_name: str
-    model_version: str
-    decision: Literal["benign", "pathogenic", "uncertain"]
-    pathogenic_probability: float = Field(ge=0, le=1)
-    probability_kind: Literal["calibrated", "uncalibrated"]
-    explanation: ShapExplanation | None = None
-
-
 class AnalysisResponse(BaseModel):
     id: str
     created_at: int
     input: str
     variant: dict
     prediction_status: Literal["not_available", "available"]
-    prediction: Prediction | None
+    prediction: StoredPrediction | None
 
 
 class HistoryResponse(BaseModel):

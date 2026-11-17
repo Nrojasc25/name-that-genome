@@ -24,7 +24,10 @@ python3 dev.py
 ```
 
 On Windows, use `py dev.py`. The launcher uses the backend's `.venv` automatically;
+On Mac, use `python3 dev.py`
 you do not need to activate it. It starts both servers in the same terminal.
 Open http://localhost:5173 and press Ctrl+C to stop both servers. Stop any
 previously started servers before using this command. If either server exits,
 the launcher shuts down the other one as well.
+
+kill 29181 29193

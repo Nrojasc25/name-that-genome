@@ -1,0 +1,68 @@
+"""Versioned prediction contracts; legacy snapshots are read without filling missing scores."""
+
+import math
+from typing import Annotated, Literal, Self
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+from ml.labels import CLASS_ORDER, VariantClass
+
+
+Score = Annotated[float, Field(strict=True, ge=0, le=1, allow_inf_nan=False)]
+
+
+class ShapFeature(BaseModel):
+    feature: str
+    value: str | float | bool | None
+    contribution: float = Field(allow_inf_nan=False)
+
+
+class ShapExplanation(BaseModel):
+    base_value: float = Field(allow_inf_nan=False)
+    explained_value: float = Field(allow_inf_nan=False)
+    output_space: Literal["probability", "log_odds", "raw_score"]
+    output_target: VariantClass
+    features: list[ShapFeature]
+
+
+class LegacyShapExplanation(ShapExplanation):
+    output_target: Literal["pathogenic"] = "pathogenic"
+
+
+class LegacyPrediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    schema_version: Literal[1] = 1
+    model_name: str
+    model_version: str
+    decision: Literal["benign", "pathogenic", "uncertain"]
+    pathogenic_probability: Score
+    probability_kind: Literal["calibrated", "uncalibrated"]
+    explanation: LegacyShapExplanation | None = None
+
+
+class Prediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    schema_version: Literal[2]
+    model_name: str = Field(min_length=1)
+    model_version: str = Field(min_length=1)
+    feature_schema_version: str = Field(min_length=1)
+    annotation_version: str = Field(min_length=1)
+    dataset_version: str = Field(min_length=1)
+    decision: VariantClass
+    class_scores: dict[VariantClass, Score]
+    probability_kind: Literal["calibrated", "uncalibrated"]
+    confidence_status: Literal["not_assessed", "low", "standard"]
+    explanation: ShapExplanation | None = None
+
+    @model_validator(mode="after")
+    def valid_distribution(self) -> Self:
+        if set(self.class_scores) != set(CLASS_ORDER):
+            raise ValueError("class_scores must contain exactly the five canonical classes")
+        if not math.isclose(sum(self.class_scores.values()), 1.0, rel_tol=0, abs_tol=1e-6):
+            raise ValueError("class_scores must sum to one within 1e-6")
+        # Python max keeps the first class in canonical order on an exact tie.
+        winner = max(CLASS_ORDER, key=self.class_scores.__getitem__)
+        if self.decision != winner:
+            raise ValueError("decision must select the highest score; ties use canonical class order")
+        return self
+
+
+StoredPrediction = Prediction | LegacyPrediction

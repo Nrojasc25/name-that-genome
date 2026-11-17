@@ -1,3 +1,45 @@
+export const CLASS_ORDER = ['benign', 'likely_benign', 'uncertain', 'likely_pathogenic', 'pathogenic'] as const
+export type VariantClass = typeof CLASS_ORDER[number]
+export const CLASS_LABELS: Record<VariantClass, string> = {
+  benign: 'Benign',
+  likely_benign: 'Likely benign',
+  uncertain: 'Uncertain',
+  likely_pathogenic: 'Likely pathogenic',
+  pathogenic: 'Pathogenic',
+}
+
+export interface ShapExplanation {
+  base_value: number
+  explained_value: number
+  output_space: 'probability' | 'log_odds' | 'raw_score'
+  output_target: VariantClass
+  features: { feature: string; value: string | number | boolean | null; contribution: number }[]
+}
+
+export interface Prediction {
+  schema_version: 2
+  model_name: string
+  model_version: string
+  feature_schema_version: string
+  annotation_version: string
+  dataset_version: string
+  decision: VariantClass
+  class_scores: Record<VariantClass, number>
+  probability_kind: 'calibrated' | 'uncalibrated'
+  confidence_status: 'not_assessed' | 'low' | 'standard'
+  explanation: ShapExplanation | null
+}
+
+export interface LegacyPrediction {
+  schema_version?: 1
+  model_name: string
+  model_version: string
+  decision: 'benign' | 'pathogenic' | 'uncertain'
+  pathogenic_probability: number
+  probability_kind: 'calibrated' | 'uncalibrated'
+  explanation: (Omit<ShapExplanation, 'output_target'> & { output_target?: 'pathogenic' }) | null
+}
+
 export interface Analysis {
   id: string
   created_at: number
@@ -18,19 +60,7 @@ export interface Analysis {
     }[]
   }
   prediction_status: 'available' | 'not_available'
-  prediction: {
-    model_name: string
-    model_version: string
-    decision: string
-    pathogenic_probability: number
-    probability_kind: 'calibrated' | 'uncalibrated'
-    explanation: {
-      base_value: number
-      explained_value: number
-      output_space: string
-      features: { feature: string; value: string | number | boolean | null; contribution: number }[]
-    } | null
-  } | null
+  prediction: Prediction | LegacyPrediction | null
 }
 
 export interface AnalysisHistory {

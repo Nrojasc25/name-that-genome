@@ -1,0 +1,16 @@
+{
+  "policy_version": "1.0.0",
+  "classification_type": "germline",
+  "minimum_review_stars": 1,
+  "class_order": ["benign", "likely_benign", "uncertain", "likely_pathogenic", "pathogenic"],
+  "exact_labels": {
+    "benign": "benign",
+    "likely benign": "likely_benign",
+    "uncertain significance": "uncertain",
+    "likely pathogenic": "likely_pathogenic",
+    "pathogenic": "pathogenic"
+  },
+  "combined_labels": ["benign/likely benign", "pathogenic/likely pathogenic"],
+  "conflicting_labels": ["conflicting classifications of pathogenicity", "conflicting interpretations of pathogenicity", "conflicting data from submitters"],
+  "missing_labels": ["", "not provided", "not specified", "."]
+}

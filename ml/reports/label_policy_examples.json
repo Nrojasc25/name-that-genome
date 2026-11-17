@@ -1,0 +1,211 @@
+{
+  "policy_version": "1.0.0",
+  "total": 17,
+  "included": 5,
+  "excluded": 12,
+  "class_counts": {
+    "benign": 1,
+    "likely_benign": 1,
+    "uncertain": 1,
+    "likely_pathogenic": 1,
+    "pathogenic": 1
+  },
+  "exclusion_counts": {
+    "combined_classification": 2,
+    "conflicting_classification": 2,
+    "insufficient_review_stars": 1,
+    "missing_classification": 2,
+    "non_germline_classification": 1,
+    "unsupported_classification": 4
+  },
+  "records": [
+    {
+      "row": 1,
+      "record_id": "synthetic-1",
+      "classification": "Benign",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": "benign",
+      "class_id": 0,
+      "exclusion_reason": null,
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 2,
+      "record_id": "synthetic-2",
+      "classification": "Likely benign",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": "likely_benign",
+      "class_id": 1,
+      "exclusion_reason": null,
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 3,
+      "record_id": "synthetic-3",
+      "classification": "Uncertain significance",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": "uncertain",
+      "class_id": 2,
+      "exclusion_reason": null,
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 4,
+      "record_id": "synthetic-4",
+      "classification": "Likely pathogenic",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": "likely_pathogenic",
+      "class_id": 3,
+      "exclusion_reason": null,
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 5,
+      "record_id": "synthetic-5",
+      "classification": "Pathogenic",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": "pathogenic",
+      "class_id": 4,
+      "exclusion_reason": null,
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 6,
+      "record_id": "synthetic-6",
+      "classification": "Benign/Likely_benign",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "combined_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 7,
+      "record_id": "synthetic-7",
+      "classification": "Pathogenic / Likely pathogenic",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "combined_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 8,
+      "record_id": "synthetic-8",
+      "classification": "Conflicting_classifications_of_pathogenicity",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "conflicting_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 9,
+      "record_id": "synthetic-9",
+      "classification": "Conflicting interpretations of pathogenicity",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "conflicting_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 10,
+      "record_id": "synthetic-10",
+      "classification": null,
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "missing_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 11,
+      "record_id": "synthetic-11",
+      "classification": "not provided",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "missing_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 12,
+      "record_id": "synthetic-12",
+      "classification": "risk factor",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "unsupported_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 13,
+      "record_id": "synthetic-13",
+      "classification": "drug response",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "unsupported_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 14,
+      "record_id": "synthetic-14",
+      "classification": "association",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "unsupported_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 15,
+      "record_id": "synthetic-15",
+      "classification": "Uncertain significance/Pathogenic",
+      "review_stars": 1,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "unsupported_classification",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 16,
+      "record_id": "synthetic-zero-stars",
+      "classification": "Benign",
+      "review_stars": 0,
+      "classification_type": "germline",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "insufficient_review_stars",
+      "policy_version": "1.0.0"
+    },
+    {
+      "row": 17,
+      "record_id": "synthetic-somatic",
+      "classification": "Pathogenic",
+      "review_stars": 3,
+      "classification_type": "somatic",
+      "label": null,
+      "class_id": null,
+      "exclusion_reason": "non_germline_classification",
+      "policy_version": "1.0.0"
+    }
+  ],
+  "source": "ml/tests/fixtures/label_examples.jsonl"
+}

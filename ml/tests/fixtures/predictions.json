@@ -1,0 +1,168 @@
+{
+  "note": "Synthetic contract examples, not trained predictions or measured confidence.",
+  "five_class": [
+    {
+      "schema_version": 2,
+      "model_name": "synthetic-contract-fixture",
+      "model_version": "fixture-only",
+      "feature_schema_version": "fixture-only",
+      "annotation_version": "fixture-only",
+      "dataset_version": "fixture-only",
+      "decision": "benign",
+      "class_scores": {
+        "benign": 0.8,
+        "likely_benign": 0.05,
+        "uncertain": 0.05,
+        "likely_pathogenic": 0.05,
+        "pathogenic": 0.05
+      },
+      "probability_kind": "uncalibrated",
+      "confidence_status": "not_assessed",
+      "explanation": {
+        "base_value": 0.0,
+        "explained_value": 1.0,
+        "output_space": "raw_score",
+        "output_target": "benign",
+        "features": [
+          {
+            "feature": "synthetic_feature",
+            "value": 1,
+            "contribution": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 2,
+      "model_name": "synthetic-contract-fixture",
+      "model_version": "fixture-only",
+      "feature_schema_version": "fixture-only",
+      "annotation_version": "fixture-only",
+      "dataset_version": "fixture-only",
+      "decision": "likely_benign",
+      "class_scores": {
+        "benign": 0.05,
+        "likely_benign": 0.8,
+        "uncertain": 0.05,
+        "likely_pathogenic": 0.05,
+        "pathogenic": 0.05
+      },
+      "probability_kind": "uncalibrated",
+      "confidence_status": "not_assessed",
+      "explanation": {
+        "base_value": 0.0,
+        "explained_value": 1.0,
+        "output_space": "raw_score",
+        "output_target": "likely_benign",
+        "features": [
+          {
+            "feature": "synthetic_feature",
+            "value": 1,
+            "contribution": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 2,
+      "model_name": "synthetic-contract-fixture",
+      "model_version": "fixture-only",
+      "feature_schema_version": "fixture-only",
+      "annotation_version": "fixture-only",
+      "dataset_version": "fixture-only",
+      "decision": "uncertain",
+      "class_scores": {
+        "benign": 0.05,
+        "likely_benign": 0.05,
+        "uncertain": 0.8,
+        "likely_pathogenic": 0.05,
+        "pathogenic": 0.05
+      },
+      "probability_kind": "uncalibrated",
+      "confidence_status": "not_assessed",
+      "explanation": {
+        "base_value": 0.0,
+        "explained_value": 1.0,
+        "output_space": "raw_score",
+        "output_target": "uncertain",
+        "features": [
+          {
+            "feature": "synthetic_feature",
+            "value": 1,
+            "contribution": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 2,
+      "model_name": "synthetic-contract-fixture",
+      "model_version": "fixture-only",
+      "feature_schema_version": "fixture-only",
+      "annotation_version": "fixture-only",
+      "dataset_version": "fixture-only",
+      "decision": "likely_pathogenic",
+      "class_scores": {
+        "benign": 0.05,
+        "likely_benign": 0.05,
+        "uncertain": 0.05,
+        "likely_pathogenic": 0.8,
+        "pathogenic": 0.05
+      },
+      "probability_kind": "uncalibrated",
+      "confidence_status": "not_assessed",
+      "explanation": {
+        "base_value": 0.0,
+        "explained_value": 1.0,
+        "output_space": "raw_score",
+        "output_target": "likely_pathogenic",
+        "features": [
+          {
+            "feature": "synthetic_feature",
+            "value": 1,
+            "contribution": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 2,
+      "model_name": "synthetic-contract-fixture",
+      "model_version": "fixture-only",
+      "feature_schema_version": "fixture-only",
+      "annotation_version": "fixture-only",
+      "dataset_version": "fixture-only",
+      "decision": "pathogenic",
+      "class_scores": {
+        "benign": 0.05,
+        "likely_benign": 0.05,
+        "uncertain": 0.05,
+        "likely_pathogenic": 0.05,
+        "pathogenic": 0.8
+      },
+      "probability_kind": "uncalibrated",
+      "confidence_status": "not_assessed",
+      "explanation": {
+        "base_value": 0.0,
+        "explained_value": 1.0,
+        "output_space": "raw_score",
+        "output_target": "pathogenic",
+        "features": [
+          {
+            "feature": "synthetic_feature",
+            "value": 1,
+            "contribution": 1.0
+          }
+        ]
+      }
+    }
+  ],
+  "legacy": {
+    "model_name": "synthetic-legacy-fixture",
+    "model_version": "fixture-only",
+    "decision": "pathogenic",
+    "pathogenic_probability": 0.8,
+    "probability_kind": "uncalibrated",
+    "explanation": null
+  }
+}

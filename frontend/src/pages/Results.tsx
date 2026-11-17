@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Card from '../components/ui/Card'
 import { api } from '../lib/api'
-import type { Analysis } from '../lib/analysis'
+import { CLASS_LABELS, CLASS_ORDER, type Analysis } from '../lib/analysis'
 import './Results.css'
 
 function LiveResults() {
@@ -49,8 +49,14 @@ function LiveResults() {
           <p className="small-text">These are reference annotations from ClinVar.</p>
           <h3>Model Prediction</h3>
           {analysis.prediction_status === 'available' && prediction ? <>
-            <p>{prediction.decision}</p>
-            <p>Pathogenic {prediction.probability_kind === 'calibrated' ? 'probability' : 'score (uncalibrated)'}: {(prediction.pathogenic_probability * 100).toFixed(1)}%</p>
+            <p>{CLASS_LABELS[prediction.decision]}</p>
+            {prediction.schema_version === 2 ? <>
+              <p>{prediction.probability_kind === 'calibrated' ? 'Class probabilities' : 'Class scores (uncalibrated)'}</p>
+              <ul>{CLASS_ORDER.map(label => <li key={label}>{CLASS_LABELS[label]}: {(prediction.class_scores[label] * 100).toFixed(1)}%</li>)}</ul>
+              {prediction.decision === 'uncertain' && <p>Uncertain is a predicted classification learned from uncertain-significance records.</p>}
+              {prediction.confidence_status === 'low' && <p>The model has low confidence in this selection. This is separate from the Uncertain category.</p>}
+              {prediction.confidence_status === 'not_assessed' && <p>Model confidence has not been assessed.</p>}
+            </> : <p>Pathogenic {prediction.probability_kind === 'calibrated' ? 'probability' : 'score (uncalibrated)'}: {(prediction.pathogenic_probability * 100).toFixed(1)}% (saved legacy result)</p>}
             <p>{prediction.model_name} · {prediction.model_version}</p>
           </> : <p>Model prediction unavailable. The model has not been connected yet.</p>}
         </Card>
@@ -58,7 +64,7 @@ function LiveResults() {
       <Card>
         <h3>Why this prediction?</h3>
         {prediction?.explanation ? <>
-          <p>Contributions to the pathogenic output in {prediction.explanation.output_space}. Positive values increase the output; negative values decrease it.</p>
+          <p>Contributions to the {CLASS_LABELS[prediction.explanation.output_target ?? 'pathogenic']} output in {prediction.explanation.output_space}. Positive values increase the output; negative values decrease it.</p>
           <p>Base value: {prediction.explanation.base_value}. Explained value: {prediction.explanation.explained_value}.</p>
           <ul>{prediction.explanation.features.map((feature, index) => <li key={index}>{feature.feature}: {String(feature.value ?? 'Not available')} — contribution {feature.contribution}</li>)}</ul>
         </> : <p>No SHAP explanation is available for this analysis.</p>}

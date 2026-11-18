@@ -1,0 +1,23 @@
+{
+  "experiment_version": "five-class-baselines-v1",
+  "seed": 1729,
+  "cv_folds": 3,
+  "primary_split": {"train": 0.70, "validation": 0.15, "test": 0.15},
+  "gene_challenge_target_fraction": 0.15,
+  "gene_challenge_minimum_per_class": 20,
+  "minimum_primary_per_class": 100,
+  "selection": "Highest mean training-CV macro-F1; ties use lower log loss, then candidate ID. Report per-class recall and inference latency; do not use held-out data.",
+  "candidates": [
+    {"id": "dummy-prior", "algorithm": "dummy", "weighted": false, "population_features": true},
+    {"id": "logistic-c01", "algorithm": "logistic", "C": 0.1, "weighted": false, "population_features": true},
+    {"id": "logistic-c01-balanced", "algorithm": "logistic", "C": 0.1, "weighted": true, "population_features": true},
+    {"id": "logistic-c1", "algorithm": "logistic", "C": 1.0, "weighted": false, "population_features": true},
+    {"id": "logistic-c1-balanced", "algorithm": "logistic", "C": 1.0, "weighted": true, "population_features": true},
+    {"id": "xgb-shallow", "algorithm": "xgboost", "max_depth": 3, "n_estimators": 150, "weighted": false, "population_features": true},
+    {"id": "xgb-shallow-balanced", "algorithm": "xgboost", "max_depth": 3, "n_estimators": 150, "weighted": true, "population_features": true},
+    {"id": "xgb-deep", "algorithm": "xgboost", "max_depth": 5, "n_estimators": 250, "weighted": false, "population_features": true},
+    {"id": "xgb-deep-balanced", "algorithm": "xgboost", "max_depth": 5, "n_estimators": 250, "weighted": true, "population_features": true},
+    {"id": "xgb-deep-no-population", "algorithm": "xgboost", "max_depth": 5, "n_estimators": 250, "weighted": false, "population_features": false},
+    {"id": "xgb-deep-balanced-no-population", "algorithm": "xgboost", "max_depth": 5, "n_estimators": 250, "weighted": true, "population_features": false}
+  ]
+}

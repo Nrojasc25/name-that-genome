@@ -1,5 +1,98 @@
 # Machine Learning
 
+## Phase 4 status: baseline training complete; candidate only
+
+The frozen splits and training pipeline are implemented. Eleven predefined candidates were compared using three-fold cross-validation **inside the training partition only**. The selected XGBoost candidate is saved locally; it is uncalibrated and has not been connected to the API. Validation, final test, and gene-challenge predictions have not been generated.
+
+### Split protocol
+
+| Partition | Variants | Purpose |
+|---|---:|---|
+| Training | 16,500 | Fold-local preprocessing, candidate comparison, and final training-only refit. |
+| Validation | 3,536 | Reserved for Phase 5 calibration and quality-rule selection. |
+| Final test | 3,536 | Reserved for evaluation after model/calibration/threshold choices are fixed. |
+| Gene challenge | 4,816 | Reserved to measure generalization to unseen annotated genes. |
+
+The challenge is selected **first**, as one complete connected gene group closest to 15% of the dataset while meeting predeclared class-support requirements. Then 70%/15%/15% is applied to the remaining variants. Thus those percentages do not describe the full dataset including the separate challenge.
+
+The reserved component contains CFTR, CFTR-AS1, CFTR-AS2, and connected overlapping gene annotations. Multi-gene links are grouped transitively. There is no annotated gene overlap between that challenge and any other partition. Primary train/validation/test partitions may share genes by design; their canonical variant keys are disjoint. Every class is present in all partitions and all training CV folds. Only one ClinVar release is available, so no temporal test is claimed.
+
+See the [split report](reports/split_report.md) and [split manifest](reports/split_manifest.json). Membership and scoring-fold assignments are frozen in `ml/data/splits-v1/membership.parquet`; do not regenerate a more favorable split after seeing results.
+
+### Candidate comparison
+
+`config/training.json` defines the seed, split policy, and bounded candidate list before training:
+
+- A class-prior dummy baseline.
+- Multinomial logistic regression with C = 0.1 or 1.0, each unweighted and balanced.
+- XGBoost with depth 3 / 150 trees or depth 5 / 250 trees, each unweighted and balanced.
+- Two depth-5 XGBoost ablations without the three population frequencies or their missingness indicators.
+
+Every fold fits a fresh imputer on its fit rows. Logistic regression additionally fits its scaler on those rows. Balanced weights are recalculated from that fold's fit labels. No resampling or balancing changes the scoring distributions. Fixed feature vocabularies remain unchanged.
+
+Candidates are ranked by mean training-CV macro-F1, then lower log loss, then candidate ID. Per-class precision/recall/F1, fold standard deviations, confusion matrices, and batch inference timings are also reported. Selection does not use validation, test, or gene-challenge results. These CV scores are selection estimates, not final test performance; fold SD is not a confidence interval.
+
+| Representative candidate | Training-CV macro-F1 |
+|---|---:|
+| Dummy prior | 0.1018 |
+| Best logistic regression | 0.6283 |
+| Selected XGBoost (depth 5, 250 trees, unweighted) | 0.6403 |
+| Same XGBoost without population features | 0.5189 |
+
+Read the [training comparison](reports/training_report.md) and [full fold/class metrics](reports/training_report.json).
+
+**Important limitation:** the selected model's pooled training out-of-fold recall for **Likely pathogenic is 9.6%**, despite the higher overall macro-F1. The small CV difference between the shallow and deeper trees is not evidence of a statistically meaningful improvement. The candidate needs class-specific investigation and formal evaluation; calibration alone should not be assumed to solve weak discrimination. Population-feature reliance also needs review because their availability may reflect dataset ascertainment.
+
+### Install and reproduce
+
+The tested environment is Python 3.12 on Apple Silicon. XGBoost requires OpenMP; on this Mac the missing runtime was installed with `brew install libomp` (tested libomp 23.1.6). Other platforms require their supported runtime. Python requirements are separate from backend runtime dependencies.
+
+```bash
+.venv/bin/python -m pip install -r ml/requirements-training.txt
+
+# Run once before training, after Phase 2/3 artifacts exist.
+.venv/bin/python -m ml.split_data --dataset ml/data/clinvar-five-class-v1-rebuild --output ml/data/splits-v1
+
+# Fit and select using training-only CV; fresh output directory required.
+.venv/bin/python -m ml.train --dataset ml/data/clinvar-five-class-v1-rebuild --features ml/data/features-v1 --splits ml/data/splits-v1 --output ml/artifacts/training-v1-final
+
+.venv/bin/python -m unittest discover -s ml/tests -v
+```
+
+Outputs are never overwritten. Use another directory for an intentional repeat run, retaining the same frozen split/configuration. The full tested Python environment is pinned in `requirements-training.lock.txt`; it includes the backend dependencies present in the project environment. Native runtime identities are recorded in the model manifest; threadpoolctl does not report an OpenMP version on this Mac, so the tested Homebrew libomp version is documented above. Install this lock in a compatible fresh environment when reproducing the exact run.
+
+### Saved artifacts
+
+| File | Contents |
+|---|---|
+| `model.ubj` | Selected XGBoost fitted on all 16,500 training rows only. A selected sklearn model would use trusted local `model.joblib`. |
+| `preprocessor.json` | Training-only imputation values, schema order, annotation version, and training-key digest. |
+| `fold-*-preprocessor.json` | Separate preprocessing parameters fitted inside each CV fold. |
+| `training_oof.parquet` | Out-of-fold probabilities for training rows and all candidates; no held-out predictions. |
+| `model_manifest.json` | Class/feature ordering, selected feature indices, source/split versions, checksums, configuration, seed, code hashes, platform, and native runtimes. |
+| `training_report.json` / `.md` | Candidate comparisons and per-class results. |
+| `environment-lock.txt` | Exact installed Python distribution versions for the run. |
+
+Actual models, row-level predictions, and split memberships stay in ignored `ml/artifacts/` and `ml/data/`. Small reports/manifests are kept in `ml/reports/`. The selected candidate is in `ml/artifacts/training-v1-final/`; repeated runs are separate artifacts.
+
+No background SHAP dataset or user-facing explanations are created here. A synthetic five-class smoke test verifies that the pinned XGBoost/SHAP combination reconstructs raw class margins. Full explanation development is Phase 6. XGBoost float32 softmax roundoff is checked within 1e-6 and renormalized for float64 metric calculation only; that is not calibration.
+
+**Validation:** 42 tests passed. A full repeated run produced identical model bytes, all training out-of-fold probabilities, preprocessing artifacts, frozen split manifests, and non-timing CV metrics. See [reproducibility evidence](reports/training_reproducibility.json).
+
+### Phase 4 checklist
+
+- [x] Freeze canonical-variant partitions and connected-gene challenge.
+- [x] Record membership, class counts, fold assignments, seeds, and overlap checks.
+- [x] Compare dummy, multinomial, and tree candidates with weighted/unweighted variants.
+- [x] Compare population-feature ablations.
+- [x] Fit imputation/scaling/weights only inside training folds.
+- [x] Select by the predefined CV rule and refit on training rows only.
+- [x] Save the candidate, preprocessors, environment, reports, and artifact manifests.
+- [x] Verify split reproducibility, persisted predictions, and multiclass SHAP compatibility.
+- [ ] Phase 5: investigate weak classes; define acceptance targets before final test access; calibrate and evaluate using the reserved partitions under that protocol.
+
+---
+
 ## Phase 3 status: initial feature pipeline implemented
 
 Phase 3 prepares **42 raw numeric features for all 28,388 retained variants**, using a versioned local annotation cache and one feature function for batch and single-variant use. **No model or preprocessing parameters have been fitted on the full dataset.** Dataset splitting and model training belong to Phase 4.
@@ -80,7 +173,7 @@ Tests cover target/metadata invariance, zero versus missing, invalid/conflicting
 - [x] Real feature matrix and per-class coverage reports.
 - [x] Tests for leakage resistance, semantics, reproducibility, and inference parity.
 - [ ] Optional conservation/protein/modern population enrichment.
-- [ ] Phase 4: freeze splits, fit preprocessing inside training folds, and train baselines.
+- [x] Phase 4: freeze splits, fit preprocessing inside training folds, and train baselines (see status above).
 
 ---
 
@@ -226,7 +319,7 @@ Legacy unversioned/1 predictions retain their saved `pathogenic_probability`. Re
 
 ---
 
-The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 3. The original PDF remains the initial planning snapshot.
+The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 4. The original PDF remains the initial planning snapshot.
 
 # Name That Genome - ML Implementation Plan
 
@@ -236,7 +329,7 @@ Build and integrate a reproducible five-category genetic variant classifier usin
 
 The five user-facing categories are **Benign, Likely benign, Pathogenic, Likely pathogenic, and Uncertain**. This replaces the earlier binary-training proposal. Likely benign and likely pathogenic remain distinct training labels; uncertain significance is included as its own supervised class.
 
-**Planning baseline:** November 12, 2026. The original foundation was established by repository inspection. Phase 1 label/contract and isolated history tests now pass, as do the frontend build and lint checks. Model training and full end-to-end inference testing remain future work.
+**Planning baseline:** November 12, 2026. The original foundation was established by repository inspection. Phase 1 label/contract and isolated history tests now pass, as do the frontend build and lint checks. Initial candidate training is complete; held-out evaluation and full end-to-end inference testing remain future work.
 
 ## Target behavior
 
@@ -620,8 +713,8 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Implement exact label rules, exclusion reasons, synthetic reports, and Phase 1 tests.
 - [x] Audit and freeze the published ClinVar SQLite snapshot; validate normalization and exact label rules. Upstream import-provenance limitations are documented above.
 - [x] Build the initial annotation cache and shared feature pipeline; verify leakage exclusions. Conservation/protein/modern-frequency enrichment remains optional follow-up.
-- [ ] Freeze grouped splits and document class coverage and overlap checks.
-- [ ] Train and compare dummy, multinomial, and tree candidates.
+- [x] Freeze grouped splits and document class coverage and overlap checks.
+- [x] Train and compare dummy, multinomial, and tree candidates.
 - [ ] Evaluate every class, calibrate if justified, and define confidence flags.
 - [ ] Record numeric acceptance targets and complete the untouched test report.
 - [ ] Implement and verify all five class-specific SHAP explanations.
@@ -630,4 +723,4 @@ Existing application features below were identified by repository inspection. Ph
 - [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Initial Phase 3 feature pipeline implemented for the published eight-gene snapshot. Next: Phase 4 splits and model training. Optional annotation enrichment is listed above. No trained model, benchmark score, calibrated probability system, or live SHAP inference has been claimed as completed.
+**Current milestone:** Phase 4 training complete. A candidate and training-only CV results are saved; Likely pathogenic recall is weak and explicitly reported. Next: Phase 5 class-specific review, calibration, and reserved-set evaluation. No final-test performance, calibrated model, or live SHAP inference is claimed.

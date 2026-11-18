@@ -1,5 +1,89 @@
 # Machine Learning
 
+## Phase 3 status: initial feature pipeline implemented
+
+Phase 3 prepares **42 raw numeric features for all 28,388 retained variants**, using a versioned local annotation cache and one feature function for batch and single-variant use. **No model or preprocessing parameters have been fitted on the full dataset.** Dataset splitting and model training belong to Phase 4.
+
+### Feature sources and scope
+
+- **Sequence change:** allele lengths, signed/absolute length change, length change modulo three, SNV/insertion/deletion indicators, and six strand-collapsed SNV substitution indicators. Modulo three is a length measurement, not a diagnosis of a coding frameshift.
+- **Consequence:** fixed indicators for NCBI molecular-consequence terms, plus missing/unknown-term indicators. The vocabulary is declared in `config/features.json`, not selected using class labels.
+- **Population frequency:** `AF_ESP`, `AF_EXAC`, and `AF_TGP` from the frozen ClinVar source. Each has an explicit missingness indicator. These legacy study fields are not current gnomAD or ancestry-specific frequencies.
+- **Reference context:** GC fraction in the 21-base GRCh38 reference window centered on the variant's VCF anchor, plus a missingness indicator.
+
+The selected annotation workflow reuses the snapshot's precomputed NCBI consequences and population fields and computes reference context locally. It does not install or claim to run VEP. Consequences are the union across linked source records; no transcript is chosen and no severity ranking uses the label. [NCBI describes these consequence and population fields here](https://doi.org/10.1093/nar/gkx1153).
+
+**Deferred enrichment:** conservation, transcript-specific amino-acid/protein features, and modern ancestry-specific frequencies. Those sources are unavailable in the snapshot and are not represented with fabricated values or all-missing feature columns. A future VEP workflow would need a separately pinned tool/cache/reference and a transcript policy; see [Ensembl annotation-source documentation](https://static.ensembl.org/info/docs/tools/vep/script/vep_cache.html). No third-party pathogenicity predictions are used.
+
+See the [feature dictionary](FEATURES.md), [coverage summary](reports/feature_coverage.md), and [per-class coverage report](reports/feature_coverage.json). Dictionary entries include meanings, units, source, missing-value behavior, transformation, and inference availability.
+
+### Build the cache and raw feature matrix
+
+Use the Phase 2 dependencies and verified dataset/reference already prepared locally. Replace the dataset path if you used another build directory.
+
+```bash
+.venv/bin/python -m ml.annotate --dataset ml/data/clinvar-five-class-v1-rebuild --reference ml/data/reference/hg38.fa --output ml/data/annotations-v1
+.venv/bin/python -m ml.build_features --dataset ml/data/clinvar-five-class-v1-rebuild --cache ml/data/annotations-v1 --output ml/data/features-v1
+.venv/bin/python -m unittest discover -s ml/tests -v
+```
+
+Both commands refuse to overwrite existing output. Use a fresh directory for a repeat build. Dataset/source/reference checksums are verified before annotation. The cache manifest pins input checksums, feature configuration, code, workflow, and transcript policy. Its cache is local and read-only during inference; there are no live annotation-service requests.
+
+| Output | Contents |
+|---|---|
+| `annotations-v1/annotations.sqlite` | Normalized allele details, consequence terms, validated frequencies, and reference context keyed by normalized variant. No labels, genes, clinical conditions, or review stars. |
+| `annotation_manifest.json` | Annotation version, source hashes, coverage statuses, source limitations, and workflow policy. |
+| `features-v1/features.parquet` | Exactly the 42 allowlisted numeric feature columns; null frequencies/context remain null. |
+| `feature_rows.parquet` | Ordered normalized variant keys, stored separately from the numeric matrix. Row i matches row i in `features.parquet`. |
+| `feature_dictionary.json` | Machine-readable feature meaning, source, type, missing policy, and transform. |
+| `feature_coverage.json` / `.md` | Observed/missing values and per-class counts; class labels are loaded only for reporting after the vectors are built. |
+| `feature_manifest.json` | Ordered feature schema, input/output hashes, annotation version, code fingerprints, and build command. |
+
+Large artifacts stay under ignored `ml/data/`. Small manifests and reports are copied to `ml/reports/`. Training targets stay in the Phase 2 dataset and must be joined through the separate row mapping; do not place targets or IDs into the numeric matrix.
+
+### Missingness and preprocessing
+
+Missing, malformed, nonfinite, out-of-range, or conflicting source frequencies become null. A measured frequency of zero stays observed. Multiple linked source records must agree on any observed frequency; disagreement is recorded instead of selecting the most convenient value. Reference context becomes null at a contig boundary or when the window contains ambiguous bases.
+
+`TrainingPreprocessor.fit(vectors_by_key, training_keys=..., annotation_version=...)` fits medians using **only the explicitly supplied training partition**. It records the training-key digest, row count, feature order, configuration, annotation version, and fill values. If a feature is absent in every training row, its fallback is zero and its missingness indicator remains set. Held-out values never determine that fallback. Save/load and reuse the same artifact for validation/test/inference. In cross-validation, fit a fresh preprocessor inside each training fold.
+
+Fixed consequence/substitution encoding does not require fitting. Unknown consequence terms set `consequence_other`; missing consequences set `consequence_missing`. No scaler is fitted in Phase 3. If Phase 4 adds scaling for a logistic baseline, that scaler must also be fitted inside the training fold and saved with its model.
+
+### Shared single-variant entry point
+
+```python
+from pathlib import Path
+from ml.annotate import AnnotationCache
+
+# expected_version must come from the selected model/feature manifest.
+cache = AnnotationCache(Path("ml/data/annotations-v1"), expected_version=expected_version)
+try:
+    raw_vector = cache.features_for(normalized_variant_key)
+    # Once fitted on training rows, preprocessing can verify annotation compatibility:
+    # numeric_vector = preprocessor.transform_from_cache(cache, normalized_variant_key)
+finally:
+    cache.close()
+```
+
+An unknown key fails explicitly rather than inventing annotations. The current cache supports the frozen dataset; arbitrary new-variant annotation and API model integration remain later work. Raw vectors are independently reconstructible without reading the target label.
+
+### Validation and limitations
+
+**Validation:** 32 tests pass; all 28,388 single-variant vectors match the exported batch matrix; repeat feature builds produce identical artifact checksums.
+
+Tests cover target/metadata invariance, zero versus missing, invalid/conflicting frequencies, unknown consequences, indels, reference boundaries, train-only imputation, schema rejection, persistence, cache corruption/version rejection, and batch/single-vector agreement. Reports disclose low frequency coverage: 946 observed GO-ESP values, 3,536 ExAC values, and 1,466 1000 Genomes values. Missingness may reflect ascertainment, so Phase 4 should compare performance with and without frequency features.
+
+- [x] Fixed feature allowlist, order, types, and dictionary.
+- [x] Versioned annotation cache with source checksums and transcript policy.
+- [x] Shared batch/single-variant feature builder and explicit unknown-key handling.
+- [x] Null-preserving raw features and train-partition-only imputation implementation.
+- [x] Real feature matrix and per-class coverage reports.
+- [x] Tests for leakage resistance, semantics, reproducibility, and inference parity.
+- [ ] Optional conservation/protein/modern population enrichment.
+- [ ] Phase 4: freeze splits, fit preprocessing inside training folds, and train baselines.
+
+---
+
 ## Phase 2 status: implemented for the published eight-gene snapshot
 
 The real ClinVar dataset has been audited, checked against GRCh38, normalized with pinned bcftools, and exported without changing the source database. The target genes recorded by the import are **ACADM, ATP7B, CFTR, COL4A5, FBN1, GAA, PAH, and PKHD1**. Overlapping gene annotations also occur. This dataset does not cover all ClinVar or establish genome-wide performance.
@@ -91,7 +175,7 @@ Reproducibility starts from the **published SQLite snapshot**, whose checksum is
 - [x] Verify all five classes meet the initial sample-support gate.
 - [x] Test normalization, exclusions, source protection, checksum rejection, and reproducibility.
 - [ ] Independently recover/verify the original upstream VCF import provenance (recorded limitation).
-- [ ] Phase 3: enrich annotations and implement the shared feature pipeline.
+- [x] Phase 3: implement initial cached annotations and the shared feature pipeline (see status above); optional enrichment remains documented.
 
 ---
 
@@ -142,7 +226,7 @@ Legacy unversioned/1 predictions retain their saved `pathogenic_probability`. Re
 
 ---
 
-The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 2. The original PDF remains the initial planning snapshot.
+The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 3. The original PDF remains the initial planning snapshot.
 
 # Name That Genome - ML Implementation Plan
 
@@ -535,7 +619,7 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Expand and version the API/frontend contract for five classes and legacy history.
 - [x] Implement exact label rules, exclusion reasons, synthetic reports, and Phase 1 tests.
 - [x] Audit and freeze the published ClinVar SQLite snapshot; validate normalization and exact label rules. Upstream import-provenance limitations are documented above.
-- [ ] Build the annotation cache and shared feature pipeline; verify leakage exclusions.
+- [x] Build the initial annotation cache and shared feature pipeline; verify leakage exclusions. Conservation/protein/modern-frequency enrichment remains optional follow-up.
 - [ ] Freeze grouped splits and document class coverage and overlap checks.
 - [ ] Train and compare dummy, multinomial, and tree candidates.
 - [ ] Evaluate every class, calibrate if justified, and define confidence flags.
@@ -546,4 +630,4 @@ Existing application features below were identified by repository inspection. Ph
 - [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 2 implemented and validated for the published eight-gene snapshot. Next: Phase 3 annotation enrichment and feature engineering. No trained model, benchmark score, calibrated probability system, or live SHAP inference has been claimed as completed.
+**Current milestone:** Initial Phase 3 feature pipeline implemented for the published eight-gene snapshot. Next: Phase 4 splits and model training. Optional annotation enrichment is listed above. No trained model, benchmark score, calibrated probability system, or live SHAP inference has been claimed as completed.

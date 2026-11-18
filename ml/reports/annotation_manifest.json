@@ -1,0 +1,44 @@
+{
+  "annotation_version": "e68bd0f7918e2c4dd87f316f8b266056a2db4e8a6c7b08c2b260fd16f90233de",
+  "cache_sha256": "4f38862d5b8537976a563210298dcecf311a77764e004fafede42d588f7297c9",
+  "clinvar_release": "2026-09-13",
+  "context_radius": 10,
+  "context_status_counts": {
+    "observed": 28388
+  },
+  "created_at_utc": "2026-11-18T03:24:59.814695+00:00",
+  "dataset_version": "clinvar-eight-gene-five-class-v1",
+  "deferred_annotations": [
+    "conservation",
+    "transcript-specific protein changes",
+    "modern ancestry-specific population frequencies"
+  ],
+  "fingerprints": {
+    "annotation_code_sha256": "fa62a3dd990374cc3ca5f3919c2db084cc23a5b666409db40e9e312585ff588c",
+    "dataset_variants_sha256": "d3cc9ac945dbe02003c81e14c18869a860bafbbcff100db9674d8d3ddba0e9ec",
+    "feature_config_sha256": "ed2cdbb32fecb7d6fa50ff426d8bc8a10e5f6dbf6bf6c003734fc56330309d70",
+    "features_code_sha256": "c3d26f65545cd2b208cbb66bbd85c692205b1bb7aa20079c33074c0326e27f68",
+    "reference_sha256": "5be01555d98347fdb3714dc84c6f77c9d8bc774adcf32c6f7a8fa06f5baf5e51",
+    "source_database_sha256": "14c0c14afc05f73e3e5ed417ab7fcdc0855a9e7b6e6a0d337d5bec54724b193d"
+  },
+  "frequency_status_counts": {
+    "AF_ESP": {
+      "missing": 27442,
+      "observed": 946
+    },
+    "AF_EXAC": {
+      "missing": 24852,
+      "observed": 3536
+    },
+    "AF_TGP": {
+      "missing": 26922,
+      "observed": 1466
+    }
+  },
+  "population_source_note": "GO-ESP, ExAC, and 1000 Genomes fields frozen in ClinVar; original study versions and ancestry/coverage denominators are not available in this snapshot.",
+  "reference_source": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz",
+  "schema_version": "1.0.0",
+  "transcript_policy": "Union of NCBI consequence terms across source records; no transcript selected and no severity ranking.",
+  "variants": 28388,
+  "workflow": "ncbi-clinvar-frozen-annotations-and-grch38-context-v1"
+}

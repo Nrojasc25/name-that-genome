@@ -1,0 +1,17 @@
+{
+  "code_sha256": {
+    "calibration.py": "facf545e41c6277010345a28fdd2c79d921ca3ca15393034afb188739959e9d5",
+    "evaluate.py": "6e74a8138c1770fbdef9fab422270768a2932eb27db89987abe16120393dde41",
+    "evaluation_data.py": "d893589257139fbbf7c08693efb170928ab2ea82af6f6a5c9f1c8feebf9aa33b",
+    "evaluation_reports.py": "fa7ae4d5402c685294bef00b80599b6995762a81242c34f246b0e3b1df3aabd4"
+  },
+  "evaluation_manifest_sha256": "29068cf263d5bf2f5575309e9bbc4f38936bac0a90f7cd73f4f0b2ac20a84bc8",
+  "outputs_sha256": {
+    "evaluation_report.json": "7020ef7b1d2983bf9ec8199a87cc9e0292ada621989053aa1709d242cf215096",
+    "evaluation_report.md": "085ed6fe9db1cae00cf6c1b19ede1c9598db5a4bc9cb9c88888b63cf1c1bf27a",
+    "gene_challenge_confusion.png": "1552d069421a4df50caad4c884e1c0ee0b44a079b5011337305d6b87507d3dbc",
+    "gene_challenge_reliability.png": "b2ba8ddf016b4deaf08291bd8edd1b40e5bc22c4fb047b374d2fe9b6773d77ca",
+    "test_confusion.png": "34111bd2df1d4100f502f806812bdc11ca32b8e8855635f0c462baecb3dd601c",
+    "test_reliability.png": "ac05cc6484532ee6ed7536754ef95f264f3c237c4a5bc4f133c7b9ac773fbbd0"
+  }
+}

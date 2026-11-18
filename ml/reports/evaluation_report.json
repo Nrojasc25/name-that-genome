@@ -1,0 +1,5973 @@
+{
+  "confidence_rule": {
+    "accepted": false,
+    "margin": null,
+    "reason": "No validation rule meets coverage and accuracy targets; all predictions flagged low confidence.",
+    "top_probability": null
+  },
+  "latency": {
+    "machine_label": "Apple Silicon development Mac; exact platform recorded at execution",
+    "p50_ms": 0.15237496700137854,
+    "p95_ms": 0.1677143620327115,
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "samples": 100,
+    "scope": "Warm single-variant cache lookup + imputation + XGBoost + temperature; excludes startup, network, API and SHAP."
+  },
+  "partitions": {
+    "gene_challenge": {
+      "bootstrap": {
+        "connected_gene_components": 1,
+        "intervals": {
+          "balanced_accuracy": {
+            "lower": 0.6232915856226549,
+            "upper": 0.6797407473180793,
+            "valid_replicates": 300
+          },
+          "log_loss": {
+            "lower": 0.5382636699094507,
+            "upper": 0.5764591544596749,
+            "valid_replicates": 300
+          },
+          "macro_f1": {
+            "lower": 0.6246241475167272,
+            "upper": 0.6736643131917016,
+            "valid_replicates": 300
+          },
+          "multiclass_brier": {
+            "lower": 0.27657672435005065,
+            "upper": 0.29746848129558856,
+            "valid_replicates": 300
+          },
+          "recall_benign": {
+            "lower": 0.4571213942307693,
+            "upper": 0.6975847457627118,
+            "valid_replicates": 300
+          },
+          "recall_likely_benign": {
+            "lower": 0.966507559551296,
+            "upper": 0.982621180794854,
+            "valid_replicates": 300
+          },
+          "recall_likely_pathogenic": {
+            "lower": 0.08988622291021671,
+            "upper": 0.17053116209563993,
+            "valid_replicates": 300
+          },
+          "recall_pathogenic": {
+            "lower": 0.6513985169402136,
+            "upper": 0.7156905095189514,
+            "valid_replicates": 300
+          },
+          "recall_uncertain": {
+            "lower": 0.8784390333571851,
+            "upper": 0.9046660727531618,
+            "valid_replicates": 300
+          }
+        },
+        "method": "Canonical-variant bootstrap conditional on this one held-out gene component; not uncertainty across unseen genes.",
+        "note": "Percentile intervals conditional on a fixed selected model and protocol; do not include model-selection uncertainty.",
+        "replicates": 300
+      },
+      "confidence": {
+        "class_standard_coverage": {
+          "benign": 0.0,
+          "likely_benign": 0.0,
+          "likely_pathogenic": 0.0,
+          "pathogenic": 0.0,
+          "uncertain": 0.0
+        },
+        "coverage": 0.0,
+        "low_count": 4816,
+        "standard_accuracy": null,
+        "standard_count": 0
+      },
+      "count": 4816,
+      "dummy": {
+        "accuracy": 0.31021594684385384,
+        "balanced_accuracy": 0.2,
+        "confusion_matrix": [
+          [
+            0,
+            63,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1494,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2231,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            299,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            729,
+            0,
+            0,
+            0
+          ]
+        ],
+        "log_loss": 1.3062035718025573,
+        "macro_f1": 0.09470681458003169,
+        "mean_class_ece": 0.05880203362528942,
+        "multiclass_brier": 0.6926073011113857,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.01308139534883721,
+            "prevalence": 0.01308139534883721,
+            "support": 63
+          },
+          "likely_benign": {
+            "average_precision": 0.31021594684385384,
+            "prevalence": 0.31021594684385384,
+            "support": 1494
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.06208471760797342,
+            "prevalence": 0.06208471760797342,
+            "support": 299
+          },
+          "pathogenic": {
+            "average_precision": 0.1513704318936877,
+            "prevalence": 0.1513704318936877,
+            "support": 729
+          },
+          "uncertain": {
+            "average_precision": 0.4632475083056478,
+            "prevalence": 0.4632475083056478,
+            "support": 2231
+          }
+        },
+        "per_class": {
+          "accuracy": 0.31021594684385384,
+          "benign": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 63.0
+          },
+          "likely_benign": {
+            "f1-score": 0.4735340729001585,
+            "precision": 0.31021594684385384,
+            "recall": 1.0,
+            "support": 1494.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 299.0
+          },
+          "macro avg": {
+            "f1-score": 0.09470681458003169,
+            "precision": 0.06204318936877077,
+            "recall": 0.2,
+            "support": 4816.0
+          },
+          "pathogenic": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 729.0
+          },
+          "uncertain": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2231.0
+          },
+          "weighted avg": {
+            "f1-score": 0.14689782078754918,
+            "precision": 0.09623393367622875,
+            "recall": 0.31021594684385384,
+            "support": 4816.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 4816,
+                "mean_probability": 0.03393939393939394,
+                "observed_fraction": 0.01308139534883721
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.02085799859055673
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 4816,
+                "mean_probability": 0.34157575757575753,
+                "observed_fraction": 0.31021594684385384
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.03135981073190369
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 4816,
+                "mean_probability": 0.14727272727272725,
+                "observed_fraction": 0.06208471760797342
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.08518800966475383
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 4816,
+                "mean_probability": 0.16096969696969696,
+                "observed_fraction": 0.1513704318936877
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.00959926507600925
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 4816,
+                "mean_probability": 0.31624242424242427,
+                "observed_fraction": 0.4632475083056478
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.14700508406322355
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 0,
+            "denominator": 1557,
+            "rate": 0.0
+          },
+          "pathogenic_to_benign": {
+            "count": 1028,
+            "denominator": 1028,
+            "rate": 1.0
+          }
+        }
+      },
+      "error_examples": {
+        "benign_to_pathogenic": [
+          {
+            "clinvar_variation_ids": [
+              1164542
+            ],
+            "consequences": [],
+            "predicted_label": "likely_pathogenic",
+            "top_score": 0.4036737200417097,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117479225:AT:A",
+            "variant_type": "deletion"
+          }
+        ],
+        "likely_vs_definite": [
+          {
+            "clinvar_variation_ids": [
+              1704416
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9193273245580532,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117589636:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              818089
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9079306648550873,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117652737:T:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              632755
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9017581117925965,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117612008:TATATATATATATATGTATATATATATATATATATATATATATATAC:T",
+            "variant_type": "deletion"
+          },
+          {
+            "clinvar_variation_ids": [
+              53975
+            ],
+            "consequences": [
+              "splice_acceptor_variant"
+            ],
+            "predicted_label": "likely_pathogenic",
+            "top_score": 0.8887008296775674,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117534274:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              554034
+            ],
+            "consequences": [
+              "splice_acceptor_variant"
+            ],
+            "predicted_label": "likely_pathogenic",
+            "top_score": 0.8762852609518594,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117542014:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              818112
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.868126089168973,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117483305:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              818095
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8520213190279196,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117509188:T:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              818610
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "benign",
+            "top_score": 0.8293700488891805,
+            "true_label": "likely_benign",
+            "variant_key": "GRCh38:7:117548625:TG:T",
+            "variant_type": "deletion"
+          },
+          {
+            "clinvar_variation_ids": [
+              3910638
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8224811101217417,
+            "true_label": "benign",
+            "variant_key": "GRCh38:7:117548975:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              560220
+            ],
+            "consequences": [
+              "frameshift_variant"
+            ],
+            "predicted_label": "pathogenic",
+            "top_score": 0.8191158402381247,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:7:117548753:TGAAAGATATTAATTTCAAGATA:T",
+            "variant_type": "deletion"
+          }
+        ],
+        "pathogenic_to_benign": [
+          {
+            "clinvar_variation_ids": [
+              53791
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9865890477824882,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117627770:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1705865
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9749675213397008,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117540088:T:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              53750
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9718681793340703,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117614713:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              35857
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117606753:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              495909
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9669315258871073,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:7:117509142:G:C",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1706001
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9353619002302462,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117611565:T:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              35864
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9349868686354369,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117611555:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              818151
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9066677448397031,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117534273:T:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              35875
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8753937642602152,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117627775:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              38497
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8605685640387937,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:7:117602868:G:A",
+            "variant_type": "snv"
+          }
+        ],
+        "uncertain_confusion": [
+          {
+            "clinvar_variation_ids": [
+              439053
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9754423631828044,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117559511:T:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              2624958
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9729207344501759,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117548823:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1163012
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9727435056379022,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117627764:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1797521
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9723505539521518,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117603781:A:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3912006
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117480145:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3690037
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117509142:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              411116
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117530997:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              2153242
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117592657:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              595029
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9684698886039635,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117664760:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              439089
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9678561939643539,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:7:117540148:T:C",
+            "variant_type": "snv"
+          }
+        ]
+      },
+      "gates": {
+        "benign_to_pathogenic": true,
+        "brier_nonworse_than_raw": true,
+        "improvement_over_dummy": true,
+        "improvement_over_logistic": false,
+        "log_loss_nonworse_than_raw": true,
+        "macro_f1_floor": true,
+        "mean_class_ece": false,
+        "pathogenic_to_benign": false,
+        "recall_benign": true,
+        "recall_likely_benign": true,
+        "recall_likely_pathogenic": false,
+        "recall_pathogenic": true,
+        "recall_uncertain": true,
+        "standard_accuracy": false,
+        "standard_coverage": false,
+        "warm_single_variant_latency": true
+      },
+      "logistic": {
+        "accuracy": 0.8397009966777409,
+        "balanced_accuracy": 0.6275561806203724,
+        "confusion_matrix": [
+          [
+            27,
+            31,
+            5,
+            0,
+            0
+          ],
+          [
+            3,
+            1472,
+            18,
+            1,
+            0
+          ],
+          [
+            4,
+            227,
+            1984,
+            11,
+            5
+          ],
+          [
+            0,
+            5,
+            84,
+            33,
+            177
+          ],
+          [
+            0,
+            30,
+            122,
+            49,
+            528
+          ]
+        ],
+        "log_loss": 0.5597762993634885,
+        "macro_f1": 0.6509433563746694,
+        "mean_class_ece": 0.05503748498006712,
+        "multiclass_brier": 0.2869293731202052,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.6542738141774777,
+            "prevalence": 0.01308139534883721,
+            "support": 63
+          },
+          "likely_benign": {
+            "average_precision": 0.9448917478042153,
+            "prevalence": 0.31021594684385384,
+            "support": 1494
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.2726491691904112,
+            "prevalence": 0.06208471760797342,
+            "support": 299
+          },
+          "pathogenic": {
+            "average_precision": 0.7169110656087695,
+            "prevalence": 0.1513704318936877,
+            "support": 729
+          },
+          "uncertain": {
+            "average_precision": 0.8893500311120024,
+            "prevalence": 0.4632475083056478,
+            "support": 2231
+          }
+        },
+        "per_class": {
+          "accuracy": 0.8397009966777409,
+          "benign": {
+            "f1-score": 0.5567010309278351,
+            "precision": 0.7941176470588235,
+            "recall": 0.42857142857142855,
+            "support": 63.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9033445842282909,
+            "precision": 0.8339943342776204,
+            "recall": 0.9852744310575636,
+            "support": 1494.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.16793893129770993,
+            "precision": 0.35106382978723405,
+            "recall": 0.11036789297658862,
+            "support": 299.0
+          },
+          "macro avg": {
+            "f1-score": 0.6509433563746694,
+            "precision": 0.7238716686560027,
+            "recall": 0.6275561806203724,
+            "support": 4816.0
+          },
+          "pathogenic": {
+            "f1-score": 0.7338429464906184,
+            "precision": 0.7436619718309859,
+            "recall": 0.7242798353909465,
+            "support": 729.0
+          },
+          "uncertain": {
+            "f1-score": 0.8928892889288929,
+            "precision": 0.8965205603253502,
+            "recall": 0.889287315105334,
+            "support": 2231.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8226516249658546,
+            "precision": 0.81878155727419,
+            "recall": 0.8397009966777409,
+            "support": 4816.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 4592,
+                "mean_probability": 0.0075303473379158825,
+                "observed_fraction": 0.0021777003484320556
+              },
+              {
+                "bin": 1,
+                "count": 99,
+                "mean_probability": 0.1511354618602098,
+                "observed_fraction": 0.010101010101010102
+              },
+              {
+                "bin": 2,
+                "count": 34,
+                "mean_probability": 0.24382317919495672,
+                "observed_fraction": 0.23529411764705882
+              },
+              {
+                "bin": 3,
+                "count": 38,
+                "mean_probability": 0.35922333001662815,
+                "observed_fraction": 0.2894736842105263
+              },
+              {
+                "bin": 4,
+                "count": 22,
+                "mean_probability": 0.43931308795036,
+                "observed_fraction": 0.36363636363636365
+              },
+              {
+                "bin": 5,
+                "count": 7,
+                "mean_probability": 0.5455730180876107,
+                "observed_fraction": 0.14285714285714285
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 1,
+                "mean_probability": 0.7650031565372258,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 8,
+                "count": 2,
+                "mean_probability": 0.8391166234237755,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 9,
+                "count": 21,
+                "mean_probability": 0.9896092479470499,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.009705379730975763
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2976,
+                "mean_probability": 0.0129535012884992,
+                "observed_fraction": 0.00571236559139785
+              },
+              {
+                "bin": 1,
+                "count": 52,
+                "mean_probability": 0.14761548933942542,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 2,
+                "count": 6,
+                "mean_probability": 0.23103207758099933,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 3,
+                "count": 5,
+                "mean_probability": 0.3512102841740328,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 4,
+                "count": 47,
+                "mean_probability": 0.45138316728238653,
+                "observed_fraction": 0.3829787234042553
+              },
+              {
+                "bin": 5,
+                "count": 22,
+                "mean_probability": 0.5396373706378972,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 6,
+                "count": 83,
+                "mean_probability": 0.6760082319150243,
+                "observed_fraction": 0.5060240963855421
+              },
+              {
+                "bin": 7,
+                "count": 457,
+                "mean_probability": 0.7565819417330164,
+                "observed_fraction": 0.6914660831509847
+              },
+              {
+                "bin": 8,
+                "count": 190,
+                "mean_probability": 0.8255729524012765,
+                "observed_fraction": 0.6947368421052632
+              },
+              {
+                "bin": 9,
+                "count": 978,
+                "mean_probability": 0.9638426860681869,
+                "observed_fraction": 0.9795501022494888
+              }
+            ],
+            "ece": 0.025029535877362355
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2166,
+                "mean_probability": 0.018781103448405966,
+                "observed_fraction": 0.002770083102493075
+              },
+              {
+                "bin": 1,
+                "count": 571,
+                "mean_probability": 0.16095564398121107,
+                "observed_fraction": 0.03677758318739054
+              },
+              {
+                "bin": 2,
+                "count": 1477,
+                "mean_probability": 0.23504282583291244,
+                "observed_fraction": 0.06364251861882193
+              },
+              {
+                "bin": 3,
+                "count": 368,
+                "mean_probability": 0.34770120236926616,
+                "observed_fraction": 0.26902173913043476
+              },
+              {
+                "bin": 4,
+                "count": 169,
+                "mean_probability": 0.43233896849401376,
+                "observed_fraction": 0.31952662721893493
+              },
+              {
+                "bin": 5,
+                "count": 54,
+                "mean_probability": 0.5406407095275553,
+                "observed_fraction": 0.4074074074074074
+              },
+              {
+                "bin": 6,
+                "count": 11,
+                "mean_probability": 0.6214805884109263,
+                "observed_fraction": 0.2727272727272727
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.08675124781397778
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2731,
+                "mean_probability": 0.032751439292853776,
+                "observed_fraction": 0.02856096667887221
+              },
+              {
+                "bin": 1,
+                "count": 1257,
+                "mean_probability": 0.11808563482854255,
+                "observed_fraction": 0.057279236276849645
+              },
+              {
+                "bin": 2,
+                "count": 30,
+                "mean_probability": 0.2610984948304506,
+                "observed_fraction": 0.06666666666666667
+              },
+              {
+                "bin": 3,
+                "count": 29,
+                "mean_probability": 0.3508359549130201,
+                "observed_fraction": 0.5172413793103449
+              },
+              {
+                "bin": 4,
+                "count": 77,
+                "mean_probability": 0.4630519142999288,
+                "observed_fraction": 0.6233766233766234
+              },
+              {
+                "bin": 5,
+                "count": 152,
+                "mean_probability": 0.5767691035774687,
+                "observed_fraction": 0.6710526315789473
+              },
+              {
+                "bin": 6,
+                "count": 364,
+                "mean_probability": 0.6550848226578597,
+                "observed_fraction": 0.7362637362637363
+              },
+              {
+                "bin": 7,
+                "count": 143,
+                "mean_probability": 0.7186270702258708,
+                "observed_fraction": 0.7762237762237763
+              },
+              {
+                "bin": 8,
+                "count": 29,
+                "mean_probability": 0.8336220996623208,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 9,
+                "count": 4,
+                "mean_probability": 0.9178660459939946,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.03491519583303241
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1948,
+                "mean_probability": 0.02014077664833854,
+                "observed_fraction": 0.033367556468172486
+              },
+              {
+                "bin": 1,
+                "count": 518,
+                "mean_probability": 0.1583832957849679,
+                "observed_fraction": 0.26640926640926643
+              },
+              {
+                "bin": 2,
+                "count": 126,
+                "mean_probability": 0.2197930693934017,
+                "observed_fraction": 0.2777777777777778
+              },
+              {
+                "bin": 3,
+                "count": 23,
+                "mean_probability": 0.33953157510896786,
+                "observed_fraction": 0.782608695652174
+              },
+              {
+                "bin": 4,
+                "count": 21,
+                "mean_probability": 0.44835758412887533,
+                "observed_fraction": 0.7619047619047619
+              },
+              {
+                "bin": 5,
+                "count": 181,
+                "mean_probability": 0.5817374808245188,
+                "observed_fraction": 0.8784530386740331
+              },
+              {
+                "bin": 6,
+                "count": 1171,
+                "mean_probability": 0.6495100800044638,
+                "observed_fraction": 0.8992314261315115
+              },
+              {
+                "bin": 7,
+                "count": 649,
+                "mean_probability": 0.7336509276305153,
+                "observed_fraction": 0.8967642526964561
+              },
+              {
+                "bin": 8,
+                "count": 160,
+                "mean_probability": 0.8283229983713378,
+                "observed_fraction": 0.9125
+              },
+              {
+                "bin": 9,
+                "count": 19,
+                "mean_probability": 0.9573129474894503,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.1187860656449873
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.42857142857142855,
+            0.49206349206349204,
+            0.07936507936507936,
+            0.0,
+            0.0
+          ],
+          [
+            0.002008032128514056,
+            0.9852744310575636,
+            0.012048192771084338,
+            0.0006693440428380187,
+            0.0
+          ],
+          [
+            0.0017929179740026895,
+            0.10174809502465262,
+            0.889287315105334,
+            0.004930524428507396,
+            0.0022411474675033617
+          ],
+          [
+            0.0,
+            0.016722408026755852,
+            0.2809364548494983,
+            0.11036789297658862,
+            0.5919732441471572
+          ],
+          [
+            0.0,
+            0.0411522633744856,
+            0.1673525377229081,
+            0.06721536351165981,
+            0.7242798353909465
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 1,
+            "denominator": 1557,
+            "rate": 0.0006422607578676942
+          },
+          "pathogenic_to_benign": {
+            "count": 35,
+            "denominator": 1028,
+            "rate": 0.03404669260700389
+          }
+        }
+      },
+      "passes": false,
+      "raw": {
+        "accuracy": 0.8349252491694352,
+        "balanced_accuracy": 0.653755460495544,
+        "confusion_matrix": [
+          [
+            37,
+            22,
+            3,
+            1,
+            0
+          ],
+          [
+            18,
+            1456,
+            20,
+            0,
+            0
+          ],
+          [
+            13,
+            219,
+            1990,
+            4,
+            5
+          ],
+          [
+            0,
+            5,
+            83,
+            39,
+            172
+          ],
+          [
+            2,
+            29,
+            120,
+            79,
+            499
+          ]
+        ],
+        "log_loss": 0.5565369698526886,
+        "macro_f1": 0.6498953010405035,
+        "mean_class_ece": 0.05218204640439218,
+        "multiclass_brier": 0.28713365084760023,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.6395941873978024,
+            "prevalence": 0.01308139534883721,
+            "support": 63
+          },
+          "likely_benign": {
+            "average_precision": 0.9451979455034041,
+            "prevalence": 0.31021594684385384,
+            "support": 1494
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.2603615674592006,
+            "prevalence": 0.06208471760797342,
+            "support": 299
+          },
+          "pathogenic": {
+            "average_precision": 0.6955468902060178,
+            "prevalence": 0.1513704318936877,
+            "support": 729
+          },
+          "uncertain": {
+            "average_precision": 0.8877101863755746,
+            "prevalence": 0.4632475083056478,
+            "support": 2231
+          }
+        },
+        "per_class": {
+          "accuracy": 0.8349252491694352,
+          "benign": {
+            "f1-score": 0.556390977443609,
+            "precision": 0.5285714285714286,
+            "recall": 0.5873015873015873,
+            "support": 63.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9029457364341086,
+            "precision": 0.8411322934719815,
+            "recall": 0.9745649263721553,
+            "support": 1494.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.1848341232227488,
+            "precision": 0.3170731707317073,
+            "recall": 0.13043478260869565,
+            "support": 299.0
+          },
+          "macro avg": {
+            "f1-score": 0.6498953010405035,
+            "precision": 0.6645914027363407,
+            "recall": 0.653755460495544,
+            "support": 4816.0
+          },
+          "pathogenic": {
+            "f1-score": 0.7103202846975089,
+            "precision": 0.7381656804733728,
+            "recall": 0.6844993141289437,
+            "support": 729.0
+          },
+          "uncertain": {
+            "f1-score": 0.8949853834045424,
+            "precision": 0.898014440433213,
+            "recall": 0.891976692066338,
+            "support": 2231.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8209831483752336,
+            "precision": 0.8152719107490672,
+            "recall": 0.8349252491694352,
+            "support": 4816.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 4670,
+                "mean_probability": 0.006750104814551342,
+                "observed_fraction": 0.002569593147751606
+              },
+              {
+                "bin": 1,
+                "count": 25,
+                "mean_probability": 0.1403840586767248,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 2,
+                "count": 24,
+                "mean_probability": 0.2504129749200888,
+                "observed_fraction": 0.16666666666666666
+              },
+              {
+                "bin": 3,
+                "count": 18,
+                "mean_probability": 0.3470429118357278,
+                "observed_fraction": 0.2777777777777778
+              },
+              {
+                "bin": 4,
+                "count": 31,
+                "mean_probability": 0.45935505172773217,
+                "observed_fraction": 0.3225806451612903
+              },
+              {
+                "bin": 5,
+                "count": 14,
+                "mean_probability": 0.5557510031166426,
+                "observed_fraction": 0.2857142857142857
+              },
+              {
+                "bin": 6,
+                "count": 8,
+                "mean_probability": 0.66657710713394,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 7,
+                "count": 3,
+                "mean_probability": 0.7632229078506518,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 8,
+                "count": 6,
+                "mean_probability": 0.8398164659614165,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 9,
+                "count": 17,
+                "mean_probability": 0.9919556245605944,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.008605170360031073
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2984,
+                "mean_probability": 0.013517776890693686,
+                "observed_fraction": 0.005697050938337802
+              },
+              {
+                "bin": 1,
+                "count": 45,
+                "mean_probability": 0.14224064536201597,
+                "observed_fraction": 0.1111111111111111
+              },
+              {
+                "bin": 2,
+                "count": 15,
+                "mean_probability": 0.24475869061774444,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 3,
+                "count": 28,
+                "mean_probability": 0.36011608460041783,
+                "observed_fraction": 0.39285714285714285
+              },
+              {
+                "bin": 4,
+                "count": 35,
+                "mean_probability": 0.43763176824132827,
+                "observed_fraction": 0.42857142857142855
+              },
+              {
+                "bin": 5,
+                "count": 19,
+                "mean_probability": 0.5438761305994203,
+                "observed_fraction": 0.3157894736842105
+              },
+              {
+                "bin": 6,
+                "count": 79,
+                "mean_probability": 0.6474454016822864,
+                "observed_fraction": 0.569620253164557
+              },
+              {
+                "bin": 7,
+                "count": 370,
+                "mean_probability": 0.7407846336544736,
+                "observed_fraction": 0.6594594594594595
+              },
+              {
+                "bin": 8,
+                "count": 210,
+                "mean_probability": 0.8439196074742272,
+                "observed_fraction": 0.719047619047619
+              },
+              {
+                "bin": 9,
+                "count": 1031,
+                "mean_probability": 0.963750926519272,
+                "observed_fraction": 0.9699321047526673
+              }
+            ],
+            "ece": 0.02134783578834817
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2163,
+                "mean_probability": 0.018399826869842605,
+                "observed_fraction": 0.004160887656033287
+              },
+              {
+                "bin": 1,
+                "count": 692,
+                "mean_probability": 0.14842416412982212,
+                "observed_fraction": 0.03901734104046243
+              },
+              {
+                "bin": 2,
+                "count": 1293,
+                "mean_probability": 0.22824193930134667,
+                "observed_fraction": 0.061871616395978345
+              },
+              {
+                "bin": 3,
+                "count": 412,
+                "mean_probability": 0.3390405425549228,
+                "observed_fraction": 0.2354368932038835
+              },
+              {
+                "bin": 4,
+                "count": 148,
+                "mean_probability": 0.4496849570691564,
+                "observed_fraction": 0.36486486486486486
+              },
+              {
+                "bin": 5,
+                "count": 66,
+                "mean_probability": 0.53575771609614,
+                "observed_fraction": 0.3484848484848485
+              },
+              {
+                "bin": 6,
+                "count": 25,
+                "mean_probability": 0.638365771905112,
+                "observed_fraction": 0.2
+              },
+              {
+                "bin": 7,
+                "count": 14,
+                "mean_probability": 0.7503793477047952,
+                "observed_fraction": 0.21428571428571427
+              },
+              {
+                "bin": 8,
+                "count": 3,
+                "mean_probability": 0.884562306768998,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.08499613852594648
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2811,
+                "mean_probability": 0.03181183628063044,
+                "observed_fraction": 0.031305585200996085
+              },
+              {
+                "bin": 1,
+                "count": 1173,
+                "mean_probability": 0.12133719826877704,
+                "observed_fraction": 0.05200341005967604
+              },
+              {
+                "bin": 2,
+                "count": 56,
+                "mean_probability": 0.24447209877451062,
+                "observed_fraction": 0.32142857142857145
+              },
+              {
+                "bin": 3,
+                "count": 33,
+                "mean_probability": 0.34979877090371597,
+                "observed_fraction": 0.6363636363636364
+              },
+              {
+                "bin": 4,
+                "count": 77,
+                "mean_probability": 0.4600259597142698,
+                "observed_fraction": 0.6363636363636364
+              },
+              {
+                "bin": 5,
+                "count": 129,
+                "mean_probability": 0.5464755114482245,
+                "observed_fraction": 0.6124031007751938
+              },
+              {
+                "bin": 6,
+                "count": 422,
+                "mean_probability": 0.6592123029504534,
+                "observed_fraction": 0.7535545023696683
+              },
+              {
+                "bin": 7,
+                "count": 85,
+                "mean_probability": 0.742887638304285,
+                "observed_fraction": 0.7764705882352941
+              },
+              {
+                "bin": 8,
+                "count": 14,
+                "mean_probability": 0.8422598073336857,
+                "observed_fraction": 0.9285714285714286
+              },
+              {
+                "bin": 9,
+                "count": 16,
+                "mean_probability": 0.9218351486732547,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.03399635127195047
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2006,
+                "mean_probability": 0.022362701584046383,
+                "observed_fraction": 0.0353938185443669
+              },
+              {
+                "bin": 1,
+                "count": 370,
+                "mean_probability": 0.15278807446965637,
+                "observed_fraction": 0.25675675675675674
+              },
+              {
+                "bin": 2,
+                "count": 211,
+                "mean_probability": 0.22552618822101242,
+                "observed_fraction": 0.33175355450236965
+              },
+              {
+                "bin": 3,
+                "count": 23,
+                "mean_probability": 0.35827596623780206,
+                "observed_fraction": 0.5652173913043478
+              },
+              {
+                "bin": 4,
+                "count": 35,
+                "mean_probability": 0.45062870573947605,
+                "observed_fraction": 0.7714285714285715
+              },
+              {
+                "bin": 5,
+                "count": 121,
+                "mean_probability": 0.5885437488296285,
+                "observed_fraction": 0.8842975206611571
+              },
+              {
+                "bin": 6,
+                "count": 1115,
+                "mean_probability": 0.6516573390953645,
+                "observed_fraction": 0.9040358744394619
+              },
+              {
+                "bin": 7,
+                "count": 647,
+                "mean_probability": 0.7435584883169339,
+                "observed_fraction": 0.8964451313755796
+              },
+              {
+                "bin": 8,
+                "count": 248,
+                "mean_probability": 0.8302945659951371,
+                "observed_fraction": 0.9032258064516129
+              },
+              {
+                "bin": 9,
+                "count": 40,
+                "mean_probability": 0.9504708629604707,
+                "observed_fraction": 0.9
+              }
+            ],
+            "ece": 0.11196473607568469
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.5873015873015873,
+            0.3492063492063492,
+            0.047619047619047616,
+            0.015873015873015872,
+            0.0
+          ],
+          [
+            0.012048192771084338,
+            0.9745649263721553,
+            0.013386880856760375,
+            0.0,
+            0.0
+          ],
+          [
+            0.00582698341550874,
+            0.09816225907664725,
+            0.891976692066338,
+            0.0017929179740026895,
+            0.0022411474675033617
+          ],
+          [
+            0.0,
+            0.016722408026755852,
+            0.27759197324414714,
+            0.13043478260869565,
+            0.5752508361204013
+          ],
+          [
+            0.0027434842249657062,
+            0.039780521262002745,
+            0.1646090534979424,
+            0.1083676268861454,
+            0.6844993141289437
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 1,
+            "denominator": 1557,
+            "rate": 0.0006422607578676942
+          },
+          "pathogenic_to_benign": {
+            "count": 36,
+            "denominator": 1028,
+            "rate": 0.03501945525291829
+          }
+        }
+      },
+      "selected": {
+        "accuracy": 0.8349252491694352,
+        "balanced_accuracy": 0.653755460495544,
+        "confusion_matrix": [
+          [
+            37,
+            22,
+            3,
+            1,
+            0
+          ],
+          [
+            18,
+            1456,
+            20,
+            0,
+            0
+          ],
+          [
+            13,
+            219,
+            1990,
+            4,
+            5
+          ],
+          [
+            0,
+            5,
+            83,
+            39,
+            172
+          ],
+          [
+            2,
+            29,
+            120,
+            79,
+            499
+          ]
+        ],
+        "log_loss": 0.5565369698526886,
+        "macro_f1": 0.6498953010405035,
+        "mean_class_ece": 0.05218204640439218,
+        "multiclass_brier": 0.28713365084760023,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.6395941873978024,
+            "prevalence": 0.01308139534883721,
+            "support": 63
+          },
+          "likely_benign": {
+            "average_precision": 0.9451979455034041,
+            "prevalence": 0.31021594684385384,
+            "support": 1494
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.2603615674592006,
+            "prevalence": 0.06208471760797342,
+            "support": 299
+          },
+          "pathogenic": {
+            "average_precision": 0.6955468902060178,
+            "prevalence": 0.1513704318936877,
+            "support": 729
+          },
+          "uncertain": {
+            "average_precision": 0.8877101863755746,
+            "prevalence": 0.4632475083056478,
+            "support": 2231
+          }
+        },
+        "per_class": {
+          "accuracy": 0.8349252491694352,
+          "benign": {
+            "f1-score": 0.556390977443609,
+            "precision": 0.5285714285714286,
+            "recall": 0.5873015873015873,
+            "support": 63.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9029457364341086,
+            "precision": 0.8411322934719815,
+            "recall": 0.9745649263721553,
+            "support": 1494.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.1848341232227488,
+            "precision": 0.3170731707317073,
+            "recall": 0.13043478260869565,
+            "support": 299.0
+          },
+          "macro avg": {
+            "f1-score": 0.6498953010405035,
+            "precision": 0.6645914027363407,
+            "recall": 0.653755460495544,
+            "support": 4816.0
+          },
+          "pathogenic": {
+            "f1-score": 0.7103202846975089,
+            "precision": 0.7381656804733728,
+            "recall": 0.6844993141289437,
+            "support": 729.0
+          },
+          "uncertain": {
+            "f1-score": 0.8949853834045424,
+            "precision": 0.898014440433213,
+            "recall": 0.891976692066338,
+            "support": 2231.0
+          },
+          "weighted avg": {
+            "f1-score": 0.8209831483752336,
+            "precision": 0.8152719107490672,
+            "recall": 0.8349252491694352,
+            "support": 4816.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 4670,
+                "mean_probability": 0.006750104814551342,
+                "observed_fraction": 0.002569593147751606
+              },
+              {
+                "bin": 1,
+                "count": 25,
+                "mean_probability": 0.1403840586767248,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 2,
+                "count": 24,
+                "mean_probability": 0.2504129749200888,
+                "observed_fraction": 0.16666666666666666
+              },
+              {
+                "bin": 3,
+                "count": 18,
+                "mean_probability": 0.3470429118357278,
+                "observed_fraction": 0.2777777777777778
+              },
+              {
+                "bin": 4,
+                "count": 31,
+                "mean_probability": 0.45935505172773217,
+                "observed_fraction": 0.3225806451612903
+              },
+              {
+                "bin": 5,
+                "count": 14,
+                "mean_probability": 0.5557510031166426,
+                "observed_fraction": 0.2857142857142857
+              },
+              {
+                "bin": 6,
+                "count": 8,
+                "mean_probability": 0.66657710713394,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 7,
+                "count": 3,
+                "mean_probability": 0.7632229078506518,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 8,
+                "count": 6,
+                "mean_probability": 0.8398164659614165,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 9,
+                "count": 17,
+                "mean_probability": 0.9919556245605944,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.008605170360031073
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2984,
+                "mean_probability": 0.013517776890693686,
+                "observed_fraction": 0.005697050938337802
+              },
+              {
+                "bin": 1,
+                "count": 45,
+                "mean_probability": 0.14224064536201597,
+                "observed_fraction": 0.1111111111111111
+              },
+              {
+                "bin": 2,
+                "count": 15,
+                "mean_probability": 0.24475869061774444,
+                "observed_fraction": 0.0
+              },
+              {
+                "bin": 3,
+                "count": 28,
+                "mean_probability": 0.36011608460041783,
+                "observed_fraction": 0.39285714285714285
+              },
+              {
+                "bin": 4,
+                "count": 35,
+                "mean_probability": 0.43763176824132827,
+                "observed_fraction": 0.42857142857142855
+              },
+              {
+                "bin": 5,
+                "count": 19,
+                "mean_probability": 0.5438761305994203,
+                "observed_fraction": 0.3157894736842105
+              },
+              {
+                "bin": 6,
+                "count": 79,
+                "mean_probability": 0.6474454016822864,
+                "observed_fraction": 0.569620253164557
+              },
+              {
+                "bin": 7,
+                "count": 370,
+                "mean_probability": 0.7407846336544736,
+                "observed_fraction": 0.6594594594594595
+              },
+              {
+                "bin": 8,
+                "count": 210,
+                "mean_probability": 0.8439196074742272,
+                "observed_fraction": 0.719047619047619
+              },
+              {
+                "bin": 9,
+                "count": 1031,
+                "mean_probability": 0.963750926519272,
+                "observed_fraction": 0.9699321047526673
+              }
+            ],
+            "ece": 0.02134783578834817
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2163,
+                "mean_probability": 0.018399826869842605,
+                "observed_fraction": 0.004160887656033287
+              },
+              {
+                "bin": 1,
+                "count": 692,
+                "mean_probability": 0.14842416412982212,
+                "observed_fraction": 0.03901734104046243
+              },
+              {
+                "bin": 2,
+                "count": 1293,
+                "mean_probability": 0.22824193930134667,
+                "observed_fraction": 0.061871616395978345
+              },
+              {
+                "bin": 3,
+                "count": 412,
+                "mean_probability": 0.3390405425549228,
+                "observed_fraction": 0.2354368932038835
+              },
+              {
+                "bin": 4,
+                "count": 148,
+                "mean_probability": 0.4496849570691564,
+                "observed_fraction": 0.36486486486486486
+              },
+              {
+                "bin": 5,
+                "count": 66,
+                "mean_probability": 0.53575771609614,
+                "observed_fraction": 0.3484848484848485
+              },
+              {
+                "bin": 6,
+                "count": 25,
+                "mean_probability": 0.638365771905112,
+                "observed_fraction": 0.2
+              },
+              {
+                "bin": 7,
+                "count": 14,
+                "mean_probability": 0.7503793477047952,
+                "observed_fraction": 0.21428571428571427
+              },
+              {
+                "bin": 8,
+                "count": 3,
+                "mean_probability": 0.884562306768998,
+                "observed_fraction": 0.3333333333333333
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.08499613852594648
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2811,
+                "mean_probability": 0.03181183628063044,
+                "observed_fraction": 0.031305585200996085
+              },
+              {
+                "bin": 1,
+                "count": 1173,
+                "mean_probability": 0.12133719826877704,
+                "observed_fraction": 0.05200341005967604
+              },
+              {
+                "bin": 2,
+                "count": 56,
+                "mean_probability": 0.24447209877451062,
+                "observed_fraction": 0.32142857142857145
+              },
+              {
+                "bin": 3,
+                "count": 33,
+                "mean_probability": 0.34979877090371597,
+                "observed_fraction": 0.6363636363636364
+              },
+              {
+                "bin": 4,
+                "count": 77,
+                "mean_probability": 0.4600259597142698,
+                "observed_fraction": 0.6363636363636364
+              },
+              {
+                "bin": 5,
+                "count": 129,
+                "mean_probability": 0.5464755114482245,
+                "observed_fraction": 0.6124031007751938
+              },
+              {
+                "bin": 6,
+                "count": 422,
+                "mean_probability": 0.6592123029504534,
+                "observed_fraction": 0.7535545023696683
+              },
+              {
+                "bin": 7,
+                "count": 85,
+                "mean_probability": 0.742887638304285,
+                "observed_fraction": 0.7764705882352941
+              },
+              {
+                "bin": 8,
+                "count": 14,
+                "mean_probability": 0.8422598073336857,
+                "observed_fraction": 0.9285714285714286
+              },
+              {
+                "bin": 9,
+                "count": 16,
+                "mean_probability": 0.9218351486732547,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.03399635127195047
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2006,
+                "mean_probability": 0.022362701584046383,
+                "observed_fraction": 0.0353938185443669
+              },
+              {
+                "bin": 1,
+                "count": 370,
+                "mean_probability": 0.15278807446965637,
+                "observed_fraction": 0.25675675675675674
+              },
+              {
+                "bin": 2,
+                "count": 211,
+                "mean_probability": 0.22552618822101242,
+                "observed_fraction": 0.33175355450236965
+              },
+              {
+                "bin": 3,
+                "count": 23,
+                "mean_probability": 0.35827596623780206,
+                "observed_fraction": 0.5652173913043478
+              },
+              {
+                "bin": 4,
+                "count": 35,
+                "mean_probability": 0.45062870573947605,
+                "observed_fraction": 0.7714285714285715
+              },
+              {
+                "bin": 5,
+                "count": 121,
+                "mean_probability": 0.5885437488296285,
+                "observed_fraction": 0.8842975206611571
+              },
+              {
+                "bin": 6,
+                "count": 1115,
+                "mean_probability": 0.6516573390953645,
+                "observed_fraction": 0.9040358744394619
+              },
+              {
+                "bin": 7,
+                "count": 647,
+                "mean_probability": 0.7435584883169339,
+                "observed_fraction": 0.8964451313755796
+              },
+              {
+                "bin": 8,
+                "count": 248,
+                "mean_probability": 0.8302945659951371,
+                "observed_fraction": 0.9032258064516129
+              },
+              {
+                "bin": 9,
+                "count": 40,
+                "mean_probability": 0.9504708629604707,
+                "observed_fraction": 0.9
+              }
+            ],
+            "ece": 0.11196473607568469
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.5873015873015873,
+            0.3492063492063492,
+            0.047619047619047616,
+            0.015873015873015872,
+            0.0
+          ],
+          [
+            0.012048192771084338,
+            0.9745649263721553,
+            0.013386880856760375,
+            0.0,
+            0.0
+          ],
+          [
+            0.00582698341550874,
+            0.09816225907664725,
+            0.891976692066338,
+            0.0017929179740026895,
+            0.0022411474675033617
+          ],
+          [
+            0.0,
+            0.016722408026755852,
+            0.27759197324414714,
+            0.13043478260869565,
+            0.5752508361204013
+          ],
+          [
+            0.0027434842249657062,
+            0.039780521262002745,
+            0.1646090534979424,
+            0.1083676268861454,
+            0.6844993141289437
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 1,
+            "denominator": 1557,
+            "rate": 0.0006422607578676942
+          },
+          "pathogenic_to_benign": {
+            "count": 36,
+            "denominator": 1028,
+            "rate": 0.03501945525291829
+          }
+        }
+      },
+      "subgroups": {
+        "groups": {
+          "consequence:3_prime_UTR_variant": {
+            "accuracy": 0.90625,
+            "class_support": {
+              "benign": 4,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 28
+            },
+            "count": 32,
+            "log_loss": 0.33907112845855,
+            "macro_f1_present_classes": 0.8070175438596491,
+            "multiclass_brier": 0.13602971506018363,
+            "per_class_recall": {
+              "benign": 0.5,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 0.9642857142857143
+            },
+            "small_sample": false
+          },
+          "consequence:5_prime_UTR_variant": {
+            "accuracy": 0.7,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 3,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 7
+            },
+            "count": 10,
+            "log_loss": 0.7392173445024387,
+            "macro_f1_present_classes": 0.4117647058823529,
+            "multiclass_brier": 0.4378400499874446,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": 0.0,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:frameshift_variant": {
+            "accuracy": 0.6770025839793282,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 115,
+              "pathogenic": 270,
+              "uncertain": 2
+            },
+            "count": 387,
+            "log_loss": 0.6524316741438674,
+            "macro_f1_present_classes": 0.2843358095694544,
+            "multiclass_brier": 0.4360828625639899,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.02608695652173913,
+              "pathogenic": 0.9592592592592593,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:inframe_deletion": {
+            "accuracy": 0.6470588235294118,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 3,
+              "pathogenic": 5,
+              "uncertain": 9
+            },
+            "count": 17,
+            "log_loss": 1.0321767469741594,
+            "macro_f1_present_classes": 0.5166666666666667,
+            "multiclass_brier": 0.5769256881545933,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.6666666666666666,
+              "pathogenic": 0.0,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:inframe_indel": {
+            "accuracy": 0.75,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 4
+            },
+            "count": 4,
+            "log_loss": 0.7979711812003163,
+            "macro_f1_present_classes": 0.8571428571428571,
+            "multiclass_brier": 0.4113740347667067,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 0.75
+            },
+            "small_sample": true
+          },
+          "consequence:inframe_insertion": {
+            "accuracy": 0.625,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 1,
+              "pathogenic": 2,
+              "uncertain": 5
+            },
+            "count": 8,
+            "log_loss": 1.1689793460093718,
+            "macro_f1_present_classes": 0.25641025641025644,
+            "multiclass_brier": 0.6299445379529611,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.0,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:initiator_codon_variant": {
+            "accuracy": 1.0,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 5,
+              "uncertain": 0
+            },
+            "count": 5,
+            "log_loss": 0.19417332088602163,
+            "macro_f1_present_classes": 1.0,
+            "multiclass_brier": 0.05292961821834217,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": 1.0,
+              "uncertain": null
+            },
+            "small_sample": true
+          },
+          "consequence:intron_variant": {
+            "accuracy": 0.6515337423312884,
+            "class_support": {
+              "benign": 55,
+              "likely_benign": 516,
+              "likely_pathogenic": 4,
+              "pathogenic": 27,
+              "uncertain": 213
+            },
+            "count": 815,
+            "log_loss": 0.9490982659228855,
+            "macro_f1_present_classes": 0.26896219857776826,
+            "multiclass_brier": 0.5033247467765859,
+            "per_class_recall": {
+              "benign": 0.6,
+              "likely_benign": 0.9651162790697675,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.0,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:missense_variant": {
+            "accuracy": 0.9020715630885122,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 13,
+              "likely_pathogenic": 81,
+              "pathogenic": 116,
+              "uncertain": 1914
+            },
+            "count": 2124,
+            "log_loss": 0.5515381551942213,
+            "macro_f1_present_classes": 0.25382866120896386,
+            "multiclass_brier": 0.2554839387763373,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": 0.0,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.034482758620689655,
+              "uncertain": 0.9989550679205852
+            },
+            "small_sample": false
+          },
+          "consequence:nonsense": {
+            "accuracy": 0.7443609022556391,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 54,
+              "pathogenic": 212,
+              "uncertain": 0
+            },
+            "count": 266,
+            "log_loss": 0.5530396210044383,
+            "macro_f1_present_classes": 0.4663047326802785,
+            "multiclass_brier": 0.3656565652759412,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.05555555555555555,
+              "pathogenic": 0.9198113207547169,
+              "uncertain": null
+            },
+            "small_sample": false
+          },
+          "consequence:splice_acceptor_variant": {
+            "accuracy": 0.6333333333333333,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 19,
+              "pathogenic": 38,
+              "uncertain": 3
+            },
+            "count": 60,
+            "log_loss": 0.8506377338103664,
+            "macro_f1_present_classes": 0.41460317460317464,
+            "multiclass_brier": 0.5260898742192256,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.5789473684210527,
+              "pathogenic": 0.7105263157894737,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:splice_donor_variant": {
+            "accuracy": 0.44871794871794873,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 21,
+              "pathogenic": 55,
+              "uncertain": 2
+            },
+            "count": 78,
+            "log_loss": 0.8541535623569337,
+            "macro_f1_present_classes": 0.30445205479452053,
+            "multiclass_brier": 0.5727058979676658,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.9047619047619048,
+              "pathogenic": 0.2909090909090909,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:stop_lost": {
+            "accuracy": 1.0,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 2
+            },
+            "count": 2,
+            "log_loss": 0.1716216810980938,
+            "macro_f1_present_classes": 1.0,
+            "multiclass_brier": 0.03689377954707347,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:synonymous_variant": {
+            "accuracy": 0.9795709908069459,
+            "class_support": {
+              "benign": 1,
+              "likely_benign": 958,
+              "likely_pathogenic": 1,
+              "pathogenic": 3,
+              "uncertain": 16
+            },
+            "count": 979,
+            "log_loss": 0.1229930955090276,
+            "macro_f1_present_classes": 0.39793388429752063,
+            "multiclass_brier": 0.04152861988248933,
+            "per_class_recall": {
+              "benign": 1.0,
+              "likely_benign": 1.0,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.0,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "population:all_missing": {
+            "accuracy": 0.8302852962692027,
+            "class_support": {
+              "benign": 27,
+              "likely_benign": 1288,
+              "likely_pathogenic": 298,
+              "pathogenic": 630,
+              "uncertain": 1858
+            },
+            "count": 4101,
+            "log_loss": 0.555580107498166,
+            "macro_f1_present_classes": 0.586953652797297,
+            "multiclass_brier": 0.2925144322384325,
+            "per_class_recall": {
+              "benign": 0.25925925925925924,
+              "likely_benign": 0.9728260869565217,
+              "likely_pathogenic": 0.13087248322147652,
+              "pathogenic": 0.7095238095238096,
+              "uncertain": 0.8928955866523143
+            },
+            "small_sample": false
+          },
+          "population:some_observed": {
+            "accuracy": 0.8615384615384616,
+            "class_support": {
+              "benign": 36,
+              "likely_benign": 206,
+              "likely_pathogenic": 1,
+              "pathogenic": 99,
+              "uncertain": 373
+            },
+            "count": 715,
+            "log_loss": 0.5620252111336629,
+            "macro_f1_present_classes": 0.6563284856627296,
+            "multiclass_brier": 0.25627129492619766,
+            "per_class_recall": {
+              "benign": 0.8333333333333334,
+              "likely_benign": 0.9854368932038835,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.5252525252525253,
+              "uncertain": 0.8873994638069705
+            },
+            "small_sample": false
+          },
+          "review:at_least_two_stars": {
+            "accuracy": 0.8453666856168277,
+            "class_support": {
+              "benign": 26,
+              "likely_benign": 524,
+              "likely_pathogenic": 50,
+              "pathogenic": 456,
+              "uncertain": 703
+            },
+            "count": 1759,
+            "log_loss": 0.5588687016334775,
+            "macro_f1_present_classes": 0.6905096469603478,
+            "multiclass_brier": 0.2799886494063399,
+            "per_class_recall": {
+              "benign": 0.7692307692307693,
+              "likely_benign": 0.9961832061068703,
+              "likely_pathogenic": 0.16,
+              "pathogenic": 0.6140350877192983,
+              "uncertain": 0.9345661450924608
+            },
+            "small_sample": false
+          },
+          "review:below_two_stars": {
+            "accuracy": 0.8289172391233235,
+            "class_support": {
+              "benign": 37,
+              "likely_benign": 970,
+              "likely_pathogenic": 249,
+              "pathogenic": 273,
+              "uncertain": 1528
+            },
+            "count": 3057,
+            "log_loss": 0.5551952897079689,
+            "macro_f1_present_classes": 0.6173663882198193,
+            "multiclass_brier": 0.29124488981887175,
+            "per_class_recall": {
+              "benign": 0.4594594594594595,
+              "likely_benign": 0.9628865979381444,
+              "likely_pathogenic": 0.12449799196787148,
+              "pathogenic": 0.8021978021978022,
+              "uncertain": 0.8723821989528796
+            },
+            "small_sample": false
+          },
+          "variant_type:deletion": {
+            "accuracy": 0.6326034063260341,
+            "class_support": {
+              "benign": 15,
+              "likely_benign": 30,
+              "likely_pathogenic": 98,
+              "pathogenic": 234,
+              "uncertain": 34
+            },
+            "count": 411,
+            "log_loss": 0.8133474415113997,
+            "macro_f1_present_classes": 0.4518980924655705,
+            "multiclass_brier": 0.49349634879621446,
+            "per_class_recall": {
+              "benign": 0.3333333333333333,
+              "likely_benign": 0.6,
+              "likely_pathogenic": 0.1326530612244898,
+              "pathogenic": 0.9017094017094017,
+              "uncertain": 0.38235294117647056
+            },
+            "small_sample": false
+          },
+          "variant_type:insertion": {
+            "accuracy": 0.5723684210526315,
+            "class_support": {
+              "benign": 6,
+              "likely_benign": 15,
+              "likely_pathogenic": 31,
+              "pathogenic": 81,
+              "uncertain": 19
+            },
+            "count": 152,
+            "log_loss": 0.9804311744627069,
+            "macro_f1_present_classes": 0.3596049034306376,
+            "multiclass_brier": 0.5522910667406231,
+            "per_class_recall": {
+              "benign": 0.3333333333333333,
+              "likely_benign": 0.5333333333333333,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.8888888888888888,
+              "uncertain": 0.2631578947368421
+            },
+            "small_sample": false
+          },
+          "variant_type:snv": {
+            "accuracy": 0.8638608041382554,
+            "class_support": {
+              "benign": 42,
+              "likely_benign": 1449,
+              "likely_pathogenic": 170,
+              "pathogenic": 414,
+              "uncertain": 2178
+            },
+            "count": 4253,
+            "log_loss": 0.5165696472680534,
+            "macro_f1_present_classes": 0.6858928409782956,
+            "multiclass_brier": 0.25771465341693484,
+            "per_class_recall": {
+              "benign": 0.7142857142857143,
+              "likely_benign": 0.9868875086266391,
+              "likely_pathogenic": 0.15294117647058825,
+              "pathogenic": 0.5217391304347826,
+              "uncertain": 0.9054178145087236
+            },
+            "small_sample": false
+          }
+        },
+        "note": "Consequence groups overlap; do not add their counts. Missing classes have null recall. Small groups are descriptive only."
+      }
+    },
+    "test": {
+      "bootstrap": {
+        "connected_gene_components": 7,
+        "intervals": {
+          "balanced_accuracy": {
+            "lower": 0.6053322371784009,
+            "upper": 0.6980856450634496,
+            "valid_replicates": 300
+          },
+          "log_loss": {
+            "lower": 0.5205987573275885,
+            "upper": 0.7974670591255619,
+            "valid_replicates": 300
+          },
+          "macro_f1": {
+            "lower": 0.5936854027543704,
+            "upper": 0.6751966439873571,
+            "valid_replicates": 300
+          },
+          "multiclass_brier": {
+            "lower": 0.287481969756222,
+            "upper": 0.446992699450184,
+            "valid_replicates": 300
+          },
+          "recall_benign": {
+            "lower": 0.5192279411764706,
+            "upper": 0.8117518101367658,
+            "valid_replicates": 300
+          },
+          "recall_likely_benign": {
+            "lower": 0.9471564947422888,
+            "upper": 0.9781105701467055,
+            "valid_replicates": 300
+          },
+          "recall_likely_pathogenic": {
+            "lower": 0.05951866306677313,
+            "upper": 0.12065199645489316,
+            "valid_replicates": 300
+          },
+          "recall_pathogenic": {
+            "lower": 0.5567516714703779,
+            "upper": 0.7381375502008027,
+            "valid_replicates": 300
+          },
+          "recall_uncertain": {
+            "lower": 0.869532284996688,
+            "upper": 0.9124047400355236,
+            "valid_replicates": 300
+          }
+        },
+        "method": "Connected-gene cluster bootstrap; few clusters limit precision.",
+        "note": "Percentile intervals conditional on a fixed selected model and protocol; do not include model-selection uncertainty.",
+        "replicates": 300
+      },
+      "confidence": {
+        "class_standard_coverage": {
+          "benign": 0.0,
+          "likely_benign": 0.0,
+          "likely_pathogenic": 0.0,
+          "pathogenic": 0.0,
+          "uncertain": 0.0
+        },
+        "coverage": 0.0,
+        "low_count": 3536,
+        "standard_accuracy": null,
+        "standard_count": 0
+      },
+      "count": 3536,
+      "dummy": {
+        "accuracy": 0.34134615384615385,
+        "balanced_accuracy": 0.2,
+        "confusion_matrix": [
+          [
+            0,
+            120,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1207,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1119,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            521,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            569,
+            0,
+            0,
+            0
+          ]
+        ],
+        "log_loss": 1.4219537303481944,
+        "macro_f1": 0.10179211469534051,
+        "mean_class_ece": 0.00011430138488958131,
+        "multiclass_brier": 0.7345811330250261,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.033936651583710405,
+            "prevalence": 0.033936651583710405,
+            "support": 120
+          },
+          "likely_benign": {
+            "average_precision": 0.34134615384615385,
+            "prevalence": 0.34134615384615385,
+            "support": 1207
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.14734162895927602,
+            "prevalence": 0.14734162895927602,
+            "support": 521
+          },
+          "pathogenic": {
+            "average_precision": 0.1609162895927602,
+            "prevalence": 0.1609162895927602,
+            "support": 569
+          },
+          "uncertain": {
+            "average_precision": 0.31645927601809953,
+            "prevalence": 0.31645927601809953,
+            "support": 1119
+          }
+        },
+        "per_class": {
+          "accuracy": 0.34134615384615385,
+          "benign": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 120.0
+          },
+          "likely_benign": {
+            "f1-score": 0.5089605734767025,
+            "precision": 0.34134615384615385,
+            "recall": 1.0,
+            "support": 1207.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 521.0
+          },
+          "macro avg": {
+            "f1-score": 0.10179211469534051,
+            "precision": 0.06826923076923078,
+            "recall": 0.2,
+            "support": 3536.0
+          },
+          "pathogenic": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 569.0
+          },
+          "uncertain": {
+            "f1-score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1119.0
+          },
+          "weighted avg": {
+            "f1-score": 0.1737317342156052,
+            "precision": 0.11651719674556213,
+            "recall": 0.34134615384615385,
+            "support": 3536.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 3536,
+                "mean_probability": 0.03393939393939394,
+                "observed_fraction": 0.033936651583710405
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 2.7423556835382e-06
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 3536,
+                "mean_probability": 0.3415757575757575,
+                "observed_fraction": 0.34134615384615385
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.0002296037296036224
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 3536,
+                "mean_probability": 0.14727272727272725,
+                "observed_fraction": 0.14734162895927602
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 6.890168654877238e-05
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 3536,
+                "mean_probability": 0.16096969696969696,
+                "observed_fraction": 0.1609162895927602
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 5.3407376936764894e-05
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 1,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 2,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 3,
+                "count": 3536,
+                "mean_probability": 0.3162424242424243,
+                "observed_fraction": 0.31645927601809953
+              },
+              {
+                "bin": 4,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 5,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 6,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 7,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.00021685177567520864
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 0,
+            "denominator": 1327,
+            "rate": 0.0
+          },
+          "pathogenic_to_benign": {
+            "count": 1090,
+            "denominator": 1090,
+            "rate": 1.0
+          }
+        }
+      },
+      "error_examples": {
+        "benign_to_pathogenic": [
+          {
+            "clinvar_variation_ids": [
+              1901397
+            ],
+            "consequences": [
+              "intron_variant",
+              "splice_acceptor_variant"
+            ],
+            "predicted_label": "likely_pathogenic",
+            "top_score": 0.7144382529643408,
+            "true_label": "likely_benign",
+            "variant_key": "GRCh38:1:75728388:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1102962
+            ],
+            "consequences": [
+              "missense_variant"
+            ],
+            "predicted_label": "likely_pathogenic",
+            "top_score": 0.3035564435650015,
+            "true_label": "likely_benign",
+            "variant_key": "GRCh38:6:51748120:C:G",
+            "variant_type": "snv"
+          }
+        ],
+        "likely_vs_definite": [
+          {
+            "clinvar_variation_ids": [
+              1601298
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9748014678492104,
+            "true_label": "benign",
+            "variant_key": "GRCh38:X:108568803:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              668562
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "benign",
+            "top_score": 0.967439149332342,
+            "true_label": "likely_benign",
+            "variant_key": "GRCh38:15:48468796:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1967561
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9632147959075755,
+            "true_label": "benign",
+            "variant_key": "GRCh38:X:108440158:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1598948
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9566909072873093,
+            "true_label": "benign",
+            "variant_key": "GRCh38:X:108586668:G:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1662245
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9416251153931104,
+            "true_label": "benign",
+            "variant_key": "GRCh38:X:108681797:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1620058
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9406832818322178,
+            "true_label": "benign",
+            "variant_key": "GRCh38:X:108696306:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1182959
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9150297741733249,
+            "true_label": "benign",
+            "variant_key": "GRCh38:15:48513763:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              2638884
+            ],
+            "consequences": [
+              "intron_variant",
+              "synonymous_variant"
+            ],
+            "predicted_label": "benign",
+            "top_score": 0.9112673444094341,
+            "true_label": "likely_benign",
+            "variant_key": "GRCh38:1:75733112:T:C",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1272727
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9056518831344996,
+            "true_label": "benign",
+            "variant_key": "GRCh38:15:48465729:T:C",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              456415
+            ],
+            "consequences": [
+              "nonsense"
+            ],
+            "predicted_label": "pathogenic",
+            "top_score": 0.871793802800358,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:17:80118746:C:T",
+            "variant_type": "snv"
+          }
+        ],
+        "pathogenic_to_benign": [
+          {
+            "clinvar_variation_ids": [
+              102892
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9838622524974072,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:12:102851687:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              4890655
+            ],
+            "consequences": [
+              "intron_variant",
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9415758967195623,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:13:51960306:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              102871
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.859774456452012,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:12:102852812:C:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              872836
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8115367384908673,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:12:102840395:C:G",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3769624
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.8016992191333178,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:15:48644510:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              24276
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.7961303031047869,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:X:108573562:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3776104
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.7752940099841106,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:15:48445519:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              633778
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.7732483300772979,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:15:48421947:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              371622
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.7377577345081909,
+            "true_label": "pathogenic",
+            "variant_key": "GRCh38:17:80104552:C:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3769619
+            ],
+            "consequences": [
+              "intron_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.7373313971284652,
+            "true_label": "likely_pathogenic",
+            "variant_key": "GRCh38:15:48429426:G:C",
+            "variant_type": "snv"
+          }
+        ],
+        "uncertain_confusion": [
+          {
+            "clinvar_variation_ids": [
+              500829
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9837440821289608,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:6:52046019:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              1945374
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9788433740564195,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:X:108680690:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3073264
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9718681793340703,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:15:48427733:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              593473
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9718681793340703,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:6:51885972:C:T",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              987765
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9700136013866895,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:12:102894802:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              655493
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9678561939643539,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:15:48444542:T:C",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              102665
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9672082006183899,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:12:102877492:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              3070875
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9672082006183899,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:15:48452632:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              4292654
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9672082006183899,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:X:108695410:G:A",
+            "variant_type": "snv"
+          },
+          {
+            "clinvar_variation_ids": [
+              4786130
+            ],
+            "consequences": [
+              "synonymous_variant"
+            ],
+            "predicted_label": "likely_benign",
+            "top_score": 0.9669090635966854,
+            "true_label": "uncertain",
+            "variant_key": "GRCh38:15:48613092:T:C",
+            "variant_type": "snv"
+          }
+        ]
+      },
+      "gates": {
+        "benign_to_pathogenic": true,
+        "brier_nonworse_than_raw": true,
+        "improvement_over_dummy": true,
+        "improvement_over_logistic": true,
+        "log_loss_nonworse_than_raw": true,
+        "macro_f1_floor": true,
+        "mean_class_ece": true,
+        "pathogenic_to_benign": false,
+        "recall_benign": true,
+        "recall_likely_benign": true,
+        "recall_likely_pathogenic": false,
+        "recall_pathogenic": true,
+        "recall_uncertain": true,
+        "standard_accuracy": false,
+        "standard_coverage": false,
+        "warm_single_variant_latency": true
+      },
+      "logistic": {
+        "accuracy": 0.747737556561086,
+        "balanced_accuracy": 0.619111617895743,
+        "confusion_matrix": [
+          [
+            61,
+            54,
+            5,
+            0,
+            0
+          ],
+          [
+            6,
+            1169,
+            31,
+            0,
+            1
+          ],
+          [
+            1,
+            89,
+            1011,
+            11,
+            7
+          ],
+          [
+            0,
+            15,
+            265,
+            43,
+            198
+          ],
+          [
+            0,
+            7,
+            160,
+            42,
+            360
+          ]
+        ],
+        "log_loss": 0.6685314793269339,
+        "macro_f1": 0.6246370767243233,
+        "mean_class_ece": 0.009336052417757531,
+        "multiclass_brier": 0.3647869856151349,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.7593857909338675,
+            "prevalence": 0.033936651583710405,
+            "support": 120
+          },
+          "likely_benign": {
+            "average_precision": 0.927860418607149,
+            "prevalence": 0.34134615384615385,
+            "support": 1207
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.37268174919075614,
+            "prevalence": 0.14734162895927602,
+            "support": 521
+          },
+          "pathogenic": {
+            "average_precision": 0.6118395675261576,
+            "prevalence": 0.1609162895927602,
+            "support": 569
+          },
+          "uncertain": {
+            "average_precision": 0.7498275892389122,
+            "prevalence": 0.31645927601809953,
+            "support": 1119
+          }
+        },
+        "per_class": {
+          "accuracy": 0.747737556561086,
+          "benign": {
+            "f1-score": 0.648936170212766,
+            "precision": 0.8970588235294118,
+            "recall": 0.5083333333333333,
+            "support": 120.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9201101928374655,
+            "precision": 0.876311844077961,
+            "recall": 0.9685169842584921,
+            "support": 1207.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.1393841166936791,
+            "precision": 0.4479166666666667,
+            "recall": 0.08253358925143954,
+            "support": 521.0
+          },
+          "macro avg": {
+            "f1-score": 0.6246370767243233,
+            "precision": 0.7088300778549615,
+            "recall": 0.619111617895743,
+            "support": 3536.0
+          },
+          "pathogenic": {
+            "f1-score": 0.6343612334801763,
+            "precision": 0.6360424028268551,
+            "recall": 0.632688927943761,
+            "support": 569.0
+          },
+          "uncertain": {
+            "f1-score": 0.7803936703975299,
+            "precision": 0.6868206521739131,
+            "recall": 0.903485254691689,
+            "support": 1119.0
+          },
+          "weighted avg": {
+            "f1-score": 0.7056777508492125,
+            "precision": 0.7152659714225258,
+            "recall": 0.747737556561086,
+            "support": 3536.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 3337,
+                "mean_probability": 0.007331330594357581,
+                "observed_fraction": 0.007791429427629608
+              },
+              {
+                "bin": 1,
+                "count": 66,
+                "mean_probability": 0.1525064543712072,
+                "observed_fraction": 0.045454545454545456
+              },
+              {
+                "bin": 2,
+                "count": 22,
+                "mean_probability": 0.2346189576453808,
+                "observed_fraction": 0.3181818181818182
+              },
+              {
+                "bin": 3,
+                "count": 25,
+                "mean_probability": 0.35628353158554843,
+                "observed_fraction": 0.48
+              },
+              {
+                "bin": 4,
+                "count": 20,
+                "mean_probability": 0.4406306498205458,
+                "observed_fraction": 0.6
+              },
+              {
+                "bin": 5,
+                "count": 7,
+                "mean_probability": 0.5457968116826396,
+                "observed_fraction": 0.42857142857142855
+              },
+              {
+                "bin": 6,
+                "count": 1,
+                "mean_probability": 0.6856278035535027,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 7,
+                "count": 3,
+                "mean_probability": 0.7779936130722215,
+                "observed_fraction": 0.6666666666666666
+              },
+              {
+                "bin": 8,
+                "count": 7,
+                "mean_probability": 0.8478777230190631,
+                "observed_fraction": 0.8571428571428571
+              },
+              {
+                "bin": 9,
+                "count": 48,
+                "mean_probability": 0.9960034569815811,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.005216368258504731
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2140,
+                "mean_probability": 0.011599742368264544,
+                "observed_fraction": 0.012616822429906542
+              },
+              {
+                "bin": 1,
+                "count": 44,
+                "mean_probability": 0.1452006701855801,
+                "observed_fraction": 0.11363636363636363
+              },
+              {
+                "bin": 2,
+                "count": 4,
+                "mean_probability": 0.269561488214445,
+                "observed_fraction": 0.25
+              },
+              {
+                "bin": 3,
+                "count": 4,
+                "mean_probability": 0.36328139691742534,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 4,
+                "count": 30,
+                "mean_probability": 0.45493295425126695,
+                "observed_fraction": 0.3
+              },
+              {
+                "bin": 5,
+                "count": 21,
+                "mean_probability": 0.5409061194068685,
+                "observed_fraction": 0.47619047619047616
+              },
+              {
+                "bin": 6,
+                "count": 72,
+                "mean_probability": 0.669972116779942,
+                "observed_fraction": 0.7638888888888888
+              },
+              {
+                "bin": 7,
+                "count": 345,
+                "mean_probability": 0.7565969576655152,
+                "observed_fraction": 0.7855072463768116
+              },
+              {
+                "bin": 8,
+                "count": 140,
+                "mean_probability": 0.8349250793976828,
+                "observed_fraction": 0.8571428571428571
+              },
+              {
+                "bin": 9,
+                "count": 736,
+                "mean_probability": 0.9636343179560811,
+                "observed_fraction": 0.9605978260869565
+              }
+            ],
+            "ece": 0.009128654529861781
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1662,
+                "mean_probability": 0.017091345322965582,
+                "observed_fraction": 0.01684717208182912
+              },
+              {
+                "bin": 1,
+                "count": 407,
+                "mean_probability": 0.16178632034615653,
+                "observed_fraction": 0.12776412776412777
+              },
+              {
+                "bin": 2,
+                "count": 941,
+                "mean_probability": 0.23112978713642238,
+                "observed_fraction": 0.2507970244420829
+              },
+              {
+                "bin": 3,
+                "count": 303,
+                "mean_probability": 0.34415077173554137,
+                "observed_fraction": 0.34983498349834985
+              },
+              {
+                "bin": 4,
+                "count": 162,
+                "mean_probability": 0.4472811049541189,
+                "observed_fraction": 0.41975308641975306
+              },
+              {
+                "bin": 5,
+                "count": 49,
+                "mean_probability": 0.5404413030303084,
+                "observed_fraction": 0.5102040816326531
+              },
+              {
+                "bin": 6,
+                "count": 11,
+                "mean_probability": 0.6246237692278128,
+                "observed_fraction": 0.45454545454545453
+              },
+              {
+                "bin": 7,
+                "count": 1,
+                "mean_probability": 0.717609197954929,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 8,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.012040851213522458
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1985,
+                "mean_probability": 0.026955764879879503,
+                "observed_fraction": 0.030226700251889168
+              },
+              {
+                "bin": 1,
+                "count": 880,
+                "mean_probability": 0.11867999654905174,
+                "observed_fraction": 0.1215909090909091
+              },
+              {
+                "bin": 2,
+                "count": 17,
+                "mean_probability": 0.2504202820531103,
+                "observed_fraction": 0.17647058823529413
+              },
+              {
+                "bin": 3,
+                "count": 32,
+                "mean_probability": 0.3568679362548354,
+                "observed_fraction": 0.34375
+              },
+              {
+                "bin": 4,
+                "count": 92,
+                "mean_probability": 0.465236059427043,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 5,
+                "count": 114,
+                "mean_probability": 0.5600137591676139,
+                "observed_fraction": 0.5877192982456141
+              },
+              {
+                "bin": 6,
+                "count": 291,
+                "mean_probability": 0.6558785706057437,
+                "observed_fraction": 0.6219931271477663
+              },
+              {
+                "bin": 7,
+                "count": 110,
+                "mean_probability": 0.7127755879232777,
+                "observed_fraction": 0.7272727272727273
+              },
+              {
+                "bin": 8,
+                "count": 12,
+                "mean_probability": 0.8462828865146435,
+                "observed_fraction": 0.9166666666666666
+              },
+              {
+                "bin": 9,
+                "count": 3,
+                "mean_probability": 0.9365868831914806,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.008364885910604086
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1563,
+                "mean_probability": 0.020586274476180978,
+                "observed_fraction": 0.02111324376199616
+              },
+              {
+                "bin": 1,
+                "count": 378,
+                "mean_probability": 0.1576596310741156,
+                "observed_fraction": 0.1349206349206349
+              },
+              {
+                "bin": 2,
+                "count": 115,
+                "mean_probability": 0.22720297203707193,
+                "observed_fraction": 0.17391304347826086
+              },
+              {
+                "bin": 3,
+                "count": 8,
+                "mean_probability": 0.3458996142127282,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 4,
+                "count": 11,
+                "mean_probability": 0.4497089577175851,
+                "observed_fraction": 0.7272727272727273
+              },
+              {
+                "bin": 5,
+                "count": 69,
+                "mean_probability": 0.5795744552698348,
+                "observed_fraction": 0.6666666666666666
+              },
+              {
+                "bin": 6,
+                "count": 818,
+                "mean_probability": 0.6487381864801861,
+                "observed_fraction": 0.6308068459657702
+              },
+              {
+                "bin": 7,
+                "count": 429,
+                "mean_probability": 0.7434396580100148,
+                "observed_fraction": 0.7435897435897436
+              },
+              {
+                "bin": 8,
+                "count": 125,
+                "mean_probability": 0.8363981372351595,
+                "observed_fraction": 0.824
+              },
+              {
+                "bin": 9,
+                "count": 20,
+                "mean_probability": 0.9529013412346291,
+                "observed_fraction": 0.95
+              }
+            ],
+            "ece": 0.011929502176294588
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.5083333333333333,
+            0.45,
+            0.041666666666666664,
+            0.0,
+            0.0
+          ],
+          [
+            0.004971002485501243,
+            0.9685169842584921,
+            0.02568351284175642,
+            0.0,
+            0.0008285004142502071
+          ],
+          [
+            0.0008936550491510277,
+            0.07953529937444147,
+            0.903485254691689,
+            0.009830205540661306,
+            0.006255585344057194
+          ],
+          [
+            0.0,
+            0.028790786948176585,
+            0.508637236084453,
+            0.08253358925143954,
+            0.3800383877159309
+          ],
+          [
+            0.0,
+            0.012302284710017574,
+            0.281195079086116,
+            0.07381370826010544,
+            0.632688927943761
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 1,
+            "denominator": 1327,
+            "rate": 0.0007535795026375283
+          },
+          "pathogenic_to_benign": {
+            "count": 22,
+            "denominator": 1090,
+            "rate": 0.02018348623853211
+          }
+        }
+      },
+      "passes": false,
+      "raw": {
+        "accuracy": 0.746606334841629,
+        "balanced_accuracy": 0.64609785650601,
+        "confusion_matrix": [
+          [
+            81,
+            37,
+            2,
+            0,
+            0
+          ],
+          [
+            13,
+            1162,
+            30,
+            2,
+            0
+          ],
+          [
+            3,
+            90,
+            1007,
+            8,
+            11
+          ],
+          [
+            0,
+            15,
+            264,
+            46,
+            196
+          ],
+          [
+            0,
+            7,
+            162,
+            56,
+            344
+          ]
+        ],
+        "log_loss": 0.6560365376226373,
+        "macro_f1": 0.6417071272430184,
+        "mean_class_ece": 0.010615578089568683,
+        "multiclass_brier": 0.36318434600267036,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.7965076634433544,
+            "prevalence": 0.033936651583710405,
+            "support": 120
+          },
+          "likely_benign": {
+            "average_precision": 0.9511737163750459,
+            "prevalence": 0.34134615384615385,
+            "support": 1207
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.3543936611472506,
+            "prevalence": 0.14734162895927602,
+            "support": 521
+          },
+          "pathogenic": {
+            "average_precision": 0.6091825947046435,
+            "prevalence": 0.1609162895927602,
+            "support": 569
+          },
+          "uncertain": {
+            "average_precision": 0.7611844950020291,
+            "prevalence": 0.31645927601809953,
+            "support": 1119
+          }
+        },
+        "per_class": {
+          "accuracy": 0.746606334841629,
+          "benign": {
+            "f1-score": 0.7465437788018433,
+            "precision": 0.8350515463917526,
+            "recall": 0.675,
+            "support": 120.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9229547259729944,
+            "precision": 0.8863463005339436,
+            "recall": 0.9627174813587407,
+            "support": 1207.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.14533965244865718,
+            "precision": 0.4107142857142857,
+            "recall": 0.08829174664107485,
+            "support": 521.0
+          },
+          "macro avg": {
+            "f1-score": 0.6417071272430184,
+            "precision": 0.6887607131059218,
+            "recall": 0.64609785650601,
+            "support": 3536.0
+          },
+          "pathogenic": {
+            "f1-score": 0.6142857142857143,
+            "precision": 0.6243194192377496,
+            "recall": 0.6045694200351494,
+            "support": 569.0
+          },
+          "uncertain": {
+            "f1-score": 0.7794117647058824,
+            "precision": 0.6873720136518772,
+            "recall": 0.8999106344950849,
+            "support": 1119.0
+          },
+          "weighted avg": {
+            "f1-score": 0.7072974838138658,
+            "precision": 0.7093934802011745,
+            "recall": 0.746606334841629,
+            "support": 3536.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 3376,
+                "mean_probability": 0.006942306595720782,
+                "observed_fraction": 0.0071090047393364926
+              },
+              {
+                "bin": 1,
+                "count": 26,
+                "mean_probability": 0.13968021622636032,
+                "observed_fraction": 0.11538461538461539
+              },
+              {
+                "bin": 2,
+                "count": 18,
+                "mean_probability": 0.23647561841432715,
+                "observed_fraction": 0.05555555555555555
+              },
+              {
+                "bin": 3,
+                "count": 8,
+                "mean_probability": 0.35139029457126425,
+                "observed_fraction": 0.75
+              },
+              {
+                "bin": 4,
+                "count": 24,
+                "mean_probability": 0.4604894919382014,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 5,
+                "count": 15,
+                "mean_probability": 0.550880631245968,
+                "observed_fraction": 0.7333333333333333
+              },
+              {
+                "bin": 6,
+                "count": 8,
+                "mean_probability": 0.63676652239498,
+                "observed_fraction": 0.625
+              },
+              {
+                "bin": 7,
+                "count": 6,
+                "mean_probability": 0.7719241511889843,
+                "observed_fraction": 0.8333333333333334
+              },
+              {
+                "bin": 8,
+                "count": 4,
+                "mean_probability": 0.8535984933823766,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 9,
+                "count": 51,
+                "mean_probability": 0.9861184332636276,
+                "observed_fraction": 0.9607843137254902
+              }
+            ],
+            "ece": 0.0038645852515143833
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2146,
+                "mean_probability": 0.012365003419354344,
+                "observed_fraction": 0.012115563839701771
+              },
+              {
+                "bin": 1,
+                "count": 32,
+                "mean_probability": 0.13437474617855935,
+                "observed_fraction": 0.125
+              },
+              {
+                "bin": 2,
+                "count": 9,
+                "mean_probability": 0.23717170385153213,
+                "observed_fraction": 0.2222222222222222
+              },
+              {
+                "bin": 3,
+                "count": 22,
+                "mean_probability": 0.36439037756080667,
+                "observed_fraction": 0.45454545454545453
+              },
+              {
+                "bin": 4,
+                "count": 27,
+                "mean_probability": 0.4431935227482802,
+                "observed_fraction": 0.25925925925925924
+              },
+              {
+                "bin": 5,
+                "count": 22,
+                "mean_probability": 0.5356432291498542,
+                "observed_fraction": 0.45454545454545453
+              },
+              {
+                "bin": 6,
+                "count": 76,
+                "mean_probability": 0.6560587664159488,
+                "observed_fraction": 0.7631578947368421
+              },
+              {
+                "bin": 7,
+                "count": 268,
+                "mean_probability": 0.7423826522343132,
+                "observed_fraction": 0.7873134328358209
+              },
+              {
+                "bin": 8,
+                "count": 169,
+                "mean_probability": 0.8454339838915792,
+                "observed_fraction": 0.8402366863905325
+              },
+              {
+                "bin": 9,
+                "count": 765,
+                "mean_probability": 0.9639937296468776,
+                "observed_fraction": 0.9633986928104575
+              }
+            ],
+            "ece": 0.008828662842365637
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1661,
+                "mean_probability": 0.016337854958930885,
+                "observed_fraction": 0.018663455749548464
+              },
+              {
+                "bin": 1,
+                "count": 444,
+                "mean_probability": 0.15584301980325024,
+                "observed_fraction": 0.1373873873873874
+              },
+              {
+                "bin": 2,
+                "count": 897,
+                "mean_probability": 0.23017302286728106,
+                "observed_fraction": 0.24303232998885171
+              },
+              {
+                "bin": 3,
+                "count": 301,
+                "mean_probability": 0.33968294236955715,
+                "observed_fraction": 0.38205980066445183
+              },
+              {
+                "bin": 4,
+                "count": 140,
+                "mean_probability": 0.44947537819524996,
+                "observed_fraction": 0.42142857142857143
+              },
+              {
+                "bin": 5,
+                "count": 64,
+                "mean_probability": 0.5306866391987821,
+                "observed_fraction": 0.390625
+              },
+              {
+                "bin": 6,
+                "count": 20,
+                "mean_probability": 0.6401073276261063,
+                "observed_fraction": 0.35
+              },
+              {
+                "bin": 7,
+                "count": 7,
+                "mean_probability": 0.7303081140016895,
+                "observed_fraction": 0.5714285714285714
+              },
+              {
+                "bin": 8,
+                "count": 2,
+                "mean_probability": 0.8483556602996818,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.016077168854033215
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2062,
+                "mean_probability": 0.028220594740266846,
+                "observed_fraction": 0.03297769156159069
+              },
+              {
+                "bin": 1,
+                "count": 795,
+                "mean_probability": 0.12226645157261926,
+                "observed_fraction": 0.12578616352201258
+              },
+              {
+                "bin": 2,
+                "count": 35,
+                "mean_probability": 0.2609577778061745,
+                "observed_fraction": 0.17142857142857143
+              },
+              {
+                "bin": 3,
+                "count": 25,
+                "mean_probability": 0.343327438922337,
+                "observed_fraction": 0.48
+              },
+              {
+                "bin": 4,
+                "count": 89,
+                "mean_probability": 0.46330371354248107,
+                "observed_fraction": 0.5168539325842697
+              },
+              {
+                "bin": 5,
+                "count": 130,
+                "mean_probability": 0.5469333765407782,
+                "observed_fraction": 0.5538461538461539
+              },
+              {
+                "bin": 6,
+                "count": 303,
+                "mean_probability": 0.6608633622171425,
+                "observed_fraction": 0.636963696369637
+              },
+              {
+                "bin": 7,
+                "count": 73,
+                "mean_probability": 0.7474484798451326,
+                "observed_fraction": 0.6986301369863014
+              },
+              {
+                "bin": 8,
+                "count": 12,
+                "mean_probability": 0.8495855188331415,
+                "observed_fraction": 0.75
+              },
+              {
+                "bin": 9,
+                "count": 12,
+                "mean_probability": 0.9423240453310863,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.01060937412398944
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1596,
+                "mean_probability": 0.020985984004029172,
+                "observed_fraction": 0.023809523809523808
+              },
+              {
+                "bin": 1,
+                "count": 300,
+                "mean_probability": 0.15274581032586682,
+                "observed_fraction": 0.13
+              },
+              {
+                "bin": 2,
+                "count": 162,
+                "mean_probability": 0.22865556928224276,
+                "observed_fraction": 0.17901234567901234
+              },
+              {
+                "bin": 3,
+                "count": 14,
+                "mean_probability": 0.3436904498876549,
+                "observed_fraction": 0.35714285714285715
+              },
+              {
+                "bin": 4,
+                "count": 8,
+                "mean_probability": 0.46759162864445625,
+                "observed_fraction": 0.625
+              },
+              {
+                "bin": 5,
+                "count": 57,
+                "mean_probability": 0.5798750837319171,
+                "observed_fraction": 0.631578947368421
+              },
+              {
+                "bin": 6,
+                "count": 819,
+                "mean_probability": 0.6475508533974298,
+                "observed_fraction": 0.6251526251526252
+              },
+              {
+                "bin": 7,
+                "count": 393,
+                "mean_probability": 0.7459247979793718,
+                "observed_fraction": 0.7557251908396947
+              },
+              {
+                "bin": 8,
+                "count": 152,
+                "mean_probability": 0.8381675440878855,
+                "observed_fraction": 0.8223684210526315
+              },
+              {
+                "bin": 9,
+                "count": 35,
+                "mean_probability": 0.9449221032747214,
+                "observed_fraction": 0.9428571428571428
+              }
+            ],
+            "ece": 0.01369809937594074
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.675,
+            0.30833333333333335,
+            0.016666666666666666,
+            0.0,
+            0.0
+          ],
+          [
+            0.010770505385252692,
+            0.9627174813587407,
+            0.024855012427506214,
+            0.0016570008285004142,
+            0.0
+          ],
+          [
+            0.002680965147453083,
+            0.08042895442359249,
+            0.8999106344950849,
+            0.0071492403932082215,
+            0.009830205540661306
+          ],
+          [
+            0.0,
+            0.028790786948176585,
+            0.5067178502879078,
+            0.08829174664107485,
+            0.3761996161228407
+          ],
+          [
+            0.0,
+            0.012302284710017574,
+            0.28471001757469244,
+            0.0984182776801406,
+            0.6045694200351494
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 2,
+            "denominator": 1327,
+            "rate": 0.0015071590052750565
+          },
+          "pathogenic_to_benign": {
+            "count": 22,
+            "denominator": 1090,
+            "rate": 0.02018348623853211
+          }
+        }
+      },
+      "selected": {
+        "accuracy": 0.746606334841629,
+        "balanced_accuracy": 0.64609785650601,
+        "confusion_matrix": [
+          [
+            81,
+            37,
+            2,
+            0,
+            0
+          ],
+          [
+            13,
+            1162,
+            30,
+            2,
+            0
+          ],
+          [
+            3,
+            90,
+            1007,
+            8,
+            11
+          ],
+          [
+            0,
+            15,
+            264,
+            46,
+            196
+          ],
+          [
+            0,
+            7,
+            162,
+            56,
+            344
+          ]
+        ],
+        "log_loss": 0.6560365376226373,
+        "macro_f1": 0.6417071272430184,
+        "mean_class_ece": 0.010615578089568683,
+        "multiclass_brier": 0.36318434600267036,
+        "one_vs_rest_average_precision": {
+          "benign": {
+            "average_precision": 0.7965076634433544,
+            "prevalence": 0.033936651583710405,
+            "support": 120
+          },
+          "likely_benign": {
+            "average_precision": 0.9511737163750459,
+            "prevalence": 0.34134615384615385,
+            "support": 1207
+          },
+          "likely_pathogenic": {
+            "average_precision": 0.3543936611472506,
+            "prevalence": 0.14734162895927602,
+            "support": 521
+          },
+          "pathogenic": {
+            "average_precision": 0.6091825947046435,
+            "prevalence": 0.1609162895927602,
+            "support": 569
+          },
+          "uncertain": {
+            "average_precision": 0.7611844950020291,
+            "prevalence": 0.31645927601809953,
+            "support": 1119
+          }
+        },
+        "per_class": {
+          "accuracy": 0.746606334841629,
+          "benign": {
+            "f1-score": 0.7465437788018433,
+            "precision": 0.8350515463917526,
+            "recall": 0.675,
+            "support": 120.0
+          },
+          "likely_benign": {
+            "f1-score": 0.9229547259729944,
+            "precision": 0.8863463005339436,
+            "recall": 0.9627174813587407,
+            "support": 1207.0
+          },
+          "likely_pathogenic": {
+            "f1-score": 0.14533965244865718,
+            "precision": 0.4107142857142857,
+            "recall": 0.08829174664107485,
+            "support": 521.0
+          },
+          "macro avg": {
+            "f1-score": 0.6417071272430184,
+            "precision": 0.6887607131059218,
+            "recall": 0.64609785650601,
+            "support": 3536.0
+          },
+          "pathogenic": {
+            "f1-score": 0.6142857142857143,
+            "precision": 0.6243194192377496,
+            "recall": 0.6045694200351494,
+            "support": 569.0
+          },
+          "uncertain": {
+            "f1-score": 0.7794117647058824,
+            "precision": 0.6873720136518772,
+            "recall": 0.8999106344950849,
+            "support": 1119.0
+          },
+          "weighted avg": {
+            "f1-score": 0.7072974838138658,
+            "precision": 0.7093934802011745,
+            "recall": 0.746606334841629,
+            "support": 3536.0
+          }
+        },
+        "pr_auc_convention": "Non-interpolated average precision (AP), not trapezoidal PR area.",
+        "reliability": {
+          "benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 3376,
+                "mean_probability": 0.006942306595720782,
+                "observed_fraction": 0.0071090047393364926
+              },
+              {
+                "bin": 1,
+                "count": 26,
+                "mean_probability": 0.13968021622636032,
+                "observed_fraction": 0.11538461538461539
+              },
+              {
+                "bin": 2,
+                "count": 18,
+                "mean_probability": 0.23647561841432715,
+                "observed_fraction": 0.05555555555555555
+              },
+              {
+                "bin": 3,
+                "count": 8,
+                "mean_probability": 0.35139029457126425,
+                "observed_fraction": 0.75
+              },
+              {
+                "bin": 4,
+                "count": 24,
+                "mean_probability": 0.4604894919382014,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 5,
+                "count": 15,
+                "mean_probability": 0.550880631245968,
+                "observed_fraction": 0.7333333333333333
+              },
+              {
+                "bin": 6,
+                "count": 8,
+                "mean_probability": 0.63676652239498,
+                "observed_fraction": 0.625
+              },
+              {
+                "bin": 7,
+                "count": 6,
+                "mean_probability": 0.7719241511889843,
+                "observed_fraction": 0.8333333333333334
+              },
+              {
+                "bin": 8,
+                "count": 4,
+                "mean_probability": 0.8535984933823766,
+                "observed_fraction": 1.0
+              },
+              {
+                "bin": 9,
+                "count": 51,
+                "mean_probability": 0.9861184332636276,
+                "observed_fraction": 0.9607843137254902
+              }
+            ],
+            "ece": 0.0038645852515143833
+          },
+          "likely_benign": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2146,
+                "mean_probability": 0.012365003419354344,
+                "observed_fraction": 0.012115563839701771
+              },
+              {
+                "bin": 1,
+                "count": 32,
+                "mean_probability": 0.13437474617855935,
+                "observed_fraction": 0.125
+              },
+              {
+                "bin": 2,
+                "count": 9,
+                "mean_probability": 0.23717170385153213,
+                "observed_fraction": 0.2222222222222222
+              },
+              {
+                "bin": 3,
+                "count": 22,
+                "mean_probability": 0.36439037756080667,
+                "observed_fraction": 0.45454545454545453
+              },
+              {
+                "bin": 4,
+                "count": 27,
+                "mean_probability": 0.4431935227482802,
+                "observed_fraction": 0.25925925925925924
+              },
+              {
+                "bin": 5,
+                "count": 22,
+                "mean_probability": 0.5356432291498542,
+                "observed_fraction": 0.45454545454545453
+              },
+              {
+                "bin": 6,
+                "count": 76,
+                "mean_probability": 0.6560587664159488,
+                "observed_fraction": 0.7631578947368421
+              },
+              {
+                "bin": 7,
+                "count": 268,
+                "mean_probability": 0.7423826522343132,
+                "observed_fraction": 0.7873134328358209
+              },
+              {
+                "bin": 8,
+                "count": 169,
+                "mean_probability": 0.8454339838915792,
+                "observed_fraction": 0.8402366863905325
+              },
+              {
+                "bin": 9,
+                "count": 765,
+                "mean_probability": 0.9639937296468776,
+                "observed_fraction": 0.9633986928104575
+              }
+            ],
+            "ece": 0.008828662842365637
+          },
+          "likely_pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1661,
+                "mean_probability": 0.016337854958930885,
+                "observed_fraction": 0.018663455749548464
+              },
+              {
+                "bin": 1,
+                "count": 444,
+                "mean_probability": 0.15584301980325024,
+                "observed_fraction": 0.1373873873873874
+              },
+              {
+                "bin": 2,
+                "count": 897,
+                "mean_probability": 0.23017302286728106,
+                "observed_fraction": 0.24303232998885171
+              },
+              {
+                "bin": 3,
+                "count": 301,
+                "mean_probability": 0.33968294236955715,
+                "observed_fraction": 0.38205980066445183
+              },
+              {
+                "bin": 4,
+                "count": 140,
+                "mean_probability": 0.44947537819524996,
+                "observed_fraction": 0.42142857142857143
+              },
+              {
+                "bin": 5,
+                "count": 64,
+                "mean_probability": 0.5306866391987821,
+                "observed_fraction": 0.390625
+              },
+              {
+                "bin": 6,
+                "count": 20,
+                "mean_probability": 0.6401073276261063,
+                "observed_fraction": 0.35
+              },
+              {
+                "bin": 7,
+                "count": 7,
+                "mean_probability": 0.7303081140016895,
+                "observed_fraction": 0.5714285714285714
+              },
+              {
+                "bin": 8,
+                "count": 2,
+                "mean_probability": 0.8483556602996818,
+                "observed_fraction": 0.5
+              },
+              {
+                "bin": 9,
+                "count": 0,
+                "mean_probability": null,
+                "observed_fraction": null
+              }
+            ],
+            "ece": 0.016077168854033215
+          },
+          "pathogenic": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 2062,
+                "mean_probability": 0.028220594740266846,
+                "observed_fraction": 0.03297769156159069
+              },
+              {
+                "bin": 1,
+                "count": 795,
+                "mean_probability": 0.12226645157261926,
+                "observed_fraction": 0.12578616352201258
+              },
+              {
+                "bin": 2,
+                "count": 35,
+                "mean_probability": 0.2609577778061745,
+                "observed_fraction": 0.17142857142857143
+              },
+              {
+                "bin": 3,
+                "count": 25,
+                "mean_probability": 0.343327438922337,
+                "observed_fraction": 0.48
+              },
+              {
+                "bin": 4,
+                "count": 89,
+                "mean_probability": 0.46330371354248107,
+                "observed_fraction": 0.5168539325842697
+              },
+              {
+                "bin": 5,
+                "count": 130,
+                "mean_probability": 0.5469333765407782,
+                "observed_fraction": 0.5538461538461539
+              },
+              {
+                "bin": 6,
+                "count": 303,
+                "mean_probability": 0.6608633622171425,
+                "observed_fraction": 0.636963696369637
+              },
+              {
+                "bin": 7,
+                "count": 73,
+                "mean_probability": 0.7474484798451326,
+                "observed_fraction": 0.6986301369863014
+              },
+              {
+                "bin": 8,
+                "count": 12,
+                "mean_probability": 0.8495855188331415,
+                "observed_fraction": 0.75
+              },
+              {
+                "bin": 9,
+                "count": 12,
+                "mean_probability": 0.9423240453310863,
+                "observed_fraction": 1.0
+              }
+            ],
+            "ece": 0.01060937412398944
+          },
+          "uncertain": {
+            "bins": [
+              {
+                "bin": 0,
+                "count": 1596,
+                "mean_probability": 0.020985984004029172,
+                "observed_fraction": 0.023809523809523808
+              },
+              {
+                "bin": 1,
+                "count": 300,
+                "mean_probability": 0.15274581032586682,
+                "observed_fraction": 0.13
+              },
+              {
+                "bin": 2,
+                "count": 162,
+                "mean_probability": 0.22865556928224276,
+                "observed_fraction": 0.17901234567901234
+              },
+              {
+                "bin": 3,
+                "count": 14,
+                "mean_probability": 0.3436904498876549,
+                "observed_fraction": 0.35714285714285715
+              },
+              {
+                "bin": 4,
+                "count": 8,
+                "mean_probability": 0.46759162864445625,
+                "observed_fraction": 0.625
+              },
+              {
+                "bin": 5,
+                "count": 57,
+                "mean_probability": 0.5798750837319171,
+                "observed_fraction": 0.631578947368421
+              },
+              {
+                "bin": 6,
+                "count": 819,
+                "mean_probability": 0.6475508533974298,
+                "observed_fraction": 0.6251526251526252
+              },
+              {
+                "bin": 7,
+                "count": 393,
+                "mean_probability": 0.7459247979793718,
+                "observed_fraction": 0.7557251908396947
+              },
+              {
+                "bin": 8,
+                "count": 152,
+                "mean_probability": 0.8381675440878855,
+                "observed_fraction": 0.8223684210526315
+              },
+              {
+                "bin": 9,
+                "count": 35,
+                "mean_probability": 0.9449221032747214,
+                "observed_fraction": 0.9428571428571428
+              }
+            ],
+            "ece": 0.01369809937594074
+          }
+        },
+        "row_normalized_confusion_matrix": [
+          [
+            0.675,
+            0.30833333333333335,
+            0.016666666666666666,
+            0.0,
+            0.0
+          ],
+          [
+            0.010770505385252692,
+            0.9627174813587407,
+            0.024855012427506214,
+            0.0016570008285004142,
+            0.0
+          ],
+          [
+            0.002680965147453083,
+            0.08042895442359249,
+            0.8999106344950849,
+            0.0071492403932082215,
+            0.009830205540661306
+          ],
+          [
+            0.0,
+            0.028790786948176585,
+            0.5067178502879078,
+            0.08829174664107485,
+            0.3761996161228407
+          ],
+          [
+            0.0,
+            0.012302284710017574,
+            0.28471001757469244,
+            0.0984182776801406,
+            0.6045694200351494
+          ]
+        ],
+        "severe_confusion": {
+          "benign_to_pathogenic": {
+            "count": 2,
+            "denominator": 1327,
+            "rate": 0.0015071590052750565
+          },
+          "pathogenic_to_benign": {
+            "count": 22,
+            "denominator": 1090,
+            "rate": 0.02018348623853211
+          }
+        }
+      },
+      "subgroups": {
+        "groups": {
+          "consequence:3_prime_UTR_variant": {
+            "accuracy": 0.9285714285714286,
+            "class_support": {
+              "benign": 1,
+              "likely_benign": 2,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 25
+            },
+            "count": 28,
+            "log_loss": 0.14983367937440023,
+            "macro_f1_present_classes": 0.6538461538461539,
+            "multiclass_brier": 0.08295711640333027,
+            "per_class_recall": {
+              "benign": 1.0,
+              "likely_benign": 0.0,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:5_prime_UTR_variant": {
+            "accuracy": 0.7333333333333333,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 9,
+              "likely_pathogenic": 4,
+              "pathogenic": 1,
+              "uncertain": 16
+            },
+            "count": 30,
+            "log_loss": 0.654691564809676,
+            "macro_f1_present_classes": 0.7253869969040248,
+            "multiclass_brier": 0.364744399104676,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": 0.7777777777777778,
+              "likely_pathogenic": 0.25,
+              "pathogenic": 1.0,
+              "uncertain": 0.8125
+            },
+            "small_sample": false
+          },
+          "consequence:frameshift_variant": {
+            "accuracy": 0.6084142394822006,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 113,
+              "pathogenic": 195,
+              "uncertain": 1
+            },
+            "count": 309,
+            "log_loss": 0.6729922291473849,
+            "macro_f1_present_classes": 0.28047485160887226,
+            "multiclass_brier": 0.4678027263702988,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.05309734513274336,
+              "pathogenic": 0.9333333333333333,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:genic_upstream_transcript_variant": {
+            "accuracy": 0.0,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 2
+            },
+            "count": 2,
+            "log_loss": 1.2758111106848302,
+            "macro_f1_present_classes": 0.0,
+            "multiclass_brier": 0.8131435735879425,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 0.0
+            },
+            "small_sample": true
+          },
+          "consequence:inframe_deletion": {
+            "accuracy": 0.4782608695652174,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 6,
+              "pathogenic": 4,
+              "uncertain": 13
+            },
+            "count": 23,
+            "log_loss": 1.1335496153516014,
+            "macro_f1_present_classes": 0.4069264069264069,
+            "multiclass_brier": 0.6680458444385794,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.3333333333333333,
+              "pathogenic": 0.25,
+              "uncertain": 0.6153846153846154
+            },
+            "small_sample": true
+          },
+          "consequence:inframe_indel": {
+            "accuracy": 0.5714285714285714,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 3,
+              "uncertain": 4
+            },
+            "count": 7,
+            "log_loss": 0.7948733909653569,
+            "macro_f1_present_classes": 0.5714285714285714,
+            "multiclass_brier": 0.4643962359882924,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": 0.6666666666666666,
+              "uncertain": 0.5
+            },
+            "small_sample": true
+          },
+          "consequence:inframe_insertion": {
+            "accuracy": 0.7142857142857143,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 1,
+              "pathogenic": 0,
+              "uncertain": 6
+            },
+            "count": 7,
+            "log_loss": 0.7338634658004228,
+            "macro_f1_present_classes": 0.4166666666666667,
+            "multiclass_brier": 0.36008137280067976,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.0,
+              "pathogenic": null,
+              "uncertain": 0.8333333333333334
+            },
+            "small_sample": true
+          },
+          "consequence:initiator_codon_variant": {
+            "accuracy": 0.75,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 1,
+              "likely_pathogenic": 1,
+              "pathogenic": 2,
+              "uncertain": 0
+            },
+            "count": 4,
+            "log_loss": 0.6251921162728524,
+            "macro_f1_present_classes": 0.6,
+            "multiclass_brier": 0.38233076870370886,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": 1.0,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 1.0,
+              "uncertain": null
+            },
+            "small_sample": true
+          },
+          "consequence:intron_variant": {
+            "accuracy": 0.798569725864124,
+            "class_support": {
+              "benign": 100,
+              "likely_benign": 529,
+              "likely_pathogenic": 32,
+              "pathogenic": 31,
+              "uncertain": 147
+            },
+            "count": 839,
+            "log_loss": 0.6332636725086186,
+            "macro_f1_present_classes": 0.5670929884400842,
+            "multiclass_brier": 0.32046707406211994,
+            "per_class_recall": {
+              "benign": 0.7,
+              "likely_benign": 0.9697542533081286,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.5161290322580645,
+              "uncertain": 0.48299319727891155
+            },
+            "small_sample": false
+          },
+          "consequence:missense_variant": {
+            "accuracy": 0.6819787985865724,
+            "class_support": {
+              "benign": 6,
+              "likely_benign": 28,
+              "likely_pathogenic": 261,
+              "pathogenic": 159,
+              "uncertain": 961
+            },
+            "count": 1415,
+            "log_loss": 0.8768349055016734,
+            "macro_f1_present_classes": 0.3142103153642176,
+            "multiclass_brier": 0.47763946063676554,
+            "per_class_recall": {
+              "benign": 0.6666666666666666,
+              "likely_benign": 0.03571428571428571,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.012578616352201259,
+              "uncertain": 0.9968782518210197
+            },
+            "small_sample": false
+          },
+          "consequence:non-coding_transcript_variant": {
+            "accuracy": 0.6666666666666666,
+            "class_support": {
+              "benign": 2,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 1
+            },
+            "count": 3,
+            "log_loss": 0.7980169670090863,
+            "macro_f1_present_classes": 0.5,
+            "multiclass_brier": 0.49333262597962757,
+            "per_class_recall": {
+              "benign": 1.0,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 0.0
+            },
+            "small_sample": true
+          },
+          "consequence:nonsense": {
+            "accuracy": 0.7215909090909091,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 46,
+              "pathogenic": 128,
+              "uncertain": 2
+            },
+            "count": 176,
+            "log_loss": 0.6374986913013607,
+            "macro_f1_present_classes": 0.30578584901522127,
+            "multiclass_brier": 0.4128731408539346,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.043478260869565216,
+              "pathogenic": 0.9765625,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:splice_acceptor_variant": {
+            "accuracy": 0.38271604938271603,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 1,
+              "likely_pathogenic": 47,
+              "pathogenic": 31,
+              "uncertain": 2
+            },
+            "count": 81,
+            "log_loss": 0.8521642656997012,
+            "macro_f1_present_classes": 0.3533268576979116,
+            "multiclass_brier": 0.5768718975959454,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": 0.0,
+              "likely_pathogenic": 0.23404255319148937,
+              "pathogenic": 0.6129032258064516,
+              "uncertain": 0.5
+            },
+            "small_sample": false
+          },
+          "consequence:splice_donor_variant": {
+            "accuracy": 0.4691358024691358,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 32,
+              "pathogenic": 42,
+              "uncertain": 7
+            },
+            "count": 81,
+            "log_loss": 0.9342218007940971,
+            "macro_f1_present_classes": 0.32321152856407614,
+            "multiclass_brier": 0.5870389895021048,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": 0.75,
+              "pathogenic": 0.3333333333333333,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "consequence:stop_lost": {
+            "accuracy": 1.0,
+            "class_support": {
+              "benign": 0,
+              "likely_benign": 0,
+              "likely_pathogenic": 0,
+              "pathogenic": 0,
+              "uncertain": 1
+            },
+            "count": 1,
+            "log_loss": 0.16306154478192303,
+            "macro_f1_present_classes": 1.0,
+            "multiclass_brier": 0.03350606753428107,
+            "per_class_recall": {
+              "benign": null,
+              "likely_benign": null,
+              "likely_pathogenic": null,
+              "pathogenic": null,
+              "uncertain": 1.0
+            },
+            "small_sample": true
+          },
+          "consequence:synonymous_variant": {
+            "accuracy": 0.9623149394347241,
+            "class_support": {
+              "benign": 11,
+              "likely_benign": 712,
+              "likely_pathogenic": 1,
+              "pathogenic": 1,
+              "uncertain": 18
+            },
+            "count": 743,
+            "log_loss": 0.1772022571936601,
+            "macro_f1_present_classes": 0.307243707796194,
+            "multiclass_brier": 0.06927561536337766,
+            "per_class_recall": {
+              "benign": 0.45454545454545453,
+              "likely_benign": 0.9971910112359551,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.0,
+              "uncertain": 0.0
+            },
+            "small_sample": false
+          },
+          "population:all_missing": {
+            "accuracy": 0.7282903663500678,
+            "class_support": {
+              "benign": 35,
+              "likely_benign": 942,
+              "likely_pathogenic": 505,
+              "pathogenic": 532,
+              "uncertain": 934
+            },
+            "count": 2948,
+            "log_loss": 0.6776849508272851,
+            "macro_f1_present_classes": 0.5751262427607369,
+            "multiclass_brier": 0.3822028241869091,
+            "per_class_recall": {
+              "benign": 0.3142857142857143,
+              "likely_benign": 0.9734607218683652,
+              "likely_pathogenic": 0.09108910891089109,
+              "pathogenic": 0.618421052631579,
+              "uncertain": 0.9036402569593148
+            },
+            "small_sample": false
+          },
+          "population:some_observed": {
+            "accuracy": 0.8384353741496599,
+            "class_support": {
+              "benign": 85,
+              "likely_benign": 265,
+              "likely_pathogenic": 16,
+              "pathogenic": 37,
+              "uncertain": 185
+            },
+            "count": 588,
+            "log_loss": 0.5474999353653205,
+            "macro_f1_present_classes": 0.6230033538643687,
+            "multiclass_brier": 0.26783320027624885,
+            "per_class_recall": {
+              "benign": 0.8235294117647058,
+              "likely_benign": 0.9245283018867925,
+              "likely_pathogenic": 0.0,
+              "pathogenic": 0.40540540540540543,
+              "uncertain": 0.8810810810810811
+            },
+            "small_sample": false
+          },
+          "review:at_least_two_stars": {
+            "accuracy": 0.7461459403905447,
+            "class_support": {
+              "benign": 49,
+              "likely_benign": 224,
+              "likely_pathogenic": 139,
+              "pathogenic": 188,
+              "uncertain": 373
+            },
+            "count": 973,
+            "log_loss": 0.6666374114268258,
+            "macro_f1_present_classes": 0.683459343345708,
+            "multiclass_brier": 0.37159805961110987,
+            "per_class_recall": {
+              "benign": 0.9183673469387755,
+              "likely_benign": 0.9821428571428571,
+              "likely_pathogenic": 0.10071942446043165,
+              "pathogenic": 0.5531914893617021,
+              "uncertain": 0.9195710455764075
+            },
+            "small_sample": false
+          },
+          "review:below_two_stars": {
+            "accuracy": 0.7467811158798283,
+            "class_support": {
+              "benign": 71,
+              "likely_benign": 983,
+              "likely_pathogenic": 382,
+              "pathogenic": 381,
+              "uncertain": 746
+            },
+            "count": 2563,
+            "log_loss": 0.6520120935292014,
+            "macro_f1_present_classes": 0.6097866185098819,
+            "multiclass_brier": 0.35999022062576375,
+            "per_class_recall": {
+              "benign": 0.5070422535211268,
+              "likely_benign": 0.9582909460834181,
+              "likely_pathogenic": 0.08376963350785341,
+              "pathogenic": 0.6299212598425197,
+              "uncertain": 0.8900804289544236
+            },
+            "small_sample": false
+          },
+          "variant_type:deletion": {
+            "accuracy": 0.565359477124183,
+            "class_support": {
+              "benign": 13,
+              "likely_benign": 12,
+              "likely_pathogenic": 109,
+              "pathogenic": 154,
+              "uncertain": 18
+            },
+            "count": 306,
+            "log_loss": 0.7846024025150247,
+            "macro_f1_present_classes": 0.5093801965230537,
+            "multiclass_brier": 0.5131968166564858,
+            "per_class_recall": {
+              "benign": 0.5384615384615384,
+              "likely_benign": 0.6666666666666666,
+              "likely_pathogenic": 0.1559633027522936,
+              "pathogenic": 0.8636363636363636,
+              "uncertain": 0.4444444444444444
+            },
+            "small_sample": false
+          },
+          "variant_type:insertion": {
+            "accuracy": 0.6518518518518519,
+            "class_support": {
+              "benign": 7,
+              "likely_benign": 14,
+              "likely_pathogenic": 32,
+              "pathogenic": 68,
+              "uncertain": 14
+            },
+            "count": 135,
+            "log_loss": 0.6825282243536862,
+            "macro_f1_present_classes": 0.5777654030127792,
+            "multiclass_brier": 0.4368133958625595,
+            "per_class_recall": {
+              "benign": 0.7142857142857143,
+              "likely_benign": 0.7142857142857143,
+              "likely_pathogenic": 0.125,
+              "pathogenic": 0.9117647058823529,
+              "uncertain": 0.5
+            },
+            "small_sample": false
+          },
+          "variant_type:snv": {
+            "accuracy": 0.7686591276252019,
+            "class_support": {
+              "benign": 100,
+              "likely_benign": 1181,
+              "likely_pathogenic": 380,
+              "pathogenic": 347,
+              "uncertain": 1087
+            },
+            "count": 3095,
+            "log_loss": 0.6421698066482391,
+            "macro_f1_present_classes": 0.6238872011711653,
+            "multiclass_brier": 0.345141135097613,
+            "per_class_recall": {
+              "benign": 0.69,
+              "likely_benign": 0.9686706181202371,
+              "likely_pathogenic": 0.06578947368421052,
+              "pathogenic": 0.42939481268011526,
+              "uncertain": 0.9126034958601656
+            },
+            "small_sample": false
+          }
+        },
+        "note": "Consequence groups overlap; do not add their counts. Missing classes have null recall. Small groups are descriptive only."
+      }
+    }
+  },
+  "probability_kind": "uncalibrated",
+  "protocol_sha256": "d92d1a9f3c9da00e77d78f5438e31fa871f4d4fb50c2d436b3cbe7a380b5de04",
+  "protocol_version": "five-class-evaluation-v1",
+  "release_approved": false,
+  "release_status": "rejected_by_project_gates",
+  "temperature": 1.0,
+  "test_reuse": false,
+  "test_reuse_warning": "First use consumes both reserved holdouts for this split. No overwrite/retry on a fresh directory to disguise test reuse. Future changes need a new holdout or an explicitly labeled reused-test study. Rendering saved predictions is allowed without rescoring.",
+  "threshold_source": "Frozen project engineering criteria, not clinical standards."
+}

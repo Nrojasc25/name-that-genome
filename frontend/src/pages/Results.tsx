@@ -6,6 +6,22 @@ import Card from '../components/ui/Card'
 import { api } from '../lib/api'
 import { CLASS_LABELS, CLASS_ORDER, type Analysis } from '../lib/analysis'
 import './Results.css'
+import { ExplanationChart } from '../components/ExplanationChart'
+
+function unavailableReason(reason?: string | null) {
+  const messages: Record<string, string> = {
+    model_missing: 'The local model artifacts are not installed.',
+    model_load_failed: 'The local model could not be verified or loaded.',
+    unsupported_source: 'This model supports only its frozen GRCh38 source release.',
+    ambiguous_source: 'Multiple source coordinates matched; no prediction was selected.',
+    unsupported_variant: 'This variant type is outside the supported scope.',
+    annotation_missing: 'This variant has no supported annotation in the frozen model cache.',
+    features_invalid: 'Required variant features could not be validated.',
+    busy: 'The model is busy. Submit a new analysis to try again.',
+    prediction_failed: 'The model could not produce a valid result.',
+  }
+  return messages[reason || ''] || 'No model result was stored in this saved analysis.'
+}
 
 function LiveResults() {
   const { analysisId } = useParams()
@@ -19,8 +35,9 @@ function LiveResults() {
     return () => { active = false }
   }, [analysisId])
   const analysis = state.data
-  const record = analysis?.variant.source_records[0]
   const prediction = analysis?.prediction
+  const sourceId = prediction?.schema_version === 2 ? prediction.source_record_id : undefined
+  const record = analysis?.variant.source_records.find(record => record.record_id === sourceId) || analysis?.variant.source_records[0]
   return <>
     <Link className="hyperlink" to="/dashboard">← Back to Dashboard</Link>
     <h1>Results</h1>
@@ -49,25 +66,25 @@ function LiveResults() {
           <p className="small-text">These are reference annotations from ClinVar.</p>
           <h3>Model Prediction</h3>
           {analysis.prediction_status === 'available' && prediction ? <>
-            <p>{CLASS_LABELS[prediction.decision]}</p>
+            <p><strong>{CLASS_LABELS[prediction.decision]}</strong></p>
+            {prediction.schema_version === 2 && prediction.release_status === 'research_candidate_rejected' && <p role="status">Research/demo candidate — this model has not passed its performance criteria. These results are not a clinical classification or diagnosis.</p>}
             {prediction.schema_version === 2 ? <>
               <p>{prediction.probability_kind === 'calibrated' ? 'Class probabilities' : 'Class scores (uncalibrated)'}</p>
-              <ul>{CLASS_ORDER.map(label => <li key={label}>{CLASS_LABELS[label]}: {(prediction.class_scores[label] * 100).toFixed(1)}%</li>)}</ul>
+              <ul className="score-list">{CLASS_ORDER.map(label => <li key={label}><span>{CLASS_LABELS[label]}: {(prediction.class_scores[label] * 100).toFixed(1)}%</span><meter min={0} max={1} value={prediction.class_scores[label]} aria-label={`${CLASS_LABELS[label]} model score`} /></li>)}</ul>
+              <p className="small-text">Scores describe model outputs, not a patient’s probability of disease.</p>
               {prediction.decision === 'uncertain' && <p>Uncertain is a predicted classification learned from uncertain-significance records.</p>}
               {prediction.confidence_status === 'low' && <p>The model has low confidence in this selection. This is separate from the Uncertain category.</p>}
               {prediction.confidence_status === 'not_assessed' && <p>Model confidence has not been assessed.</p>}
             </> : <p>Pathogenic {prediction.probability_kind === 'calibrated' ? 'probability' : 'score (uncalibrated)'}: {(prediction.pathogenic_probability * 100).toFixed(1)}% (saved legacy result)</p>}
             <p>{prediction.model_name} · {prediction.model_version}</p>
-          </> : <p>Model prediction unavailable. The model has not been connected yet.</p>}
+          </> : <p>Model prediction unavailable. {unavailableReason(analysis.prediction_reason)}</p>}
         </Card>
       </div>
       <Card>
         <h3>Why this prediction?</h3>
         {prediction?.explanation ? <>
-          <p>Contributions to the {CLASS_LABELS[prediction.explanation.output_target ?? 'pathogenic']} output in {prediction.explanation.output_space}. Positive values increase the output; negative values decrease it.</p>
-          <p>Base value: {prediction.explanation.base_value}. Explained value: {prediction.explanation.explained_value}.</p>
-          <ul>{prediction.explanation.features.map((feature, index) => <li key={index}>{feature.feature}: {String(feature.value ?? 'Not available')} — contribution {feature.contribution}</li>)}</ul>
-        </> : <p>No SHAP explanation is available for this analysis.</p>}
+          <ExplanationChart explanation={{ ...prediction.explanation, output_target: prediction.explanation.output_target ?? 'pathogenic' }} />
+        </> : <p>{prediction?.schema_version === 2 && prediction.explanation_status === 'failed' ? 'The explanation could not be generated. The prediction above is still available.' : 'No SHAP explanation is stored for this analysis.'}</p>}
       </Card>
     </>}
   </>

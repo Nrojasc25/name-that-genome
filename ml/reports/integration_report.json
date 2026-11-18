@@ -1,0 +1,83 @@
+{
+  "checks": {
+    "five_class_chart_rendering": "passed",
+    "frontend_build": "passed",
+    "frontend_lint": "passed",
+    "live_api_snapshot_access_tests": "passed",
+    "ml_tests": 60
+  },
+  "examples": [
+    {
+      "clinvar_id": 729975,
+      "confidence_status": "low",
+      "decision": "likely_benign",
+      "explanation_status": "available",
+      "timings_ms": {
+        "cache_hit": false,
+        "explanation": 83.55183317326009,
+        "features": 0.11987495236098766,
+        "prediction": 0.8044999558478594,
+        "total": 84.47620808146894
+      }
+    },
+    {
+      "clinvar_id": 2828440,
+      "confidence_status": "low",
+      "decision": "likely_benign",
+      "explanation_status": "available",
+      "timings_ms": {
+        "cache_hit": false,
+        "explanation": 67.39129195921123,
+        "features": 0.08845888078212738,
+        "prediction": 0.2898331731557846,
+        "total": 67.76958401314914
+      }
+    },
+    {
+      "clinvar_id": 703089,
+      "confidence_status": "low",
+      "decision": "likely_benign",
+      "explanation_status": "available",
+      "timings_ms": {
+        "cache_hit": false,
+        "explanation": 88.68775004521012,
+        "features": 0.0826660543680191,
+        "prediction": 0.2737920731306076,
+        "total": 89.04420817270875
+      }
+    },
+    {
+      "clinvar_id": 102871,
+      "confidence_status": "low",
+      "decision": "likely_benign",
+      "explanation_status": "available",
+      "timings_ms": {
+        "cache_hit": false,
+        "explanation": 76.5601668972522,
+        "features": 0.08179200813174248,
+        "prediction": 0.2816661726683378,
+        "total": 76.92362507805228
+      }
+    },
+    {
+      "clinvar_id": 614,
+      "confidence_status": "low",
+      "decision": "likely_pathogenic",
+      "explanation_status": "available",
+      "timings_ms": {
+        "cache_hit": false,
+        "explanation": 68.38941690512002,
+        "features": 0.08866703137755394,
+        "prediction": 0.308833085000515,
+        "total": 68.78691702149808
+      }
+    }
+  ],
+  "limitations": [
+    "Browser/device interaction QA not performed in this session.",
+    "Fresh-checkout artifact distribution remains future work.",
+    "Phase 5 performance gates remain failed."
+  ],
+  "release_approved": false,
+  "scope": "Local API integration research candidate; no change to training, calibration, evaluation, or SHAP artifacts."
+}

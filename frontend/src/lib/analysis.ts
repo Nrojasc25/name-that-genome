@@ -8,12 +8,22 @@ export const CLASS_LABELS: Record<VariantClass, string> = {
   pathogenic: 'Pathogenic',
 }
 
+export interface ShapFeature {
+  feature: string
+  value: string | number | boolean | null
+  contribution: number
+  members?: { feature: string; value: number | null; model_value: number }[] | null
+}
+
 export interface ShapExplanation {
   base_value: number
   explained_value: number
   output_space: 'probability' | 'log_odds' | 'raw_score'
   output_target: VariantClass
-  features: { feature: string; value: string | number | boolean | null; contribution: number }[]
+  features: ShapFeature[]
+  display_features?: ShapFeature[] | null
+  model_version?: string | null
+  background_version?: string | null
 }
 
 export interface Prediction {
@@ -28,6 +38,10 @@ export interface Prediction {
   probability_kind: 'calibrated' | 'uncalibrated'
   confidence_status: 'not_assessed' | 'low' | 'standard'
   explanation: ShapExplanation | null
+  release_status?: 'research_candidate_rejected' | null
+  explanation_status?: 'available' | 'failed' | 'not_assessed'
+  source_record_id?: string | null
+  normalized_variant_key?: string | null
 }
 
 export interface LegacyPrediction {
@@ -47,6 +61,7 @@ export interface Analysis {
   variant: {
     clinvar_variation_id: number
     source_records: {
+      record_id?: string
       hgvs: string | null
       genes: string[]
       chromosome: string
@@ -59,6 +74,7 @@ export interface Analysis {
       release_version: string
     }[]
   }
+  prediction_reason?: string | null
   prediction_status: 'available' | 'not_available'
   prediction: Prediction | LegacyPrediction | null
 }

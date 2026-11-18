@@ -70,7 +70,7 @@ class ContractTest(unittest.TestCase):
         for prediction in self.fixtures['five_class']:
             with self.subTest(decision=prediction['decision']):
                 parsed = Prediction.model_validate(prediction)
-                self.assertEqual(parsed.model_dump(mode='json'), prediction)
+                self.assertEqual(parsed.model_dump(mode='json', exclude_unset=True), prediction)
                 response = AnalysisResponse.model_validate(self.analysis(prediction))
                 self.assertIsInstance(response.prediction, Prediction)
 

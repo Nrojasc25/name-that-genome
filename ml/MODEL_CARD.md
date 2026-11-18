@@ -1,6 +1,6 @@
 # Five-class candidate model card
 
-Status as of 2026-11-18: **research candidate; rejected by project release gates**. No API integration or clinical-use claim.
+Status as of 2026-11-18: **research candidate; rejected by project release gates**. Phase 7 connects this candidate to the local research API/UI; no clinical-use claim.
 
 ## Intended task and scope
 
@@ -54,3 +54,7 @@ The [ML README](README.md) documents commands, dependencies, tests, and report r
 Interventional Tree SHAP uses 100 uniformly sampled training rows after training-only imputation. It explains raw class margins, not probabilities, causal mechanisms, or patient risk. All five class outputs passed additivity checks on 200 sampled previously evaluated variants. Full details and measured explanation latency are in the [SHAP report](reports/shap_report.md).
 
 Grouped consequence features dominate global mean absolute attributions for every class. Population missingness is also influential: the 1000 Genomes missingness indicator is the second-largest group for Benign, Uncertain, and Likely pathogenic in this sample. This supports further investigation of annotation-availability dependence; it does not establish leakage or biological relevance. The model's poor Likely pathogenic recall remains unresolved. Correlation, constrained feature combinations, background choice, and the small equally weighted evaluation samples limit interpretation.
+
+## Local integration
+
+Phase 7 serves the frozen candidate with all five uncalibrated scores, low-confidence flags, and selected-class raw-margin SHAP. The interface explicitly identifies failed release status. Missing artifacts or unsupported inputs produce unavailable reasons; SHAP failure retains valid scores. Saved analyses preserve predictions and explanation provenance without recomputation. See [integration checks](reports/integration_report.json). Release gates remain failed; this integration does not change the evaluation outcome.

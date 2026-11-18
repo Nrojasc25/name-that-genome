@@ -1,5 +1,54 @@
 # Machine Learning
 
+## Phase 7 status: local API, UI, and history integration complete
+
+The frozen candidate is connected on `feat/ml-api-inference`. Sign in and create a **new analysis** to see five model scores, the separate confidence flag, a research-candidate notice, and a SHAP chart for the predicted class. Guest demos remain explicitly fixed examples. Old history is read as stored; it is never recomputed or filled with invented scores.
+
+The candidate **still fails Phase 5 release gates**. As agreed, the next modeling work is to improve features/training and reevaluate using a fresh holdout reserved before tuning (or an explicitly documented reused-test study). Phase 7 is a local research integration, not model release approval or support for arbitrary unseen variants.
+
+### Setup and operation
+
+```bash
+.venv/bin/python -m pip install -r ml/requirements-inference.txt
+python3 dev.py
+```
+
+Artifacts must already exist at `ml/artifacts/training-v1-final`, `ml/artifacts/shap-v1-final`, `ml/artifacts/evaluation-v1`, and `ml/data/annotations-v1`. Earlier phase instructions describe their creation. The service verifies reviewed manifests and artifact checksums at startup, loads the model/explainer/cache once, and enforces package and schema compatibility. Start a new server process after changing artifacts. No automatic retraining, calibration, or test-set scoring occurs.
+
+Only exact normalized GRCh38 sequence alleles in the frozen cache and source release are supported. Unknown/unsupported inputs, missing annotations, load failures, and capacity limits return explicit unavailable reasons. A failed SHAP computation preserves a valid prediction. One worker owns the annotation connection and serializes model work; four active/queued requests and 128 cached successful outputs bound concurrency and cache growth. Cache identities include all model, SHAP, policy, and annotation versions.
+
+The UI separates ClinVar reference classification/conditions from model outputs. Percentages are labeled uncalibrated scores, not patient disease probability. Signed bars, numeric signs, and keyboard-operable details explain the selected raw class margin; grouped values and an Other features remainder preserve additivity. Snapshot provenance includes model, feature, annotation, dataset, background, and source-record identities. Legacy three-class and earlier five-class snapshots remain readable.
+
+### Validation
+
+Install test dependencies with `.venv/bin/python -m pip install -r ml/requirements-test.txt`. Run:
+
+```bash
+.venv/bin/python -m unittest discover -s ml/tests -v
+node frontend/scripts/test-explanations.cjs
+cd frontend
+npm run build
+npm run lint
+```
+
+Real-artifact integration tests cover five reference examples, label/metadata invariance, live API persistence, history isolation and no recomputation, unsupported sources/types, missing annotations/models, bounded capacity, and SHAP-failure recovery. Those tests skip if ignored local artifacts are absent. Existing fixtures cover all five decisions and legacy snapshots; server-side React checks render all five fixture explanations and five real grouped examples. Browser interaction and cross-device visual QA remain final delivery checks.
+
+**Verification:** 60 ML/backend tests passed, frontend build and lint passed, and all five fixture plus five real explanation charts rendered successfully. Five real local examples completed prediction plus SHAP in approximately 68–89 ms in the recorded smoke run (not a latency benchmark). See [integration evidence](reports/integration_report.json).
+
+### Phase 7 checklist
+
+- [x] Load verified artifacts once and connect supported single-variant inference.
+- [x] Preserve raw feature parity and model/version provenance.
+- [x] Return explicit failure reasons and retain predictions when explanations fail.
+- [x] Bound concurrent inference and cache size; record stage timings.
+- [x] Display all five scores, low confidence, candidate status, and accessible SHAP details.
+- [x] Preserve old and new saved snapshots without recomputation; verify access isolation.
+- [x] Update setup, API contract, About page, and research-scope wording.
+- [ ] Improve the candidate and pass the Phase 5 gates using an honest evaluation protocol.
+- [ ] Final artifact distribution, clean-checkout demo, browser/device QA, and release approval.
+
+---
+
 ## Phase 6 status: class-specific SHAP implemented for the research candidate
 
 All five class explanations are implemented on `feat/ml-shap`. The Phase 5 candidate **still fails release gates**; these explanations describe its behavior and do not improve its accuracy or make it suitable for clinical decisions. API/UI integration remains Phase 7.
@@ -840,7 +889,7 @@ Existing application features below were identified by repository inspection. Ph
 - [x] ClinVar ID and stored GRCh38 genomic HGVS lookup are implemented in backend/database.py.
 - [x] Lookup returns reference coordinates, genes, consequences, classification, conditions, and source metadata.
 - [x] Account/session handling and per-user JSON analysis history are implemented.
-- [x] The analysis endpoint calls a dedicated predict_variant hook; the hook currently returns None.
+- [x] The analysis endpoint now calls the versioned inference service; unsupported/missing-model cases remain explicit.
 - [x] Results UI separates ClinVar reference annotations from model output.
 - [x] Version 2 prediction/SHAP schemas and minimal results UI support all five classes, with legacy snapshot compatibility.
 - [x] Five required categories are confirmed by the user and documented in this plan.
@@ -857,9 +906,9 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Evaluate every class, assess calibration (rejected), and define confidence flags (all low).
 - [x] Record numeric acceptance targets before test access and complete the first held-out report; candidate rejected.
 - [x] Implement and verify all five class-specific SHAP explanations for the rejected research candidate.
-- [ ] Package/version trusted artifacts and connect live API inference.
-- [ ] Build five-category results, class-score display, and readable SHAP charts.
-- [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
+- [x] Connect live API inference with locally versioned trusted artifacts. Distribution packaging remains a final delivery task.
+- [x] Build five-category results, class-score display, and readable SHAP charts.
+- [x] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 6 offline SHAP complete. All five classes have verified raw-margin explanations and versioned background data. The model remains rejected by Phase 5 gates; API/UI integration and release approval remain outstanding.
+**Current milestone:** Phase 7 local integration complete. Next: revisit Phase 5 failures through feature/training improvements, reserving fresh evaluation data before tuning. Model release approval and final delivery checks remain outstanding.

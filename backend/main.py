@@ -32,7 +32,13 @@ COOKIE_NAME = "ntg_session"
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     store.initialize_database()
-    yield
+    from ml.inference import InferenceService
+    app.state.inference = InferenceService()
+    try:
+        yield
+    finally:
+        app.state.inference.close()
+        del app.state.inference
 
 
 app = FastAPI(title="Name That Genome API", version="0.2.0", lifespan=lifespan)
@@ -98,6 +104,8 @@ class AnalysisResponse(BaseModel):
     variant: dict
     prediction_status: Literal["not_available", "available"]
     prediction: StoredPrediction | None
+    prediction_reason: str | None = None
+    timings_ms: dict | None = None
 
 
 class HistoryResponse(BaseModel):
@@ -243,17 +251,25 @@ def lookup_variant(body: VariantInput) -> dict:
 
 
 def predict_variant(record: dict) -> Prediction | None:
-    """Model hook; returns None until inference is implemented."""
-    return None
+    """Compatibility hook for a single source record."""
+    if not hasattr(app.state, "inference"):
+        return None
+    result = app.state.inference.predict([record])
+    return Prediction.model_validate(result["prediction"]) if result["prediction"] else None
 
 
 @app.post("/api/analyses", response_model=AnalysisResponse, status_code=201)
 def analyze(body: VariantInput, user: User):
+    lookup_start = time.perf_counter()
     variant = lookup_variant(body)
     if not variant["source_records"]:
         raise HTTPException(404, "No source record is available for this variant.")
-    prediction = predict_variant(variant["source_records"][0])
+    lookup_done = time.perf_counter()
+    result = app.state.inference.predict(variant["source_records"])
+    prediction = Prediction.model_validate(result['prediction']) if result['prediction'] else None
     return store.save_analysis(user["id"], {
+        "prediction_reason": result.get("prediction_reason"),
+        "timings_ms": {**(result.get("timings_ms") or {}), "lookup": (lookup_done-lookup_start)*1000},
         "input": body.variant.strip(),
         "variant": variant,
         "prediction_status": "available" if prediction is not None else "not_available",

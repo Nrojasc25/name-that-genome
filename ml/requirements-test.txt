@@ -1,0 +1,4 @@
+-r requirements-evaluation.txt
+-r ../backend/requirements.txt
+# Required by the installed Starlette TestClient.
+httpx2==2.16.2

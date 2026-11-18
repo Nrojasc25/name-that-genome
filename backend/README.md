@@ -81,7 +81,17 @@ The link opens `/forgot-password/new-password#token=...`. Read `token` from the 
 
 ## Prediction and SHAP
 
-No model is connected yet. New analyses continue to return `prediction_status: "not_available"` and `prediction: null`.
+Phase 7 connects the frozen research candidate when the local artifacts are installed. New supported analyses return five uncalibrated scores, a low-confidence flag, and a selected-class raw-margin SHAP explanation. The candidate has failed its release criteria; it is not an approved clinical model.
+
+Install inference dependencies from the repository root with `.venv/bin/python -m pip install -r ml/requirements-inference.txt`. The local service expects `ml/artifacts/training-v1-final/`, `ml/artifacts/shap-v1-final/`, `ml/artifacts/evaluation-v1/evaluation_policy.json`, and `ml/data/annotations-v1/`. See the [ML README](../ml/README.md) for build instructions. Artifacts remain ignored and are not downloaded automatically.
+
+Startup checks reviewed manifest hashes, model/background/cache checksums, schema/class order, provenance, and pinned NumPy/XGBoost/SHAP versions. Missing or invalid artifacts leave lookup/history usable and produce a structured `prediction_reason`. One inference worker owns the SQLite annotation connection; at most four requests may be active/queued. A 128-entry LRU stores successful outputs keyed by normalized variant plus model, explanation, policy, and annotation identities.
+
+Only the pinned GRCh38 release and exact normalized sequence alleles in the cache are supported. No new normalization or live annotation is attempted. The full source-record list is searched for the supported release rather than blindly predicting from the first record. Classification, conditions, genes, and review status are not inputs to prediction.
+
+Unavailable reasons: `model_missing`, `model_load_failed`, `unsupported_source`, `ambiguous_source`, `unsupported_variant`, `annotation_missing`, `features_invalid`, `busy`, or `prediction_failed`. Unknown lookup IDs still return HTTP 404; invalid lookup syntax returns HTTP 422. `timings_ms` records lookup, features, prediction, explanation, and total inference time, or a cache-hit time.
+
+If SHAP fails, valid scores are retained with `explanation: null` and `explanation_status: failed`. Failed explanation results are not memoized, so a new analysis can retry. History always reads the stored snapshot without recomputing it.
 
 ### Five-class prediction (schema version 2)
 
@@ -100,7 +110,7 @@ The decision is the maximum-scoring class. Exact ties choose the first class in 
 
 An explanation contains `base_value`, `explained_value`, `output_space` (`probability`, `log_odds`, or `raw_score`), a required `output_target` using the five-class enum, and `features`. Each feature has `feature`, `value` (string, number, boolean, or null), and finite `contribution`.
 
-Positive contributions increase the named target's output in the stated output space; negative contributions decrease it. Raw multiclass margins must not be described as calibrated probabilities. SHAP computation and additivity checks will be implemented with the model.
+Positive contributions increase the named target's output in the stated output space; negative contributions decrease it. Raw multiclass margins must not be described as calibrated probabilities. SHAP computation and full/display additivity checks are implemented. New explanations include `model_version`, `background_version`, `display_features`, and group `members` retaining original and imputed values. New predictions include `release_status: research_candidate_rejected`, `explanation_status`, `source_record_id`, and `normalized_variant_key`. These fields are optional/defaulted when reading older version 2 snapshots; existing JSON is not migrated.
 
 ### Legacy saved results
 

@@ -58,3 +58,7 @@ Grouped consequence features dominate global mean absolute attributions for ever
 ## Local integration
 
 Phase 7 serves the frozen candidate with all five uncalibrated scores, low-confidence flags, and selected-class raw-margin SHAP. The interface explicitly identifies failed release status. Missing artifacts or unsupported inputs produce unavailable reasons; SHAP failure retains valid scores. Saved analyses preserve predictions and explanation provenance without recomputation. See [integration checks](reports/integration_report.json). Release gates remain failed; this integration does not change the evaluation outcome.
+
+## Separate conservation-enriched development candidate
+
+The Phase 5 follow-up produced `conservation-depth8-lp1.5`, refitted only on the original training partition with two additional experimental conservation columns. Its training OOF macro-F1 is 0.6743 and Likely pathogenic recall is 40.4%; all existing pooled discrimination criteria pass on those selection estimates. These are not independent test results, and the candidate is not calibrated, approved, serving-compatible, or deployed. The active model described above remains unchanged. See [IMPROVEMENT.md](IMPROVEMENT.md) for both failed and improved experiments, tradeoffs, and remaining evaluation requirements.

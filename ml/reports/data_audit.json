@@ -1,0 +1,1116 @@
+{
+  "annotation_note": "Presence is not validation, numeric parsing, or independent annotation evidence.",
+  "assemblies": {
+    "GRCh38": 36065
+  },
+  "chromosomes": {
+    "1": 1092,
+    "12": 1735,
+    "13": 3749,
+    "15": 9332,
+    "17": 3626,
+    "6": 6893,
+    "7": 6160,
+    "X": 3478
+  },
+  "class_by_consequence_before_review": {
+    "(missing)": {
+      "benign": 8,
+      "likely_benign": 15,
+      "likely_pathogenic": 22,
+      "pathogenic": 29,
+      "uncertain": 116
+    },
+    "3_prime_UTR_variant": {
+      "benign": 38,
+      "likely_benign": 18,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 194
+    },
+    "5_prime_UTR_variant": {
+      "benign": 14,
+      "likely_benign": 88,
+      "likely_pathogenic": 40,
+      "pathogenic": 20,
+      "uncertain": 157
+    },
+    "frameshift_variant": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 1138,
+      "pathogenic": 1963,
+      "uncertain": 24
+    },
+    "genic_downstream_transcript_variant": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 8,
+      "uncertain": 0
+    },
+    "genic_upstream_transcript_variant": {
+      "benign": 2,
+      "likely_benign": 2,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 7
+    },
+    "inframe_deletion": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 57,
+      "pathogenic": 40,
+      "uncertain": 121
+    },
+    "inframe_indel": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 14,
+      "pathogenic": 11,
+      "uncertain": 39
+    },
+    "inframe_insertion": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 8,
+      "pathogenic": 7,
+      "uncertain": 42
+    },
+    "initiator_codon_variant": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 6,
+      "pathogenic": 26,
+      "uncertain": 2
+    },
+    "intron_variant": {
+      "benign": 710,
+      "likely_benign": 4037,
+      "likely_pathogenic": 261,
+      "pathogenic": 247,
+      "uncertain": 1531
+    },
+    "missense_variant": {
+      "benign": 64,
+      "likely_benign": 194,
+      "likely_pathogenic": 1959,
+      "pathogenic": 1168,
+      "uncertain": 9090
+    },
+    "no_sequence_alteration": {
+      "benign": 4,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "non-coding_transcript_variant": {
+      "benign": 6,
+      "likely_benign": 7,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 4
+    },
+    "nonsense": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 492,
+      "pathogenic": 1108,
+      "uncertain": 14
+    },
+    "splice_acceptor_variant": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 278,
+      "pathogenic": 298,
+      "uncertain": 26
+    },
+    "splice_donor_variant": {
+      "benign": 0,
+      "likely_benign": 2,
+      "likely_pathogenic": 326,
+      "pathogenic": 349,
+      "uncertain": 30
+    },
+    "stop_lost": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 3,
+      "pathogenic": 0,
+      "uncertain": 11
+    },
+    "synonymous_variant": {
+      "benign": 80,
+      "likely_benign": 5785,
+      "likely_pathogenic": 15,
+      "pathogenic": 14,
+      "uncertain": 337
+    }
+  },
+  "class_by_gene_before_review": {
+    "ACADM": {
+      "benign": 50,
+      "likely_benign": 301,
+      "likely_pathogenic": 165,
+      "pathogenic": 107,
+      "uncertain": 260
+    },
+    "ALG11": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "ASCL1": {
+      "benign": 4,
+      "likely_benign": 10,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 17
+    },
+    "ATP7B": {
+      "benign": 69,
+      "likely_benign": 1144,
+      "likely_pathogenic": 331,
+      "pathogenic": 336,
+      "uncertain": 1268
+    },
+    "CCDC40": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 2
+    },
+    "CFTR": {
+      "benign": 74,
+      "likely_benign": 1538,
+      "likely_pathogenic": 382,
+      "pathogenic": 822,
+      "uncertain": 2516
+    },
+    "CFTR-AS1": {
+      "benign": 21,
+      "likely_benign": 149,
+      "likely_pathogenic": 59,
+      "pathogenic": 71,
+      "uncertain": 205
+    },
+    "CFTR-AS2": {
+      "benign": 14,
+      "likely_benign": 311,
+      "likely_pathogenic": 88,
+      "pathogenic": 189,
+      "uncertain": 505
+    },
+    "COL4A5": {
+      "benign": 130,
+      "likely_benign": 873,
+      "likely_pathogenic": 673,
+      "pathogenic": 572,
+      "uncertain": 593
+    },
+    "FBN1": {
+      "benign": 161,
+      "likely_benign": 1968,
+      "likely_pathogenic": 1128,
+      "pathogenic": 1982,
+      "uncertain": 2760
+    },
+    "GAA": {
+      "benign": 143,
+      "likely_benign": 1137,
+      "likely_pathogenic": 354,
+      "pathogenic": 414,
+      "uncertain": 1192
+    },
+    "LOC111674463": {
+      "benign": 3,
+      "likely_benign": 16,
+      "likely_pathogenic": 0,
+      "pathogenic": 2,
+      "uncertain": 79
+    },
+    "LOC111674464": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC111674467": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 1,
+      "pathogenic": 1,
+      "uncertain": 2
+    },
+    "LOC111674468": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 1
+    },
+    "LOC111674472": {
+      "benign": 5,
+      "likely_benign": 114,
+      "likely_pathogenic": 31,
+      "pathogenic": 84,
+      "uncertain": 182
+    },
+    "LOC111674474": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 2
+    },
+    "LOC111674475": {
+      "benign": 1,
+      "likely_benign": 42,
+      "likely_pathogenic": 11,
+      "pathogenic": 26,
+      "uncertain": 54
+    },
+    "LOC111674477": {
+      "benign": 1,
+      "likely_benign": 54,
+      "likely_pathogenic": 12,
+      "pathogenic": 11,
+      "uncertain": 111
+    },
+    "LOC113219471": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 1
+    },
+    "LOC113219472": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113633874": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113633875": {
+      "benign": 1,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113633876": {
+      "benign": 0,
+      "likely_benign": 2,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 0
+    },
+    "LOC113633877": {
+      "benign": 0,
+      "likely_benign": 4,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 2
+    },
+    "LOC113664106": {
+      "benign": 0,
+      "likely_benign": 16,
+      "likely_pathogenic": 4,
+      "pathogenic": 13,
+      "uncertain": 17
+    },
+    "LOC113939944": {
+      "benign": 1,
+      "likely_benign": 40,
+      "likely_pathogenic": 19,
+      "pathogenic": 30,
+      "uncertain": 46
+    },
+    "LOC123744820": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC126859690": {
+      "benign": 2,
+      "likely_benign": 82,
+      "likely_pathogenic": 45,
+      "pathogenic": 16,
+      "uncertain": 110
+    },
+    "LOC126860160": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 2
+    },
+    "LOC126861615": {
+      "benign": 3,
+      "likely_benign": 12,
+      "likely_pathogenic": 24,
+      "pathogenic": 25,
+      "uncertain": 24
+    },
+    "LOC126862124": {
+      "benign": 5,
+      "likely_benign": 33,
+      "likely_pathogenic": 16,
+      "pathogenic": 31,
+      "uncertain": 35
+    },
+    "LOC129930773": {
+      "benign": 2,
+      "likely_benign": 4,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC130009838": {
+      "benign": 3,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 15
+    },
+    "LOC130009841": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC130057018": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC130057019": {
+      "benign": 1,
+      "likely_benign": 12,
+      "likely_pathogenic": 4,
+      "pathogenic": 4,
+      "uncertain": 23
+    },
+    "LOC130057020": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 5
+    },
+    "LOC130061897": {
+      "benign": 3,
+      "likely_benign": 6,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 4
+    },
+    "LOC130061898": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "PAH": {
+      "benign": 64,
+      "likely_benign": 359,
+      "likely_pathogenic": 410,
+      "pathogenic": 445,
+      "uncertain": 350
+    },
+    "PKHD1": {
+      "benign": 216,
+      "likely_benign": 2408,
+      "likely_pathogenic": 937,
+      "pathogenic": 350,
+      "uncertain": 2143
+    },
+    "TMEM272": {
+      "benign": 5,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 41
+    }
+  },
+  "class_counts_after_label_policy": {
+    "benign": 906,
+    "likely_benign": 9621,
+    "likely_pathogenic": 4015,
+    "pathogenic": 4812,
+    "uncertain": 9823
+  },
+  "class_counts_review_stars_at_least_two": {
+    "benign": 360,
+    "likely_benign": 1963,
+    "likely_pathogenic": 935,
+    "pathogenic": 1708,
+    "uncertain": 3081
+  },
+  "coordinate_note": "Stored source coordinates; canonical normalized counts require the reference-backed build.",
+  "exact_class_counts_before_review_filter": {
+    "benign": 907,
+    "likely_benign": 9728,
+    "likely_pathogenic": 4380,
+    "pathogenic": 5028,
+    "uncertain": 11082
+  },
+  "exclusion_counts": {
+    "combined_classification": 2038,
+    "complex_sequence_change": 362,
+    "conflicting_classification": 2366,
+    "indel_exceeds_max_length": 75,
+    "insufficient_review_stars": 1948,
+    "missing_classification": 497,
+    "symbolic_or_ambiguous_allele": 8,
+    "unsupported_classification": 39,
+    "unsupported_variant_type": 344
+  },
+  "final_class_by_consequence": {
+    "(missing)": {
+      "benign": 8,
+      "likely_benign": 6,
+      "likely_pathogenic": 16,
+      "pathogenic": 12,
+      "uncertain": 46
+    },
+    "3_prime_UTR_variant": {
+      "benign": 38,
+      "likely_benign": 18,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 190
+    },
+    "5_prime_UTR_variant": {
+      "benign": 12,
+      "likely_benign": 71,
+      "likely_pathogenic": 36,
+      "pathogenic": 18,
+      "uncertain": 123
+    },
+    "frameshift_variant": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 893,
+      "pathogenic": 1713,
+      "uncertain": 11
+    },
+    "genic_downstream_transcript_variant": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 0
+    },
+    "genic_upstream_transcript_variant": {
+      "benign": 2,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 5
+    },
+    "inframe_deletion": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 40,
+      "pathogenic": 28,
+      "uncertain": 70
+    },
+    "inframe_indel": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 6,
+      "pathogenic": 10,
+      "uncertain": 20
+    },
+    "inframe_insertion": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 6,
+      "pathogenic": 6,
+      "uncertain": 33
+    },
+    "initiator_codon_variant": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 6,
+      "pathogenic": 24,
+      "uncertain": 2
+    },
+    "intron_variant": {
+      "benign": 672,
+      "likely_benign": 3912,
+      "likely_pathogenic": 234,
+      "pathogenic": 237,
+      "uncertain": 1275
+    },
+    "missense_variant": {
+      "benign": 64,
+      "likely_benign": 188,
+      "likely_pathogenic": 1784,
+      "pathogenic": 1103,
+      "uncertain": 8276
+    },
+    "no_sequence_alteration": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "non-coding_transcript_variant": {
+      "benign": 6,
+      "likely_benign": 5,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 4
+    },
+    "nonsense": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 432,
+      "pathogenic": 1042,
+      "uncertain": 10
+    },
+    "splice_acceptor_variant": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 233,
+      "pathogenic": 242,
+      "uncertain": 20
+    },
+    "splice_donor_variant": {
+      "benign": 0,
+      "likely_benign": 2,
+      "likely_pathogenic": 272,
+      "pathogenic": 286,
+      "uncertain": 20
+    },
+    "stop_lost": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 8
+    },
+    "synonymous_variant": {
+      "benign": 80,
+      "likely_benign": 5751,
+      "likely_pathogenic": 13,
+      "pathogenic": 14,
+      "uncertain": 151
+    }
+  },
+  "final_class_by_gene": {
+    "ACADM": {
+      "benign": 48,
+      "likely_benign": 300,
+      "likely_pathogenic": 147,
+      "pathogenic": 101,
+      "uncertain": 193
+    },
+    "ALG11": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "ASCL1": {
+      "benign": 2,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 12
+    },
+    "ATP7B": {
+      "benign": 68,
+      "likely_benign": 1134,
+      "likely_pathogenic": 290,
+      "pathogenic": 317,
+      "uncertain": 1165
+    },
+    "CCDC40": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 2
+    },
+    "CFTR": {
+      "benign": 63,
+      "likely_benign": 1494,
+      "likely_pathogenic": 299,
+      "pathogenic": 729,
+      "uncertain": 2231
+    },
+    "CFTR-AS1": {
+      "benign": 12,
+      "likely_benign": 136,
+      "likely_pathogenic": 37,
+      "pathogenic": 60,
+      "uncertain": 182
+    },
+    "CFTR-AS2": {
+      "benign": 14,
+      "likely_benign": 304,
+      "likely_pathogenic": 73,
+      "pathogenic": 167,
+      "uncertain": 446
+    },
+    "COL4A5": {
+      "benign": 130,
+      "likely_benign": 861,
+      "likely_pathogenic": 613,
+      "pathogenic": 511,
+      "uncertain": 514
+    },
+    "FBN1": {
+      "benign": 148,
+      "likely_benign": 1936,
+      "likely_pathogenic": 909,
+      "pathogenic": 1752,
+      "uncertain": 2657
+    },
+    "GAA": {
+      "benign": 141,
+      "likely_benign": 1113,
+      "likely_pathogenic": 333,
+      "pathogenic": 380,
+      "uncertain": 1110
+    },
+    "LOC111674463": {
+      "benign": 3,
+      "likely_benign": 7,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 32
+    },
+    "LOC111674464": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC111674467": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 2
+    },
+    "LOC111674468": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC111674472": {
+      "benign": 5,
+      "likely_benign": 114,
+      "likely_pathogenic": 29,
+      "pathogenic": 69,
+      "uncertain": 162
+    },
+    "LOC111674474": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 2
+    },
+    "LOC111674475": {
+      "benign": 1,
+      "likely_benign": 41,
+      "likely_pathogenic": 10,
+      "pathogenic": 22,
+      "uncertain": 46
+    },
+    "LOC111674477": {
+      "benign": 1,
+      "likely_benign": 54,
+      "likely_pathogenic": 8,
+      "pathogenic": 7,
+      "uncertain": 100
+    },
+    "LOC113219471": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113219472": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113633874": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC113633875": {
+      "benign": 1,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC113633876": {
+      "benign": 0,
+      "likely_benign": 2,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC113633877": {
+      "benign": 0,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 1
+    },
+    "LOC113664106": {
+      "benign": 0,
+      "likely_benign": 16,
+      "likely_pathogenic": 3,
+      "pathogenic": 13,
+      "uncertain": 15
+    },
+    "LOC113939944": {
+      "benign": 1,
+      "likely_benign": 38,
+      "likely_pathogenic": 18,
+      "pathogenic": 28,
+      "uncertain": 46
+    },
+    "LOC123744820": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC126859690": {
+      "benign": 2,
+      "likely_benign": 80,
+      "likely_pathogenic": 39,
+      "pathogenic": 15,
+      "uncertain": 74
+    },
+    "LOC126860160": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC126861615": {
+      "benign": 3,
+      "likely_benign": 12,
+      "likely_pathogenic": 24,
+      "pathogenic": 24,
+      "uncertain": 22
+    },
+    "LOC126862124": {
+      "benign": 5,
+      "likely_benign": 30,
+      "likely_pathogenic": 12,
+      "pathogenic": 27,
+      "uncertain": 35
+    },
+    "LOC129930773": {
+      "benign": 2,
+      "likely_benign": 4,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC130009838": {
+      "benign": 3,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 1,
+      "uncertain": 11
+    },
+    "LOC130009841": {
+      "benign": 0,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 1
+    },
+    "LOC130057018": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "LOC130057019": {
+      "benign": 1,
+      "likely_benign": 12,
+      "likely_pathogenic": 3,
+      "pathogenic": 4,
+      "uncertain": 22
+    },
+    "LOC130057020": {
+      "benign": 0,
+      "likely_benign": 1,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 5
+    },
+    "LOC130061897": {
+      "benign": 3,
+      "likely_benign": 4,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 4
+    },
+    "LOC130061898": {
+      "benign": 1,
+      "likely_benign": 0,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 0
+    },
+    "PAH": {
+      "benign": 60,
+      "likely_benign": 349,
+      "likely_pathogenic": 384,
+      "pathogenic": 420,
+      "uncertain": 318
+    },
+    "PKHD1": {
+      "benign": 205,
+      "likely_benign": 2358,
+      "likely_pathogenic": 796,
+      "pathogenic": 313,
+      "uncertain": 1498
+    },
+    "TMEM272": {
+      "benign": 5,
+      "likely_benign": 3,
+      "likely_pathogenic": 0,
+      "pathogenic": 0,
+      "uncertain": 41
+    }
+  },
+  "final_missingness": {
+    "consequences": 88,
+    "genes": 0
+  },
+  "inventory": {
+    "releases": [
+      {
+        "assembly": "GRCh38",
+        "id": "971123de-ac78-40ad-b45b-a1e8303c4fdc",
+        "imported_at": "2026-09-17 20:09:32.399228",
+        "sha256": "47ea3626cd90154d82304afe3b8f717aab2557a1330f4ea2c809892386e08d49",
+        "source": "ClinVar",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar_20260913.vcf.gz",
+        "version": "2026-09-13"
+      }
+    ],
+    "tables": {
+      "alembic_version": 1,
+      "annotation": 0,
+      "annotation_run": 1,
+      "clinvar_record": 36065,
+      "condition_link": 59864,
+      "dataset": 1,
+      "dataset_member": 36065,
+      "evaluation": 0,
+      "evidence": 0,
+      "explanation": 0,
+      "feature_set": 1,
+      "feature_vector": 20996,
+      "gene": 44,
+      "model_version": 0,
+      "prediction": 0,
+      "record_consequence": 37741,
+      "record_gene": 39905,
+      "selection_policy": 1,
+      "shap_contribution": 0,
+      "source_release": 1,
+      "variant": 36065,
+      "variant_locus": 36065
+    }
+  },
+  "missingness": {
+    "classification": 365,
+    "condition_links": 371,
+    "consequences": 209,
+    "genes": 0,
+    "review_stars": 365
+  },
+  "normalization": {
+    "duplicate_groups": 0,
+    "label_disagreement_groups": 0,
+    "normalized_changed_records": 0,
+    "normalized_unique_keys": 35618
+  },
+  "raw_annotation_presence": {
+    "AF_ESP": 1715,
+    "AF_EXAC": 5122,
+    "AF_TGP": 2185,
+    "CLNHGVS": 36065,
+    "GENEINFO": 36065,
+    "MC": 35856
+  },
+  "raw_labels": {
+    "Benign": 907,
+    "Benign/Likely_benign": 346,
+    "Benign/Likely_benign|other": 1,
+    "Benign|other": 2,
+    "Conflicting_classifications_of_pathogenicity": 2366,
+    "Likely_benign": 9728,
+    "Likely_pathogenic": 4380,
+    "None": 365,
+    "Pathogenic": 5028,
+    "Pathogenic/Likely_pathogenic": 1692,
+    "Pathogenic/Likely_pathogenic|other": 1,
+    "Pathogenic|drug_response": 17,
+    "Uncertain_significance": 11082,
+    "drug_response": 12,
+    "no_classification_for_the_single_variant": 6,
+    "not_provided": 132
+  },
+  "records": 36065,
+  "reference_issues": {},
+  "release": {
+    "assembly": "GRCh38",
+    "id": "971123de-ac78-40ad-b45b-a1e8303c4fdc",
+    "imported_at": "2026-09-17 20:09:32.399228",
+    "sha256": "47ea3626cd90154d82304afe3b8f717aab2557a1330f4ea2c809892386e08d49",
+    "source": "ClinVar",
+    "source_url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar_20260913.vcf.gz",
+    "version": "2026-09-13"
+  },
+  "review_stars": {
+    "0": 2091,
+    "1": 23345,
+    "2": 8540,
+    "3": 1701,
+    "4": 23,
+    "None": 365
+  },
+  "review_status": {
+    "None": 365,
+    "criteria_provided,_conflicting_classifications": 2361,
+    "criteria_provided,_multiple_submitters,_no_conflicts": 8540,
+    "criteria_provided,_single_submitter": 20984,
+    "no_assertion_criteria_provided": 1953,
+    "no_classification_for_the_single_variant": 6,
+    "no_classification_provided": 132,
+    "practice_guideline": 23,
+    "reviewed_by_expert_panel": 1701
+  },
+  "selected_genes_from_import_metadata": [
+    "ACADM",
+    "ATP7B",
+    "CFTR",
+    "COL4A5",
+    "FBN1",
+    "GAA",
+    "PAH",
+    "PKHD1"
+  ],
+  "source_normalization": {
+    "source_vcf": 36065
+  },
+  "stages": [
+    {
+      "class_counts": {
+        "benign": 907,
+        "likely_benign": 9728,
+        "likely_pathogenic": 4380,
+        "pathogenic": 5028,
+        "uncertain": 11082
+      },
+      "name": "source (exact labels before review)",
+      "records": 36065
+    },
+    {
+      "class_counts": {
+        "benign": 906,
+        "likely_benign": 9621,
+        "likely_pathogenic": 4015,
+        "pathogenic": 4812,
+        "uncertain": 9823
+      },
+      "name": "label/review eligible",
+      "records": 29177
+    },
+    {
+      "class_counts": {
+        "benign": 863,
+        "likely_benign": 9545,
+        "likely_pathogenic": 3771,
+        "pathogenic": 4523,
+        "uncertain": 9686
+      },
+      "name": "supported sequence after normalization",
+      "records": 28388
+    },
+    {
+      "class_counts": {
+        "benign": 863,
+        "likely_benign": 9545,
+        "likely_pathogenic": 3771,
+        "pathogenic": 4523,
+        "uncertain": 9686
+      },
+      "name": "reference validated",
+      "records": 28388
+    },
+    {
+      "class_counts": {
+        "benign": 863,
+        "likely_benign": 9545,
+        "likely_pathogenic": 3771,
+        "pathogenic": 4523,
+        "uncertain": 9686
+      },
+      "name": "deduplicated, no label conflicts",
+      "records": 28388
+    }
+  ],
+  "stored_coordinate_keys": 36065,
+  "variant_types": {
+    "Deletion": 3220,
+    "Duplication": 1109,
+    "Indel": 411,
+    "Insertion": 221,
+    "Inversion": 18,
+    "Microsatellite": 417,
+    "Variation": 2,
+    "single_nucleotide_variant": 30667
+  }
+}

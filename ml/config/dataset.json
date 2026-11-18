@@ -1,0 +1,23 @@
+{
+  "dataset_version": "clinvar-eight-gene-five-class-v1",
+  "release_id": "971123de-ac78-40ad-b45b-a1e8303c4fdc",
+  "release_version": "2026-09-13",
+  "assembly": "GRCh38",
+  "max_indel_length": 49,
+  "allowed_source_types": [
+    "single_nucleotide_variant",
+    "Deletion",
+    "Insertion",
+    "Duplication",
+    "Indel"
+  ],
+  "minimum_examples_per_class": 100,
+  "snapshot_url": "https://github.com/Nrojasc25/name-that-genome/releases/download/clinvar-data-v1/variants.sqlite",
+  "reference": {
+    "name": "UCSC hg38 GRCh38 primary chromosome sequences",
+    "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz",
+    "checksum_url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/md5sum.txt",
+    "compressed_md5": "1c9dcaddfa41027f17cd8f7a82c7293b"
+  },
+  "source_database_sha256": "14c0c14afc05f73e3e5ed417ab7fcdc0855a9e7b6e6a0d337d5bec54724b193d"
+}

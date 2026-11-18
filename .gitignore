@@ -29,3 +29,7 @@ dist-ssr
 .venv/
 __pycache__/
 *.py[cod]
+
+# Reproducible ML data and large artifacts (keep reports/configuration in Git)
+/ml/data/
+/ml/artifacts/

@@ -1,5 +1,100 @@
 # Machine Learning
 
+## Phase 2 status: implemented for the published eight-gene snapshot
+
+The real ClinVar dataset has been audited, checked against GRCh38, normalized with pinned bcftools, and exported without changing the source database. The target genes recorded by the import are **ACADM, ATP7B, CFTR, COL4A5, FBN1, GAA, PAH, and PKHD1**. Overlapping gene annotations also occur. This dataset does not cover all ClinVar or establish genome-wide performance.
+
+### Real build results
+
+| Category | Retained unique variants |
+|---|---:|
+| Benign | 863 |
+| Likely benign | 9,545 |
+| Uncertain | 9,686 |
+| Likely pathogenic | 3,771 |
+| Pathogenic | 4,523 |
+| **Total** | **28,388** |
+
+Source: 36,065 records in release **2026-09-13**. Excluded: **7,677**, with one final reason per record plus independent label/sequence/reference reasons. The eligible sequence records matched the reference; normalization found no duplicate groups or representation changes in this snapshot. Synthetic tests verify that non-normalized indels and disagreements are handled correctly when present.
+
+Read [the real dataset audit](reports/data_audit.md), [detailed audit counts](reports/data_audit.json), and [the frozen build manifest](reports/dataset_manifest.json). These are real-data reports, unlike the optional Phase 1 label-policy examples.
+
+### Install offline data tools
+
+From the repository root, after backend setup:
+
+```bash
+.venv/bin/python -m pip install -r ml/requirements.txt
+```
+
+The tested environment is Python 3.12 on macOS. Use a compatible Linux/WSL environment for the offline normalization workflow if native Windows dependencies are unavailable. ML dependencies are separate from the API's runtime requirements.
+
+### Reproduce Phase 2 from a clean checkout
+
+Obtain `backend/data/variants.sqlite` from the [published snapshot](https://github.com/Nrojasc25/name-that-genome/releases/download/clinvar-data-v1/variants.sqlite), following the backend README. `ml/config/dataset.json` pins its SHA-256, release ID/version, GRCh38 assembly, maximum indel length, and reference identity. A changed snapshot fails the build instead of silently selecting a new release.
+
+```bash
+# Audit the selected source; no reference download required for this inventory.
+.venv/bin/python -m ml.audit_data
+
+# About 938 MB compressed / 3 GB unpacked; stored outside Git.
+mkdir -p ml/data/reference
+curl --fail --location https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz --output ml/data/reference/hg38.fa.gz
+.venv/bin/python -m ml.prepare_reference ml/data/reference/hg38.fa.gz
+
+# Uses the indexed FASTA and its verified checksum manifest.
+.venv/bin/python -m ml.build_dataset --reference ml/data/reference/hg38.fa --reference-manifest ml/data/reference/hg38.manifest.json --output ml/data/clinvar-five-class-v1
+
+# Includes Phase 1 and tiny synthetic FASTA/SQLite normalization tests.
+.venv/bin/python -m unittest discover -s ml/tests -v
+```
+
+When known, supply `--download-date YYYY-MM-DD` to `ml.prepare_reference`; do not guess an earlier download date. Preparation verifies the pinned official compressed MD5 and records compressed/uncompressed SHA-256 plus the FASTA index checksum. The initial local download occurred November 17, 2026. Reuse an already prepared reference instead of unpacking it again. Both reference preparation and dataset building refuse to overwrite existing output; use a fresh output directory for comparison builds.
+
+### Selection and normalization policy
+
+- Read only the configured source release and its ClinVar germline classification field. Ignore existing binary-oriented `dataset_member`/model tables in the source database.
+- Accept primary GRCh38 chromosome aliases (`1`/`chr1`, `X`/`chrX`, `MT`/`chrM`) explicitly. Do not guess RefSeq aliases or lift between assemblies.
+- Validate A/C/G/T alleles, positive 1-based positions, contig bounds, and REF sequence. Exclude symbolic, ambiguous, multiallelic, and unsupported source types with reasons.
+- Run **bcftools 1.23.1 through pysam 0.24.0**, with reference validation and left alignment. Never swap alleles to repair a mismatch. Accept normalized simple SNVs and insertions/deletions of **1-49 bases**; exclude complex substitutions and larger indels.
+- Check normalized duplicate groups even when some members have ineligible labels. Quarantine label disagreements. For consistent eligible duplicates, choose highest review stars, then lowest ClinVar variation ID, then record ID; retain all source/ClinVar IDs for traceability.
+- Emit one representative per canonical assembly/chromosome/position/ref/alt key. Every source row is accounted for as a representative or an exclusion, including duplicate rows.
+- Require at least 100 unique examples in each class as an initial feasibility gate. This does not prove that a gene-held-out split is feasible or that any model will perform well.
+
+The reference/normalization procedure follows the [UCSC reference distribution and checksums](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/) and [bcftools normalization documentation](https://samtools.github.io/bcftools/bcftools#norm).
+
+### Output files
+
+Large/intermediate files live in ignored `ml/data/`; compact reports live in `ml/reports/` for review.
+
+| File | Purpose |
+|---|---|
+| `variants.parquet` | One row per validated canonical variant, five-class target, gene/consequence annotations, and source IDs. |
+| `exclusions.parquet` | Every excluded source row, original allele, normalized key when available, and explicit reasons. |
+| `source_membership.parquet` | Every source row, original coordinates/classification/review stars, disposition, and representative linkage. |
+| `data_audit.json` / `.md` | Filter counts, coverage, raw labels, review status, per-class gene/consequence counts, reference results, and limitations. |
+| `dataset_manifest.json` | Checksums, source/reference metadata, policy/configuration, package versions, code fingerprints, command, output hashes, and gates. |
+
+`label`/`class_id` are targets. Gene identity, clinical/reference metadata, coordinates, and IDs are not default predictor features. The manifest lists candidate feature columns separately from non-feature columns. Phase 3 must build a specific feature matrix rather than train on every exported column. No account/history data is exported, and no training/test split or model training occurs in Phase 2.
+
+### Provenance limitations
+
+Reproducibility starts from the **published SQLite snapshot**, whose checksum is pinned. Its upstream VCF URL, checksum, import time, and gene selection are retained, but the upstream file was not independently verified in this build. The original import script and original download date are unavailable. Therefore, exact reconstruction from the upstream VCF alone remains unverified; the import timestamp is not represented as a download timestamp.
+
+### Completed in Phase 2
+
+- [x] Audit the real selected ClinVar release and annotation coverage.
+- [x] Pin the source snapshot, label policy, release, reference, and normalizer.
+- [x] Check REF alleles and normalize supported sequence variants.
+- [x] Exclude unsupported records and quarantine duplicate-label disagreements.
+- [x] Export typed Parquet tables, row-level traceability, manifests, and real reports.
+- [x] Verify all five classes meet the initial sample-support gate.
+- [x] Test normalization, exclusions, source protection, checksum rejection, and reproducibility.
+- [ ] Independently recover/verify the original upstream VCF import provenance (recorded limitation).
+- [ ] Phase 3: enrich annotations and implement the shared feature pipeline.
+
+---
+
 ## Phase 1 status: implemented
 
 The five-class contract and exact ClinVar label policy are implemented. No trained model is connected; new analyses still return `prediction_status: not_available` and `prediction: null`.
@@ -43,11 +138,11 @@ Legacy unversioned/1 predictions retain their saved `pathogenic_probability`. Re
 - [x] Minimal results rendering for the new contract and class-specific SHAP targets.
 - [x] Label, contract, and isolated SQLite history tests.
 - [x] Full implementation plan copied below; original PDF remains the planning snapshot.
-- [ ] Phase 2: audit the actual ClinVar dataset and freeze the training source.
+- [x] Phase 2: audit the actual ClinVar dataset and freeze the training source (see status above).
 
 ---
 
-The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 1. The original PDF remains the initial planning snapshot.
+The full plan below retains the November 12, 2026 implementation sequence, with its status and final checklist updated after Phase 2. The original PDF remains the initial planning snapshot.
 
 # Name That Genome - ML Implementation Plan
 
@@ -439,7 +534,7 @@ Existing application features below were identified by repository inspection. Ph
 
 - [x] Expand and version the API/frontend contract for five classes and legacy history.
 - [x] Implement exact label rules, exclusion reasons, synthetic reports, and Phase 1 tests.
-- [ ] Audit and freeze ClinVar sources; validate normalization and exact label rules.
+- [x] Audit and freeze the published ClinVar SQLite snapshot; validate normalization and exact label rules. Upstream import-provenance limitations are documented above.
 - [ ] Build the annotation cache and shared feature pipeline; verify leakage exclusions.
 - [ ] Freeze grouped splits and document class coverage and overlap checks.
 - [ ] Train and compare dummy, multinomial, and tree candidates.
@@ -451,4 +546,4 @@ Existing application features below were identified by repository inspection. Ph
 - [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 1 implemented and validated. Next: Phase 2 ClinVar dataset audit and normalization. No trained model, benchmark score, calibrated probability system, or live SHAP inference has been claimed as completed.
+**Current milestone:** Phase 2 implemented and validated for the published eight-gene snapshot. Next: Phase 3 annotation enrichment and feature engineering. No trained model, benchmark score, calibrated probability system, or live SHAP inference has been claimed as completed.

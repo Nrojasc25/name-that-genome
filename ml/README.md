@@ -1,5 +1,15 @@
 # Machine Learning
 
+## Phase 5 improvement follow-up: stronger candidate, approval still pending
+
+The follow-up on `feat/ml-model-improvements` found that many differently labeled variants had identical original features. Training-weight/depth changes alone did not resolve the gates. A separate training-only conservation experiment produced an eligible development candidate: pooled OOF macro-F1 **0.6743**, Likely pathogenic recall **40.4%** (was 9.6%), and pathogenic-group-to-benign-group errors **1.63%** (was 2.26%). Other class recalls decreased; full results are disclosed.
+
+The new model is saved separately and **has not replaced the live candidate**. These are training selection estimates, not fresh test results. Calibration, confidence assessment, independent evaluation, serving support for the new features, and regenerated SHAP remain necessary. No gate thresholds were changed or consumed tests reopened.
+
+See [the improvement study and remaining requirements](IMPROVEMENT.md), [v3 results](reports/v3_improvement_report.md), and [candidate provenance](reports/conservation_candidate_manifest.json).
+
+---
+
 ## Phase 7 status: local API, UI, and history integration complete
 
 The frozen candidate is connected on `feat/ml-api-inference`. Sign in and create a **new analysis** to see five model scores, the separate confidence flag, a research-candidate notice, and a SHAP chart for the predicted class. Guest demos remain explicitly fixed examples. Old history is read as stored; it is never recomputed or filled with invented scores.
@@ -911,4 +921,4 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 7 local integration complete. Next: revisit Phase 5 failures through feature/training improvements, reserving fresh evaluation data before tuning. Model release approval and final delivery checks remain outstanding.
+**Current milestone:** Phase 7 integration remains in place. The Phase 5 follow-up produced a stronger conservation-enriched training candidate, saved separately. Independent evaluation and the full release gates remain pending; see IMPROVEMENT.md.

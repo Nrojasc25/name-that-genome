@@ -1,0 +1,800 @@
+{
+  "assembly": "GRCh38",
+  "code_sha256": "62ce2a8ec355293ee86031a636b6f0a9707d7fc7e0f06843c8d45cce77d3afd2",
+  "features_sha256": "a3880fc6c36c28fc749067d8913c3c29b3cd06f9f2c6049647427b1f5b835680",
+  "observed": 14331,
+  "partition": "train",
+  "retrieved_at": "2026-11-18T15:27:19.661644+00:00",
+  "rows": 16500,
+  "schema": "experimental-phylop-snv-v1",
+  "semantics": "UCSC API base-level 100-way phyloP score for SNVs; GRCh38 1-based variant position converted to 0-based half-open source coordinate. Indels and absent scores are null, not zero. API track values may differ in precision from original bigWig.",
+  "source": "https://genome.ucsc.edu/goldenPath/help/api.html",
+  "sources": [
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:53Z",
+      "file": "1-75724059-75725005.json",
+      "sha256": "c0bb9a00acab7d64d07a4a307ab7633d2a968b17caccbfbb6eb0b86974d974c0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75724059;end=75725005"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:53Z",
+      "file": "1-75728327-75728621.json",
+      "sha256": "db99fd37f8a1590802cb45938cf76002d289209c3106dfccebe00f5a1b0b169c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75728327;end=75728621"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:54Z",
+      "file": "1-75732347-75734942.json",
+      "sha256": "11f5a6731bba3f9d1f044ec32aced16033dab1baf592a2de1932ca13559cd6ee",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75732347;end=75734942"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:54Z",
+      "file": "1-75739957-75740129.json",
+      "sha256": "09c15126eec436108a841cdaec165c3f25a391836bf5a07aef2e2e5f4e8a3864",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75739957;end=75740129"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:54Z",
+      "file": "1-75745541-75746213.json",
+      "sha256": "0585a56baeb48243657828c17f4fc197c448b1960309c1936df59bff3ff061a1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75745541;end=75746213"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:54Z",
+      "file": "1-75749399-75750847.json",
+      "sha256": "9c6182acf1621741c0bd47fc7e76a4c3c03e3862323deb05ffee44174f796bef",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75749399;end=75750847"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:54Z",
+      "file": "1-75760798-75763589.json",
+      "sha256": "f0e8e4b3121c5345deef715d684dc0e67677b5cf29149bbb6c51a15a54f59697",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75760798;end=75763589"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:55Z",
+      "file": "1-75769234-75769235.json",
+      "sha256": "67a5d02445829d256a50ca91af7664be96c2252c9851f305cbd20d0fca211917",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr1;start=75769234;end=75769235"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:55Z",
+      "file": "12-102838439-102840534.json",
+      "sha256": "68cc51f53a03cf9f4b6418f5ef45aae448f81c78324a640df9be2df547ad1df1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102838439;end=102840534"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:55Z",
+      "file": "12-102843381-102844626.json",
+      "sha256": "089f6bb8721511f92910d9b31ca3b9000979479dbafd1a56f17ba22e49e257ec",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102843381;end=102844626"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:55Z",
+      "file": "12-102846673-102846960.json",
+      "sha256": "f703537bf4a09b94360055d60993a6acedc7a96d68423cb618c1ab1fb500e735",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102846673;end=102846960"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:55Z",
+      "file": "12-102851457-102855549.json",
+      "sha256": "4f8ccc0c5c038299086f8acb9c5e3353409233514d382e7ea56886bf2ce8a059",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102851457;end=102855549"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:56Z",
+      "file": "12-102866494-102866856.json",
+      "sha256": "8b599cdcb7cfbe345cb1d721366510462217d6771224e104388cc5acccf8d042",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102866494;end=102866856"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:56Z",
+      "file": "12-102877414-102877722.json",
+      "sha256": "ca7628232da0cbfb8130c9343b171cb39a961b84a595702391c1556a3cd97ff8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102877414;end=102877722"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:56Z",
+      "file": "12-102885974-102885975.json",
+      "sha256": "14db8017314e0c02ea92a51f4836ef6fc5021b7e63d10fe4d1855c99f9224abd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102885974;end=102885975"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:56Z",
+      "file": "12-102894570-102894931.json",
+      "sha256": "6a46256421d7c0b95053e0c8a378ac4a04b18ec1ce1b5acf727ce18479fb3835",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102894570;end=102894931"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:57Z",
+      "file": "12-102912523-102912917.json",
+      "sha256": "1b486afc832b7d77e6105a343a22f375d85284e8071f4e7dffb4b94b706e3138",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102912523;end=102912917"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:57Z",
+      "file": "12-102916771-102917757.json",
+      "sha256": "53152f01213231af191c0c26d7140716d79405e9e28b575b35954bf484dc4ce7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102916771;end=102917757"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:57Z",
+      "file": "12-102958047-102958432.json",
+      "sha256": "d816191e8fc5a2fc3993ff9354f1a14ba097a38b5a07ec380569984e45e5a2cd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr12;start=102958047;end=102958432"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:57Z",
+      "file": "13-51932854-51946499.json",
+      "sha256": "c83a4a9cd3daaec66b29b8f11942a90213305f484579141ffd3b57f7983848ce",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51932854;end=51946499"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:57Z",
+      "file": "13-51949412-51950607.json",
+      "sha256": "93c5c56722bfa5a11f5f5d4fe775ddc24bafcf9e01737795190d9847ec77e3bc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51949412;end=51950607"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:58Z",
+      "file": "13-51957495-51961962.json",
+      "sha256": "1628dd526a7b9fa2202611c2439a75ecc023ef346ea8c7ad43d9579690abf48a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51957495;end=51961962"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:58Z",
+      "file": "13-51964851-51965067.json",
+      "sha256": "442a2dc9a459e8174d707d8969d4adddfca3d36551705ca2cfde5f11d9891cf0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51964851;end=51965067"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:58Z",
+      "file": "13-51968345-51970902.json",
+      "sha256": "dc0f209e75b1aff6920dd8d53a674439daa459b086a0b99cac83df0b2515dd67",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51968345;end=51970902"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:58Z",
+      "file": "13-51973925-51975474.json",
+      "sha256": "8d3bcd79c3afde7cec2d6be07f2d21fa61a3b8d84963c6c64db4fe78b7764631",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=51973925;end=51975474"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:59Z",
+      "file": "13-52011255-52011857.json",
+      "sha256": "65e1ab324e3ffc00f93be77174a2a42588ded66c20d2577cf3628f6afc65e4cd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr13;start=52011255;end=52011857"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:59Z",
+      "file": "15-48408351-48415787.json",
+      "sha256": "7f0dac347a3e102fae1a0eed1b050ca6d900658e31b702cde01571063a2846a8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48408351;end=48415787"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:26:59Z",
+      "file": "15-48417800-48417801.json",
+      "sha256": "544d190d5ca9ab1647607bf83210badd0af00e00640b61383486eebaec00fae9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48417800;end=48417801"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:00Z",
+      "file": "15-48420544-48422158.json",
+      "sha256": "92cce61f8fd7f55ab12aab0665f4068e9cc4ac256b35a8d925157cadf92f459c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48420544;end=48422158"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:00Z",
+      "file": "15-48425352-48434736.json",
+      "sha256": "422758ee5bffdc120d3e8f975019ecea1647675262540dee13e170d4498b1ce8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48425352;end=48434736"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:00Z",
+      "file": "15-48436948-48438215.json",
+      "sha256": "d277b2abb3b52eea998ef92c023f1a97dc2cf8f214e1ee91d446032004655736",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48436948;end=48438215"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:00Z",
+      "file": "15-48441427-48442019.json",
+      "sha256": "256ce6623638576c239309c046f1b5017bc7c61570bf2ed28613d33602e71341",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48441427;end=48442019"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:01Z",
+      "file": "15-48444241-48453022.json",
+      "sha256": "a3b73df9151239ea3f914559e53d7751f08eeff0ef752341f5d89c4d4b9fca57",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48444241;end=48453022"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:01Z",
+      "file": "15-48456623-48456887.json",
+      "sha256": "9944f53323f0641643976bee19cad94e90f56f8595e206c9e5a25c9a93a88cc8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48456623;end=48456887"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:01Z",
+      "file": "15-48460233-48460395.json",
+      "sha256": "fbd20d01e2e9b3dd963c84ebfc0bed3aa886be6fc58ab3b4ec872ca24fea98e7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48460233;end=48460395"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:01Z",
+      "file": "15-48462920-48475731.json",
+      "sha256": "2d52632c007e799ddf70da4354dfee861c29fdbc31eef1dddbba764aeec5b41f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48462920;end=48475731"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:01Z",
+      "file": "15-48481635-48490372.json",
+      "sha256": "d2560495b168dd0ac4dc87b0800cda0cc450acac1e4ab3e5165549b5a38245ff",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48481635;end=48490372"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:02Z",
+      "file": "15-48492440-48499058.json",
+      "sha256": "1f1f7f776f8fb87104e17d0cd53a36b08a6780227b9aaf7c4ae11fed7a326553",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48492440;end=48499058"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:02Z",
+      "file": "15-48503769-48505166.json",
+      "sha256": "2f4fab7bd99df8d4a4fccd868e768fc5564429098bd9d551351569a617595360",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48503769;end=48505166"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:03Z",
+      "file": "15-48508545-48510189.json",
+      "sha256": "61d5a4d21ae9dd3d28757046b2f71cbecf696934c807479a05ea43fd726e467b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48508545;end=48510189"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:03Z",
+      "file": "15-48513439-48516378.json",
+      "sha256": "ac11dd08874ea4247289ea66a36b0f7698ecf14f1a2e7ee8e400cc0848ac6e74",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48513439;end=48516378"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:03Z",
+      "file": "15-48520638-48520939.json",
+      "sha256": "f786ab2f821fb3b66942064800b4a7b0748c68d1c1157c337237615dd1ee0045",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48520638;end=48520939"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:03Z",
+      "file": "15-48525840-48526538.json",
+      "sha256": "7604789c1765fcfb9d6de837a648dbc430ac657022531b20b5d9da9ca2b921f2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48525840;end=48526538"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48533847-48534225.json",
+      "sha256": "5f1a822b3cf5b41cdb0a7702860e08ef5b9486cc66a51cc7c46d2d1175df9518",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48533847;end=48534225"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48537593-48537818.json",
+      "sha256": "6456ea315654c3eff685a353a57f07b746c0696bbe21a4c66992dc7ee84526b8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48537593;end=48537818"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48594008-48594009.json",
+      "sha256": "a20ecef96c3ca3e1504322dbe9509ce1793271c7044589dcf985899fdcfbb47b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48594008;end=48594009"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48596026-48596398.json",
+      "sha256": "352c283cbec7980877d8aee64b9d9fb6d84f4f06dde92dd2bf4783bfc2add04a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48596026;end=48596398"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48600134-48600307.json",
+      "sha256": "4303da4881f5434f262a239ba6f64f2cdd2548c5613c0d3d1eecbbff51218c7a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48600134;end=48600307"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48610711-48613333.json",
+      "sha256": "4f46fc6dad3136da65661563f3f9fe78d21dff7da52ba8d5e26a806ce0b9c3f1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48610711;end=48613333"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:04Z",
+      "file": "15-48644589-48645781.json",
+      "sha256": "a5ead2e47abaf1a2794bf3d2faedcc240e97c3ac8148e1d8b8eb95c5bac998b7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr15;start=48644589;end=48645781"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:05Z",
+      "file": "17-80099557-80119554.json",
+      "sha256": "530bbddf9a7cc6de1c5937997949960e71cdf44f4f96b4d22db5e2d453ddf04d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr17;start=80099557;end=80119554"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:05Z",
+      "file": "17-80119639-80119852.json",
+      "sha256": "93da39df95b67b5e1bb357cbd6c70d3f1a72c7ae605ce14108b7f41c1b405608",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr17;start=80119639;end=80119852"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:05Z",
+      "file": "6-51615636-51619707.json",
+      "sha256": "ea767e427fafb4b01261dab1cce605d97e50ac83c930a807ea0cc6d1b8bdb13b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51615636;end=51619707"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:06Z",
+      "file": "6-51626976-51627366.json",
+      "sha256": "b0bd71cb521b7f60aa3fefad6bd16011e836a85088825744ba3e5a9bab31ac30",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51626976;end=51627366"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:06Z",
+      "file": "6-51632286-51632814.json",
+      "sha256": "9fde6778f6048f7da6182e2b6bcf43211ec8ce03b400743fb475af53ef3ef985",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51632286;end=51632814"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:06Z",
+      "file": "6-51638589-51639027.json",
+      "sha256": "856d6fd0c3f4b948c9f94d874c6dfc1b53dabe1ea2143245dea88faf8af020eb",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51638589;end=51639027"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:06Z",
+      "file": "6-51647908-51649407.json",
+      "sha256": "0a3950a58151bf9b60f9b5e29d7b23efb2520b8a525a374fd22f7c97105380c7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51647908;end=51649407"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:07Z",
+      "file": "6-51658932-51660001.json",
+      "sha256": "36db5dedd14dbd3ae2524ab93adc759a800085f6aced592701b635a8639936be",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51658932;end=51660001"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:07Z",
+      "file": "6-51721746-51722341.json",
+      "sha256": "f3312e4bb6b3dad805cb372b61e589ac993bcf649fd7548b4573bd133988b0b0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51721746;end=51722341"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:07Z",
+      "file": "6-51744182-51748827.json",
+      "sha256": "9342ead35c8b9b2633f745b8a657c22c0723751c2c776c06a02bdfb47ea16c2b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51744182;end=51748827"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:07Z",
+      "file": "6-51753001-51755174.json",
+      "sha256": "95a43cd8e2599a614d2e5c381edef6d546d9d4720391dfe23622cd55c0b43f36",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51753001;end=51755174"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51772441-51772913.json",
+      "sha256": "75630f7360f2f2ad8588b15a6fe853bf12427b53bab8a324f0690f57bfdbe084",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51772441;end=51772913"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51775797-51775989.json",
+      "sha256": "a6168430eaecd0bc70a781f69fd80f54f86544c78d00f464a11a9f4fe0218398",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51775797;end=51775989"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51790997-51791663.json",
+      "sha256": "e8943f7e21cbd16fbbd72e24a9f0780cc400a94fab20f3f6cae7580f6f14d50a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51790997;end=51791663"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51830771-51831324.json",
+      "sha256": "656879d6241c41e097eaff543e68c01db28cb939865df2f4ed61951fbc7a51c3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51830771;end=51831324"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51836259-51836686.json",
+      "sha256": "8576fa67916ebb35a041b008d5d50b4141ee9756d0b31a47ee706eb262e39164",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51836259;end=51836686"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:08Z",
+      "file": "6-51847693-51848214.json",
+      "sha256": "129c75d0e3ae14476280a80a10f15af009fec494c95a49362e6904ca29b5391c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51847693;end=51848214"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:09Z",
+      "file": "6-51855875-51856089.json",
+      "sha256": "72a378e95f86ab284d63091d8fe000bd0ccc74fb99f7caa0e5b1e3b7af8648e1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51855875;end=51856089"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:09Z",
+      "file": "6-51867801-51868318.json",
+      "sha256": "b8e4e5ded56f14779eccd1328f04aff5cb6c6dafd9fa0f1f969a65e7e3451e86",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51867801;end=51868318"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:09Z",
+      "file": "6-51870485-51870815.json",
+      "sha256": "13f0737c57ac28cddb4c3d7a48e5b64b494b9d5f61d11efa75d127fa025c7730",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51870485;end=51870815"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:09Z",
+      "file": "6-51882422-51883267.json",
+      "sha256": "b6e261d5f9843a439a52d75743197f215d5daeb4f384bdc003e45fb5670ae629",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51882422;end=51883267"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:09Z",
+      "file": "6-51885764-51887262.json",
+      "sha256": "ccf3d67d899fb6f987a8fb6aa4adbc42ef48f18b16d108ddd44bb9fc058e2088",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51885764;end=51887262"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:10Z",
+      "file": "6-51903588-51904061.json",
+      "sha256": "6593f38fe719b991e0e4a500ab15658527d70e1a0bc6005fb6c71bf8fd4a45f6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51903588;end=51904061"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:10Z",
+      "file": "6-51906195-51906360.json",
+      "sha256": "31ddff20593ab7673da8364638b76902f0e67540d392a067f6411b9854496fa3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51906195;end=51906360"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:10Z",
+      "file": "6-51909265-51909492.json",
+      "sha256": "fec75fa1c1e77f7ad7caab404c099d21e884d92294d8e31fbcceada45f943a4b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51909265;end=51909492"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:10Z",
+      "file": "6-51911788-51912598.json",
+      "sha256": "2c40874b3b0659785f62194576b1f2665eccd0bc7a54fc6f917c799187689e0b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51911788;end=51912598"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:10Z",
+      "file": "6-51933928-51934368.json",
+      "sha256": "77589dffa9698a0754b8b50c6605a9a18af8de0886243cd7b123e6cf079c2c4b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51933928;end=51934368"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:11Z",
+      "file": "6-51959850-51960272.json",
+      "sha256": "71be8960c51d676f8fb2095bcafd056208e7bbfd70dcced9b93ace7dd91e3c6d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=51959850;end=51960272"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:11Z",
+      "file": "6-52010288-52010654.json",
+      "sha256": "cf63b80a45fc36f6e0f717903e5fe75ce4ce5ad19b3878b60dd8d0fd9cceb076",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52010288;end=52010654"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:11Z",
+      "file": "6-52017276-52017882.json",
+      "sha256": "a853311731286e2fb4b0897776b459076286bcfbd7c8e13d5a8e9fb65dc84060",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52017276;end=52017882"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:11Z",
+      "file": "6-52022620-52028650.json",
+      "sha256": "9b4e58c6e75fcdb25ff0b42950cac9af87d8278efdf24403e4aa52b54ac5e807",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52022620;end=52028650"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:11Z",
+      "file": "6-52032766-52033466.json",
+      "sha256": "16c13ed1f5f23f795f9a010674fd900c5fc619cbe12fef1c2b1e9cb951b05072",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52032766;end=52033466"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:12Z",
+      "file": "6-52035578-52035739.json",
+      "sha256": "2aab4873383e6c1ad66ffbdd97377c2b8d70ba7de7f5036a42c760cc775856ac",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52035578;end=52035739"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:12Z",
+      "file": "6-52042846-52046200.json",
+      "sha256": "e5b5c550a53654dc77b8cc6ed69b934a5a39b9afa187d14cb2eb2a0256721707",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52042846;end=52046200"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:12Z",
+      "file": "6-52048441-52050616.json",
+      "sha256": "2bc2e9e08f8d2f8bb89ba1405ca322e49ff0e4d875bbcf39a63254b8f45fb788",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52048441;end=52050616"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:13Z",
+      "file": "6-52053058-52060232.json",
+      "sha256": "9dd9a8af1a4a8babd17e656017f978d39ff593e709b2d6e180061d55868c877e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52053058;end=52060232"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:13Z",
+      "file": "6-52062270-52066272.json",
+      "sha256": "02b2e00bccf0573c4b9c4ddbac3eb210af491c154a0c8cb475abfc257436ad44",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52062270;end=52066272"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:13Z",
+      "file": "6-52069243-52073619.json",
+      "sha256": "395336cb0a95b8be1e27eb15a7ffdd5f0d12908341fda79d8b16f5fd70dcd21b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52069243;end=52073619"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:13Z",
+      "file": "6-52076244-52076635.json",
+      "sha256": "12f2e85aa1b7f61072d30faa1260cde472c9598255d09d605df6246ad5bd4605",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52076244;end=52076635"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:14Z",
+      "file": "6-52079727-52080158.json",
+      "sha256": "ba03e6564e13f9b27fe8fdefeed4e67938a3bd0892d2ee02fe44d7f1b189b7ee",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52079727;end=52080158"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:14Z",
+      "file": "6-52082374-52085077.json",
+      "sha256": "d74502ef7f3de7b27c4bfbbc10e22d11951503336adf907329959824a625078c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52082374;end=52085077"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:14Z",
+      "file": "6-52087533-52087625.json",
+      "sha256": "20703603a909fe40df962a9590735144140c3fb1a2eeecf8277c468e76d86c1f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chr6;start=52087533;end=52087625"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:14Z",
+      "file": "X-108440114-108440334.json",
+      "sha256": "54e515e11d0f2d94f3e963bac551502e3a453215b9d07797767a11dad5efdc6a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108440114;end=108440334"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:14Z",
+      "file": "X-108539533-108540062.json",
+      "sha256": "abb4a9b152910f7b9152e304f684eb0713b07db618266dcbaba5ec34669a365f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108539533;end=108540062"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:15Z",
+      "file": "X-108559048-108559170.json",
+      "sha256": "4fad7c296061297680f502cbeae7931e361b35d54f615ce4d6eb1ba077195463",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108559048;end=108559170"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:15Z",
+      "file": "X-108563861-108563945.json",
+      "sha256": "4016a9c816979638ecb985e73f5b132f978d50375a2c1444419183f3bf32ca2a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108563861;end=108563945"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:15Z",
+      "file": "X-108568069-108573672.json",
+      "sha256": "7e61bedfd020305b7a4c004efeb6d561eb92eb63aae1ef3c5560562011056c48",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108568069;end=108573672"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:15Z",
+      "file": "X-108575894-108578397.json",
+      "sha256": "b023abfe25d739e1a976d6cc9bb7f0929c295bfbabe057ec81a4f53f2ffdc0f4",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108575894;end=108578397"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:16Z",
+      "file": "X-108580452-108587045.json",
+      "sha256": "46b23836379461ecc091d0c2cfcc499faf298c15bedfc3d8c225432fa98d2f94",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108580452;end=108587045"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:16Z",
+      "file": "X-108591056-108591660.json",
+      "sha256": "1181d587471c4755d2b29b4b0a01651bcfcbd6d52712907d0987ef0b41444333",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108591056;end=108591660"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:16Z",
+      "file": "X-108595505-108603079.json",
+      "sha256": "047921c489a173223b1c9e2832d99cdb7b141b13caf449b0f4add86297d19c76",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108595505;end=108603079"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:16Z",
+      "file": "X-108606729-108606896.json",
+      "sha256": "8b8818ffc69b8d5ce070318d6984f6edcc423b3a07e0361c3c8664c074fb8db5",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108606729;end=108606896"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:17Z",
+      "file": "X-108609640-108609641.json",
+      "sha256": "a0769c99f34dd781f05ce5078dbb2174adc62d37f4fd79d289c335fc2981abd9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108609640;end=108609641"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:17Z",
+      "file": "X-108614893-108615624.json",
+      "sha256": "31306f6af0f278f05d43badeb6ffa4cd5c30dffc61483a693945d4d26cf7f7d1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108614893;end=108615624"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:17Z",
+      "file": "X-108620062-108626365.json",
+      "sha256": "4a11e80526d9abf1267f995bb91fac272042094ac39610603ee533d21f9b2417",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108620062;end=108626365"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:17Z",
+      "file": "X-108655001-108655594.json",
+      "sha256": "1e752b4521f819f4431056b16a347e4b98ee69b076886453dfe48831b13f7c79",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108655001;end=108655594"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:18Z",
+      "file": "X-108665232-108670254.json",
+      "sha256": "44a8175277b5203db87f98fd2050861e1bfc47d992b6d2e84f9cd220e3941c90",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108665232;end=108670254"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:18Z",
+      "file": "X-108674744-108674958.json",
+      "sha256": "c77441b7985aa7ff4beec1844c89474bc3cd7bea919cf6349b6ef872ea2a1735",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108674744;end=108674958"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:18Z",
+      "file": "X-108677469-108677692.json",
+      "sha256": "d5f61f377db91b675883a7f8fac4793a8167e08f247672dc7284df7504081db7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108677469;end=108677692"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:18Z",
+      "file": "X-108680661-108682116.json",
+      "sha256": "cda6a47fa94f36d2b9312f1664795959506de14c1bc5efed0a79ef78b75dcce7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108680661;end=108682116"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:18Z",
+      "file": "X-108686011-108690401.json",
+      "sha256": "5493f7ef6daaf77a81d27eb78445c50186853b8c29110e627a8c92d85ba06049",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108686011;end=108690401"
+    },
+    {
+      "data_time": "2015-05-08T16:02:02",
+      "download_time": "2026:11:18T15:27:19Z",
+      "file": "X-108692422-108696429.json",
+      "sha256": "1e4c4310c9e3bd44a6dd8b1bd4b04ed31c8540c2064d3352993dfb2e8b3d1c51",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=phyloP100way;chrom=chrX;start=108692422;end=108696429"
+    }
+  ],
+  "split_manifest_sha256": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa",
+  "track": "phyloP100way"
+}

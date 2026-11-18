@@ -1,0 +1,59 @@
+{
+  "study_version": "five-class-conservation-study-v3",
+  "seed": 1729,
+  "scope": "Training-only follow-up motivated by the failed v2 study. New UCSC SNV conservation features; no validation/test/challenge scoring or deployment.",
+  "selection": "Eligible only when pooled OOF macro-F1, all-class recall, both severe-error rates, and logistic/dummy comparisons meet unchanged discrimination gates. Rank eligible candidates by mean fold macro-F1, lower log loss, then ID. Selection estimates are not release evidence.",
+  "fresh_evaluation": "Freeze new independent evaluation variants before subsequent tuning; old holdouts remain consumed. Do not create a supposedly fresh holdout by reshuffling previously used rows.",
+  "candidates": [
+    {
+      "id": "baseline-replay",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 1
+    },
+    {
+      "id": "conservation-depth5-lp1",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 1
+    },
+    {
+      "id": "conservation-depth5-lp1.5",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5
+    },
+    {
+      "id": "conservation-depth5-lp2",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 2
+    },
+    {
+      "id": "conservation-depth8-lp1",
+      "depth": 8,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1
+    },
+    {
+      "id": "conservation-depth8-lp1.5",
+      "depth": 8,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5
+    },
+    {
+      "id": "conservation-depth8-lp2",
+      "depth": 8,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 2
+    }
+  ],
+  "extra_features": "experimental-phylop-snv-v1"
+}

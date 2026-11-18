@@ -1,0 +1,13 @@
+{
+  "version": "five-class-shap-v1",
+  "seed": 20261119,
+  "background_size": 100,
+  "evaluation_rows_per_partition": 100,
+  "feature_perturbation": "interventional",
+  "output_space": "raw_score",
+  "additivity_atol": 0.0001,
+  "display_per_sign": 3,
+  "latency_warmup": 3,
+  "latency_repeats": 30,
+  "warm_explanation_p95_budget_ms": 1000
+}

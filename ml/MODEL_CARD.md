@@ -41,10 +41,16 @@ The test 95% macro-F1 bootstrap interval is 0.5937–0.6752, based on seven conn
 
 Likely pathogenic is poorly separated from Uncertain and Pathogenic. ClinVar likely-versus-definite labels may depend on evidence absent from the current features. Calibration preserves class ordering and cannot fix that discrimination problem. Sparse legacy population annotations and strong population-feature reliance may encode ascertainment effects. Conservation, protein-level, and modern ancestry-specific annotation are not included. No temporal, genome-wide, demographic, patient-level, or prospective validation is claimed.
 
-Warm cached lookup, imputation, model prediction, and temperature transformation measured p95 0.168 ms over 100 timed runs on macOS 15.7.4 arm64 with Python 3.12. This excludes startup, API, network annotation, and SHAP. Class-specific SHAP implementation remains Phase 6.
+Warm cached lookup, imputation, model prediction, and temperature transformation measured p95 0.168 ms over 100 timed runs on macOS 15.7.4 arm64 with Python 3.12. This excludes startup, API, network annotation, and SHAP. Phase 6 now provides verified class-specific raw-margin SHAP explanations; see the [SHAP report](reports/shap_report.md). This does not change model release status.
 
 The candidate should not be presented as an accepted release. Investigate class separation and source/feature coverage in a versioned follow-up experiment. Both holdouts were opened once on 2026-11-18; obtaining a new holdout or explicitly declaring a reused-test study is required for further evaluation claims. Do not lower gates after seeing these results.
 
 ## Reproducibility
 
 The [ML README](README.md) documents commands, dependencies, tests, and report rendering. Calibration and evaluation artifacts stay locally under ignored `ml/artifacts/`; small reports and provenance are tracked. The [evaluation manifest](reports/evaluation_manifest.json), [render manifest](reports/render_manifest.json), and [completed access record](reports/evaluation_access.json) bind the frozen policy and saved predictions. Report rendering reads saved predictions without rescoring the model. Fifty ML tests passed; all four plots were visually reviewed.
+
+## Explanation assessment
+
+Interventional Tree SHAP uses 100 uniformly sampled training rows after training-only imputation. It explains raw class margins, not probabilities, causal mechanisms, or patient risk. All five class outputs passed additivity checks on 200 sampled previously evaluated variants. Full details and measured explanation latency are in the [SHAP report](reports/shap_report.md).
+
+Grouped consequence features dominate global mean absolute attributions for every class. Population missingness is also influential: the 1000 Genomes missingness indicator is the second-largest group for Benign, Uncertain, and Likely pathogenic in this sample. This supports further investigation of annotation-availability dependence; it does not establish leakage or biological relevance. The model's poor Likely pathogenic recall remains unresolved. Correlation, constrained feature combinations, background choice, and the small equally weighted evaluation samples limit interpretation.

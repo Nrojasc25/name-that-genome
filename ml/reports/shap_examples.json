@@ -1,0 +1,2947 @@
+[
+  {
+    "decision": "likely_benign",
+    "explanation": {
+      "background_version": "five-class-shap-v1-e757f327d217",
+      "base_value": -2.7207674844959002,
+      "display_features": [
+        {
+          "contribution": 2.061870810355176,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 0.0003,
+              "value": 0.0003
+            }
+          ]
+        },
+        {
+          "contribution": 0.9529528839106206,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.4992100527253933,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -1.0853703706292435,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 0.00015,
+              "value": 0.00015
+            }
+          ]
+        },
+        {
+          "contribution": -0.1511553659127094,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.09221948694757884,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.7500941404624609,
+          "feature": "Other features",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.38095238095238093,
+              "value": 0.38095238095238093
+            },
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "explained_value": 0.2146151214838028,
+      "features": [
+        {
+          "contribution": 0.016394445858895778,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.00021838347660377622,
+          "feature": "alt_length",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change",
+          "members": [
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.006091888837981969,
+          "feature": "absolute_length_change",
+          "members": [
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.0033794580423273145,
+          "feature": "length_change_mod3",
+          "members": [
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "Variant type",
+          "members": [
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.10731461814139037,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.46258528168255,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0014653164148330689,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "consequence_other",
+          "members": [
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -1.0853703706292435,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 0.00015,
+              "value": 0.00015
+            }
+          ]
+        },
+        {
+          "contribution": 0.4992100527253933,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 2.061870810355176,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 0.0003,
+              "value": 0.0003
+            }
+          ]
+        },
+        {
+          "contribution": 0.9529528839106206,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.1511553659127094,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.09221948694757884,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.17158744176849722,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.38095238095238093,
+              "value": 0.38095238095238093
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "context_gc_fraction_missing",
+          "members": [
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Positive contributions increase this class raw margin relative to the training background; they do not indicate disease risk or causation.",
+      "model_version": "five-class-baselines-v1",
+      "output_space": "raw_score",
+      "output_target": "benign"
+    },
+    "partition": "test",
+    "reference_label": "benign",
+    "variant_key": "GRCh38:12:102877504:A:G"
+  },
+  {
+    "decision": "likely_benign",
+    "explanation": {
+      "background_version": "five-class-shap-v1-e757f327d217",
+      "base_value": -0.4781995715779246,
+      "display_features": [
+        {
+          "contribution": 3.8827741832344325,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.12678830362972804,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.5714285714285714,
+              "value": 0.5714285714285714
+            }
+          ]
+        },
+        {
+          "contribution": 0.07171570562757551,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.10097673065058188,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.031636711375322195,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.020164943310664967,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.12222767413972178,
+          "feature": "Other features",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            },
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "af_exac",
+              "model_value": 2e-05,
+              "value": null
+            },
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "explained_value": 3.57252836227417,
+      "features": [
+        {
+          "contribution": 0.00029875881969928744,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.00020389317418448627,
+          "feature": "alt_length",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change",
+          "members": [
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.03624850152991712,
+          "feature": "absolute_length_change",
+          "members": [
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change_mod3",
+          "members": [
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "Variant type",
+          "members": [
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.10097673065058188,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 3.8827741832344325,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.0010650572553277016,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "consequence_other",
+          "members": [
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.07135532535554376,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.006896203776123002,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.022490242640196813,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 2e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.020164943310664967,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.07171570562757551,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.031636711375322195,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.12678830362972804,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.5714285714285714,
+              "value": 0.5714285714285714
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "context_gc_fraction_missing",
+          "members": [
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Positive contributions increase this class raw margin relative to the training background; they do not indicate disease risk or causation.",
+      "model_version": "five-class-baselines-v1",
+      "output_space": "raw_score",
+      "output_target": "likely_benign"
+    },
+    "partition": "test",
+    "reference_label": "likely_benign",
+    "variant_key": "GRCh38:12:102917104:T:G"
+  },
+  {
+    "decision": "likely_benign",
+    "explanation": {
+      "background_version": "five-class-shap-v1-e757f327d217",
+      "base_value": 0.5850324515794432,
+      "display_features": [
+        {
+          "contribution": 0.6986236021912191,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.0004,
+              "value": 0.0004
+            }
+          ]
+        },
+        {
+          "contribution": 0.6400043113180436,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 0.00046,
+              "value": 0.00046
+            }
+          ]
+        },
+        {
+          "contribution": 0.13339100047480315,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -1.083029473433271,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.7134584091973739,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.23967555239192734,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 0.00024,
+              "value": 0.00024
+            }
+          ]
+        },
+        {
+          "contribution": -0.0013820684397069327,
+          "feature": "Other features",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.5238095238095238,
+              "value": 0.5238095238095238
+            },
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "explained_value": 0.019505895674228668,
+      "features": [
+        {
+          "contribution": -0.0030877125635743142,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0013707011472433805,
+          "feature": "alt_length",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change",
+          "members": [
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.010562979425303638,
+          "feature": "absolute_length_change",
+          "members": [
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0012619793426711112,
+          "feature": "length_change_mod3",
+          "members": [
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "Variant type",
+          "members": [
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.06971786534442799,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.7134584091973739,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.012073592790402472,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "consequence_other",
+          "members": [
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.6400043113180436,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 0.00046,
+              "value": 0.00046
+            }
+          ]
+        },
+        {
+          "contribution": 0.13339100047480315,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.23967555239192734,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 0.00024,
+              "value": 0.00024
+            }
+          ]
+        },
+        {
+          "contribution": 0.01052136734011583,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.6986236021912191,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.0004,
+              "value": 0.0004
+            }
+          ]
+        },
+        {
+          "contribution": -1.083029473433271,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.08090603385397116,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.5238095238095238,
+              "value": 0.5238095238095238
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "context_gc_fraction_missing",
+          "members": [
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Positive contributions increase this class raw margin relative to the training background; they do not indicate disease risk or causation.",
+      "model_version": "five-class-baselines-v1",
+      "output_space": "raw_score",
+      "output_target": "uncertain"
+    },
+    "partition": "test",
+    "reference_label": "uncertain",
+    "variant_key": "GRCh38:12:102843684:G:A"
+  },
+  {
+    "decision": "likely_benign",
+    "explanation": {
+      "background_version": "five-class-shap-v1-e757f327d217",
+      "base_value": -0.6831531468216463,
+      "display_features": [
+        {
+          "contribution": 0.2052130225278961,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.6190476190476191,
+              "value": 0.6190476190476191
+            }
+          ]
+        },
+        {
+          "contribution": 0.1954222600790672,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.18917732169327792,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 1e-05,
+              "value": 1e-05
+            }
+          ]
+        },
+        {
+          "contribution": -0.5138621726611745,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.21283169880400232,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.0012600823515094817,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.06684462068136782,
+          "feature": "Other features",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            },
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            },
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "explained_value": -0.7544494867324829,
+      "features": [
+        {
+          "contribution": -0.0012600823515094817,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0019411568107898347,
+          "feature": "alt_length",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change",
+          "members": [
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 2.8589582070708276e-05,
+          "feature": "absolute_length_change",
+          "members": [
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.0004558069119229913,
+          "feature": "length_change_mod3",
+          "members": [
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "Variant type",
+          "members": [
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.011792690122092607,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.21283169880400232,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0024024848826229572,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "consequence_other",
+          "members": [
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.02995826493250206,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": 0.019841216743225233,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.18917732169327792,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 1e-05,
+              "value": 1e-05
+            }
+          ]
+        },
+        {
+          "contribution": -0.5138621726611745,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0013360245199874044,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": 0.1954222600790672,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.2052130225278961,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.6190476190476191,
+              "value": 0.6190476190476191
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "context_gc_fraction_missing",
+          "members": [
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Positive contributions increase this class raw margin relative to the training background; they do not indicate disease risk or causation.",
+      "model_version": "five-class-baselines-v1",
+      "output_space": "raw_score",
+      "output_target": "likely_pathogenic"
+    },
+    "partition": "test",
+    "reference_label": "likely_pathogenic",
+    "variant_key": "GRCh38:12:102852812:C:G"
+  },
+  {
+    "decision": "likely_pathogenic",
+    "explanation": {
+      "background_version": "five-class-shap-v1-e757f327d217",
+      "base_value": -0.9684646149059776,
+      "display_features": [
+        {
+          "contribution": 2.0259388685597512,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.06511405671655666,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.04178703063160356,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.6190476190476191,
+              "value": 0.6190476190476191
+            }
+          ]
+        },
+        {
+          "contribution": -0.02646592468139716,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.009190588831552304,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 2e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": -0.00014356223866343498,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.059752532348938986,
+          "feature": "Other features",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            },
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "af_exac_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            },
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "explained_value": 1.1883277893066406,
+      "features": [
+        {
+          "contribution": 0.0014267372142057865,
+          "feature": "ref_length",
+          "members": [
+            {
+              "feature": "ref_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "alt_length",
+          "members": [
+            {
+              "feature": "alt_length",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "length_change",
+          "members": [
+            {
+              "feature": "length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0049884760286659,
+          "feature": "absolute_length_change",
+          "members": [
+            {
+              "feature": "absolute_length_change",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.002344231850001961,
+          "feature": "length_change_mod3",
+          "members": [
+            {
+              "feature": "length_change_mod3",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "Variant type",
+          "members": [
+            {
+              "feature": "is_snv",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "is_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "is_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.02646592468139716,
+          "feature": "SNV substitution",
+          "members": [
+            {
+              "feature": "substitution_C_to_A",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_C_to_T",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_A",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "substitution_T_to_C",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "substitution_T_to_G",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 2.0259388685597512,
+          "feature": "Annotated consequences",
+          "members": [
+            {
+              "feature": "consequence_3_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_5_prime_UTR_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_frameshift_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_downstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_genic_upstream_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_deletion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_indel",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_inframe_insertion",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_initiator_codon_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_intron_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_missense_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_no_sequence_alteration",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_non-coding_transcript_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_nonsense",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_acceptor_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_splice_donor_variant",
+              "model_value": 1.0,
+              "value": 1.0
+            },
+            {
+              "feature": "consequence_stop_lost",
+              "model_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "feature": "consequence_synonymous_variant",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.00014356223866343498,
+          "feature": "consequence_missing",
+          "members": [
+            {
+              "feature": "consequence_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "consequence_other",
+          "members": [
+            {
+              "feature": "consequence_other",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.017293340828473447,
+          "feature": "af_esp",
+          "members": [
+            {
+              "feature": "af_esp",
+              "model_value": 9e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": 0.005424221862340346,
+          "feature": "af_esp_missing",
+          "members": [
+            {
+              "feature": "af_esp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": -0.009190588831552304,
+          "feature": "af_exac",
+          "members": [
+            {
+              "feature": "af_exac",
+              "model_value": 2e-05,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": 0.003675320065813139,
+          "feature": "af_exac_missing",
+          "members": [
+            {
+              "feature": "af_exac_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.024600204499438404,
+          "feature": "af_tgp",
+          "members": [
+            {
+              "feature": "af_tgp",
+              "model_value": 0.00539,
+              "value": null
+            }
+          ]
+        },
+        {
+          "contribution": 0.06511405671655666,
+          "feature": "af_tgp_missing",
+          "members": [
+            {
+              "feature": "af_tgp_missing",
+              "model_value": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "contribution": 0.04178703063160356,
+          "feature": "context_gc_fraction",
+          "members": [
+            {
+              "feature": "context_gc_fraction",
+              "model_value": 0.6190476190476191,
+              "value": 0.6190476190476191
+            }
+          ]
+        },
+        {
+          "contribution": 0.0,
+          "feature": "context_gc_fraction_missing",
+          "members": [
+            {
+              "feature": "context_gc_fraction_missing",
+              "model_value": 0.0,
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "interpretation": "Positive contributions increase this class raw margin relative to the training background; they do not indicate disease risk or causation.",
+      "model_version": "five-class-baselines-v1",
+      "output_space": "raw_score",
+      "output_target": "pathogenic"
+    },
+    "partition": "test",
+    "reference_label": "pathogenic",
+    "variant_key": "GRCh38:12:102852813:A:T"
+  }
+]

@@ -1,5 +1,75 @@
 # Machine Learning
 
+## Phase 6 status: class-specific SHAP implemented for the research candidate
+
+All five class explanations are implemented on `feat/ml-shap`. The Phase 5 candidate **still fails release gates**; these explanations describe its behavior and do not improve its accuracy or make it suitable for clinical decisions. API/UI integration remains Phase 7.
+
+Read the [SHAP report](reports/shap_report.md), [local examples](reports/shap_examples.json), [manifest](reports/shap_manifest.json), and [model card](MODEL_CARD.md).
+
+### Explanation contract
+
+`ml/explain.py` uses pinned SHAP 0.48.0 with XGBoost 3.0.5. Interventional TreeExplainer explains the original model's five **raw class margins**, identified as `output_space: raw_score`. These are not binary log-odds, probabilities, or contributions to a calibrated predictor. The default target is the predicted class; callers may explicitly choose any canonical class. A positive contribution increases the named class's raw output relative to its background baseline, including when that class is Benign.
+
+Each local payload records the target, baseline, explained value, model/background versions, full grouped contributions, and displayed contributions. Group members retain both their original feature value (including null) and the imputed value actually used by the model. Substitution indicators, variant-type indicators, and known consequence indicators are summed into readable groups. Missingness indicators remain separate. The display retains up to three positive and three negative groups plus an **Other features** remainder so the displayed total still reconstructs the output.
+
+Interventional SHAP can evaluate feature combinations that do not occur naturally, especially with constrained one-hot or correlated inputs. Grouping is an additive display operation; it does not refit a grouped model or establish a biological mechanism. See the [TreeExplainer documentation](https://shap.readthedocs.io/en/stable/generated/shap.TreeExplainer.html) for background and feature-dependence semantics.
+
+### Background and evaluation scope
+
+The frozen background contains 100 uniformly sampled training variants without replacement, using seed 20261119 and the existing training-fitted imputer. It contains 8 Benign, 29 Likely benign, 35 Uncertain, 15 Likely pathogenic, and 13 Pathogenic rows. The uniform sample is not class-balanced; proportions fluctuate around the training distribution. No validation or test row enters the background, and the explainer checks that SHAP has not silently subsampled it.
+
+Diagnostics cover 100 deterministic random rows from each already evaluated partition (200 total), explaining all five classes for every row. Saved Phase 5 scores are checked against the explained outputs. This is interpretation of previously used test data, not another untouched performance test. Global importance combines these two samples equally and is not a population-weighted estimate. Local examples use the first sampled row with each reference class, not the most favorable prediction.
+
+The pipeline checks shapes, finite values, class mapping, raw-margin reconstruction (absolute tolerance 0.0001), grouped/display totals, persisted reloads, and single-variant/batch parity. The largest real-data reconstruction error was 0.00000521. Warm explanation latency and the predeclared 1,000 ms engineering budget are recorded in the report; this budget is not an end-to-end application service guarantee.
+
+### Build and use
+
+Use the existing evaluation dependencies; no new packages are needed:
+
+```bash
+.venv/bin/python -m pip install -r ml/requirements-evaluation.txt
+# Already built locally. A fresh output directory is required for an intentional repeat.
+.venv/bin/python -m ml.build_explanations --dataset ml/data/clinvar-five-class-v1-rebuild --features ml/data/features-v1 --splits ml/data/splits-v1 --model ml/artifacts/training-v1-final --evaluation ml/artifacts/evaluation-v1 --cache ml/data/annotations-v1 --output ml/artifacts/shap-v1-final
+.venv/bin/python -m unittest discover -s ml/tests -v
+```
+
+The build freezes checksums, code/configuration hashes, environment, background membership/matrix, explanation sample membership, full SHAP arrays, examples, and plots. Backgrounds and full arrays stay in ignored `ml/artifacts/`; compact reports are tracked under `ml/reports/`. Original Phase 5 predictions, policy, and access ledger remain unchanged. A first plot-layout draft is retained separately at `ml/artifacts/shap-v1/`.
+
+```python
+from pathlib import Path
+from ml.annotate import AnnotationCache
+from ml.explain import SavedExplainer
+
+explainer = SavedExplainer(Path('ml/artifacts/training-v1-final'),
+                          Path('ml/artifacts/shap-v1-final'))
+cache = AnnotationCache(Path('ml/data/annotations-v1'),
+                        expected_version=explainer.processor.artifact['annotation_version'])
+try:
+    # normalized_variant_key must exist in this frozen cache.
+    result = explainer.explain_from_cache(cache, normalized_variant_key)
+    alternate = explainer.explain_from_cache(cache, normalized_variant_key,
+                                            target='likely_pathogenic')
+finally:
+    cache.close()
+```
+
+Load only trusted local artifacts. The loader verifies model/preprocessor/background checksums and class/feature order. Unknown cache keys and mismatched annotation versions fail explicitly. The offline payload includes group-member detail; adapting it to the existing API schema and rendering interactive UI charts belongs to Phase 7.
+
+**Validation:** 55 ML tests passed. Repeated builds produced identical background, sample membership, SHAP arrays, raw margins, and local examples. Final warm explanation p95 was 72.54 ms. Both plots were visually reviewed.
+
+### Phase 6 checklist
+
+- [x] Verify real multiclass raw-output compatibility.
+- [x] Freeze a training-only background and its provenance.
+- [x] Explain every class with explicit target and raw-score semantics.
+- [x] Verify additivity, signs, class mapping, grouped totals, and remainder preservation.
+- [x] Verify saved reload, checksum rejection, and single/batch parity.
+- [x] Produce and visually review local and global per-class plots.
+- [x] Review missingness reliance and measure scoped explanation latency.
+- [ ] Model release approval remains blocked by Phase 5 performance failures.
+
+---
+
 ## Phase 5 status: evaluation complete; model release rejected
 
 Phase 5 is implemented on `feat/ml-evaluation`. The frozen candidate was evaluated once on the reserved test and gene challenge after validation-only calibration and confidence selection. **The candidate failed the predefined release gates and remains disconnected from the API.**
@@ -786,10 +856,10 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Train and compare dummy, multinomial, and tree candidates.
 - [x] Evaluate every class, assess calibration (rejected), and define confidence flags (all low).
 - [x] Record numeric acceptance targets before test access and complete the first held-out report; candidate rejected.
-- [ ] Implement and verify all five class-specific SHAP explanations.
+- [x] Implement and verify all five class-specific SHAP explanations for the rejected research candidate.
 - [ ] Package/version trusted artifacts and connect live API inference.
 - [ ] Build five-category results, class-score display, and readable SHAP charts.
 - [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 5 evaluation complete; candidate rejected by project gates. Scores remain uncalibrated and every prediction is flagged low confidence. The test sets have now been used. Full SHAP explanations and API inference remain unimplemented.
+**Current milestone:** Phase 6 offline SHAP complete. All five classes have verified raw-margin explanations and versioned background data. The model remains rejected by Phase 5 gates; API/UI integration and release approval remain outstanding.

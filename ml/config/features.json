@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "annotation_workflow": "ncbi-clinvar-frozen-annotations-and-grch38-context-v1",
+  "assembly": "GRCh38",
+  "context_radius": 10,
+  "frequency_fields": ["AF_ESP", "AF_EXAC", "AF_TGP"],
+  "consequences": [
+    "3_prime_UTR_variant", "5_prime_UTR_variant", "frameshift_variant",
+    "genic_downstream_transcript_variant", "genic_upstream_transcript_variant",
+    "inframe_deletion", "inframe_indel", "inframe_insertion", "initiator_codon_variant",
+    "intron_variant", "missense_variant", "no_sequence_alteration",
+    "non-coding_transcript_variant", "nonsense", "splice_acceptor_variant",
+    "splice_donor_variant", "stop_lost", "synonymous_variant"
+  ],
+  "transcript_policy": "Union of NCBI consequence terms across source records; no transcript selected and no severity ranking.",
+  "deferred_annotations": ["conservation", "transcript-specific protein changes", "modern ancestry-specific population frequencies"],
+  "external_pathogenicity_scores": "excluded"
+}

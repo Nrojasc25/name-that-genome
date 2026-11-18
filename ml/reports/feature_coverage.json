@@ -1,0 +1,1659 @@
+{
+  "annotation_version": "e68bd0f7918e2c4dd87f316f8b266056a2db4e8a6c7b08c2b260fd16f90233de",
+  "class_counts": {
+    "benign": 863,
+    "likely_benign": 9545,
+    "likely_pathogenic": 3771,
+    "pathogenic": 4523,
+    "uncertain": 9686
+  },
+  "deferred_annotations": [
+    "conservation",
+    "transcript-specific protein changes",
+    "modern ancestry-specific population frequencies"
+  ],
+  "feature_coverage": {
+    "absolute_length_change": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 709
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9293
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2693
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 2614
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9450
+        }
+      },
+      "maximum": 49.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "af_esp": {
+      "by_class": {
+        "benign": {
+          "missing": 683,
+          "observed": 180,
+          "total": 863,
+          "zero": 0
+        },
+        "likely_benign": {
+          "missing": 9191,
+          "observed": 354,
+          "total": 9545,
+          "zero": 0
+        },
+        "likely_pathogenic": {
+          "missing": 3757,
+          "observed": 14,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 4465,
+          "observed": 58,
+          "total": 4523,
+          "zero": 0
+        },
+        "uncertain": {
+          "missing": 9346,
+          "observed": 340,
+          "total": 9686,
+          "zero": 0
+        }
+      },
+      "maximum": 0.95917,
+      "minimum": 8e-05,
+      "missing": 27442,
+      "observed": 946,
+      "total": 28388
+    },
+    "af_esp_missing": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 180
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 354
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 14
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 58
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 340
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "af_exac": {
+      "by_class": {
+        "benign": {
+          "missing": 643,
+          "observed": 220,
+          "total": 863,
+          "zero": 0
+        },
+        "likely_benign": {
+          "missing": 7920,
+          "observed": 1625,
+          "total": 9545,
+          "zero": 1
+        },
+        "likely_pathogenic": {
+          "missing": 3677,
+          "observed": 94,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 4249,
+          "observed": 274,
+          "total": 4523,
+          "zero": 1
+        },
+        "uncertain": {
+          "missing": 8363,
+          "observed": 1323,
+          "total": 9686,
+          "zero": 2
+        }
+      },
+      "maximum": 0.9883,
+      "minimum": 0.0,
+      "missing": 24852,
+      "observed": 3536,
+      "total": 28388
+    },
+    "af_exac_missing": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 220
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 1625
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 94
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 274
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 1323
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "af_tgp": {
+      "by_class": {
+        "benign": {
+          "missing": 308,
+          "observed": 555,
+          "total": 863,
+          "zero": 0
+        },
+        "likely_benign": {
+          "missing": 8974,
+          "observed": 571,
+          "total": 9545,
+          "zero": 0
+        },
+        "likely_pathogenic": {
+          "missing": 3762,
+          "observed": 9,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 4488,
+          "observed": 35,
+          "total": 4523,
+          "zero": 0
+        },
+        "uncertain": {
+          "missing": 9390,
+          "observed": 296,
+          "total": 9686,
+          "zero": 2
+        }
+      },
+      "maximum": 0.9984,
+      "minimum": 0.0,
+      "missing": 26922,
+      "observed": 1466,
+      "total": 28388
+    },
+    "af_tgp_missing": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 555
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 571
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 9
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 35
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 296
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "alt_length": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 0
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 0
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 0
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 0
+        }
+      },
+      "maximum": 50.0,
+      "minimum": 1.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_3_prime_UTR_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 825
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9527
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9496
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_5_prime_UTR_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 851
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9474
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3735
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4505
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9563
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_frameshift_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 862
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2878
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 2810
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9675
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_genic_downstream_transcript_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4522
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9686
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_genic_upstream_transcript_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 861
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9544
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4522
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9681
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_inframe_deletion": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3731
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4495
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9616
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_inframe_indel": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3765
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4513
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9666
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_inframe_insertion": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3765
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4517
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9653
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_initiator_codon_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9544
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3765
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4499
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9684
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_intron_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 191
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 5633
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3537
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4286
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 8411
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_missense_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 799
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9357
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 1987
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3420
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 1410
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_missing": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 855
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9539
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3755
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4511
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9640
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_no_sequence_alteration": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9544
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9685
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_non-coding_transcript_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 857
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9540
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9682
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_nonsense": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3339
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3481
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9676
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_other": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9686
+        }
+      },
+      "maximum": 0.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_splice_acceptor_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9544
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3538
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4281
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9666
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_splice_donor_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9543
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3499
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4237
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9666
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_stop_lost": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9678
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "consequence_synonymous_variant": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 783
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 3794
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3758
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4509
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9535
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "context_gc_fraction": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 2
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 1
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 0
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 1
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "context_gc_fraction_missing": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 863
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9545
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3771
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4523
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9686
+        }
+      },
+      "maximum": 0.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "is_deletion": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 774
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9398
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2957
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3198
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9527
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "is_insertion": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 798
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9440
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3507
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3939
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9609
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "is_snv": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 154
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 252
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 1078
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 1909
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 236
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "length_change": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 709
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9293
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2693
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 2614
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9450
+        }
+      },
+      "maximum": 49.0,
+      "minimum": -46.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "length_change_mod3": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 716
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 9327
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2773
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 2672
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 9591
+        }
+      },
+      "maximum": 2.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "ref_length": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 0
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 0
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 0
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 0
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 0
+        }
+      },
+      "maximum": 47.0,
+      "minimum": 1.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_C_to_A": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 804
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 8643
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3214
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3948
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 8478
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_C_to_G": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 793
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 8736
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3345
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4205
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 8304
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_C_to_T": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 608
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 5971
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 2990
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 3588
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 6969
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_T_to_A": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 819
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 8980
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3505
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4261
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 8899
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_T_to_C": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 632
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 6760
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3376
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4191
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 7282
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    },
+    "substitution_T_to_G": {
+      "by_class": {
+        "benign": {
+          "missing": 0,
+          "observed": 863,
+          "total": 863,
+          "zero": 813
+        },
+        "likely_benign": {
+          "missing": 0,
+          "observed": 9545,
+          "total": 9545,
+          "zero": 8887
+        },
+        "likely_pathogenic": {
+          "missing": 0,
+          "observed": 3771,
+          "total": 3771,
+          "zero": 3503
+        },
+        "pathogenic": {
+          "missing": 0,
+          "observed": 4523,
+          "total": 4523,
+          "zero": 4331
+        },
+        "uncertain": {
+          "missing": 0,
+          "observed": 9686,
+          "total": 9686,
+          "zero": 8734
+        }
+      },
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "missing": 0,
+      "observed": 28388,
+      "total": 28388
+    }
+  },
+  "features": 42,
+  "preprocessing_fitted": false,
+  "schema_version": "1.0.0",
+  "variants": 28388
+}

@@ -1,0 +1,15 @@
+{
+  "input_fingerprints": {
+    "dataset_variants_sha256": "d3cc9ac945dbe02003c81e14c18869a860bafbbcff100db9674d8d3ddba0e9ec",
+    "feature_manifest_sha256": "eb07295f41239ee52d6657a747dbffd1acbe5c5f4d28a7f0fddcf9fd59f0f5d4",
+    "model_manifest_sha256": "9cec522c12c8f96f197b3c7ebab255a317ff2f4639f954415f71345f562e4c37",
+    "split_manifest_sha256": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa"
+  },
+  "opened_at_utc": "2026-11-18T13:51:38.611838+00:00",
+  "output": "/Users/connorpatchen/Name that Genome/name-that-genome/ml/artifacts/evaluation-v1",
+  "policy_path": "/Users/connorpatchen/Name that Genome/name-that-genome/ml/artifacts/calibration-v1/policy.json",
+  "policy_sha256": "d03173f0d504b6daee086a76c7f8035c34b77f83cf95a1ddad222d0d7175f526",
+  "predictions_sha256": "7a719dcf796f3d2326ef4ab69721a6733f5c501b3294f7042cefe0047fe6eddf",
+  "protocol_sha256": "d92d1a9f3c9da00e77d78f5438e31fa871f4d4fb50c2d436b3cbe7a380b5de04",
+  "state": "complete"
+}

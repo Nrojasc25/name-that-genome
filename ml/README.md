@@ -1,8 +1,77 @@
 # Machine Learning
 
+## Phase 5 status: evaluation complete; model release rejected
+
+Phase 5 is implemented on `feat/ml-evaluation`. The frozen candidate was evaluated once on the reserved test and gene challenge after validation-only calibration and confidence selection. **The candidate failed the predefined release gates and remains disconnected from the API.**
+
+| Partition | Rows | Macro-F1 | Balanced accuracy | Likely pathogenic recall |
+|---|---:|---:|---:|---:|
+| Final test | 3,536 | 0.6417 | 0.6461 | 8.8% |
+| Gene challenge | 4,816 | 0.6499 | 0.6538 | 13.0% |
+
+Read the [evaluation report and plots](reports/evaluation_report.md), [full metrics, subgroups, and error examples](reports/evaluation_report.json), [validation assessment](reports/validation_report.md), and [candidate model card](MODEL_CARD.md).
+
+### Frozen policy and findings
+
+`config/evaluation.json` records numerical engineering criteria fixed before test access. Both partitions must pass: macro-F1 at least 0.60, improvement over dummy at least 0.20 and over logistic at least zero, recall at least 0.40 for every class, each severe-confusion direction at most 2%, mean class ECE at most 0.05, and non-degrading score-quality criteria. Standard-confidence predictions must cover at least 50% of rows with at least 85% accuracy. Warm single-variant prediction p95 must be at most 100 ms. These are project gates, not clinical standards.
+
+- Validation was stratified into 1,768 calibration-fit rows and 1,768 separate policy-selection rows. Temperature scaling fitted T=1.034627, but the selection log-loss improvement (0.0011) missed the required 0.005. Active T remains 1.0 and `probability_kind` remains `uncalibrated`.
+- No top-score/margin combination met both confidence targets. All predictions are flagged `low`; they retain their five-class argmax decisions. Low confidence does not mean the Uncertain class. Ties follow the canonical class order.
+- Both partitions failed Likely pathogenic recall and the pathogenic-group-to-benign-group error gate. The challenge also failed the logistic comparison and ECE gates. Neither partition has a standard-confidence subset, so its accuracy is undefined.
+- Of 521 test Likely pathogenic variants, 264 were predicted Uncertain and 196 Pathogenic; only 46 were correctly classified. In the challenge, 83 of 299 were predicted Uncertain and 172 Pathogenic, with 39 correct. Temperature scaling cannot repair this class separation.
+- Logistic and dummy baselines use training rows only. Test macro-F1 was 0.6246 for logistic and 0.1018 for dummy; challenge macro-F1 was 0.6509 and 0.0947.
+- Warm cached feature lookup, imputation, prediction, and temperature transformation had p95 0.168 ms on the recorded Apple Silicon/Python 3.12 environment. Startup, network annotation, API overhead, and SHAP are excluded.
+
+### Evaluation evidence and limitations
+
+Reports include count and row-normalized confusion matrices, all-class precision/recall/F1, one-vs-rest average precision with prevalence, log loss, multiclass Brier score (sum across five classes, range 0–2), ten-bin reliability plots, and ECE. Average precision uses non-interpolated recall increments, not trapezoidal integration. See the [scikit-learn calibration documentation](https://scikit-learn.org/stable/modules/calibration.html) and [average precision definition](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html).
+
+The 300-replicate 95% macro-F1 intervals are 0.5937–0.6752 for test and 0.6246–0.6737 for the challenge. Test intervals resample connected gene components; few components limit precision. The challenge contains one component, so its variant-bootstrap interval is conditional on that component and does not quantify uncertainty across unseen genes. Intervals exclude model-selection uncertainty.
+
+Subgroup diagnostics cover variant type, overlapping consequence groups, population-frequency missingness, and review status. Small samples are flagged; absent-class recall is null. Review stars are reporting metadata, never model inputs. Concrete severe, Uncertain, and likely-versus-definite errors are saved in the JSON report.
+
+### Commands and test-access policy
+
+Install with `.venv/bin/python -m pip install -r ml/requirements-evaluation.txt`. The complete tested environment is pinned separately in `requirements-evaluation.lock.txt`; the training lock is unchanged.
+
+The following commands document the **already completed first run**. Do not rerun them against this consumed split or remove its access ledger:
+
+```bash
+.venv/bin/python -m ml.evaluate calibrate --dataset ml/data/clinvar-five-class-v1-rebuild --features ml/data/features-v1 --splits ml/data/splits-v1 --model ml/artifacts/training-v1-final --cache ml/data/annotations-v1 --output ml/artifacts/calibration-v1
+.venv/bin/python -m ml.evaluate final --dataset ml/data/clinvar-five-class-v1-rebuild --features ml/data/features-v1 --splits ml/data/splits-v1 --model ml/artifacts/training-v1-final --policy ml/artifacts/calibration-v1 --output ml/artifacts/evaluation-v1
+```
+
+Calibration freezes code, input, protocol, and output hashes. Final scoring creates `evaluation_access.json` exclusively in the split directory before loading held-out labels; it rejects repeat scoring even with a different output directory. This is a local workflow safeguard, not a global access-control system. Policy tuning is also blocked once the ledger exists.
+
+Reports may safely be regenerated from checksummed saved predictions without fitting or rescoring:
+
+```bash
+.venv/bin/python -m ml.evaluate render --output ml/artifacts/evaluation-v1
+.venv/bin/python -m unittest discover -s ml/tests -v
+```
+
+The 26 MB row-level prediction file, calibration memberships, and baseline binary remain in ignored artifact directories. Compact reports, policy, manifests, plots, and a completed access-ledger snapshot are in `ml/reports/`. The policy's `holdouts_opened: false` describes its creation time; the completed access ledger records subsequent test access.
+
+**Validation:** 50 ML tests passed, including calibration math, confidence semantics, severe-error denominators, deterministic bootstrap, protocol-change rejection, and the one-time scoring/report-rendering lifecycle. Saved artifact hashes and partition counts were checked; all four plots were visually reviewed.
+
+### Phase 5 checklist
+
+- [x] Freeze acceptance targets before accessing reserved labels.
+- [x] Fit and assess calibration using separate validation subsets.
+- [x] Select confidence rules independently of the five-class decision.
+- [x] Evaluate both reserved partitions once against training-only baselines.
+- [x] Report all classes, uncertainty, subgroups, severe mistakes, and scoped latency.
+- [x] Save reproducible reports, policy, provenance, plots, and candidate model card.
+- [x] Disclose failed gates and protect against accidental test reuse.
+- [ ] Model release approval: blocked by failed performance/confidence gates.
+
+Further modeling needs a new holdout or an explicitly documented reused-test study. Do not tune against these results and then describe these same sets as untouched. Phase 6 SHAP work can explain this research candidate, but cannot make it an accepted model.
+
+---
+
 ## Phase 4 status: baseline training complete; candidate only
 
-The frozen splits and training pipeline are implemented. Eleven predefined candidates were compared using three-fold cross-validation **inside the training partition only**. The selected XGBoost candidate is saved locally; it is uncalibrated and has not been connected to the API. Validation, final test, and gene-challenge predictions have not been generated.
+The frozen splits and training pipeline are implemented. Eleven predefined candidates were compared using three-fold cross-validation **inside the training partition only**. The selected XGBoost candidate is saved locally; it is uncalibrated and has not been connected to the API. Phase 5 subsequently evaluated validation, final test, and gene challenge; see the current status above.
 
 ### Split protocol
 
@@ -89,7 +158,7 @@ No background SHAP dataset or user-facing explanations are created here. A synth
 - [x] Select by the predefined CV rule and refit on training rows only.
 - [x] Save the candidate, preprocessors, environment, reports, and artifact manifests.
 - [x] Verify split reproducibility, persisted predictions, and multiclass SHAP compatibility.
-- [ ] Phase 5: investigate weak classes; define acceptance targets before final test access; calibrate and evaluate using the reserved partitions under that protocol.
+- [x] Phase 5: assess weak classes, freeze acceptance targets, assess calibration, and evaluate reserved partitions. Release gates failed; see above.
 
 ---
 
@@ -715,12 +784,12 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Build the initial annotation cache and shared feature pipeline; verify leakage exclusions. Conservation/protein/modern-frequency enrichment remains optional follow-up.
 - [x] Freeze grouped splits and document class coverage and overlap checks.
 - [x] Train and compare dummy, multinomial, and tree candidates.
-- [ ] Evaluate every class, calibrate if justified, and define confidence flags.
-- [ ] Record numeric acceptance targets and complete the untouched test report.
+- [x] Evaluate every class, assess calibration (rejected), and define confidence flags (all low).
+- [x] Record numeric acceptance targets before test access and complete the first held-out report; candidate rejected.
 - [ ] Implement and verify all five class-specific SHAP explanations.
 - [ ] Package/version trusted artifacts and connect live API inference.
 - [ ] Build five-category results, class-score display, and readable SHAP charts.
 - [ ] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 4 training complete. A candidate and training-only CV results are saved; Likely pathogenic recall is weak and explicitly reported. Next: Phase 5 class-specific review, calibration, and reserved-set evaluation. No final-test performance, calibrated model, or live SHAP inference is claimed.
+**Current milestone:** Phase 5 evaluation complete; candidate rejected by project gates. Scores remain uncalibrated and every prediction is flagged low confidence. The test sets have now been used. Full SHAP explanations and API inference remain unimplemented.

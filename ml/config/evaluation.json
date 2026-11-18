@@ -1,0 +1,40 @@
+{
+  "protocol_version": "five-class-evaluation-v1",
+  "seed": 20261118,
+  "validation_calibration_fit_fraction": 0.5,
+  "temperature_bounds": [0.25, 4.0],
+  "calibration_selection": {
+    "minimum_log_loss_improvement": 0.005,
+    "maximum_brier_increase": 0.0001,
+    "maximum_mean_class_ece_increase": 0.005
+  },
+  "confidence_selection": {
+    "top_probability_grid": [0.5, 0.6, 0.7, 0.8, 0.9],
+    "margin_grid": [0.05, 0.1, 0.15, 0.2],
+    "minimum_standard_coverage": 0.5,
+    "minimum_standard_accuracy": 0.85
+  },
+  "acceptance": {
+    "minimum_macro_f1": 0.6,
+    "minimum_macro_f1_improvement_over_dummy": 0.2,
+    "minimum_macro_f1_improvement_over_logistic": 0.0,
+    "minimum_recall_each_class": 0.4,
+    "maximum_severe_confusion_each_direction": 0.02,
+    "maximum_mean_class_ece": 0.05,
+    "maximum_brier_increase_over_raw": 0.0001,
+    "maximum_log_loss_increase_over_raw": 0.005,
+    "minimum_standard_coverage": 0.5,
+    "minimum_standard_accuracy": 0.85,
+    "maximum_warm_single_variant_p95_ms": 100.0,
+    "require_gene_challenge_gates": true
+  },
+  "reliability_bins": 10,
+  "bootstrap_replicates": 300,
+  "bootstrap_confidence": 0.95,
+  "latency_warmup": 10,
+  "latency_repeats": 100,
+  "latency_machine": "Apple Silicon development Mac; exact platform recorded at execution",
+  "severe_confusion_definition": "True benign/likely_benign predicted likely_pathogenic/pathogenic, or reverse; separate conditional rates for each true side. Uncertain is excluded from those denominators.",
+  "rationale": "Pre-test project engineering criteria, not validated clinical standards. Macro-F1 floor is below training CV 0.6403; recall floor prevents that average from hiding the known weak Likely pathogenic class. Compare against both baselines. Acceptance uses point estimates with reported bootstrap intervals; no claim of statistical superiority. Fixed calibration/quality rules are selected only on validation rows.",
+  "test_reuse_policy": "First use consumes both reserved holdouts for this split. No overwrite/retry on a fresh directory to disguise test reuse. Future changes need a new holdout or an explicitly labeled reused-test study. Rendering saved predictions is allowed without rescoring."
+}

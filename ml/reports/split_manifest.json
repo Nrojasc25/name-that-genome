@@ -1,0 +1,118 @@
+{
+  "class_order": [
+    "benign",
+    "likely_benign",
+    "uncertain",
+    "likely_pathogenic",
+    "pathogenic"
+  ],
+  "code_sha256": "fdd23b324ea724386fc74345e4d777158f3782b547aa591a6d58c40f4fae391d",
+  "config": {
+    "candidates": [
+      {
+        "algorithm": "dummy",
+        "id": "dummy-prior",
+        "population_features": true,
+        "weighted": false
+      },
+      {
+        "C": 0.1,
+        "algorithm": "logistic",
+        "id": "logistic-c01",
+        "population_features": true,
+        "weighted": false
+      },
+      {
+        "C": 0.1,
+        "algorithm": "logistic",
+        "id": "logistic-c01-balanced",
+        "population_features": true,
+        "weighted": true
+      },
+      {
+        "C": 1.0,
+        "algorithm": "logistic",
+        "id": "logistic-c1",
+        "population_features": true,
+        "weighted": false
+      },
+      {
+        "C": 1.0,
+        "algorithm": "logistic",
+        "id": "logistic-c1-balanced",
+        "population_features": true,
+        "weighted": true
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-shallow",
+        "max_depth": 3,
+        "n_estimators": 150,
+        "population_features": true,
+        "weighted": false
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-shallow-balanced",
+        "max_depth": 3,
+        "n_estimators": 150,
+        "population_features": true,
+        "weighted": true
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-deep",
+        "max_depth": 5,
+        "n_estimators": 250,
+        "population_features": true,
+        "weighted": false
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-deep-balanced",
+        "max_depth": 5,
+        "n_estimators": 250,
+        "population_features": true,
+        "weighted": true
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-deep-no-population",
+        "max_depth": 5,
+        "n_estimators": 250,
+        "population_features": false,
+        "weighted": false
+      },
+      {
+        "algorithm": "xgboost",
+        "id": "xgb-deep-balanced-no-population",
+        "max_depth": 5,
+        "n_estimators": 250,
+        "population_features": false,
+        "weighted": true
+      }
+    ],
+    "cv_folds": 3,
+    "experiment_version": "five-class-baselines-v1",
+    "gene_challenge_minimum_per_class": 20,
+    "gene_challenge_target_fraction": 0.15,
+    "minimum_primary_per_class": 100,
+    "primary_split": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    },
+    "seed": 1729,
+    "selection": "Highest mean training-CV macro-F1; ties use lower log loss, then candidate ID. Report per-class recall and inference latency; do not use held-out data."
+  },
+  "config_sha256": "e81e51bf02a9103ce09d97259186f71ba1fd972fa7e1a3e3e60622309d318978",
+  "dataset_variants_sha256": "d3cc9ac945dbe02003c81e14c18869a860bafbbcff100db9674d8d3ddba0e9ec",
+  "dataset_version": "clinvar-eight-gene-five-class-v1",
+  "outputs_sha256": {
+    "membership.parquet": "789c507f15374877244efd060e53568a8e7e586f9d683ace11069d776cfeb776",
+    "split_report.json": "038c6366359f4aca6c19046e81f1b764176e6c6468c06a3121cffde064b35db7",
+    "split_report.md": "14dc1ac2bb67089374ec30bc6cbd56e73a4b646e7239580a2839b3a3580311f5"
+  },
+  "schema_version": 1,
+  "split_id": "e854e23f1a2365734111a9b4dd5f7beca151209f373f5ea84456fa4d4362e9c2"
+}

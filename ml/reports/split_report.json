@@ -1,0 +1,103 @@
+{
+  "canonical_overlap": 0,
+  "challenge_gene_overlap": [],
+  "challenge_genes": [
+    "CFTR",
+    "CFTR-AS1",
+    "CFTR-AS2",
+    "LOC111674463",
+    "LOC111674464",
+    "LOC111674467",
+    "LOC111674468",
+    "LOC111674472",
+    "LOC111674474",
+    "LOC111674475",
+    "LOC111674477",
+    "LOC113219471",
+    "LOC113219472",
+    "LOC113633874",
+    "LOC113633875",
+    "LOC113633876",
+    "LOC113633877",
+    "LOC113664106",
+    "LOC126860160"
+  ],
+  "connected_gene_groups": 8,
+  "cv_folds": {
+    "0": {
+      "class_counts": {
+        "benign": 180,
+        "likely_benign": 1870,
+        "likely_pathogenic": 792,
+        "pathogenic": 911,
+        "uncertain": 1747
+      },
+      "count": 5500
+    },
+    "1": {
+      "class_counts": {
+        "benign": 187,
+        "likely_benign": 1920,
+        "likely_pathogenic": 765,
+        "pathogenic": 911,
+        "uncertain": 1717
+      },
+      "count": 5500
+    },
+    "2": {
+      "class_counts": {
+        "benign": 193,
+        "likely_benign": 1846,
+        "likely_pathogenic": 873,
+        "pathogenic": 834,
+        "uncertain": 1754
+      },
+      "count": 5500
+    }
+  },
+  "partitions": {
+    "gene_challenge": {
+      "class_counts": {
+        "benign": 63,
+        "likely_benign": 1494,
+        "likely_pathogenic": 299,
+        "pathogenic": 729,
+        "uncertain": 2231
+      },
+      "count": 4816
+    },
+    "test": {
+      "class_counts": {
+        "benign": 120,
+        "likely_benign": 1207,
+        "likely_pathogenic": 521,
+        "pathogenic": 569,
+        "uncertain": 1119
+      },
+      "count": 3536
+    },
+    "train": {
+      "class_counts": {
+        "benign": 560,
+        "likely_benign": 5636,
+        "likely_pathogenic": 2430,
+        "pathogenic": 2656,
+        "uncertain": 5218
+      },
+      "count": 16500
+    },
+    "validation": {
+      "class_counts": {
+        "benign": 120,
+        "likely_benign": 1208,
+        "likely_pathogenic": 521,
+        "pathogenic": 569,
+        "uncertain": 1118
+      },
+      "count": 3536
+    }
+  },
+  "protocol": "Reserve one whole connected gene component closest to 15% with sufficient class support, then apply 70/15/15 to remaining variants. Selection uses counts only, before fitting.",
+  "temporal_evaluation": "Unavailable: only one source release is available in this dataset.",
+  "total": 28388
+}

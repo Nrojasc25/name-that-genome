@@ -1,0 +1,21 @@
+{
+  "heldout_oof_rows": 0,
+  "identical_cv_metrics": true,
+  "identical_model_and_prediction_files": {
+    "fold-0-preprocessor.json": "21cedc7dc208abcc6cb23f6ad4ca17582ce5e0bd78d4e0935322c7a1bc391d86",
+    "fold-1-preprocessor.json": "27c634e4b815243656514f21dca47e72249b3b1e0f407b1af8e1073c27caaf4c",
+    "fold-2-preprocessor.json": "ed3e6d275165975b65a82f2ac4af8f339aa2a4bfe782ea7f918d710424ebab79",
+    "model.ubj": "926b0b69dd4690a33e14c1142f8380661d08cd61aa5ac3fbc568b6962e70a9f2",
+    "preprocessor.json": "e827ddf23d10bf77a666e7b2114fc16e8fbd5845d4af6be3a9805725c960a708",
+    "training_oof.parquet": "8713f37b2d2d92744e7e4d068d9dc8d0845f5f31ab51614a92d0b94a886c32bf"
+  },
+  "identical_split_manifest": true,
+  "note": "Timestamps and timing measurements may differ; model bytes, probabilities, preprocessing, split membership, and non-timing metrics match.",
+  "oof_training_rows_per_candidate": 16500,
+  "runs": [
+    "ml/artifacts/training-v1-final",
+    "ml/artifacts/training-v1-repro"
+  ],
+  "same_selected_candidate": true,
+  "tests_passed": 42
+}

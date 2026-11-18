@@ -1,0 +1,100 @@
+{
+  "code_sha256": {
+    "calibration.py": "facf545e41c6277010345a28fdd2c79d921ca3ca15393034afb188739959e9d5",
+    "improve.py": "7e32493ec90acc27a6fd4b62d4b32b755de1412683708ef4509659771e894b49",
+    "preprocessing.py": "802f3e2b32c970b8c33ba64c603aacd745eaa3c875cc667974f6b7b2bec89807",
+    "train.py": "d3248777010b636df8ce5624fe0870f49635159446a0aa3ddfd2d374c01417f2"
+  },
+  "created_at_utc": "2026-11-18T22:45:35.790430+00:00",
+  "input_sha256": {
+    "baseline_manifest": "9cec522c12c8f96f197b3c7ebab255a317ff2f4639f954415f71345f562e4c37",
+    "dataset_manifest": "1347c79340124efc56a5e9651d58337ec2e8077ff528a888796e9316aac0059e",
+    "feature_manifest": "eb07295f41239ee52d6657a747dbffd1acbe5c5f4d28a7f0fddcf9fd59f0f5d4",
+    "split_manifest": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa"
+  },
+  "outputs_sha256": {
+    "environment-lock.txt": "b78023f0b117e3b7172ed98c2fa8945d7a261fdcedc66f8e2e19f47942d361db",
+    "improvement_report.json": "0bfa37653ce064788b09f13e805052e79cabf68aba0ce29ffeea2202cf5e4143",
+    "improvement_report.md": "3c54d58fa1a509be1910a7b1b324e7ecdb99033816148ff2db76d2dffe131df2",
+    "protocol.json": "07c72ae165db762b1e5812e53ef0af87bfa294632ddf8aa7587543989adff829",
+    "training_oof.parquet": "0862e8a275f4f6cdfb18d73b35cb981e058575a545df5a1cb23ac9a8d49b379e"
+  },
+  "protocol": {
+    "candidates": [
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "baseline-replay",
+        "likely_pathogenic_weight": 1,
+        "trees": 250
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "conservation-replay",
+        "likely_pathogenic_weight": 1.5,
+        "protein_features": false,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "protein-depth5-lp1.0",
+        "likely_pathogenic_weight": 1.0,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "protein-depth5-lp1.5",
+        "likely_pathogenic_weight": 1.5,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "protein-depth8-lp1.0",
+        "likely_pathogenic_weight": 1.0,
+        "protein_features": true,
+        "trees": 800
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "protein-depth8-lp1.5",
+        "likely_pathogenic_weight": 1.5,
+        "protein_features": true,
+        "trees": 800
+      },
+      {
+        "balanced": false,
+        "depth": 12,
+        "id": "protein-depth12-lp1.0",
+        "likely_pathogenic_weight": 1.0,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 12,
+        "id": "protein-depth12-lp1.5",
+        "likely_pathogenic_weight": 1.5,
+        "protein_features": true,
+        "trees": 500
+      }
+    ],
+    "extra_features": "experimental-phylop-snv-v1",
+    "fresh_evaluation": "Freeze new independent evaluation variants before subsequent tuning; old holdouts remain consumed. Do not create a supposedly fresh holdout by reshuffling previously used rows.",
+    "locked_cohort": "ml/data/locked-temporal-v4",
+    "locked_cohort_manifest_sha256": "8f52bf47263259ff4eea50a70a8d1a75d1bf26f264eaac3fd4385b6f5934ca73",
+    "minimum_accuracy_exclusive": 0.9,
+    "protein_features": true,
+    "scope": "Training-only study after reserving temporal v4 cohort; benchmark ordinary accuracy on every OOF row. No holdout scoring or confidence-filtered accuracy.",
+    "seed": 1729,
+    "selection": "Require strictly greater than 90% pooled OOF accuracy and unchanged five-class discrimination gates. Rank eligible by mean fold macro-F1, log loss, ID. None eligible means no model is approved or selected; training selection cannot establish test accuracy.",
+    "study_version": "protein-accuracy-study-v4"
+  },
+  "protocol_sha256": "a1d4926391cf176105b56470803c07a39a33588d76f2cc3ff0a901eb5f1d4342"
+}

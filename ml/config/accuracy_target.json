@@ -1,0 +1,13 @@
+{
+  "version": "accuracy-target-v4",
+  "target": "Strictly greater than 0.90 ordinary accuracy on all eligible locked evaluation variants; no confidence filtering or label merging.",
+  "minimum_accuracy_exclusive": 0.90,
+  "minimum_recall_each_class": 0.40,
+  "maximum_severe_confusion_each_direction": 0.02,
+  "minimum_evaluation_support_each_class": 100,
+  "genes": ["ACADM", "ATP7B", "CFTR", "COL4A5", "FBN1", "GAA", "PAH", "PKHD1"],
+  "evaluation_release": "2026-11-15",
+  "prior_release": "2026-09-13",
+  "cohort_policy": "All eligible eight-gene variants from the new release, excluding every original source ID, allele ID, and overlapping original source locus plus all prior normalized keys/loci. No subsampling or rebalancing. Labels sealed separately; no test predictions until a frozen candidate and evaluation protocol exist.",
+  "scope": "Temporal new-variant cohort in known genes, not a new-gene or prospective clinical validation. Original Phase 5 gates remain additional requirements. Insufficient class support blocks a five-class acceptance claim."
+}

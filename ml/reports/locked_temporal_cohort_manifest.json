@@ -1,0 +1,54 @@
+{
+  "access_status": "sealed_not_scored",
+  "adequate_class_support": false,
+  "caution": "Sealed is a workflow convention, not encryption. Eligibility and class counts were inspected during reservation; per-variant labels must not be used for tuning.",
+  "class_counts": {
+    "benign": 1,
+    "likely_benign": 94,
+    "likely_pathogenic": 79,
+    "pathogenic": 66,
+    "uncertain": 175
+  },
+  "code_sha256": "a35774109602e42916c0de4bf2681e311afa66131cc3ce43725b9f8caa3be6e8",
+  "counts": {
+    "excluded_combined_classification": 2,
+    "excluded_complex_sequence_change": 6,
+    "in_scope_source_records": 37176,
+    "previous_locus_overlap": 792,
+    "previous_source_identity": 35961
+  },
+  "created_at_utc": "2026-11-18T22:43:35.626220+00:00",
+  "old_database_sha256": "14c0c14afc05f73e3e5ed417ab7fcdc0855a9e7b6e6a0d337d5bec54724b193d",
+  "old_dataset_manifest_sha256": "1347c79340124efc56a5e9651d58337ec2e8077ff528a888796e9316aac0059e",
+  "outputs_sha256": {
+    "labels.sealed.json": "fe46e9873e193a629e1755d27bf40d9193368377976fe380d4ebcdbacc26133b",
+    "variants.json": "89f531003a372b24da818940a913ced68f6e95796e54baec159d632d71fbfd55"
+  },
+  "protocol": {
+    "cohort_policy": "All eligible eight-gene variants from the new release, excluding every original source ID, allele ID, and overlapping original source locus plus all prior normalized keys/loci. No subsampling or rebalancing. Labels sealed separately; no test predictions until a frozen candidate and evaluation protocol exist.",
+    "evaluation_release": "2026-11-15",
+    "genes": [
+      "ACADM",
+      "ATP7B",
+      "CFTR",
+      "COL4A5",
+      "FBN1",
+      "GAA",
+      "PAH",
+      "PKHD1"
+    ],
+    "maximum_severe_confusion_each_direction": 0.02,
+    "minimum_accuracy_exclusive": 0.9,
+    "minimum_evaluation_support_each_class": 100,
+    "minimum_recall_each_class": 0.4,
+    "prior_release": "2026-09-13",
+    "scope": "Temporal new-variant cohort in known genes, not a new-gene or prospective clinical validation. Original Phase 5 gates remain additional requirements. Insufficient class support blocks a five-class acceptance claim.",
+    "target": "Strictly greater than 0.90 ordinary accuracy on all eligible locked evaluation variants; no confidence filtering or label merging.",
+    "version": "accuracy-target-v4"
+  },
+  "protocol_sha256": "c9dbb568c4c876af0dd2e02cfc8d98ac670eae74aa047380a5b6ae29e502887d",
+  "reference_sha256": "5be01555d98347fdb3714dc84c6f77c9d8bc774adcf32c6f7a8fa06f5baf5e51",
+  "reserved_variants": 415,
+  "vcf_md5": "8aa64cd0c6b40a0fbed10f99bb51a9d7",
+  "vcf_sha256": "a0984d79c24a6735c6c709142e81672d41c673e3011cafb3ce16d8d5390d6d68"
+}

@@ -77,7 +77,7 @@ def extend_features(extra, fit_keys, score_keys):
     return matrix(fit_keys),matrix(score_keys),fill
 
 
-def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichment=None):
+def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichment=None, protein=None, population=None):
     if output.exists():
         raise FileExistsError('Preserve previous studies; choose a new versioned directory')
     config=json.loads(config_path.read_text())
@@ -94,6 +94,36 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
     dummy=next(e for e in old['experiments'] if e['candidate']['algorithm']=='dummy')
     criteria=json.loads(GATES.read_text())['acceptance']
     keys=sorted(vectors); y=np.array([targets[k] for k in keys]); annotation=inputs['features']['annotation_version']
+    if config.get('locked_cohort'):
+        cohort=Path(config['locked_cohort'])
+        if digest(cohort/'cohort_manifest.json')!=config['locked_cohort_manifest_sha256']:
+            raise ValueError('Locked cohort manifest mismatch')
+        locked=json.loads((cohort/'cohort_manifest.json').read_text())
+        for name,checksum in locked['outputs_sha256'].items():
+            if digest(cohort/name)!=checksum:raise ValueError('Locked cohort content changed')
+        if locked['access_status']!='sealed_not_scored':raise ValueError('Evaluation cohort already opened')
+    protein_rows=None
+    if bool(config.get('protein_features')) != bool(protein):raise ValueError('Protein features must be declared')
+    if protein:
+        from .protein_features import NAMES
+        protein_manifest=json.loads((protein/'protein_manifest.json').read_text())
+        if protein_manifest['partition']!='train' or protein_manifest['split_manifest_sha256']!=digest(splits/'split_manifest.json'):
+            raise ValueError('Protein feature partition mismatch')
+        if digest(protein/'features.json')!=protein_manifest['features_sha256']:raise ValueError('Protein checksum mismatch')
+        protein_rows=json.loads((protein/'features.json').read_text())
+        if set(protein_rows)!=set(keys) or any(set(r)!=set(NAMES) for r in protein_rows.values()):raise ValueError('Protein schema/key mismatch')
+        if not np.isfinite([[r[n] for n in NAMES] for r in protein_rows.values()]).all():raise ValueError('Nonfinite protein features')
+    population_rows=None
+    if bool(config.get('population_features_v4')) != bool(population):raise ValueError('Population features must be declared')
+    if population:
+        from .population_features import NAMES as POP_NAMES
+        population_manifest=json.loads((population/'population_manifest.json').read_text())
+        if population_manifest['partition']!='train' or population_manifest['split_manifest_sha256']!=digest(splits/'split_manifest.json'):
+            raise ValueError('Population feature partition mismatch')
+        if digest(population/'features.json')!=population_manifest['features_sha256']:raise ValueError('Population checksum mismatch')
+        population_rows=json.loads((population/'features.json').read_text())
+        if set(population_rows)!=set(keys) or any(set(r)!=set(POP_NAMES) for r in population_rows.values()):raise ValueError('Population schema/key mismatch')
+        if not np.isfinite([[r[n] for n in POP_NAMES] for r in population_rows.values()]).all():raise ValueError('Nonfinite population features')
     extra=None
     if bool(config.get('extra_features')) != bool(enrichment):
         raise ValueError('Enrichment must be explicitly declared in the protocol')
@@ -130,6 +160,12 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
                 if extra and candidate['id']!='baseline-replay':
                     x=np.column_stack([x,enriched_folds[f][0]])
                     z=np.column_stack([z,enriched_folds[f][1]])
+                if protein_rows and candidate.get('protein_features',False):
+                    x=np.column_stack([x,[[protein_rows[k][n] for n in NAMES] for k in train]])
+                    z=np.column_stack([z,[[protein_rows[k][n] for n in NAMES] for k in score]])
+                if population_rows and candidate.get('population_features_v4',False):
+                    x=np.column_stack([x,[[population_rows[k][n] for n in POP_NAMES] for k in train]])
+                    z=np.column_stack([z,[[population_rows[k][n] for n in POP_NAMES] for k in score]])
                 model=XGBClassifier(objective='multi:softprob',num_class=5,eval_metric='mlogloss',tree_method='hist',n_jobs=2,
                                     random_state=config['seed']+f,learning_rate=.08,subsample=1.,colsample_bytree=1.,
                                     max_depth=candidate['depth'],n_estimators=candidate['trees'])
@@ -145,9 +181,11 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
                   'mean_fold_macro_f1':float(np.mean([m['macro_f1'] for m in folds])),
                   'mean_fold_log_loss':float(np.mean([m['log_loss'] for m in folds])),
                   'discrimination_gates':discrimination_gates(summary,logistic['oof_metrics']['macro_f1'],dummy['oof_metrics']['macro_f1'],criteria)}
+            if config.get('minimum_accuracy_exclusive') is not None:
+                item['discrimination_gates']['accuracy_target']=summary['accuracy'] > config['minimum_accuracy_exclusive']
             experiments.append(item)
             predictions.extend({'candidate_id':candidate['id'],'variant_key':k,'class_scores':oof[k]} for k in keys)
-            print(f"  macro-F1 {summary['macro_f1']:.4f}; LP recall {summary['per_class']['likely_pathogenic']['recall']:.4f}; eligible {all(item['discrimination_gates'].values())}",flush=True)
+            print(f"  macro-F1 {summary['macro_f1']:.4f}; accuracy {summary['accuracy']:.4f}; LP recall {summary['per_class']['likely_pathogenic']['recall']:.4f}; eligible {all(item['discrimination_gates'].values())}",flush=True)
         selected=select(experiments)
         # Baseline replay must match historical training OOF, not just aggregate scores.
         old_rows=pq.read_table(baseline/'training_oof.parquet',filters=[('candidate_id','=',old['selected_candidate'])]).to_pylist()
@@ -158,6 +196,9 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
         pq.write_table(pa.Table.from_pylist(predictions),dest/'training_oof.parquet',compression='zstd')
         report={'study_version':config['study_version'],'training_rows':len(keys),'feature_collisions':collision,'enriched_feature_collisions':enriched_collision,
                 'enrichment_manifest_sha256':digest(enrichment/'conservation_manifest.json') if extra else None,
+                'protein_manifest_sha256':digest(protein/'protein_manifest.json') if protein else None,
+                'population_manifest_sha256':digest(population/'population_manifest.json') if population else None,
+                'locked_cohort_manifest_sha256':config.get('locked_cohort_manifest_sha256'),
                 'enrichment_fold_imputation':[f[2] for f in enriched_folds] if extra else None,'experiments':experiments,
                 'selected_candidate':selected['candidate']['id'] if selected else None,'release_approved':False,
                 'heldout_labels_loaded':False,'baseline_replay_identical':True,
@@ -169,11 +210,11 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
         lines=['# Phase 5 model-improvement study','',report['interpretation'],'',
                f"Training rows: {len(keys):,}. Baseline replay matches the original OOF predictions exactly.",
                f"Selected candidate: **{report['selected_candidate'] or 'none — no candidate passes discrimination gates'}**. Release approved: **no**.",'',
-               '| Candidate | Macro-F1 | Benign recall | Likely benign recall | Uncertain recall | Likely pathogenic recall | Pathogenic recall | P/LP → B/LB | Eligible |',
-               '|---|---:|---:|---:|---:|---:|---:|---:|---|']
+               '| Candidate | Accuracy | Macro-F1 | Benign recall | Likely benign recall | Uncertain recall | Likely pathogenic recall | Pathogenic recall | P/LP → B/LB | Eligible |',
+               '|---|---:|---:|---:|---:|---:|---:|---:|---:|---|']
         for e in experiments:
             m=e['oof']; recalls=' | '.join(f"{m['per_class'][c]['recall']:.3f}" for c in CLASS_ORDER)
-            lines.append(f"| {e['candidate']['id']} | {m['macro_f1']:.4f} | {recalls} | {m['severe_confusion']['pathogenic_to_benign']['rate']:.3%} | {all(e['discrimination_gates'].values())} |")
+            lines.append(f"| {e['candidate']['id']} | {m['accuracy']:.4f} | {m['macro_f1']:.4f} | {recalls} | {m['severe_confusion']['pathogenic_to_benign']['rate']:.3%} | {all(e['discrimination_gates'].values())} |")
         lines+=['','## Feature sufficiency','',f"{collision['distinct_vectors']:,} distinct feature vectors among {len(keys):,} training variants. {collision['rows_in_conflicting_groups']:,} rows belong to identical-vector groups with conflicting labels; {collision['likely_pathogenic_rows_in_conflicting_groups']:,} are Likely pathogenic.",
                 f"Optimistic empirical deterministic accuracy ceiling on these training vectors: {collision['empirical_maximum_deterministic_accuracy']:.2%}.",collision['note'],'',
                 '## Decision','',report['next_step'],
@@ -182,13 +223,23 @@ def run(dataset, features, splits, baseline, output, config_path=CONFIG, enrichm
             lines += ['', '## Conservation experiment', '',
                       f"Extra features: SNV phyloP100way and its missingness indicator. Fold medians use fit rows only. Enriched vectors: {enriched_collision['distinct_vectors']:,}; conflicting rows: {enriched_collision['rows_in_conflicting_groups']:,}; empirical deterministic accuracy ceiling: {enriched_collision['empirical_maximum_deterministic_accuracy']:.2%}.",
                       'Baseline replay uses the original 42 features; all other candidates use the two additional experimental columns. These columns are not deployed or claimed compatible with the existing serving schema.']
+        if protein_rows:
+            lines += ['', '## Transcript/protein experiment', '',
+                      'Protein-enabled candidates add fixed transcript/splice geometry, amino-acid identities, and coding-change indicators. Conservation replay omits these new features. No class labels, identifiers, or external pathogenicity scores are predictor columns.',
+                      'Accuracy is correct five-class argmax predictions divided by all training OOF rows, without filtering by confidence. These selection results cannot establish accuracy on the locked temporal cohort.']
+        if population_rows:
+            lines += ['', '## Population-frequency experiment', '',
+                      'Population-enabled candidates add eight gnomAD v4.1.1 columns: overall/ancestry-group maximum frequencies and missingness indicators for exomes and genomes. Exact PASS SNV matches only; absent values are not measured zeros. No external pathogenicity predictions are used.']
         (dest/'improvement_report.md').write_text('\n'.join(lines)+'\n')
+        code_dir=dest/'source';code_dir.mkdir()
+        for name in ['improve.py','train.py','preprocessing.py','calibration.py','conservation.py','protein_features.py','population_features.py']:
+            (code_dir/name).write_bytes(Path(__file__).with_name(name).read_bytes())
         (dest/'environment-lock.txt').write_text('\n'.join(environment_lock())+'\n')
         write_json(dest/'study_manifest.json',{'created_at_utc':datetime.now(timezone.utc).isoformat(),'protocol':config,'protocol_sha256':digest(config_path),
                   'code_sha256':{n:digest(Path(__file__).with_name(n)) for n in ['improve.py','train.py','preprocessing.py','calibration.py']},
                   'input_sha256':{'dataset_manifest':digest(dataset/'dataset_manifest.json'),'feature_manifest':digest(features/'feature_manifest.json'),
                                   'split_manifest':digest(splits/'split_manifest.json'),'baseline_manifest':digest(baseline/'model_manifest.json')},
-                  'outputs_sha256':{p.name:digest(p) for p in dest.iterdir()}})
+                  'outputs_sha256':{str(p.relative_to(dest)):digest(p) for p in dest.rglob('*') if p.is_file()}})
         dest.replace(output)
     return report
 
@@ -199,8 +250,10 @@ def main():
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--config',type=Path,default=CONFIG)
     parser.add_argument('--enrichment',type=Path)
+    parser.add_argument('--protein',type=Path)
+    parser.add_argument('--population',type=Path)
     args=parser.parse_args()
-    result=run(args.dataset,args.features,args.splits,args.baseline,args.output,args.config,args.enrichment)
+    result=run(args.dataset,args.features,args.splits,args.baseline,args.output,args.config,args.enrichment,args.protein,args.population)
     print(json.dumps({'selected_candidate':result['selected_candidate'],'release_approved':False}))
 
 

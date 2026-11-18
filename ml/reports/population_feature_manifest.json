@@ -1,0 +1,1597 @@
+{
+  "code_sha256": "9f4c06f469f298960d4d0d4e0357f8a4d73a9d2c6427e5d460f888ac94737373",
+  "conflicting_values": 0,
+  "created_at_utc": "2026-11-18T22:48:03.613129+00:00",
+  "feature_names": [
+    "gnomad4_genomes_af",
+    "gnomad4_genomes_af_missing",
+    "gnomad4_genomes_grpmax_af",
+    "gnomad4_genomes_grpmax_af_missing",
+    "gnomad4_exomes_af",
+    "gnomad4_exomes_af_missing",
+    "gnomad4_exomes_grpmax_af",
+    "gnomad4_exomes_grpmax_af_missing"
+  ],
+  "features_sha256": "61f0315b66d91a5390b973e0373be86bb01b4f651e9866b4d86d10e3ade47d0d",
+  "observed": {
+    "gnomad4_exomes_af": 6602,
+    "gnomad4_exomes_grpmax_af": 6397,
+    "gnomad4_genomes_af": 3528,
+    "gnomad4_genomes_grpmax_af": 3463
+  },
+  "partition": "train",
+  "rows": 16500,
+  "schema": "experimental-gnomad411-snv-v1",
+  "semantics": "Only exact GRCh38 SNV allele matches with PASS and positive allele-number denominator. Overall AF and ancestry-group maximum AF for genomes/exomes; no clinical labels or pathogenicity scores. Missing/unmatched/indel values use numeric zero plus missing=1; measured zero has missing=0. Original source responses retain full precision and provenance.",
+  "sources": [
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:00Z",
+      "file": "genomes-1-75724059-75725005.json",
+      "sha256": "7e90832e85bcd7c4d7c4a46dfc93fb551970a5879cc39231e63c8b0aa26da8e7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75724059;end=75725005"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:00Z",
+      "file": "genomes-1-75728327-75728621.json",
+      "sha256": "f3cd7292c29c56097d8f352689bc3e69391f26dd52e4098422e706dcc88f3044",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75728327;end=75728621"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:01Z",
+      "file": "genomes-1-75732347-75734942.json",
+      "sha256": "1499a03d875690490e3c898a4b0ba80458234784b7859fd0c11edeb89e299811",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75732347;end=75734942"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:01Z",
+      "file": "genomes-1-75739957-75740129.json",
+      "sha256": "ac1bb71d5f145d9113bfb1b1ea98c88e93ca467d9b704cb072dff07eb6520bdc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75739957;end=75740129"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:02Z",
+      "file": "genomes-1-75745541-75746213.json",
+      "sha256": "68849f12c6575f55133744a64b622746ce274a0b0d25749ac516db7560c80543",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75745541;end=75746213"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:02Z",
+      "file": "genomes-1-75749399-75750847.json",
+      "sha256": "b9221ffbe785e31afa0d61c673534c40da5361cf8828e63792933c211e658a3d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75749399;end=75750847"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:02Z",
+      "file": "genomes-1-75760798-75763589.json",
+      "sha256": "c2fba9963fbefaede2b692f4cfb4a80364850f108ae43a0d06cd89108ec64677",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75760798;end=75763589"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:03Z",
+      "file": "genomes-1-75769234-75769235.json",
+      "sha256": "84d808e75e65d61b090dedaf5a4dada88c98ee9663cc5c6f79ae936b40a1f7c0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr1;start=75769234;end=75769235"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:03Z",
+      "file": "genomes-12-102838439-102840534.json",
+      "sha256": "712960b6a0390b6cdbfdc7ff2fa33e862af16323c488ea9f3e7d2b459b5208f4",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102838439;end=102840534"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:03Z",
+      "file": "genomes-12-102843381-102844626.json",
+      "sha256": "02470ec7020f3c8688cfc89d1c7a76153405ffd8ed4fed4c62eeef8120e2b8ef",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102843381;end=102844626"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:03Z",
+      "file": "genomes-12-102846673-102846960.json",
+      "sha256": "66ddb916fd1289c3c67d2caf71e0402ea914af316343e44148d3a2124831bf35",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102846673;end=102846960"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:03Z",
+      "file": "genomes-12-102851457-102855549.json",
+      "sha256": "dd40cf18d5a0bbc516d69b27d19f0cbfe8f372eb96a9064f38c1e55ded39c9a2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102851457;end=102855549"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:04Z",
+      "file": "genomes-12-102866494-102866856.json",
+      "sha256": "9abb9ded2a2c626978f29ab6016a6cafc3ebcb77489f900e2602d914087bafa7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102866494;end=102866856"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:04Z",
+      "file": "genomes-12-102877414-102877722.json",
+      "sha256": "c733147717684726af9add8a448fb5cb3cc11834ee96c2d71234577f259b9d9e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102877414;end=102877722"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:04Z",
+      "file": "genomes-12-102885974-102885975.json",
+      "sha256": "5cda30da354fbbbd387ac3bd448f830b95db77173275ba20ad2d11dda18486f2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102885974;end=102885975"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:04Z",
+      "file": "genomes-12-102894570-102894931.json",
+      "sha256": "de58c9f2d32e87b8af2cbd565564fe8662badda304314c7c4ebf71650f13007a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102894570;end=102894931"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:46:05Z",
+      "file": "genomes-12-102912523-102912917.json",
+      "sha256": "f67034ff6fc2acf71741674d9fd856ff851ab4e56d2a0e1660eed395d5673fbd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102912523;end=102912917"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:00Z",
+      "file": "genomes-12-102916771-102917757.json",
+      "sha256": "59620f94de93b877d25d616dbc9fbc514c86160ee0ee90ec09cc68c3ebea1100",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102916771;end=102917757"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:00Z",
+      "file": "genomes-12-102958047-102958432.json",
+      "sha256": "841311cf1a6941a5dd1e48dafc1b6a959b9df7c3a28783bdefb1b4984600cce2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr12;start=102958047;end=102958432"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:01Z",
+      "file": "genomes-13-51932854-51946499.json",
+      "sha256": "6906c8c34c0b035721b6144cddf001cb5bf9357dd5f3ba766745cdb08cc02651",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51932854;end=51946499"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:01Z",
+      "file": "genomes-13-51949412-51950607.json",
+      "sha256": "5bf3fcc8fcb262b8971929b23eae0e4be79f2f3d3c5e328abb7a2345c691e072",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51949412;end=51950607"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:01Z",
+      "file": "genomes-13-51957495-51961962.json",
+      "sha256": "5f2a9c30949b5711003b67972cd36a07835c05492f27445c7e2e2459ea425f22",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51957495;end=51961962"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:02Z",
+      "file": "genomes-13-51964851-51965067.json",
+      "sha256": "e4fe32f2ff3777d6dbe33e9ff7d394a2f555023341d6445b0911ad61ff130774",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51964851;end=51965067"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:02Z",
+      "file": "genomes-13-51968345-51970902.json",
+      "sha256": "b67768154bc4fd948df1931bfdbeb34d0498f0ab59a50243a69733d4187083bc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51968345;end=51970902"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:02Z",
+      "file": "genomes-13-51973925-51975474.json",
+      "sha256": "ff572794f2fd3c87c5475bd2bcee7e90955332284a90eeb2c9f28ab8a1ec60c8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=51973925;end=51975474"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:03Z",
+      "file": "genomes-13-52011255-52011857.json",
+      "sha256": "08c61a28dfc86887bae94775637380bcf17fe64344b5afbb344d2c234f04d59a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr13;start=52011255;end=52011857"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:03Z",
+      "file": "genomes-15-48408351-48415787.json",
+      "sha256": "51590fedb4a4bc4acf51c1b0bc17b3c1252a2cfda78afb819585fa4c85f7aed0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48408351;end=48415787"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:03Z",
+      "file": "genomes-15-48417800-48417801.json",
+      "sha256": "6c86134b6b761d5898921dc37a28ebf01385351c66e1e1de49172226012d4a4c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48417800;end=48417801"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:04Z",
+      "file": "genomes-15-48420544-48422158.json",
+      "sha256": "abde288d73bd21b39c634019ac2e9b5111ad4c1947b47b976a0f246684e3623f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48420544;end=48422158"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:04Z",
+      "file": "genomes-15-48425352-48434736.json",
+      "sha256": "434cad9d6e870a896bda5667beea3804d9b5c9a6dfc6bd63417f296d8925acee",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48425352;end=48434736"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:04Z",
+      "file": "genomes-15-48436948-48438215.json",
+      "sha256": "cbc0c0a459ef774655e501d793bf31774db39d67e44a866c97139f9d9ad87ee9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48436948;end=48438215"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:05Z",
+      "file": "genomes-15-48441427-48442019.json",
+      "sha256": "5509ac172aacf7f6c6120fd727a94d6189585d3a5aa4e523a8962392b371159b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48441427;end=48442019"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:05Z",
+      "file": "genomes-15-48444241-48453022.json",
+      "sha256": "9c80564cc54832e06017a49c601749915e670dd5e8701019fff76a453faa7b72",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48444241;end=48453022"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:05Z",
+      "file": "genomes-15-48456623-48456887.json",
+      "sha256": "28ab2a13547b7e143c5fa749d0b8dffcbac9f18ceef4c378b41d456e28d8ef04",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48456623;end=48456887"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:06Z",
+      "file": "genomes-15-48460233-48460395.json",
+      "sha256": "992b5d96f0fb6e0cf01335018472cc48dfcacc22b889a08911888bdabfd59592",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48460233;end=48460395"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:06Z",
+      "file": "genomes-15-48462920-48475731.json",
+      "sha256": "f0de1b4bc589173d182653289a9b77ecd78a96a040bc059da328eef15bf6dbeb",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48462920;end=48475731"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:06Z",
+      "file": "genomes-15-48481635-48490372.json",
+      "sha256": "e42c784c7b13350238e0eb59f4d5c954c09569a6e93822d1d0560bc65cf43449",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48481635;end=48490372"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:07Z",
+      "file": "genomes-15-48492440-48499058.json",
+      "sha256": "9b2b4ec1085a323858947a4429cbe8707186c4c69e937b314f4e82c4e07244ae",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48492440;end=48499058"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:07Z",
+      "file": "genomes-15-48503769-48505166.json",
+      "sha256": "f8e4bffa6a6e176f19617a1b7755739626b138b0c5d009c673b7c698d2eeed65",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48503769;end=48505166"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:07Z",
+      "file": "genomes-15-48508545-48510189.json",
+      "sha256": "e14e27b45f1c0fa1f6a4fc26d521cdf8708b31ce230b3ea3ed24a00895983f7d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48508545;end=48510189"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:07Z",
+      "file": "genomes-15-48513439-48516378.json",
+      "sha256": "015816c996b9d8e7f30679509834231b1f8b326b726f5f9e7393a535c2702f68",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48513439;end=48516378"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:08Z",
+      "file": "genomes-15-48520638-48520939.json",
+      "sha256": "6e7002edc69b998514c6bbcc3795c06f7eaa81c04b5c35bfd912ccdbee1702f9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48520638;end=48520939"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:08Z",
+      "file": "genomes-15-48525840-48526538.json",
+      "sha256": "859015117062e17e8b94a1a6460553d5ca52ff2229d7646b18138f31ba9ad612",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48525840;end=48526538"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:08Z",
+      "file": "genomes-15-48533847-48534225.json",
+      "sha256": "1bad0b06c2a2b9777440335004316b14fddcc25826e0e2c438ea0ec908b7277e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48533847;end=48534225"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:09Z",
+      "file": "genomes-15-48537593-48537818.json",
+      "sha256": "2f3a7e47eea53a5ce8341bbad65807c4bc7da4222590ee1c303e36b48e0a04fa",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48537593;end=48537818"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:09Z",
+      "file": "genomes-15-48594008-48594009.json",
+      "sha256": "801c97fafeb80ccae8545f5ad1d942b1a876aea595f318b66ac38b2efa2a9339",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48594008;end=48594009"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:09Z",
+      "file": "genomes-15-48596026-48596398.json",
+      "sha256": "045b60e61c6dcefa836429f4a386e779a7295c48ba2556cd5ff21e10cc843099",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48596026;end=48596398"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:09Z",
+      "file": "genomes-15-48600134-48600307.json",
+      "sha256": "c34b9f6836ed71792498da1f48bd80dfc9df656986300bb09e6030623d3f47a2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48600134;end=48600307"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:09Z",
+      "file": "genomes-15-48610711-48613333.json",
+      "sha256": "f48338992aba5b75c36d67dde731cca301499aedd763cc1f80c75cdbae2cf79e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48610711;end=48613333"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:10Z",
+      "file": "genomes-15-48644589-48645781.json",
+      "sha256": "c29987ef37d14cc515e6820f096e666e06e5d53be6ff98a7500c4e1d944ad122",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr15;start=48644589;end=48645781"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:10Z",
+      "file": "genomes-17-80099557-80119554.json",
+      "sha256": "1069dac18a6247cf449c104322f1bbaaf94c1740e9972e82c78f9faa35c32166",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr17;start=80099557;end=80119554"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:10Z",
+      "file": "genomes-17-80119639-80119852.json",
+      "sha256": "9ca46124e57345acb49935492f242a1c950f6706bb4c8ad514901c708a5cfcb2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr17;start=80119639;end=80119852"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:11Z",
+      "file": "genomes-6-51615636-51619707.json",
+      "sha256": "22276567fc9871db0e0f5a18adf9c34c77ca8228cc61bb78763aab0490003416",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51615636;end=51619707"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:11Z",
+      "file": "genomes-6-51626976-51627366.json",
+      "sha256": "0b414c1d88b2bae1162b01f9d5ec8311b82d0895088e1775d94a64915fd3d3e3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51626976;end=51627366"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:11Z",
+      "file": "genomes-6-51632286-51632814.json",
+      "sha256": "c03ff6f65cba559c6560c2223fd8d8a2f8253a96b251277f123ca68b19fd9891",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51632286;end=51632814"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:12Z",
+      "file": "genomes-6-51638589-51639027.json",
+      "sha256": "7540eea26e41c605cf0ecaee8fdcbb23f42b829d681ee600c15ab76b0bf6364f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51638589;end=51639027"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:12Z",
+      "file": "genomes-6-51647908-51649407.json",
+      "sha256": "66ea9844e1641486042f2008002212c689ad185c4dce0fcbf0d0e1aaff963dd6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51647908;end=51649407"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:12Z",
+      "file": "genomes-6-51658932-51660001.json",
+      "sha256": "a4a67c3ce7c0893a53646d47d1919c99c45b4ea98429a6243b62aa874fa23673",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51658932;end=51660001"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:12Z",
+      "file": "genomes-6-51721746-51722341.json",
+      "sha256": "da8bee93467db8d6d9691494b247cd70c2e792dc0169bf928a3f094c3d8f9ece",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51721746;end=51722341"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:13Z",
+      "file": "genomes-6-51744182-51748827.json",
+      "sha256": "2314a5758c63a69664bd1a3ff74f0c7bc1871ce0b3a59d9781a09991f0a5177b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51744182;end=51748827"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:13Z",
+      "file": "genomes-6-51753001-51755174.json",
+      "sha256": "7bbab54d97f9f3bfe733a537036d01f0868dc1f88971db7a54c96925534cd9f3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51753001;end=51755174"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:13Z",
+      "file": "genomes-6-51772441-51772913.json",
+      "sha256": "7873c95f0fcff6ead3459d878a94f8bfe9d61e0f84f0df7015e579bbe1fd234c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51772441;end=51772913"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:13Z",
+      "file": "genomes-6-51775797-51775989.json",
+      "sha256": "021328899a51cef6e57f0307d18ea7db2c0976ae96628baad106867e6ab2b545",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51775797;end=51775989"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:14Z",
+      "file": "genomes-6-51790997-51791663.json",
+      "sha256": "0826ca493594b5190af2969f68709b1441b09dd1dd3b2025b1e0060fbb0c0750",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51790997;end=51791663"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:14Z",
+      "file": "genomes-6-51830771-51831324.json",
+      "sha256": "c65c3c396d429bbaf349bb523d9e27454a25cdb0824f4ec197fda0d5fe1491de",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51830771;end=51831324"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:14Z",
+      "file": "genomes-6-51836259-51836686.json",
+      "sha256": "b1b1c5e54141983c5344813e8045d6d7bfc5b8c28f3b47287b48bc3eabba6390",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51836259;end=51836686"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:14Z",
+      "file": "genomes-6-51847693-51848214.json",
+      "sha256": "22866340f4b118f3bb8c931b4a4674c60fcf9a02b461ff93dfd294c5fc924973",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51847693;end=51848214"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:15Z",
+      "file": "genomes-6-51855875-51856089.json",
+      "sha256": "809cfd85049f754952a38a6dcef5905c30ac76b55680aecca96a22b1ce13500a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51855875;end=51856089"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:15Z",
+      "file": "genomes-6-51867801-51868318.json",
+      "sha256": "bf9568f6a7b2cbeedac1bce7d7461f2cf56f4dcc16993b2bbd0559ca2e8cdfab",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51867801;end=51868318"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:15Z",
+      "file": "genomes-6-51870485-51870815.json",
+      "sha256": "565f5988ba1fa0779ff700f2ca7b84875e0fdd38f5b8c6b5548ff1722fd6c7a8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51870485;end=51870815"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:15Z",
+      "file": "genomes-6-51882422-51883267.json",
+      "sha256": "ce1e742fb4cc395674b1c58667da3ff4632e64b2596ea9a88f78b403cda60ffc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51882422;end=51883267"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:16Z",
+      "file": "genomes-6-51885764-51887262.json",
+      "sha256": "cc7b144a8120a3be44ccdc7f484ecde79d21699e43770076ced1b02a385aba05",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51885764;end=51887262"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:16Z",
+      "file": "genomes-6-51903588-51904061.json",
+      "sha256": "06438da5275220367bd38e570ecf67cf34e80eafb18221cd94aef38b4c2900f2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51903588;end=51904061"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:16Z",
+      "file": "genomes-6-51906195-51906360.json",
+      "sha256": "b68699e56180dd373c42faebea9559a91f3296385df94742649f2b1b050f021a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51906195;end=51906360"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:16Z",
+      "file": "genomes-6-51909265-51909492.json",
+      "sha256": "3fbadc7bdb275c831f84dd678f6bd6f5a96d5aa18d43186adb2b640eee4ee70b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51909265;end=51909492"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:16Z",
+      "file": "genomes-6-51911788-51912598.json",
+      "sha256": "de75e51f204aea23e84a8693ca9632669c50f098fa32c31b5bda4f8f2c22a464",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51911788;end=51912598"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:17Z",
+      "file": "genomes-6-51933928-51934368.json",
+      "sha256": "5936f55a684161b474aaf39689d03c3a64acf09c1cbd034d7e3039fee9a32e51",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51933928;end=51934368"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:17Z",
+      "file": "genomes-6-51959850-51960272.json",
+      "sha256": "6e534406fc118101efd2a1b31aaf041882256007d96cda092dc8656f40eca09c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=51959850;end=51960272"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:17Z",
+      "file": "genomes-6-52010288-52010654.json",
+      "sha256": "06673c09918fdc00eddea67eb0f9bc7d4aa52ab28675725303c79306d59dbbdd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52010288;end=52010654"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:17Z",
+      "file": "genomes-6-52017276-52017882.json",
+      "sha256": "e63994e039be9d40e1a418f3dccd6921afbdb74a4533a0da8dabbb37e781fb1c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52017276;end=52017882"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:17Z",
+      "file": "genomes-6-52022620-52028650.json",
+      "sha256": "4a97fc6e6add9c3691d6d4ef3692604b9fae9b680bb3fd5d32858d6c31672fc2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52022620;end=52028650"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:18Z",
+      "file": "genomes-6-52032766-52033466.json",
+      "sha256": "7d07ade6309e37cdc12c5518563355896b10df0b614aeb0b2be78e89a162eac5",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52032766;end=52033466"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:18Z",
+      "file": "genomes-6-52035578-52035739.json",
+      "sha256": "8cf7662bd17144dc7c5742d214d20d25abd329ed10a93beb5b5c674461cad0b3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52035578;end=52035739"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:18Z",
+      "file": "genomes-6-52042846-52046200.json",
+      "sha256": "57c95d975ae7aa8e12aaf95de3aaf1f69be80643f4195832a9070c38d10ef2c3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52042846;end=52046200"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:19Z",
+      "file": "genomes-6-52048441-52050616.json",
+      "sha256": "721ec50c0bf116f239b8039d04da43694ee6fa8ac20c304400b5c17778567ac8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52048441;end=52050616"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:19Z",
+      "file": "genomes-6-52053058-52060232.json",
+      "sha256": "8a79ca4e367063a25703bcfba920e8bafc2a24db14c7705b90b01eac856b27e5",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52053058;end=52060232"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:19Z",
+      "file": "genomes-6-52062270-52066272.json",
+      "sha256": "63fcd5017e1ef94aa1b115d07c8127ff63037aa417efa61558e4039740e65a34",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52062270;end=52066272"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:20Z",
+      "file": "genomes-6-52069243-52073619.json",
+      "sha256": "c4c196ac2dc83ba60c0ab02bcff5057bfca50109cd85c6d3e58a5d9f656f4c75",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52069243;end=52073619"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:20Z",
+      "file": "genomes-6-52076244-52076635.json",
+      "sha256": "bb73c60b898af1613306573988101c682941831240809bac5b354b46a5aac676",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52076244;end=52076635"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:20Z",
+      "file": "genomes-6-52079727-52080158.json",
+      "sha256": "8aa35feebdfa09eb0a873ce2a7e2066d4d930f74c88df4aafbab6ce510f9af4e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52079727;end=52080158"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:21Z",
+      "file": "genomes-6-52082374-52085077.json",
+      "sha256": "f2b59fd42c988649076187d579ffb4013230a79b15a4980f520954eab318e558",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52082374;end=52085077"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:21Z",
+      "file": "genomes-6-52087533-52087625.json",
+      "sha256": "62775f5163e16b583b0975cbf78f8ae85ea9de2346a97621d820bae46090d178",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chr6;start=52087533;end=52087625"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:21Z",
+      "file": "genomes-X-108440114-108440334.json",
+      "sha256": "427f0af17b6844f28bf6f8b1d619aa99b8f4771c1e1b748fef0fe2b413d7faaf",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108440114;end=108440334"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:21Z",
+      "file": "genomes-X-108539533-108540062.json",
+      "sha256": "0f4140f057f0713b64e2ead8587feff14353021d2b4d19f331d9b8c93a4abae2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108539533;end=108540062"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:22Z",
+      "file": "genomes-X-108559048-108559170.json",
+      "sha256": "2b6730a9aef1bca76a90f7b3741f03ac3b327d3b4fed6fb8d20ea39a24c21ff1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108559048;end=108559170"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:22Z",
+      "file": "genomes-X-108563861-108563945.json",
+      "sha256": "33d0d643069434ea7cac92c00e4e05bae02ee892acd8d0c0b55c42804bb3e83a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108563861;end=108563945"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:22Z",
+      "file": "genomes-X-108568069-108573672.json",
+      "sha256": "e8443a3a9beba5a504fc20e9982c95e3024a92c9f82de5c722df884f09edc65a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108568069;end=108573672"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:22Z",
+      "file": "genomes-X-108575894-108578397.json",
+      "sha256": "ee498ab7631b4facf9eda384d36c34583f53e614bddd1858b74a22f08944aa0c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108575894;end=108578397"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:23Z",
+      "file": "genomes-X-108580452-108587045.json",
+      "sha256": "06b50fc1b0e31c081a60965323d4756e8fc12a13dc9fb18b0a393c70e0b81dc0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108580452;end=108587045"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:23Z",
+      "file": "genomes-X-108591056-108591660.json",
+      "sha256": "19d30176349527cffa9924ad5ca88b1bc2372ad385eb541c98ab3460a4376edf",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108591056;end=108591660"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:23Z",
+      "file": "genomes-X-108595505-108603079.json",
+      "sha256": "f37f862630785bdd3ac3872f7bcb1f99903694c560f08f0e5dcb6036e0461268",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108595505;end=108603079"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:23Z",
+      "file": "genomes-X-108606729-108606896.json",
+      "sha256": "924b6e6dae8eabcb94878eb645ca26ae3af138652af4cffaafe7628bc1f4976d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108606729;end=108606896"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:24Z",
+      "file": "genomes-X-108609640-108609641.json",
+      "sha256": "c709d07367d1594fa9571ec7a231c97dab96689e5c3f3e5f59878275d6deeb97",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108609640;end=108609641"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:24Z",
+      "file": "genomes-X-108614893-108615624.json",
+      "sha256": "ec118fe8d54e567e9ab89830247a9c90badf1043ca779d08a46e1f66dd9407c2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108614893;end=108615624"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:24Z",
+      "file": "genomes-X-108620062-108626365.json",
+      "sha256": "84f201bf5cd46c9db5840024cc8ea5d778f10157782fba266eecee702956df7d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108620062;end=108626365"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:24Z",
+      "file": "genomes-X-108655001-108655594.json",
+      "sha256": "e39d00df244cbc151ee0ab6343c95fcc469b7e45f8c57f94cd9cfc933e816527",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108655001;end=108655594"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:25Z",
+      "file": "genomes-X-108665232-108670254.json",
+      "sha256": "e93861c2779d477de10ac757d097ee766310c9b524e3f5b0f426acd942f14fc8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108665232;end=108670254"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:25Z",
+      "file": "genomes-X-108674744-108674958.json",
+      "sha256": "2a69bc3c9df46b8477246f74b8cf6287e22c9d6eedf793568f4c4bcf6dba06ed",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108674744;end=108674958"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:25Z",
+      "file": "genomes-X-108677469-108677692.json",
+      "sha256": "2b03f839b845638795326698a5a474a3242890d0330da37a708425c94edccf1d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108677469;end=108677692"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:25Z",
+      "file": "genomes-X-108680661-108682116.json",
+      "sha256": "cec5b3a79108226cffbda7da9599d5e0025cd1df101cae9b4ceed602fd06a43b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108680661;end=108682116"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:25Z",
+      "file": "genomes-X-108686011-108690401.json",
+      "sha256": "7ae9c8983c84eb20b99397409f4923b57770993d3b2a5cd80342fa66a95cbc4c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108686011;end=108690401"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/genomes/genomes.bb",
+      "download_time": "2026:11:18T22:47:26Z",
+      "file": "genomes-X-108692422-108696429.json",
+      "sha256": "5215d401952e849f47fb0d67b577a2b60b2eacd6793948f1953dac37f19912fa",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadGenomesVariantsV4_1;chrom=chrX;start=108692422;end=108696429"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:26Z",
+      "file": "exomes-1-75724059-75725005.json",
+      "sha256": "c579de06ae91a580946dcd6288542b3253239e7ec8be6ffe7463f11e65bb219e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75724059;end=75725005"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:26Z",
+      "file": "exomes-1-75728327-75728621.json",
+      "sha256": "d47a2ead89559c7718f8cde2034875e2983a83d049a05d8f4935ea1adcd57038",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75728327;end=75728621"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:27Z",
+      "file": "exomes-1-75732347-75734942.json",
+      "sha256": "3fe84e3736a51b36be8967b15da2636816ef7b2e92d0219579ccc1934b2a1d71",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75732347;end=75734942"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:27Z",
+      "file": "exomes-1-75739957-75740129.json",
+      "sha256": "6a7ffb7cff0c99ef144121421185a8a7a1cbf62683109cd3220f2d6b092f62e2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75739957;end=75740129"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:28Z",
+      "file": "exomes-1-75745541-75746213.json",
+      "sha256": "736d57956f8fbd9386f629bd70536e1a564c3f6647e6d618c0ef90ff2a1bddf2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75745541;end=75746213"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:28Z",
+      "file": "exomes-1-75749399-75750847.json",
+      "sha256": "e4dead2d328fe642c3bfdba3ebe66afb9f7dee98008fbe1c126793c89b4b95db",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75749399;end=75750847"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:28Z",
+      "file": "exomes-1-75760798-75763589.json",
+      "sha256": "14c06042857a6ffb3ce5d547af3520aef6155004389d0fcbd39224d257ea79b6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75760798;end=75763589"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:29Z",
+      "file": "exomes-1-75769234-75769235.json",
+      "sha256": "bcff6d78af5cbbb638b757d23871b13a40c8bbde1064ae33ab7eb1e86814b099",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr1;start=75769234;end=75769235"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:29Z",
+      "file": "exomes-12-102838439-102840534.json",
+      "sha256": "e6d29e83566446323620650efda085eee056c45c3a9747b45c436c80e5b36f27",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102838439;end=102840534"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:29Z",
+      "file": "exomes-12-102843381-102844626.json",
+      "sha256": "32aaa3e0f92bb7a00ce7c4af22e30b4f8f6ea1651774e38de93cc4e5b7dbda99",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102843381;end=102844626"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:30Z",
+      "file": "exomes-12-102846673-102846960.json",
+      "sha256": "6d49ee1107af2311e7636f9367349911c5c6806e03d10c1b3cae3365e127e778",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102846673;end=102846960"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:30Z",
+      "file": "exomes-12-102851457-102855549.json",
+      "sha256": "8dd5b41efb9e6b421d217b684c8c567caa82c34e8efb3347171ffe0d7ea58412",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102851457;end=102855549"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:30Z",
+      "file": "exomes-12-102866494-102866856.json",
+      "sha256": "f033506eb837bbc4cd94ed88b4eccc9f4df9ee2902c2313a5bbd31994e783719",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102866494;end=102866856"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:31Z",
+      "file": "exomes-12-102877414-102877722.json",
+      "sha256": "216e11e85de97eb90dc78b608869fe99b7d4e79bf891aadff680cfb18efa59b1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102877414;end=102877722"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:31Z",
+      "file": "exomes-12-102885974-102885975.json",
+      "sha256": "27af0664f5539b3b81ddb4ee4e124577c778e9118f8aa452c039759acfd2efcf",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102885974;end=102885975"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:31Z",
+      "file": "exomes-12-102894570-102894931.json",
+      "sha256": "6c3f8a233a9e51d609fd036f043fb6a120fcd51b66c95ab9343d1b17aa96fdb9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102894570;end=102894931"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:31Z",
+      "file": "exomes-12-102912523-102912917.json",
+      "sha256": "29af456ce34c60dd919bd2d8d0739061e1fbe25b352d78831f221f717a1cf832",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102912523;end=102912917"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:31Z",
+      "file": "exomes-12-102916771-102917757.json",
+      "sha256": "a8ee529aa729b98a5ddd3854fb2d9f5f5b1a39effaec2eb99b2a019e4bea580b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102916771;end=102917757"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:32Z",
+      "file": "exomes-12-102958047-102958432.json",
+      "sha256": "b8659a5528e0cd71aa5f80b676ffdb59374f4cf95dd2e4453ce85560d91d1c1e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr12;start=102958047;end=102958432"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:32Z",
+      "file": "exomes-13-51932854-51946499.json",
+      "sha256": "96255aa41d49c53b3d7e96bc39dcfed7e7fd8f60a59847033ec3941bf73f6584",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51932854;end=51946499"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:32Z",
+      "file": "exomes-13-51949412-51950607.json",
+      "sha256": "28ae772ebfccfeccb210d07943f40387cb7b97763fe16dd548ff029dfae4c79c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51949412;end=51950607"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:33Z",
+      "file": "exomes-13-51957495-51961962.json",
+      "sha256": "0b76539c42a9b2d9e8312ffea4e235c61c8326f6393edbd0efae2839acff922a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51957495;end=51961962"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:33Z",
+      "file": "exomes-13-51964851-51965067.json",
+      "sha256": "c8d59eba2fdaf123c4d27d1c0bfcb5aae4a928f00fa5ddca64dda4ac95cd7153",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51964851;end=51965067"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:34Z",
+      "file": "exomes-13-51968345-51970902.json",
+      "sha256": "0437610c27571d3e995d99a5abb6157115cbde3de648a31561fe31406e0def35",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51968345;end=51970902"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:34Z",
+      "file": "exomes-13-51973925-51975474.json",
+      "sha256": "d5df7b1a812628d2b2b719c0a1cc81c74dc42ba1189c20a380d7d61bacdcfce0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=51973925;end=51975474"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:34Z",
+      "file": "exomes-13-52011255-52011857.json",
+      "sha256": "d8a793e260d59e13edbc1dcaa772ccb93fcf634b7fa8e5d5567495db2cd5a87e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr13;start=52011255;end=52011857"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:35Z",
+      "file": "exomes-15-48408351-48415787.json",
+      "sha256": "a3df0e169d86bdd1d198f7cfea32db3a2a12befcd645cd52ed00f874d3c06cbf",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48408351;end=48415787"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:35Z",
+      "file": "exomes-15-48417800-48417801.json",
+      "sha256": "9b5206b12529565cb58e7a2d125f8a431fe0ac844f7a12ad3f89214ce91e17d1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48417800;end=48417801"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:35Z",
+      "file": "exomes-15-48420544-48422158.json",
+      "sha256": "3e1e14bdcb0b5e27114126855b96e1b05803d49e9e6dd03aac82cc4c77401bcc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48420544;end=48422158"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:36Z",
+      "file": "exomes-15-48425352-48434736.json",
+      "sha256": "854e34e16189250254683c71a8cd11f7c474a079010f595ea82f5d9e80e574f1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48425352;end=48434736"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:36Z",
+      "file": "exomes-15-48436948-48438215.json",
+      "sha256": "0e619f4d6f66a93ec96ab5782e6656bb54722ae7785c2bd94606a862c6209ac3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48436948;end=48438215"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:37Z",
+      "file": "exomes-15-48441427-48442019.json",
+      "sha256": "5a9f4ed5dd4b1421065f08cc2a764237be4b9485b1c9fb2e41830773230e9f8d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48441427;end=48442019"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:37Z",
+      "file": "exomes-15-48444241-48453022.json",
+      "sha256": "41e5bc3b9e4cc17a1564b2aea286e9b4e7a3ed0b5c50e3a9454848eba5b078f2",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48444241;end=48453022"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:37Z",
+      "file": "exomes-15-48456623-48456887.json",
+      "sha256": "5c53d42d3e84cda17a23acca22cd1c673086c55cacb69b50a8d9711f51882c47",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48456623;end=48456887"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:38Z",
+      "file": "exomes-15-48460233-48460395.json",
+      "sha256": "4d880c62200c8490e49c6010880087ba85324670f44428c8debf3f68336e3dbe",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48460233;end=48460395"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:38Z",
+      "file": "exomes-15-48462920-48475731.json",
+      "sha256": "98fde82850358bace125fa9beb8019600cd1ca28e28fca166cf8a79cf8c96c29",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48462920;end=48475731"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:38Z",
+      "file": "exomes-15-48481635-48490372.json",
+      "sha256": "2d549c486747723ca22b58b5159a988b54c4ad562540bc606d8b682141eadf73",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48481635;end=48490372"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:39Z",
+      "file": "exomes-15-48492440-48499058.json",
+      "sha256": "439e9413c7b1c0129d6a5621c18f5505c433f383c91345c88a1752070e6f5249",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48492440;end=48499058"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:39Z",
+      "file": "exomes-15-48503769-48505166.json",
+      "sha256": "5fbb5cbd983663f6aea4265eee423cb7484ff63923f1c0f5430bea8b99d01e27",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48503769;end=48505166"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:39Z",
+      "file": "exomes-15-48508545-48510189.json",
+      "sha256": "5f55e73b4a71515bdb02bc3994f2efdb569f998f0845140946d83802339ed676",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48508545;end=48510189"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:40Z",
+      "file": "exomes-15-48513439-48516378.json",
+      "sha256": "52744441136a046745679f688acfa6dac216331146a2c2a251711be0a5af8aa5",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48513439;end=48516378"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:40Z",
+      "file": "exomes-15-48520638-48520939.json",
+      "sha256": "c3a8ad03deb2ec8905cae58fe049b72116119f2df19c7d4043e359f65c06c209",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48520638;end=48520939"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:41Z",
+      "file": "exomes-15-48525840-48526538.json",
+      "sha256": "b28baee15d1e3e6972d6ad3d2c5b287f633dae5afb6fe0cbe016ae070a934bf9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48525840;end=48526538"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:41Z",
+      "file": "exomes-15-48533847-48534225.json",
+      "sha256": "7c02d39965f3617b100ccc61c74e07153fa91a25bc0846280d30621d73db7576",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48533847;end=48534225"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:41Z",
+      "file": "exomes-15-48537593-48537818.json",
+      "sha256": "d24a1adacd1062011a8eadfe29aa54bacf50c6f6764f4f5ed306dbe925c92187",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48537593;end=48537818"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:41Z",
+      "file": "exomes-15-48594008-48594009.json",
+      "sha256": "e624c6fa79bce2e9e8ecdc0ed71068753b7b313200f40627c42505c1bf14d662",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48594008;end=48594009"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:41Z",
+      "file": "exomes-15-48596026-48596398.json",
+      "sha256": "0328d845a20a8d1d7bcc47b7a7bd79fd311cedf0611f8bc293578e65dbd3ebd9",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48596026;end=48596398"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:42Z",
+      "file": "exomes-15-48600134-48600307.json",
+      "sha256": "dec96bb3de677937b184f6c2cc2d9431083c9b72d50f463b71397582347738c1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48600134;end=48600307"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:42Z",
+      "file": "exomes-15-48610711-48613333.json",
+      "sha256": "856b3d497ef07826bd0150d35b6f24a5160b0317bf25f8b5990104f41890d21a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48610711;end=48613333"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:42Z",
+      "file": "exomes-15-48644589-48645781.json",
+      "sha256": "af52dcaba68aa7c6c0c854bf0e3b0ad47e297577ccbd4730c026267f7fbd9231",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr15;start=48644589;end=48645781"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:43Z",
+      "file": "exomes-17-80099557-80119554.json",
+      "sha256": "8bed24671d0199a326abdaca426d1d6488268b330334aafe36e0a5588f1c71a4",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr17;start=80099557;end=80119554"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:43Z",
+      "file": "exomes-17-80119639-80119852.json",
+      "sha256": "42885efe4f1916abf626f2a5409c55154f8e4f514c131d19431e4a5604d49768",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr17;start=80119639;end=80119852"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:43Z",
+      "file": "exomes-6-51615636-51619707.json",
+      "sha256": "92cd4cef52c995c9363beffc2d6fa5c34ce834a984c968c7ce257e544a7b5a48",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51615636;end=51619707"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:44Z",
+      "file": "exomes-6-51626976-51627366.json",
+      "sha256": "47570ebee07d022fd8b9175d15888abd53d18c779cf1fe1d7456ead456852bfc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51626976;end=51627366"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:44Z",
+      "file": "exomes-6-51632286-51632814.json",
+      "sha256": "1a51aa79b47e878774d4080ee9b8f3d2633c4ea0a802a3cb3cca3c6d02ffdb65",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51632286;end=51632814"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:45Z",
+      "file": "exomes-6-51638589-51639027.json",
+      "sha256": "7e8cc7717e5ce4c6bffb551fa4956dca301011e0190803f1530f5a1896d4e3c5",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51638589;end=51639027"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:45Z",
+      "file": "exomes-6-51647908-51649407.json",
+      "sha256": "c8d3042dce4366e172a30d9d6b480f0418cd4761234494b9804c39a6f18994ec",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51647908;end=51649407"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:45Z",
+      "file": "exomes-6-51658932-51660001.json",
+      "sha256": "ea651265f07b35bb7fbaa1b42daefa3ca6b8c37071c5abecf69a44a2a0679c7a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51658932;end=51660001"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:46Z",
+      "file": "exomes-6-51721746-51722341.json",
+      "sha256": "da47c4735f8d7c5a58be30bcb8783f863ad9f437238f1f3b65b77b9f7785b2f1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51721746;end=51722341"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:46Z",
+      "file": "exomes-6-51744182-51748827.json",
+      "sha256": "72958c0dcb88470dd52c310693d3988ad45679443895e42142a120d0a50ba9b6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51744182;end=51748827"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:46Z",
+      "file": "exomes-6-51753001-51755174.json",
+      "sha256": "863fe9edfb9ef7f9b7d3c79b67b1c29c82563434c116973bfe1f4545cec77a84",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51753001;end=51755174"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:47Z",
+      "file": "exomes-6-51772441-51772913.json",
+      "sha256": "46176137e5f27d0012b16274537080f9768161b3a72d11b1a1cb74688ffec849",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51772441;end=51772913"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:47Z",
+      "file": "exomes-6-51775797-51775989.json",
+      "sha256": "a546fe7f5b35d2f639eec373eb52cda7b9e9f9fa3c1791bd653a3d3e2b54341a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51775797;end=51775989"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:48Z",
+      "file": "exomes-6-51790997-51791663.json",
+      "sha256": "0d35d4642d87fbde42937b2d912224ba67e7f6e5d23ba4df2b7c8cbbfc555ddd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51790997;end=51791663"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:48Z",
+      "file": "exomes-6-51830771-51831324.json",
+      "sha256": "fd87b9b0c4ab2077e7c9543f3df65f065ef7603b75678a66f2547b85c5163ff3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51830771;end=51831324"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:48Z",
+      "file": "exomes-6-51836259-51836686.json",
+      "sha256": "beab498026b577cc8a4fcec89f6e46578625fc48cf99643de051105328eac909",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51836259;end=51836686"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:48Z",
+      "file": "exomes-6-51847693-51848214.json",
+      "sha256": "bd4ae9181a51dffd171d988ef6c6118381a763d443c13a04b0470a87e17b2c2b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51847693;end=51848214"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:49Z",
+      "file": "exomes-6-51855875-51856089.json",
+      "sha256": "a27ca4daf094fd3db282b1306e1f607c771e51552bd201bb67986ab655aaaa3e",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51855875;end=51856089"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:49Z",
+      "file": "exomes-6-51867801-51868318.json",
+      "sha256": "4d90612bede063b11922bc576fd71321d322a01b372ba6b12dc69155102ab785",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51867801;end=51868318"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:49Z",
+      "file": "exomes-6-51870485-51870815.json",
+      "sha256": "db7424022a5c93b5b76ffbec0b88f98c5ca53f4dce1100aa4905f26b1190c2fa",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51870485;end=51870815"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:50Z",
+      "file": "exomes-6-51882422-51883267.json",
+      "sha256": "0fe3e54cdb62cdff48be7ed89eb684ee8eae0f4ec8881de79c21152e12a5ffbd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51882422;end=51883267"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:50Z",
+      "file": "exomes-6-51885764-51887262.json",
+      "sha256": "f8219a38beba955bef98f903de2d1e8f5e5149c148d0347088362e6842b7c001",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51885764;end=51887262"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:50Z",
+      "file": "exomes-6-51903588-51904061.json",
+      "sha256": "929241a9c3d155fc0406086dcdc5e38eda1a3fb2baf675c6731ca5d9a37ae537",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51903588;end=51904061"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:50Z",
+      "file": "exomes-6-51906195-51906360.json",
+      "sha256": "0969946f1ce81cc77ae53e00852819e27b16eedca0bfd7cd26d9937c61b57871",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51906195;end=51906360"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:51Z",
+      "file": "exomes-6-51909265-51909492.json",
+      "sha256": "7c60fd22834659ca62a34debe6642cbfba462c60b86ea3b11bfec3630f71e36a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51909265;end=51909492"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:51Z",
+      "file": "exomes-6-51911788-51912598.json",
+      "sha256": "96aafbb388f991434db90dd5280abda55e4b759a27ac5b6788b09c11d22f42ac",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51911788;end=51912598"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:51Z",
+      "file": "exomes-6-51933928-51934368.json",
+      "sha256": "1cf1c05c3cbc9efb7f041985db7cdebc2120c05e89b6ca7939825bd194ee70fc",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51933928;end=51934368"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:52Z",
+      "file": "exomes-6-51959850-51960272.json",
+      "sha256": "7902bcb3b53efe9e8202d068b6724694299d775b75b8530c5b1fc8cd625330a6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=51959850;end=51960272"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:52Z",
+      "file": "exomes-6-52010288-52010654.json",
+      "sha256": "2fa2cd4043a7c99a853f0ff4d50f5eeee8c6aa17d880db67cb4b7a69c33a04e6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52010288;end=52010654"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:52Z",
+      "file": "exomes-6-52017276-52017882.json",
+      "sha256": "86e72234f476c2cb1739f8aa85b15fbe13b9f037d6347c24ccc7995792705770",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52017276;end=52017882"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:53Z",
+      "file": "exomes-6-52022620-52028650.json",
+      "sha256": "a865d46af0f8e37a5c8b5d13997c7e0d0c045ca37d70ec30ea0c3a7f5b120d8b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52022620;end=52028650"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:53Z",
+      "file": "exomes-6-52032766-52033466.json",
+      "sha256": "a3ea68d4ada77a16830eb76c9d11e5d0074c22291db8d487bd9a41a948051ddd",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52032766;end=52033466"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:53Z",
+      "file": "exomes-6-52035578-52035739.json",
+      "sha256": "8ee2e2fb0231b8e3a6fb06d5d58637035e2113017f1435cfa6ae06614ef5df44",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52035578;end=52035739"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:54Z",
+      "file": "exomes-6-52042846-52046200.json",
+      "sha256": "90d1a1d41b48d97043cfaf2385e58ed02bf8c5269a0e34057a0bdb6e38a1130a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52042846;end=52046200"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:54Z",
+      "file": "exomes-6-52048441-52050616.json",
+      "sha256": "c16d7d0ad9bd4c487707ce06be437f45c443c513643c67728dc1b7e7f39efc3c",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52048441;end=52050616"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:54Z",
+      "file": "exomes-6-52053058-52060232.json",
+      "sha256": "5dd4de42d51d78dfd54ba4752d00c8306d0bf6bd9e24fafe7ce139cb90f8fb3d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52053058;end=52060232"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:55Z",
+      "file": "exomes-6-52062270-52066272.json",
+      "sha256": "bf817b916f344302292ef124061a57b5875e1ecddf45ad2ad43b45884882874a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52062270;end=52066272"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:55Z",
+      "file": "exomes-6-52069243-52073619.json",
+      "sha256": "77d9a4efa49ae79781fd49ce3e08c7d8b6dd17d32989bfa011a587b7b65e38e7",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52069243;end=52073619"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:55Z",
+      "file": "exomes-6-52076244-52076635.json",
+      "sha256": "9001ce00240cb4b7c892e07f75ffae9e9ada4a243ce6cb980757160ef292d3fb",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52076244;end=52076635"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:56Z",
+      "file": "exomes-6-52079727-52080158.json",
+      "sha256": "2c0b62ec2c3108119f10fde02be1b1238b6df110751c95635ec70adecbead2ca",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52079727;end=52080158"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:56Z",
+      "file": "exomes-6-52082374-52085077.json",
+      "sha256": "edebba893ddc42004ae03fccb028f8cd9b989f8ca5c3ea06f951247b397c5378",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52082374;end=52085077"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:56Z",
+      "file": "exomes-6-52087533-52087625.json",
+      "sha256": "9f4f9a9b3359d7fd48de1793ff4c110082ca5def31d037e811fe120b1d3bb136",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chr6;start=52087533;end=52087625"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:57Z",
+      "file": "exomes-X-108440114-108440334.json",
+      "sha256": "3e96ac79e1452d187c3a8c9f21b32c406b4138dee8060f07b15750a2b5072f59",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108440114;end=108440334"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:57Z",
+      "file": "exomes-X-108539533-108540062.json",
+      "sha256": "c2803c7f680f1b9dfd179f12f0dc9c8aa768fd059353d9b3df0cf5e974e185b3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108539533;end=108540062"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:57Z",
+      "file": "exomes-X-108559048-108559170.json",
+      "sha256": "e16dc18bcc1896c4a63666af46887817c19d29ade233445b9b1443b2eaa6efc4",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108559048;end=108559170"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:58Z",
+      "file": "exomes-X-108563861-108563945.json",
+      "sha256": "f238724176ca31e7dcd417843d3eefd4823d7a7413c7c11ed6c4391cba77cb88",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108563861;end=108563945"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:58Z",
+      "file": "exomes-X-108568069-108573672.json",
+      "sha256": "9ae846f8bf5c6d6ca0e758d89b7b3e14db82914a6bd684785cc65420026a3f75",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108568069;end=108573672"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:58Z",
+      "file": "exomes-X-108575894-108578397.json",
+      "sha256": "f43fe6c3f54ba45c4b07bcdefd419bfe65fd791c5ffffc518b382e260a60fe6f",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108575894;end=108578397"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:59Z",
+      "file": "exomes-X-108580452-108587045.json",
+      "sha256": "101c71273cebd97c228369bca605fc6fb24c715e95244b02069873b84604a8c8",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108580452;end=108587045"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:59Z",
+      "file": "exomes-X-108591056-108591660.json",
+      "sha256": "42d662928bf6dbd9197e46df45c9721e2bb8f13f6187d2181e951812997f9672",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108591056;end=108591660"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:59Z",
+      "file": "exomes-X-108595505-108603079.json",
+      "sha256": "72ebde7986ac673fd5b10536e56b870afa650e52b27acc759d74283c605d03d6",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108595505;end=108603079"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:47:59Z",
+      "file": "exomes-X-108606729-108606896.json",
+      "sha256": "1ee14d43a35ce49f07a0543a95d49307fcf63021676aea85bc130a30d314e2b1",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108606729;end=108606896"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:00Z",
+      "file": "exomes-X-108609640-108609641.json",
+      "sha256": "674e73c8bfcae72f3a3d474f59fda2e1ce1c706f4da102510f17c71870fdb4af",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108609640;end=108609641"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:00Z",
+      "file": "exomes-X-108614893-108615624.json",
+      "sha256": "8ffa51f61a44d54f81c50bd2d7b9e644136b341c7426ede46f606051a3e8a688",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108614893;end=108615624"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:00Z",
+      "file": "exomes-X-108620062-108626365.json",
+      "sha256": "3144ff498e4b5fcf18a489ba3e55bfeef60ea15ce058ca136c36eded62c01b65",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108620062;end=108626365"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:01Z",
+      "file": "exomes-X-108655001-108655594.json",
+      "sha256": "72f272d9e1a6cd6ff9f068851f655c14d1a4c08d4877187d6bb3fca72bb30398",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108655001;end=108655594"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:01Z",
+      "file": "exomes-X-108665232-108670254.json",
+      "sha256": "746c553b27d3c331c95c42380743343d00132036f3253a227b57d3ae03a2f3af",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108665232;end=108670254"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:01Z",
+      "file": "exomes-X-108674744-108674958.json",
+      "sha256": "3cc56e70ff85575b5f017899bc7fd19e4e789d8e13c41c3d0a3db2c717fcdeb3",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108674744;end=108674958"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:02Z",
+      "file": "exomes-X-108677469-108677692.json",
+      "sha256": "b2e23efda02e32b841863560219b5c9c72a014f92e86402dd80d2716ded42a7a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108677469;end=108677692"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:02Z",
+      "file": "exomes-X-108680661-108682116.json",
+      "sha256": "78533436c40cf92d18f60ab884f3324f684e8e8d75b70a8b777ad83c4418f2e0",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108680661;end=108682116"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:02Z",
+      "file": "exomes-X-108686011-108690401.json",
+      "sha256": "6152ef4c541aa9afbfb8eeb8b6ac1b691813258cd4c3a5db11abd8a01ec059bf",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108686011;end=108690401"
+    },
+    {
+      "big_data_url": "/gbdb/hg38/gnomAD/v4.1.1/exomes/exomes.bb",
+      "download_time": "2026:11:18T22:48:02Z",
+      "file": "exomes-X-108692422-108696429.json",
+      "sha256": "347174501cef396c8564c555b1ee8facc2d0e122470257db66c8ef6f349e48ab",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=gnomadExomesVariantsV4_1;chrom=chrX;start=108692422;end=108696429"
+    }
+  ],
+  "split_manifest_sha256": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa"
+}

@@ -1,0 +1,15 @@
+{
+  "best_accuracy_candidate": "population-depth5-lp1.0",
+  "best_discrimination_eligible_candidate": "population-depth5-lp1.5",
+  "best_training_oof_accuracy": 0.7919393939393939,
+  "goal_achieved": false,
+  "heldout_accuracy": null,
+  "its_training_oof_accuracy": 0.7883636363636364,
+  "its_training_oof_macro_f1": 0.7314310147421336,
+  "live_model_changed": false,
+  "locked_cohort_adequate_support": false,
+  "locked_cohort_count": 415,
+  "locked_cohort_scored": false,
+  "note": "Development selection estimates only; no 90% claim and no independent evaluation performed.",
+  "tests": 73
+}

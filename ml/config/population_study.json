@@ -1,0 +1,84 @@
+{
+  "study_version": "population-accuracy-study-v5",
+  "seed": 1729,
+  "scope": "Training-only follow-up adding exact gnomAD 4.1.1 SNV frequency matches after v4 protein study; locked cohort remains unscored.",
+  "selection": "Require strictly greater than 90% pooled OOF accuracy and unchanged five-class discrimination gates. Rank eligible by mean fold macro-F1, log loss, ID. None eligible means no model is approved or selected; training selection cannot establish test accuracy.",
+  "fresh_evaluation": "Freeze new independent evaluation variants before subsequent tuning; old holdouts remain consumed. Do not create a supposedly fresh holdout by reshuffling previously used rows.",
+  "candidates": [
+    {
+      "id": "baseline-replay",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 1
+    },
+    {
+      "id": "conservation-replay",
+      "depth": 8,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": false
+    },
+    {
+      "id": "population-depth5-lp1.0",
+      "depth": 5,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.0,
+      "protein_features": true,
+      "population_features_v4": true
+    },
+    {
+      "id": "population-depth5-lp1.5",
+      "depth": 5,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": true,
+      "population_features_v4": true
+    },
+    {
+      "id": "population-depth5-lp2.0",
+      "depth": 5,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 2.0,
+      "protein_features": true,
+      "population_features_v4": true
+    },
+    {
+      "id": "population-depth8-lp1.0",
+      "depth": 8,
+      "trees": 800,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.0,
+      "protein_features": true,
+      "population_features_v4": true
+    },
+    {
+      "id": "population-depth8-lp1.5",
+      "depth": 8,
+      "trees": 800,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": true,
+      "population_features_v4": true
+    },
+    {
+      "id": "population-depth8-lp2.0",
+      "depth": 8,
+      "trees": 800,
+      "balanced": false,
+      "likely_pathogenic_weight": 2.0,
+      "protein_features": true,
+      "population_features_v4": true
+    }
+  ],
+  "extra_features": "experimental-phylop-snv-v1",
+  "protein_features": true,
+  "minimum_accuracy_exclusive": 0.9,
+  "locked_cohort": "ml/data/locked-temporal-v4",
+  "locked_cohort_manifest_sha256": "8f52bf47263259ff4eea50a70a8d1a75d1bf26f264eaac3fd4385b6f5934ca73",
+  "population_features_v4": true
+}

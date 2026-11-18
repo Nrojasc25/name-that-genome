@@ -1,0 +1,114 @@
+{
+  "code_sha256": {
+    "calibration.py": "facf545e41c6277010345a28fdd2c79d921ca3ca15393034afb188739959e9d5",
+    "improve.py": "097cf208a91d6ff2116ad5731eeeca9e02e949ee08abcb1ee7e709b2eb4df44d",
+    "preprocessing.py": "802f3e2b32c970b8c33ba64c603aacd745eaa3c875cc667974f6b7b2bec89807",
+    "train.py": "d3248777010b636df8ce5624fe0870f49635159446a0aa3ddfd2d374c01417f2"
+  },
+  "created_at_utc": "2026-11-18T22:49:57.099148+00:00",
+  "input_sha256": {
+    "baseline_manifest": "9cec522c12c8f96f197b3c7ebab255a317ff2f4639f954415f71345f562e4c37",
+    "dataset_manifest": "1347c79340124efc56a5e9651d58337ec2e8077ff528a888796e9316aac0059e",
+    "feature_manifest": "eb07295f41239ee52d6657a747dbffd1acbe5c5f4d28a7f0fddcf9fd59f0f5d4",
+    "split_manifest": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa"
+  },
+  "outputs_sha256": {
+    "environment-lock.txt": "b78023f0b117e3b7172ed98c2fa8945d7a261fdcedc66f8e2e19f47942d361db",
+    "improvement_report.json": "3d91eab619ac7de8410eefd6767252ba8d607e6947ba9d9b7efa2db25ff021b5",
+    "improvement_report.md": "4ea56c746bf8f3270502b8bf4b78ac4e702c4ccaf077ccc0894875e8c978c4ca",
+    "protocol.json": "b51a96d09ad3e54237137999aa53f65eb36adff9c622d8ad73ce9636075447d4",
+    "source/calibration.py": "facf545e41c6277010345a28fdd2c79d921ca3ca15393034afb188739959e9d5",
+    "source/conservation.py": "62ce2a8ec355293ee86031a636b6f0a9707d7fc7e0f06843c8d45cce77d3afd2",
+    "source/improve.py": "097cf208a91d6ff2116ad5731eeeca9e02e949ee08abcb1ee7e709b2eb4df44d",
+    "source/population_features.py": "9f4c06f469f298960d4d0d4e0357f8a4d73a9d2c6427e5d460f888ac94737373",
+    "source/preprocessing.py": "802f3e2b32c970b8c33ba64c603aacd745eaa3c875cc667974f6b7b2bec89807",
+    "source/protein_features.py": "0149382e305b41e0c1a1cbe37f99b7ec000a33cda9c637084784370dd3fa53ea",
+    "source/train.py": "d3248777010b636df8ce5624fe0870f49635159446a0aa3ddfd2d374c01417f2",
+    "training_oof.parquet": "46f45aa6d2afa5095b700633583d3dee9fd72b0a47812114e07446448c77fadb"
+  },
+  "protocol": {
+    "candidates": [
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "baseline-replay",
+        "likely_pathogenic_weight": 1,
+        "trees": 250
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "conservation-replay",
+        "likely_pathogenic_weight": 1.5,
+        "protein_features": false,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "population-depth5-lp1.0",
+        "likely_pathogenic_weight": 1.0,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "population-depth5-lp1.5",
+        "likely_pathogenic_weight": 1.5,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 5,
+        "id": "population-depth5-lp2.0",
+        "likely_pathogenic_weight": 2.0,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 500
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "population-depth8-lp1.0",
+        "likely_pathogenic_weight": 1.0,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 800
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "population-depth8-lp1.5",
+        "likely_pathogenic_weight": 1.5,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 800
+      },
+      {
+        "balanced": false,
+        "depth": 8,
+        "id": "population-depth8-lp2.0",
+        "likely_pathogenic_weight": 2.0,
+        "population_features_v4": true,
+        "protein_features": true,
+        "trees": 800
+      }
+    ],
+    "extra_features": "experimental-phylop-snv-v1",
+    "fresh_evaluation": "Freeze new independent evaluation variants before subsequent tuning; old holdouts remain consumed. Do not create a supposedly fresh holdout by reshuffling previously used rows.",
+    "locked_cohort": "ml/data/locked-temporal-v4",
+    "locked_cohort_manifest_sha256": "8f52bf47263259ff4eea50a70a8d1a75d1bf26f264eaac3fd4385b6f5934ca73",
+    "minimum_accuracy_exclusive": 0.9,
+    "population_features_v4": true,
+    "protein_features": true,
+    "scope": "Training-only follow-up adding exact gnomAD 4.1.1 SNV frequency matches after v4 protein study; locked cohort remains unscored.",
+    "seed": 1729,
+    "selection": "Require strictly greater than 90% pooled OOF accuracy and unchanged five-class discrimination gates. Rank eligible by mean fold macro-F1, log loss, ID. None eligible means no model is approved or selected; training selection cannot establish test accuracy.",
+    "study_version": "population-accuracy-study-v5"
+  },
+  "protocol_sha256": "9d3ef80926fb183ead0bbf89ea2faa098d03b6e04b3f45104ea3d302887deea2"
+}

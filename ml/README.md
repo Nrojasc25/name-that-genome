@@ -1,5 +1,15 @@
 # Machine Learning
 
+## 90% accuracy goal: not achieved in the current development round
+
+A newer-release cohort of **415 nonoverlapping variants** was locked before further tuning and remains unscored. It contains only one Benign variant, so it cannot support a reliable five-class acceptance claim on its own.
+
+New RefSeq protein/splice and gnomAD v4.1.1 population features raised the highest ordinary training OOF accuracy from **74.77% to 79.19%**. A configuration meeting the original discrimination criteria reached **78.84% accuracy and 0.7314 macro-F1**. Neither reaches the requested greater-than-90% target. No model was selected for promotion or swapped into the app.
+
+Read [the accuracy-target study](ACCURACY_TARGET.md) for data reservation, all results, limitations, reproduction commands, and remaining requirements. 73 tests passed. These development scores are not independent test performance.
+
+---
+
 ## Phase 5 improvement follow-up: stronger candidate, approval still pending
 
 The follow-up on `feat/ml-model-improvements` found that many differently labeled variants had identical original features. Training-weight/depth changes alone did not resolve the gates. A separate training-only conservation experiment produced an eligible development candidate: pooled OOF macro-F1 **0.6743**, Likely pathogenic recall **40.4%** (was 9.6%), and pathogenic-group-to-benign-group errors **1.63%** (was 2.26%). Other class recalls decreased; full results are disclosed.
@@ -921,4 +931,4 @@ Existing application features below were identified by repository inspection. Ph
 - [x] Verify saved snapshots, old results, unsupported inputs, and failure states.
 - [ ] Complete regression checks, latency measurement, model card, and clean setup demo.
 
-**Current milestone:** Phase 7 integration remains in place. The Phase 5 follow-up produced a stronger conservation-enriched training candidate, saved separately. Independent evaluation and the full release gates remain pending; see IMPROVEMENT.md.
+**Current milestone:** Phase 7 remains active with the original research model. The latest feature studies improved development accuracy but did not reach 90%; a small temporal cohort is locked and unscored, with inadequate class support for acceptance. See ACCURACY_TARGET.md.

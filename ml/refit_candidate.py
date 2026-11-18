@@ -22,6 +22,8 @@ def refit(dataset,features,splits,study,enrichment,output):
     for name in ['improvement_report.json','protocol.json']:
         if digest(study/name)!=manifest['outputs_sha256'][name]: raise ValueError('Study checksum mismatch')
     report=json.loads((study/'improvement_report.json').read_text())
+    if report.get('protein_manifest_sha256') or report.get('population_manifest_sha256'):
+        raise ValueError('This refit adapter supports conservation-only studies; do not silently drop experimental feature columns')
     chosen=select(report['experiments'])
     if not chosen or chosen['candidate']['id']!=report['selected_candidate']:
         raise ValueError('No eligible selected candidate')

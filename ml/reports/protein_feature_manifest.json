@@ -1,0 +1,110 @@
+{
+  "code_sha256": "0149382e305b41e0c1a1cbe37f99b7ec000a33cda9c637084784370dd3fa53ea",
+  "coding_snv_observed": 10770,
+  "created_at_utc": "2026-11-18T22:42:38.176901+00:00",
+  "feature_names": [
+    "transcript_missing",
+    "coding_snv_missing",
+    "coding_fraction",
+    "splice_distance_log1p",
+    "splice_context_missing",
+    "coding_synonymous",
+    "coding_stop_gain",
+    "coding_stop_loss",
+    "aa_ref_A",
+    "aa_ref_C",
+    "aa_ref_D",
+    "aa_ref_E",
+    "aa_ref_F",
+    "aa_ref_G",
+    "aa_ref_H",
+    "aa_ref_I",
+    "aa_ref_K",
+    "aa_ref_L",
+    "aa_ref_M",
+    "aa_ref_N",
+    "aa_ref_P",
+    "aa_ref_Q",
+    "aa_ref_R",
+    "aa_ref_S",
+    "aa_ref_T",
+    "aa_ref_V",
+    "aa_ref_W",
+    "aa_ref_Y",
+    "aa_ref_*",
+    "aa_alt_A",
+    "aa_alt_C",
+    "aa_alt_D",
+    "aa_alt_E",
+    "aa_alt_F",
+    "aa_alt_G",
+    "aa_alt_H",
+    "aa_alt_I",
+    "aa_alt_K",
+    "aa_alt_L",
+    "aa_alt_M",
+    "aa_alt_N",
+    "aa_alt_P",
+    "aa_alt_Q",
+    "aa_alt_R",
+    "aa_alt_S",
+    "aa_alt_T",
+    "aa_alt_V",
+    "aa_alt_W",
+    "aa_alt_Y",
+    "aa_alt_*"
+  ],
+  "features_sha256": "06c5e47a5ea678667f66bd3aaf068f8faf90d4170aed950d4c5fa0028cb278c7",
+  "limitations": "No domains or modern population annotations. Protein substitution features apply only to reference-matching coding SNVs with a complete translatable CDS; other variants retain missing indicators. Splice distance is a geometric distance to internal exon boundaries, not a splice-effect prediction.",
+  "partition": "train",
+  "reference_sha256": "5be01555d98347fdb3714dc84c6f77c9d8bc774adcf32c6f7a8fa06f5baf5e51",
+  "rows": 16500,
+  "schema": "experimental-refseq-protein-v1",
+  "sources": [
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "1.json",
+      "sha256": "67102d4d2f53a629627b288a7fd73c3c6bbd352d5832df76107f24cc3345a81b",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr1;start=75724059;end=75769235"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "12.json",
+      "sha256": "7584aada27cbbc833abe25a20dcd89c8e05535b63d75b7c55e45b887387de418",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr12;start=102838439;end=102958432"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "13.json",
+      "sha256": "cbb3341163cb4deed0d17a1b042fc955ca23bcbab6c4850e5d7f94e10283e365",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr13;start=51932854;end=52011857"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "15.json",
+      "sha256": "17601ac011f7a37f982f731b00b1f09880a4ec34fa611c25c53b40ff679d0515",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr15;start=48408351;end=48645781"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "17.json",
+      "sha256": "3478b2a46d3a7fb0055464dbcc910474de889aec01f8ffddc063000e385a299d",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr17;start=80099557;end=80119852"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "6.json",
+      "sha256": "474dbcd147164e1706e097d84b37253716dcf49e8ecba313d9ccac0bf9a31abb",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chr6;start=51615636;end=52087625"
+    },
+    {
+      "data_time": "2025-08-13T08:30:40",
+      "file": "X.json",
+      "sha256": "6521cf5bd3052afe8b097c81f3bb342047e83a1e9b2e26fdbc4a1bb0c49da83a",
+      "url": "https://api.genome.ucsc.edu/getData/track?genome=hg38;track=ncbiRefSeqCurated;chrom=chrX;start=108440114;end=108696429"
+    }
+  ],
+  "split_manifest_sha256": "17bb79d220b109ef615c82743b2bed6d597e164c2071c6ad1a15c2bb9a7a82aa",
+  "transcript_observed": 16491,
+  "transcript_policy": "Overlapping complete-CDS NM_ transcript with longest spliced CDS, ties by accession. Not MANE canonical. No clinical classification or consequence-severity selection."
+}

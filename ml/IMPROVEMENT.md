@@ -38,7 +38,7 @@ It is explicitly **uncalibrated**, **not approved**, and **not compatible with t
 
 ## Remaining work before Phase 5 can pass
 
-1. Freeze an independent evaluation cohort that excludes all prior variant keys (and account for related alleles/loci and gene overlap). No unused independent cohort is currently present locally. A different shuffle of the old variants does not make a new holdout. If old test sets are used for development comparisons, label them explicitly as reused and do not claim fresh validation.
+1. Freeze an independent evaluation cohort that excludes all prior variant keys (and account for related alleles/loci and gene overlap). A later study reserved 415 newer-release variants, but class support is inadequate (only one Benign); see [the accuracy-target update](ACCURACY_TARGET.md). A different shuffle of the old variants does not make a new holdout. If old test sets are used for development comparisons, label them explicitly as reused and do not claim fresh validation.
 2. Extend the conservation cache/feature contract to the validation and future evaluation cohorts with consistent missingness semantics. The current cache and experimental matrix deliberately contain training rows only. Avoid making annotation availability depend on partition membership.
 3. Freeze the candidate and validation protocol. Assess calibration and confidence coverage/accuracy on validation data; do not deploy a confidence threshold chosen from training OOF scores.
 4. Evaluate the frozen complete predictor against **all** existing gates, including per-class recalls, both severe-error directions, baselines, calibration, confidence, latency, and the gene challenge. Report failures without lowering thresholds.
@@ -71,3 +71,7 @@ No additional Python packages were installed for these studies. The downloader a
 ## Verification
 
 All 66 ML/backend tests passed. Tests cover fold-local class weights and conservation imputation, absent values, coordinate conversion, mismatched/truncated annotation responses, feature collisions, and refusing selection when a discrimination gate fails. The refit verified persisted-model prediction parity on 512 training probe rows. Study/candidate checksums and unchanged original model, policy, evaluation report, SHAP manifest, and access ledger were verified.
+
+## Subsequent accuracy-target work
+
+Protein/transcript and modern population-frequency experiments are documented in [ACCURACY_TARGET.md](ACCURACY_TARGET.md). They improved ordinary training OOF accuracy to at most 79.19%, not 90%. The 415-variant temporal cohort remains unscored and too small in several classes for acceptance. No deployed artifact was changed.

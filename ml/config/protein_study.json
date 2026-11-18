@@ -1,0 +1,77 @@
+{
+  "study_version": "protein-accuracy-study-v4",
+  "seed": 1729,
+  "scope": "Training-only study after reserving temporal v4 cohort; benchmark ordinary accuracy on every OOF row. No holdout scoring or confidence-filtered accuracy.",
+  "selection": "Require strictly greater than 90% pooled OOF accuracy and unchanged five-class discrimination gates. Rank eligible by mean fold macro-F1, log loss, ID. None eligible means no model is approved or selected; training selection cannot establish test accuracy.",
+  "fresh_evaluation": "Freeze new independent evaluation variants before subsequent tuning; old holdouts remain consumed. Do not create a supposedly fresh holdout by reshuffling previously used rows.",
+  "candidates": [
+    {
+      "id": "baseline-replay",
+      "depth": 5,
+      "trees": 250,
+      "balanced": false,
+      "likely_pathogenic_weight": 1
+    },
+    {
+      "id": "conservation-replay",
+      "depth": 8,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": false
+    },
+    {
+      "id": "protein-depth5-lp1.0",
+      "depth": 5,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.0,
+      "protein_features": true
+    },
+    {
+      "id": "protein-depth5-lp1.5",
+      "depth": 5,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": true
+    },
+    {
+      "id": "protein-depth8-lp1.0",
+      "depth": 8,
+      "trees": 800,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.0,
+      "protein_features": true
+    },
+    {
+      "id": "protein-depth8-lp1.5",
+      "depth": 8,
+      "trees": 800,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": true
+    },
+    {
+      "id": "protein-depth12-lp1.0",
+      "depth": 12,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.0,
+      "protein_features": true
+    },
+    {
+      "id": "protein-depth12-lp1.5",
+      "depth": 12,
+      "trees": 500,
+      "balanced": false,
+      "likely_pathogenic_weight": 1.5,
+      "protein_features": true
+    }
+  ],
+  "extra_features": "experimental-phylop-snv-v1",
+  "protein_features": true,
+  "minimum_accuracy_exclusive": 0.9,
+  "locked_cohort": "ml/data/locked-temporal-v4",
+  "locked_cohort_manifest_sha256": "8f52bf47263259ff4eea50a70a8d1a75d1bf26f264eaac3fd4385b6f5934ca73"
+}

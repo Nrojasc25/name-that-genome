@@ -62,3 +62,7 @@ Phase 7 serves the frozen candidate with all five uncalibrated scores, low-confi
 ## Separate conservation-enriched development candidate
 
 The Phase 5 follow-up produced `conservation-depth8-lp1.5`, refitted only on the original training partition with two additional experimental conservation columns. Its training OOF macro-F1 is 0.6743 and Likely pathogenic recall is 40.4%; all existing pooled discrimination criteria pass on those selection estimates. These are not independent test results, and the candidate is not calibrated, approved, serving-compatible, or deployed. The active model described above remains unchanged. See [IMPROVEMENT.md](IMPROVEMENT.md) for both failed and improved experiments, tradeoffs, and remaining evaluation requirements.
+
+## Subsequent greater-than-90% accuracy target
+
+The v4/v5 development studies add RefSeq protein/splice features and gnomAD v4.1.1 frequencies. Highest training OOF accuracy is 79.19%; the configuration with the strongest macro-F1 among those meeting original discrimination criteria has 78.84% accuracy and 0.7314 macro-F1. None passes the new greater-than-90% accuracy requirement. The 415-variant newer-release cohort remains unscored and lacks adequate class support. These studies do not change the deployed model or establish unseen performance. See [ACCURACY_TARGET.md](ACCURACY_TARGET.md).

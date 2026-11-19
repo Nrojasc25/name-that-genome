@@ -42,6 +42,8 @@ def bootstrap(labels, scores, groups, config):
 
 def subgroups(partition, scores, stars):
     masks = {}
+    for gene in sorted({gene for row in partition['metadata'] for gene in row.get('genes', [])}):
+        masks['gene:' + gene] = np.array([gene in row.get('genes', []) for row in partition['metadata']])
     types = sorted({r['variant_type'] for r in partition['metadata']})
     for kind in types:
         masks['variant_type:' + kind] = np.array([r['variant_type'] == kind for r in partition['metadata']])
@@ -66,7 +68,7 @@ def subgroups(partition, scores, stars):
                         'class_support':{str(c):int(np.sum(y == i)) for i,c in enumerate(CLASS_ORDER)},
                         'per_class_recall':{str(c):item['per_class'][c]['recall'] if i in present else None for i,c in enumerate(CLASS_ORDER)},
                         'small_sample':count < 30}
-    return {'groups':result,'note':'Consequence groups overlap; do not add their counts. Missing classes have null recall. Small groups are descriptive only.'}
+    return {'groups':result,'note':'Gene and consequence groups can overlap; do not add their counts. Missing classes have null recall. Small groups are descriptive only.'}
 
 
 def error_examples(partition,scores,limit=10):

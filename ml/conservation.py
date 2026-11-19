@@ -1,4 +1,4 @@
-"""Freeze a training-only UCSC phyloP100way experiment; not a serving feature schema."""
+"""Freeze UCSC phyloP100way values; optionally extend the training cache for inference."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -64,12 +64,23 @@ def fetch(window, directory):
     return {'url':url,'file':path.name,'sha256':digest(path),'data_time':payload.get('dataTime'),'download_time':payload.get('downloadTime')},payload
 
 
-def build(splits,output):
+def build(splits,output,extend_from=None):
     if (output/'conservation_manifest.json').exists(): raise FileExistsError('Completed annotation already exists')
     split_manifest=json.loads((splits/'split_manifest.json').read_text())
     if digest(splits/'membership.parquet')!=split_manifest['outputs_sha256']['membership.parquet']:
         raise ValueError('Split checksum mismatch')
-    keys=sorted(r['variant_key'] for r in pq.read_table(splits/'membership.parquet').to_pylist() if r['partition']=='train')
+    membership=pq.read_table(splits/'membership.parquet').to_pylist()
+    keys=sorted(r['variant_key'] for r in membership if r['partition']=='train')
+    saved={}
+    if extend_from:
+        previous=json.loads((extend_from/'conservation_manifest.json').read_text())
+        if previous['partition']!='train' or previous['split_manifest_sha256']!=digest(splits/'split_manifest.json'):
+            raise ValueError('Extension requires the original training cache and split')
+        if digest(extend_from/'features.json')!=previous['features_sha256']:
+            raise ValueError('Training conservation checksum mismatch')
+        saved=json.loads((extend_from/'features.json').read_text())
+        if set(saved)!=set(keys): raise ValueError('Training conservation keys differ')
+        keys=sorted(r['variant_key'] for r in membership if r['variant_key'] not in saved)
     output.mkdir(parents=True,exist_ok=True);raw=output/'responses';raw.mkdir(exist_ok=True)
     lookup={};sources=[]
     with ThreadPoolExecutor(max_workers=2) as executor:
@@ -83,9 +94,13 @@ def build(splits,output):
                 if not math.isfinite(value): raise ValueError('Nonfinite source score')
                 for pos in range(row['start'],row['end']): lookup[chrom,pos]=value
             if (i+1)%10==0: print('Downloaded regions',i+1,flush=True)
-    rows={key:feature(key,lookup) for key in keys}
+    for key, values in saved.items():
+        _,chrom,pos,ref,alt=key.split(':')
+        if len(ref)==len(alt)==1: lookup[chrom,int(pos)-1]=values['phylop100way_snv']
+    rows={**saved,**{key:feature(key,lookup) for key in keys}}
     write_json(output/'features.json',rows)
-    write_json(output/'conservation_manifest.json',{'schema':'experimental-phylop-snv-v1','partition':'train','assembly':'GRCh38',
+    write_json(output/'conservation_manifest.json',{'schema':'experimental-phylop-snv-v1','partition':'all' if extend_from else 'train','assembly':'GRCh38',
+        'training_manifest_sha256':digest(extend_from/'conservation_manifest.json') if extend_from else None,
         'track':TRACK,'source':'https://genome.ucsc.edu/goldenPath/help/api.html','retrieved_at':datetime.now(timezone.utc).isoformat(),
         'split_manifest_sha256':digest(splits/'split_manifest.json'),'features_sha256':digest(output/'features.json'),
         'code_sha256':digest(Path(__file__)),'rows':len(rows),'observed':sum(r['phylop100way_snv'] is not None for r in rows.values()),
@@ -96,4 +111,5 @@ def build(splits,output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--splits',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
-    args=parser.parse_args();build(args.splits,args.output)
+    parser.add_argument('--extend-from',type=Path,help='Preserve this training cache and annotate the remaining split variants')
+    args=parser.parse_args();build(args.splits,args.output,args.extend_from)

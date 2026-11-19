@@ -1,4 +1,4 @@
-"""Refit an eligible enriched study candidate on training rows only; never deploy it."""
+"""Refit an eligible enriched candidate and its training-only SHAP background; no automatic deployment."""
 import argparse
 import json
 from pathlib import Path
@@ -9,6 +9,7 @@ from threadpoolctl import threadpool_limits
 from xgboost import XGBClassifier
 
 from .dataset_io import digest, write_json
+from .explain import ClassExplainer
 from .features import FEATURE_NAMES
 from .improve import extend_features, sample_weights, select
 from .labels import CLASS_ORDER
@@ -56,13 +57,25 @@ def refit(dataset,features,splits,study,enrichment,output):
         write_json(directory/'conservation_preprocessor.json',{'schema':'experimental-phylop-snv-v1','median':fill,
                     'training_keys_sha256':processor.artifact['training_keys_sha256'],'columns':['phylop100way_snv','phylop100way_snv_missing'],
                     'missing_policy':'Training-only median for absent or indel SNV score; explicit missing indicator retained.'})
+        names=list(FEATURE_NAMES)+['phylop100way_snv','phylop100way_snv_missing']
+        shap_config=json.loads((Path(__file__).parent/'config/shap.json').read_text())
+        background_ids=np.random.default_rng(shap_config['seed']).choice(len(keys),min(shap_config['background_size'],len(keys)),replace=False)
+        np.save(directory/'background.npy',x[background_ids],allow_pickle=False)
+        write_json(directory/'background_membership.json',[keys[i] for i in background_ids])
+        background_version=digest(directory/'background.npy')
+        engine=ClassExplainer(loaded,names,x[background_ids],model_version=config['study_version'],
+                              background_version=background_version,atol=shap_config['additivity_atol'])
+        engine.explain(x[probe[:20]])
         (directory/'environment-lock.txt').write_text('\n'.join(environment_lock())+'\n')
         write_json(directory/'candidate_manifest.json',{'candidate':candidate,'study_manifest_sha256':digest(study/'study_manifest.json'),
+            'model_name':candidate['id'],'model_version':config['study_version'],
+            'dataset_version':inputs['dataset']['dataset_version'],'annotation_version':inputs['features']['annotation_version'],
+            'feature_schema_version':'1.0.0+phylop-snv-v1','shap_config':shap_config,'background_version':background_version,
             'enrichment_manifest_sha256':digest(enrichment/'conservation_manifest.json'),'class_order':list(CLASS_ORDER),
-            'feature_names':list(FEATURE_NAMES)+['phylop100way_snv','phylop100way_snv_missing'],'training_rows':len(keys),
+            'feature_names':names,'training_rows':len(keys),
             'training_keys_sha256':processor.artifact['training_keys_sha256'],'probability_kind':'uncalibrated',
             'status':'research_candidate_requires_validation_and_fresh_evaluation','release_approved':False,
-            'serving_compatible':False,'reload_parity_rows':len(probe),
+            'serving_compatible':True,'reload_parity_rows':len(probe),
             'code_sha256':{name:digest(Path(__file__).with_name(name)) for name in ['refit_candidate.py','improve.py','conservation.py']},
             'outputs_sha256':{p.name:digest(p) for p in directory.iterdir()}})
         directory.replace(output)

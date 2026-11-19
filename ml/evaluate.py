@@ -182,6 +182,12 @@ def render(output):
         for label in CLASS_ORDER:
             m=entry['selected']['per_class'][label];ap=entry['selected']['one_vs_rest_average_precision'][label]
             lines.append(f"| {label} | {m['precision']:.4f} | {m['recall']:.4f} | {m['f1-score']:.4f} | {ap['average_precision']:.4f} | {ap['prevalence']:.4f} | {int(m['support'])} |")
+        lines += ['', 'Per-gene results (macro-F1 over classes present; — means no examples):', '',
+                  '| Gene | Rows | Macro-F1 | B recall | LB recall | VUS recall | LP recall | P recall |', '|---|---:|---:|---:|---:|---:|---:|---:|']
+        for group, metrics in entry['subgroups']['groups'].items():
+            if group.startswith('gene:'):
+                recalls = ['—' if metrics['per_class_recall'][label] is None else f"{metrics['per_class_recall'][label]:.1%}" for label in CLASS_ORDER]
+                lines.append(f"| {group[5:]} | {metrics['count']} | {metrics['macro_f1_present_classes']:.4f} | " + ' | '.join(recalls) + ' |')
         lines += ['',f"Baseline macro-F1: dummy {entry['dummy']['macro_f1']:.4f}; logistic {entry['logistic']['macro_f1']:.4f}.",
                   f"Standard-confidence coverage: {entry['confidence']['coverage']:.1%}; accuracy within that subset: {entry['confidence']['standard_accuracy']}.",'', 'Failed gates:']
         lines += ['- '+gate for gate,passed in entry['gates'].items() if not passed] or ['- None.']
